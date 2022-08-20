@@ -1,4 +1,4 @@
-import Layout from 'kadernictvi/features/layout/Layout';
+import Layout from 'kadernictvi_pavla_halfarova/features/layout/Layout';
 
 function App() {
   return <Layout />;

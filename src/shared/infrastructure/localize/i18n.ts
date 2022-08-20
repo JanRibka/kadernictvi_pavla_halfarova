@@ -7,11 +7,11 @@ import { LanguageEnum } from 'shared/enums/LanguageEnum';
 const languages = [LanguageEnum.Cz, LanguageEnum.Pl];
 // Zvolený jazyk z localstorage nebo default
 const selectedLanguage = localStorage.getItem("i18nextLng") || LanguageEnum.Cz;
-debugger;
+
 // Cesta k překladům pro daný projekt
 const getPrefix = () => {
   let prefix = process.env.PUBLIC_URL || "";
-  debugger;
+
   if (prefix !== "" && !prefix.endsWith("/")) prefix += "/";
   if (prefix === "") prefix += "/";
 
@@ -19,7 +19,6 @@ const getPrefix = () => {
 };
 
 const getLoadPath = (): string => {
-  debugger;
   return `${getPrefix()}${
     process.env.REACT_APP_CLIENT
   }/locales/{{lng}}/{{ns}}.json?${process.env.REACT_APP_VERSION}`;
