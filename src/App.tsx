@@ -7,19 +7,18 @@ function App() {
       <Layout />
       <CookieConsent
         location='bottom'
-        buttonText='ROZUMÍM'
-        cookieName='myAwesomeCookieName2'
+        buttonText='Rozumím'
+        cookieName='viewed_cookie_policy'
         style={{ background: "rgba(12, 35, 43, 0.8)" }}
         buttonStyle={{ 
           color: "#4e503b", 
           fontSize: "13px",
-          height: "35px",
-          borderRadius: "25px"
+          height: "30px",
+          borderRadius: "10px"
         }}
         expires={150}
       >
-        Používáním těchto stránek vyjadřujete souhlas s používáním cookies v
-        souladu s nastavením prohlížeče.
+        Tyto stránky používají cookies pro funkčnost webových stránek. Používáním tohoto webu s tím souhlasíte.        
       </CookieConsent>
     </>
   );
