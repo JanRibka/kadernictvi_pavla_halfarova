@@ -36,9 +36,7 @@ const LanguageSelect = () => {
         >
           {Countries.map((option, key) => (
             <MenuItem>
-              <img src={option.Src} alt={option.Label}>
-                {" "}
-              </img>
+              <img src={option.Src} alt={option.Label} />{" "}
             </MenuItem>
           ))}
         </Select>
