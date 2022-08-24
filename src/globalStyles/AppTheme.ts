@@ -1,9 +1,9 @@
 import createTheme from '@mui/material/styles/createTheme';
 
 // Colors
-const palettePrimaryMain = "rgb(121, 149, 64)";
+const palettePrimaryMain = "rgb(64, 64, 64)";
 const palettePrimaryDark = "rgb(80, 99, 43)";
-const paletteSecondaryMain = "rgb(255, 255, 255)";
+const paletteSecondaryMain = "rgb(212, 120, 168)";
 const paletteTextPrimary = "rgb(112, 112, 112)";
 const paletteTextSecondary = "rgb(125, 125, 125)";
 

@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 
 import { AppBar, Box, Toolbar } from '@mui/material';
 import { useEffect } from 'react';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
 
 const NavBar = () => {
   const { t } = useTranslation(["layout\\navBar"]);
@@ -40,7 +42,21 @@ debugger;
   return (
     <Box flexGrow={1}>      
       <AppBar>
-        <Toolbar style={{color: "w"}}>{t("test")}</Toolbar>
+        <Toolbar 
+          style={{color: "w"}}
+        >
+          <GridContainer>
+            <GridItem xs={3}>
+              Logo
+            </GridItem>
+            <GridItem xs={7}>
+              Menu
+            </GridItem>
+            <GridItem xs={2}>
+              Jazyk
+            </GridItem>
+          </GridContainer>
+        </Toolbar>
       </AppBar>
     </Box>
   );
