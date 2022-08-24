@@ -1,14 +1,14 @@
-import { Box } from '@mui/system';
-import KadernictviPage from '../pages/KadernictviPage';
+import { Box } from "@mui/system";
 
-import Footer from './Footer';
-import NavBar from './NavBar';
+import KadernictviPage from "../pages/KadernictviPage";
+import Footer from "./Footer";
+import NavBar from "./NavBar/NavBar";
 
 const Layout = () => {
   return (
     <Box display='flex' flexDirection='column'>
       <NavBar />
-        <KadernictviPage />
+      <KadernictviPage />
       <Footer />
     </Box>
   );
