@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
 
-import { AppBar, Box, Toolbar } from "@mui/material";
+import { AppBar, Box, SxProps, Toolbar } from '@mui/material';
 
-import LanguageSelect from "./LanguageSelect";
+import LanguageSelect from './LanguageSelect';
 
 const NavBar = () => {
   const { t } = useTranslation(["layout\\navBar"]);
@@ -45,9 +45,8 @@ const NavBar = () => {
       <AppBar>
         <Toolbar style={{ color: "w" }}>
           <GridContainer>
-            <GridItem xs={3}>Logo</GridItem>
-            <GridItem xs={7}>Menu</GridItem>
-            <GridItem xs={2}>
+            <GridItem xs={5}>Logo</GridItem>            
+            <GridItem xs={7} sx={menuLanguage}>
               <LanguageSelect />
             </GridItem>
           </GridContainer>
@@ -60,3 +59,7 @@ const NavBar = () => {
 export default NavBar;
 
 // Styles
+const menuLanguage: SxProps = {
+  display: "flex",
+  justifyContent: "end"
+}
