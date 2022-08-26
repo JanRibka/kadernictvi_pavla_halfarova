@@ -1,15 +1,22 @@
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import { SyntheticEvent, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { AppBar, Box, SxProps, Toolbar } from '@mui/material';
+import { AppBar, Box, SxProps, Toolbar } from "@mui/material";
 
-import LanguageSelect from './LanguageSelect';
+import LanguageSelect from "./LanguageSelect";
+import MainMenu from "./MainMenu";
 
-const NavBar = () => {
-  const { t } = useTranslation(["layout\\navBar"]);
+interface IProps {
+  tabSelectOnChangeAction: (
+    event: SyntheticEvent<Element, Event>,
+    value: number
+  ) => void;
+  seldTab: number;
+}
 
+const NavBar = (props: IProps) => {
   useEffect(() => {
     window.addEventListener("scroll", HeaderColorChange);
 
@@ -45,8 +52,12 @@ const NavBar = () => {
       <AppBar>
         <Toolbar style={{ color: "w" }}>
           <GridContainer>
-            <GridItem xs={5}>Logo</GridItem>            
+            <GridItem xs={5}>Logo</GridItem>
             <GridItem xs={7} sx={menuLanguage}>
+              <MainMenu
+                onChangeAction={props.tabSelectOnChangeAction}
+                seldTab={props.seldTab}
+              />
               <LanguageSelect />
             </GridItem>
           </GridContainer>
@@ -61,5 +72,5 @@ export default NavBar;
 // Styles
 const menuLanguage: SxProps = {
   display: "flex",
-  justifyContent: "end"
-}
+  justifyContent: "end",
+};

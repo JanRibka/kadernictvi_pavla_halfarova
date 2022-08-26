@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { useState } from 'react';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
 import i18n from 'shared/infrastructure/localize/i18n';
@@ -9,7 +10,7 @@ import CzechFlag from '../../../../shared/flags/czech-flag.png';
 import Countries from './Countries';
 
 const LanguageSelect = () => {
-  const i18nextLng: string | null = localStorage.getItem("i18nextLng");
+  const i18nextLng: string | null = i18next.language || localStorage.getItem("i18nextLng");
   const seldLanguage: string | undefined = Countries.find(f => f.Value === i18nextLng)?.Src;
   const deafultCountry: string = Countries.find(f => f.Value === LanguageEnum.Cz)?.Src ?? CzechFlag;
 
