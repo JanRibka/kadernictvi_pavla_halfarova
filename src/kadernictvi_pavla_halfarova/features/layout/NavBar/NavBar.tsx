@@ -6,6 +6,7 @@ import GridItem from "shared/components/gridItem/GridItem";
 import { AppBar, Box, SxProps, Toolbar } from "@mui/material";
 
 import LanguageSelect from "./LanguageSelect";
+import Logo from "./Logo";
 import MainMenu from "./MainMenu";
 
 interface IProps {
@@ -52,7 +53,9 @@ const NavBar = (props: IProps) => {
       <AppBar>
         <Toolbar style={{ color: "w" }}>
           <GridContainer>
-            <GridItem xs={5}>Logo</GridItem>
+            <GridItem xs={5} alignItems='center'>
+              <Logo></Logo>
+            </GridItem>
             <GridItem xs={7} sx={menuLanguage}>
               <MainMenu
                 onChangeAction={props.tabSelectOnChangeAction}

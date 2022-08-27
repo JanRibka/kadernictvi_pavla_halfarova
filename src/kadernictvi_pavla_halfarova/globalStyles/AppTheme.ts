@@ -1,4 +1,4 @@
-import createTheme from '@mui/material/styles/createTheme';
+import createTheme from "@mui/material/styles/createTheme";
 
 // Colors
 const palettePrimaryMain = "rgb(64, 64, 64)";
@@ -15,6 +15,10 @@ const AppThemeBase = createTheme({
       styleOverrides: {
         root: {
           // fontWeight: 700,
+          color: "white",
+        },
+        selected: {
+          color: paletteSecondaryMain,
         },
       },
     },

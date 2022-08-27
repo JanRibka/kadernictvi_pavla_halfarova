@@ -18,13 +18,18 @@ const MainMenu = (props: IProps) => {
   const { t } = useTranslation(["layout\\mainMenu"]);
 
   return (
-    <Box sx={mainMenuWrapper}>
+    <Box sx={mainMenuWrapperStyle}>
       <Box>
-        <Tabs value={props.seldTab} onChange={props.onChangeAction}>
-          <Tab label={t("intro")} />
-          <Tab label={t("services")} />
-          <Tab label={t("gallery")} />
-          <Tab label={t("contact")} />
+        <Tabs
+          value={props.seldTab}
+          onChange={props.onChangeAction}
+          textColor='primary'
+          indicatorColor='secondary'
+        >
+          <Tab sx={tabStyle} label={t("intro")} />
+          <Tab sx={tabStyle} label={t("services")} />
+          <Tab sx={tabStyle} label={t("gallery")} />
+          <Tab sx={tabStyle} label={t("contact")} />
         </Tabs>
       </Box>
     </Box>
@@ -34,6 +39,14 @@ const MainMenu = (props: IProps) => {
 export default MainMenu;
 
 // Styles
-const mainMenuWrapper: SxProps = {
+const mainMenuWrapperStyle: SxProps = {
   marginRight: "25px",
+};
+
+const tabStyle: SxProps = {
+  // TODO: Pokliku at se tlačítko nepodbaruje
+  borderRadius: "25px 0 25px 0",
+  "&.Mui-selected": {
+    color: "white",
+  },
 };
