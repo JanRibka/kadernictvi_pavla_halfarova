@@ -79,6 +79,7 @@ const NavBar = (props: IProps) => {
               </IconButton>
             </GridItem>
           </GridContainer>
+          // TODO: Mobile menu
         </Toolbar>
       </AppBar>
     </Box>
