@@ -2,7 +2,7 @@ import { createRef, SyntheticEvent, useRef, useState } from 'react';
 
 import { Box } from '@mui/system';
 
-import KadernictviPage from '../pages/KadernictviPage';
+import HairSalonPHPage from '../pages/HairSalonPHPage';
 import Footer from './Footer';
 import NavBar from './NavBar/NavBar';
 
@@ -35,7 +35,7 @@ const Layout = () => {
         tabSelectOnChangeAction={TabSelectOnChangeAction}
         seldTab={seldTab}
       />
-      <KadernictviPage ref={ref} />
+      <HairSalonPHPage ref={ref} />
       <Footer />
     </Box>
   );
