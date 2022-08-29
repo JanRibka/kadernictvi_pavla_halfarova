@@ -17,7 +17,7 @@ const LanguageSelect = () => {
   )?.Src;
   const deafultCountry: string =
     Countries.find((f) => f.Value === LanguageEnum.Cz)?.Src ?? CzechFlag;
-
+  debugger;
   // State
   const [seldCountry, setSeldCountry] = useState<string>(
     seldLanguage ?? deafultCountry
@@ -36,7 +36,7 @@ const LanguageSelect = () => {
 
     setSeldCountry(value);
   };
-
+  // TODO: Npererrenderuje se Select, kdyz zmenim jazyk v mobilnim menu
   return (
     <Box sx={wrapperStyle}>
       <LanguageIcon sx={languageIconStyle} color='secondary' />

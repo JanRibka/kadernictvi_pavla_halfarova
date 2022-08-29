@@ -1,10 +1,10 @@
-import { SyntheticEvent } from "react";
-import { useTranslation } from "react-i18next";
+import { SyntheticEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { SxProps } from "@mui/material";
-import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
+import { SxProps } from '@mui/material';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
 
 interface IProps {
   onChangeAction: (
@@ -45,7 +45,7 @@ const mainMenuWrapperStyle: SxProps = {
 
 const tabStyle: SxProps = {
   // TODO: Pokliku at se tlačítko nepodbaruje
-  borderRadius: "25px 0 25px 0",
+  // borderRadius: "25px 0 25px 0",
   "&.Mui-selected": {
     color: "white",
   },

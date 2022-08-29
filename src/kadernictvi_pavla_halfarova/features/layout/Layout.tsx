@@ -31,9 +31,7 @@ const Layout = () => {
   // console.log(ref1);
   // console.log(ref2);
   console.log(ref);
-  const r = ref;
-  var x = ref.current;
-  debugger;
+
   return (
     <Box display='flex' flexDirection='column'>
       <NavBar

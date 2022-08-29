@@ -12,10 +12,18 @@ const KadernictviPage = forwardRef(
 
     useImperativeHandle(ref, () => ({
       get galerie() {
-        return refGalerie.current;
+        if (!!refGalerie) {
+          return refGalerie.current;
+        } else {
+          return undefined;
+        }
       },
       get kontakt() {
-        return refKontakt.current;
+        if (!!refGalerie) {
+          return refKontakt.current;
+        } else {
+          return undefined;
+        }
       },
     }));
 
