@@ -1,3 +1,4 @@
+import { Spin as HamburgerIcon } from 'hamburger-react';
 import { SyntheticEvent, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
@@ -6,11 +7,12 @@ import GridItem from 'shared/components/gridItem/GridItem';
 import { AlignHorizontalCenter } from '@mui/icons-material';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, IconButton, SxProps, Toolbar } from '@mui/material';
+import { AppBar, Box, IconButton, MenuItem, MenuList, SxProps, Toolbar } from '@mui/material';
 
 import LanguageSelect from './LanguageSelect';
 import Logo from './Logo';
 import MainMenu from './MainMenu';
+import MobileMenu from './MobileMenu';
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -22,7 +24,7 @@ interface IProps {
 
 const NavBar = (props: IProps) => {
   // State
-  const [open, setOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     window.addEventListener("scroll", HeaderColorChange);
@@ -33,7 +35,7 @@ const NavBar = (props: IProps) => {
   }, []);
 
   const handleDrawerOpen = () => {
-    setOpen(!open);
+    setIsOpen(!isOpen);
   };
 
   const HeaderColorChange = () => {
@@ -61,7 +63,14 @@ const NavBar = (props: IProps) => {
   return (
     <Box flexGrow={1}>
       <AppBar>
-        <Toolbar sx={appBarStyle}>
+        <Toolbar
+          sx={{
+            height: isOpen ? "fit-content" : "70px",
+            display: isOpen ? "flex" : undefined,
+            flexDirection: isOpen ? "column" : undefined,
+            paddingTop: isOpen ? "11px" : undefined,
+          }}
+        >
           <GridContainer>
             <GridItem xs={10} md={5} alignItems='center'>
               <Logo />
@@ -74,12 +83,16 @@ const NavBar = (props: IProps) => {
               <LanguageSelect />
             </GridItem>
             <GridItem sx={menuIconStyle} xs={2}>
-              <IconButton onClick={handleDrawerOpen}>
-                {open ? <CloseIcon /> : <MenuIcon />}
-              </IconButton>
+              <HamburgerIcon toggled={isOpen} toggle={handleDrawerOpen} />
             </GridItem>
           </GridContainer>
-          {/* TODO: Mobile menu           */}
+          {isOpen && (
+            <GridContainer>
+              <GridItem xs={12}>
+                <MobileMenu />
+              </GridItem>
+            </GridContainer>
+          )}
         </Toolbar>
       </AppBar>
     </Box>
@@ -92,7 +105,7 @@ export default NavBar;
 const appBarStyle: SxProps = {
   height: "70px",
   display: "flex",
-  justifyContent: "center",
+  // justifyContent: "center",
 };
 const menuLanguageStyle: SxProps = {
   display: {

@@ -1,4 +1,4 @@
-import { forwardRef, Ref, RefObject, useImperativeHandle, useRef } from 'react';
+import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
 
 import Galerie from '../galerie/Galerie';
 import Kontakt from '../kontakt/Kontakt';
