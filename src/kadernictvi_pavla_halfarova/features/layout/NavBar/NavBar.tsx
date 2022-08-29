@@ -1,13 +1,10 @@
 import { Spin as HamburgerIcon } from 'hamburger-react';
-import { SyntheticEvent, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { MouseEvent, SyntheticEvent, useEffect, useState } from 'react';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
 
-import { AlignHorizontalCenter } from '@mui/icons-material';
-import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, IconButton, MenuItem, MenuList, SxProps, Toolbar } from '@mui/material';
+import { AppBar, Box, Toolbar, useMediaQuery } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material/styles';
 
 import LanguageSelect from './LanguageSelect';
 import Logo from './Logo';
@@ -19,12 +16,24 @@ interface IProps {
     event: SyntheticEvent<Element, Event>,
     value: number
   ) => void;
+  tabSelectMobileOnClickAction: (event: MouseEvent<HTMLLIElement>) => void;
   seldTab: number;
 }
 
 const NavBar = (props: IProps) => {
+  // Consts
+  const theme = useTheme();
+  const closeMenu: boolean = useMediaQuery(theme.breakpoints.up("md"));
+
   // State
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  // Other
+  useEffect(() => {
+    if (closeMenu) {
+      setIsOpen(false);
+    }
+  }, [closeMenu]);
 
   useEffect(() => {
     window.addEventListener("scroll", HeaderColorChange);
@@ -36,6 +45,11 @@ const NavBar = (props: IProps) => {
 
   const handleDrawerOpen = () => {
     setIsOpen(!isOpen);
+  };
+
+  const TabSelectMobileOnClickAction = (event: MouseEvent<HTMLLIElement>) => {
+    props.tabSelectMobileOnClickAction(event);
+    setIsOpen(false);
   };
 
   const HeaderColorChange = () => {
@@ -63,14 +77,7 @@ const NavBar = (props: IProps) => {
   return (
     <Box flexGrow={1}>
       <AppBar>
-        <Toolbar
-          sx={{
-            height: isOpen ? "fit-content" : "70px",
-            display: isOpen ? "flex" : undefined,
-            flexDirection: isOpen ? "column" : undefined,
-            paddingTop: isOpen ? "11px" : undefined,
-          }}
-        >
+        <Toolbar sx={appBarStyle}>
           <GridContainer>
             <GridItem xs={10} md={5} alignItems='center'>
               <Logo />
@@ -82,18 +89,21 @@ const NavBar = (props: IProps) => {
               />
               <LanguageSelect />
             </GridItem>
-            <GridItem sx={menuIconStyle} xs={2}>
+            <GridItem sx={menuIconStyle} xs={2} justifyContent='end'>
               <HamburgerIcon toggled={isOpen} toggle={handleDrawerOpen} />
             </GridItem>
           </GridContainer>
-          {isOpen && (
-            <GridContainer>
-              <GridItem xs={12}>
-                <MobileMenu />
-              </GridItem>
-            </GridContainer>
-          )}
         </Toolbar>
+        {isOpen && (
+          <GridContainer display={{ xs: "block", md: "none" }}>
+            <GridItem xs={12}>
+              <MobileMenu
+                onClickAction={TabSelectMobileOnClickAction}
+                seldTab={props.seldTab}
+              />
+            </GridItem>
+          </GridContainer>
+        )}
       </AppBar>
     </Box>
   );
@@ -104,8 +114,6 @@ export default NavBar;
 // Styles
 const appBarStyle: SxProps = {
   height: "70px",
-  display: "flex",
-  // justifyContent: "center",
 };
 const menuLanguageStyle: SxProps = {
   display: {

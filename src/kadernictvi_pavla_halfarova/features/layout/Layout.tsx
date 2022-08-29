@@ -1,4 +1,4 @@
-import { createRef, SyntheticEvent, useRef, useState } from 'react';
+import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from 'react';
 
 import { Box } from '@mui/system';
 
@@ -10,12 +10,17 @@ const Layout = () => {
   // State
   const [seldTab, setSeldTab] = useState<number>(1);
 
-  // Functions
+  // Other
   const TabSelectOnChangeAction = (
     event: SyntheticEvent<Element, Event>,
     value: number
   ) => {
     setSeldTab(value);
+  };
+
+  const TabSelectMobileOnClickAction = (event: MouseEvent<HTMLLIElement>) => {
+    debugger;
+    setSeldTab(event.currentTarget.value);
   };
 
   const ref1 = createRef<HTMLDivElement>();
@@ -33,6 +38,7 @@ const Layout = () => {
     <Box display='flex' flexDirection='column'>
       <NavBar
         tabSelectOnChangeAction={TabSelectOnChangeAction}
+        tabSelectMobileOnClickAction={TabSelectMobileOnClickAction}
         seldTab={seldTab}
       />
       <HairSalonPHPage ref={ref} />
