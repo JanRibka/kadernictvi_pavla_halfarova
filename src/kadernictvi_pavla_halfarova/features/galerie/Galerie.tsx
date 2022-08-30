@@ -3,7 +3,7 @@ import { forwardRef, LegacyRef } from 'react';
 interface IProps {}
 
 const Galerie = forwardRef<HTMLDivElement, IProps>((props, ref) => {
-  return <div ref={ref}></div>;
+  return <div style={{ height: "500px" }} ref={ref}></div>;
 });
 
 export default Galerie;
