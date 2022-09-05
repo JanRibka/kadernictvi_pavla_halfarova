@@ -38,7 +38,7 @@ const MobileMenu = (props: IProps) => {
 
   // Styles
   const menuItemStyle: SxProps = {
-    minHeight: "unset",
+    // minHeight: "unset",
     "&:hover": {
       backgroundColor: alpha(theme.palette.secondary.dark, 0.3),
     },
