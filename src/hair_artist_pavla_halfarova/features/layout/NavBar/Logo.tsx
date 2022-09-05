@@ -1,12 +1,12 @@
 import { IconButton, SxProps } from "@mui/material";
 
-import HairSalonLogo from "../../logo/logo_kadernictvi_ph.svg";
+import HairArtistPHLogo from "../../logo/logo_hair_artist_ph_header.svg";
 
 const Logo = () => {
   return (
     // TODO: Po kliku prejit na hlavni stranku
     <IconButton sx={iconButtonStyle} onClick={() => {}}>
-      <img src={HairSalonLogo} alt='hairsalon-ph-logo'></img>
+      <img src={HairArtistPHLogo} alt='hairsalon-ph-logo'></img>
     </IconButton>
   );
 };

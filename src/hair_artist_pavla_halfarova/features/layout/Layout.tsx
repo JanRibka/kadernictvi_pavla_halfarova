@@ -2,7 +2,7 @@ import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from 'react';
 
 import { Box } from '@mui/system';
 
-import HairSalonPHPage from '../pages/HairSalonPHPage';
+import HairArtistPHPage from '../pages/HairArtistPHPage';
 import Footer from './Footer';
 import NavBar from './NavBar/NavBar';
 
@@ -39,7 +39,7 @@ const Layout = () => {
         tabSelectMobileOnClickAction={TabSelectMobileOnClickAction}
         seldTab={seldTab}
       />
-      <HairSalonPHPage ref={ref} />
+      <HairArtistPHPage ref={ref} />
       <Footer />
     </Box>
   );
