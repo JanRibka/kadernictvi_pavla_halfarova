@@ -1,7 +1,7 @@
 // LOCALIZATION
 import './shared/infrastructure/localize/i18n';
 
-import { AppTheme } from 'kadernictvi_pavla_halfarova/globalStyles/AppTheme';
+import { AppTheme } from 'hair_artist_pavla_halfarova/globalStyles/AppTheme';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 

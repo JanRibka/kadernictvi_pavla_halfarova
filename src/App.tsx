@@ -1,4 +1,4 @@
-import Layout from "kadernictvi_pavla_halfarova/features/layout/Layout";
+import Layout from "hair_artist_pavla_halfarova/features/layout/Layout";
 import CookieConsent from "shared/infrastructure/CookieConsent";
 
 function App() {
