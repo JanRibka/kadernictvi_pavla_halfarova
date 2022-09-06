@@ -1,26 +1,26 @@
 import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
 
-import Galerie from '../galerie/Galerie';
-import Kontakt from '../kontakt/Kontakt';
+import Contact from '../contact/Contact';
+import Galerie from '../gallery/Gallery';
 
 interface IProps {}
 
 const KadernictviPage = forwardRef(
   (props: IProps, ref: Ref<unknown> | undefined) => {
-    const refGalerie = useRef<HTMLDivElement>(null);
-    const refKontakt = useRef<HTMLDivElement>(null);
+    const refGallery = useRef<HTMLDivElement>(null);
+    const refContact = useRef<HTMLDivElement>(null);
 
     useImperativeHandle(ref, () => ({
       get galerie() {
-        if (!!refGalerie) {
-          return refGalerie.current;
+        if (!!refGallery) {
+          return refGallery.current;
         } else {
           return undefined;
         }
       },
       get kontakt() {
-        if (!!refGalerie) {
-          return refKontakt.current;
+        if (!!refContact) {
+          return refContact.current;
         } else {
           return undefined;
         }
@@ -29,8 +29,8 @@ const KadernictviPage = forwardRef(
 
     return (
       <div style={{ height: "3000px" }}>
-        <Galerie ref={refGalerie} />
-        <Kontakt ref={refKontakt} />
+        <Galerie ref={refGallery} />
+        <Contact ref={refContact} />
       </div>
     );
   }

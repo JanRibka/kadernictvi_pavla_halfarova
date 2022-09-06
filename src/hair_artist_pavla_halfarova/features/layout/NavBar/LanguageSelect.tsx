@@ -89,14 +89,12 @@ const wrapperStyle: SxProps = {
 };
 
 const selectStyle: SxProps = {
-  // TODO: Zmenit borderColor na primary při hover
-
   marginLeft: "5px",
   "& .MuiSelect-select": {
     display: "flex",
     alignItems: "center",
   },
   fieldset: {
-    borderColor: "primary.main",
+    border: "none",
   },
 };
