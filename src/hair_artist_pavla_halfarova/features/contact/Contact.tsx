@@ -1,3 +1,5 @@
+import 'shared/styles/scss/effects/hover.scss';
+
 import { forwardRef, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContact from 'shared/components/contact/AppContact';
@@ -48,7 +50,7 @@ const Contact = forwardRef(
     };
 
     const socialButonStyle: SxProps = {
-      display: "flex",
+      display: "flex !important",
       alignItems: "center",
       margin: "0 15px",
       svg: {
@@ -99,12 +101,22 @@ const Contact = forwardRef(
                 addressMapLink='https://www.google.com/maps/place/%C4%8Cesk%C3%A1+spo%C5%99itelna,+a.s.+-+ATM/@49.983651,18.0499473,19z/data=!4m5!3m4!1s0x4711616e6b378b61:0xc80b162cab0c5a6d!8m2!3d49.983651!4d18.0499473'
               />
               <Box sx={socialButonsWrapperStyle}>
-                <Box component='a' href='' sx={socialButonStyle}>
-                  <InstagramIcon />
+                <Box
+                  component='a'
+                  href='#'
+                  sx={socialButonStyle}
+                  className='hvr-icon-bob'
+                >
+                  <InstagramIcon className='hvr-icon' />
                   <Typography variant='subtitle1'>Instagram</Typography>
                 </Box>
-                <Box component='a' href='' sx={socialButonStyle}>
-                  <FacebookIcon />
+                <Box
+                  component='a'
+                  href=''
+                  sx={socialButonStyle}
+                  className='hvr-icon-bob'
+                >
+                  <FacebookIcon className='hvr-icon' />
                   <Typography variant='subtitle1'>Facebook</Typography>
                 </Box>
               </Box>

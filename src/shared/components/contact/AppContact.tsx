@@ -1,4 +1,5 @@
-import { NONAME } from 'dns';
+import 'shared/styles/scss/effects/hover.scss';
+
 import { useTranslation } from 'react-i18next';
 import { ContactTypeEnum } from 'shared/enums/ContactTypeEnum';
 
@@ -41,18 +42,19 @@ const AppContact = (props: IProps) => {
         props.contactType === ContactTypeEnum.Address ? "_blank" : undefined
       }
       sx={appContactWrapperStyle}
+      className='hvr-icon-bob'
     >
       <Box sx={iconWrapperStyle}>
         {(() => {
           switch (props.contactType) {
             case ContactTypeEnum.Tel:
-              return <PhoneIcon />;
+              return <PhoneIcon className='hvr-icon' />;
 
             case ContactTypeEnum.Mail:
-              return <EmailIcon />;
+              return <EmailIcon className='hvr-icon' />;
 
             case ContactTypeEnum.Address:
-              return <PlaceIcon />;
+              return <PlaceIcon className='hvr-icon' />;
           }
         })()}
       </Box>

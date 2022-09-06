@@ -1,5 +1,4 @@
-import { Spin as HamburgerIcon } from 'hamburger-react';
-import { MouseEvent, SyntheticEvent, useEffect, useState } from 'react';
+import { MouseEvent, SyntheticEvent, useEffect, useRef, useState } from 'react';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
 
@@ -43,7 +42,10 @@ const NavBar = (props: IProps) => {
     };
   }, []);
 
-  const handleDrawerOpen = () => {
+  const handleDrawerOpen = (event: MouseEvent<HTMLDivElement> | undefined) => {
+    if (!isOpen) {
+      debugger;
+    }
     setIsOpen(!isOpen);
   };
 
@@ -90,7 +92,11 @@ const NavBar = (props: IProps) => {
               <LanguageSelect />
             </GridItem>
             <GridItem sx={menuIconStyle} xs={2} justifyContent='end'>
-              <HamburgerIcon toggled={isOpen} toggle={handleDrawerOpen} />
+              <div className='hamburger-icon-button' onClick={handleDrawerOpen}>
+                <div className='icon-1'></div>
+                <div className='icon-2'></div>
+                <div className='icon-3'></div>
+              </div>
             </GridItem>
           </GridContainer>
         </Toolbar>
@@ -113,7 +119,7 @@ export default NavBar;
 
 // Styles
 const appBarStyle: SxProps = {
-  height: "70px",
+  height: "90px",
 };
 const menuLanguageStyle: SxProps = {
   display: {
@@ -134,5 +140,34 @@ const menuIconStyle: SxProps = {
   svg: {
     fontSize: "xx-large",
     color: "white",
+  },
+  ".hamburger-icon-button": {
+    position: "relative",
+    height: "60px",
+    width: "60px",
+    cursor: "pointer",
+    borderRadius: "50%",
+    transition: "all 0.2s ease-in-out",
+    background: "rgba(255, 255, 255, 0.2)",
+    "&:hover": {
+      transform: "scale(1.2)",
+      boxShadow: "0px 0px 30px rgba(0,0,0,0.1)",
+    },
+  },
+  ".icon-1, .icon-2, .icon-3": {
+    position: "absolute",
+    left: "25%",
+    top: "50%",
+    width: "32px",
+    height: "3px",
+    backgroundColor: "white",
+  },
+  ".icon-1": {
+    transform: "translateY(-8px)",
+    animationDelay: "100ms",
+  },
+  ".icon-3": {
+    transform: "translateY(8px)",
+    animationDelay: "250ms",
   },
 };
