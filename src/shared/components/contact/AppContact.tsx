@@ -1,14 +1,17 @@
-import 'shared/styles/scss/effects/hover.scss';
+// import "shared/styles/scss/effects/hover.scss";
 
-import { useTranslation } from 'react-i18next';
-import { ContactTypeEnum } from 'shared/enums/ContactTypeEnum';
+import { useTranslation } from "react-i18next";
+import { ContactTypeEnum } from "shared/enums/ContactTypeEnum";
+import EnvelopeIcon from "shared/icons/envelope/EnvelopeIcon";
 
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import PlaceIcon from '@mui/icons-material/Place';
-import Box from '@mui/material/Box';
-import { SxProps, useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import PlaceIcon from "@mui/icons-material/Place";
+import Box from "@mui/material/Box";
+import { SxProps, useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+
+import classes from "./AppContact.module.scss";
 
 interface IProps {
   contactType: ContactTypeEnum;
@@ -29,9 +32,10 @@ const AppContact = (props: IProps) => {
 
   // Styles
   const iconWrapperStyle: SxProps = {
-    width: "2em",
-    paddingTop: "0.5em",
     color: theme.palette.secondary.main,
+    svg: {
+      fontSize: "xxx-large",
+    },
   };
 
   return (
@@ -42,22 +46,29 @@ const AppContact = (props: IProps) => {
         props.contactType === ContactTypeEnum.Address ? "_blank" : undefined
       }
       sx={appContactWrapperStyle}
-      className='hvr-icon-bob'
+      className={classes.ringingBell}
     >
+      {/* Icon */}
       <Box sx={iconWrapperStyle}>
         {(() => {
           switch (props.contactType) {
             case ContactTypeEnum.Tel:
-              return <PhoneIcon className='hvr-icon' />;
+              return (
+                <PhoneIcon
+                  className={classes.faaRing + " " + classes.animated}
+                />
+              );
 
             case ContactTypeEnum.Mail:
-              return <EmailIcon className='hvr-icon' />;
+              // return <EmailIcon className='hvr-icon' />;
+              return <EnvelopeIcon />;
 
             case ContactTypeEnum.Address:
               return <PlaceIcon className='hvr-icon' />;
           }
         })()}
       </Box>
+      {/* Label */}
       <Box>
         <Typography variant='h6' color={theme.palette.text.primary}>
           {(() => {
@@ -73,7 +84,9 @@ const AppContact = (props: IProps) => {
             }
           })()}
         </Typography>
-
+      </Box>
+      {/* Constct */}
+      <Box>
         <Typography variant='h6' color={theme.palette.text.secondary}>
           {props.contact}
         </Typography>
@@ -89,6 +102,8 @@ const appContactWrapperStyle: SxProps = {
   width: "100%",
   height: "fit-content",
   display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
   margin: "10px",
   ":link": {
     textDecoration: "none",
@@ -98,9 +113,9 @@ const appContactWrapperStyle: SxProps = {
   },
   ":hover": {
     textDecoration: "none",
-    svg: {
-      transform: "scale(1.25, 1.25)",
-    },
+    // svg: {
+    //   transform: "scale(1.25, 1.25)",
+    // },
   },
   ":active": {
     textDecoration: "none",
