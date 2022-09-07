@@ -47,7 +47,9 @@ const AppContact = (props: IProps) => {
         props.contactType === ContactTypeEnum.Address ? "_blank" : undefined
       }
       sx={appContactWrapperStyle}
-      className={classes.ringingBell + " " + classes.textShine}
+      className={
+        classes.ringingBell + " " + classes.textShine + " hvr-icon-hang"
+      }
     >
       {/* Icon */}
       <Box sx={iconWrapperStyle}>
@@ -89,8 +91,9 @@ const AppContact = (props: IProps) => {
       <Box>
         <Typography
           variant='h6'
+          textAlign='center'
           color={theme.palette.text.secondary}
-          className={classes.efectShine}
+          className={classes.effectShine}
         >
           {props.contact}
         </Typography>

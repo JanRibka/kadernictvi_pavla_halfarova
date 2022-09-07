@@ -1,3 +1,7 @@
+@import "../../styles/scss/effects/options";
+@import "../../styles/scss/effects/mixins";
+@import "../../styles/scss/effects/hacks";
+
 .ringingBell {
   transition: translate(-50%, -50%);
 }
@@ -115,7 +119,7 @@
 
 /* effect-shine */
 .textShine:hover {
-  .efectShine {
+  .effectShine {
     mask-image: linear-gradient(
       -75deg,
       rgba(0, 0, 0, 0.6) 30%,
@@ -134,5 +138,13 @@
 
   to {
     -webkit-mask-position: -50%;
+  }
+}
+
+// effect drop
+@import "../../../shared/styles/scss/effects/icons/icon-hang";
+@if $includeClasses {
+  .#{$nameSpace}-icon-hang {
+    @include icon-hang();
   }
 }
