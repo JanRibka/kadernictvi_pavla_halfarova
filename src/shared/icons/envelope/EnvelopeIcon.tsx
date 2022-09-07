@@ -44,5 +44,3 @@ const EnvelopeIcon = () => {
 };
 
 export default EnvelopeIcon;
-
-// Styles
