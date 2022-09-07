@@ -4,6 +4,7 @@ import { SxProps, useTheme } from "@mui/material/styles";
 import CoverLetter from "../../img/cover-letter.png";
 import classes from "./EnvelopeIcon.module.scss";
 
+// https://www.youtube.com/watch?v=4Hm26xcr_dQ
 const EnvelopeIcon = () => {
   // Consts
   const theme = useTheme();
