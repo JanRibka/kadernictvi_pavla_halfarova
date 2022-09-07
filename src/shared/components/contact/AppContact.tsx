@@ -1,17 +1,16 @@
 // import "shared/styles/scss/effects/hover.scss";
 
-import { useTranslation } from "react-i18next";
-import { ContactTypeEnum } from "shared/enums/ContactTypeEnum";
-import EnvelopeIcon from "shared/icons/envelope/EnvelopeIcon";
+import { useTranslation } from 'react-i18next';
+import { ContactTypeEnum } from 'shared/enums/ContactTypeEnum';
+import EnvelopeIcon from 'shared/icons/envelope/EnvelopeIcon';
 
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
-import PlaceIcon from "@mui/icons-material/Place";
-import Box from "@mui/material/Box";
-import { SxProps, useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
+import PhoneIcon from '@mui/icons-material/Phone';
+import PlaceIcon from '@mui/icons-material/Place';
+import Box from '@mui/material/Box';
+import { SxProps, useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
-import classes from "./AppContact.module.scss";
+import classes from './AppContact.module.scss';
 
 interface IProps {
   contactType: ContactTypeEnum;
@@ -33,6 +32,8 @@ const AppContact = (props: IProps) => {
   // Styles
   const iconWrapperStyle: SxProps = {
     color: theme.palette.secondary.main,
+    height: "48px",
+    width: "48px",
     svg: {
       fontSize: "xxx-large",
     },
@@ -60,7 +61,6 @@ const AppContact = (props: IProps) => {
               );
 
             case ContactTypeEnum.Mail:
-              // return <EmailIcon className='hvr-icon' />;
               return <EnvelopeIcon />;
 
             case ContactTypeEnum.Address:
@@ -113,9 +113,16 @@ const appContactWrapperStyle: SxProps = {
   },
   ":hover": {
     textDecoration: "none",
-    // svg: {
-    //   transform: "scale(1.25, 1.25)",
-    // },
+    ".top-side": {
+      transform: "rotateX(0deg)",
+      zIndex: 3,
+      transitionDelay: "0.3s",
+    },
+    ".image": {
+      top: "-70%",
+      zIndex: 3,
+      transitionDelay: "0.6s",
+    },
   },
   ":active": {
     textDecoration: "none",

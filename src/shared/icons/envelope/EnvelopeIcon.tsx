@@ -4,7 +4,7 @@ import { SxProps, useTheme } from '@mui/material/styles';
 import CoverLetter from '../../img/cover-letter.png';
 import classes from './EnvelopeIcon.module.scss';
 
-// https://www.youtube.com/watch?v=4Hm26xcr_dQ
+// Ikona musí být v rozlišení 3/2
 const EnvelopeIcon = () => {
   // Consts
   const theme = useTheme();
@@ -15,26 +15,26 @@ const EnvelopeIcon = () => {
   };
 
   const topSideStyle: SxProps = {
-    borderBottom: "150px solid " + theme.palette.secondary.main,
+    borderBottom: "24px solid " + theme.palette.secondary.main,
   };
 
   const bottomSideStyle: SxProps = {
-    borderBottom: "150px solid " + theme.palette.secondary.dark,
+    borderBottom: "24px solid " + theme.palette.secondary.dark,
   };
 
   const leftSideStyle: SxProps = {
-    borderLeft: "125px solid " + theme.palette.secondary.dark,
+    borderLeft: "20px solid " + theme.palette.secondary.dark,
   };
 
   const rightSideStyle: SxProps = {
-    borderRight: "125px solid " + theme.palette.secondary.dark,
+    borderRight: "20px solid " + theme.palette.secondary.dark,
   };
 
   return (
     <Box className={classes.envelope} sx={envelopeStyle}>
-      <Box className={classes.topSide} sx={topSideStyle}></Box>
+      <Box className={classes.topSide + " top-side"} sx={topSideStyle}></Box>
       <Box className={classes.leftSide} sx={leftSideStyle}></Box>
-      <Box className={classes.image}>
+      <Box className={classes.image + " image"}>
         <img src={CoverLetter} alt='cover-letter'></img>
       </Box>
       <Box className={classes.rightSide} sx={rightSideStyle}></Box>

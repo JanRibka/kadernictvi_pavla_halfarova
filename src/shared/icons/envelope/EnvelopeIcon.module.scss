@@ -1,20 +1,20 @@
 .envelope {
-  width: 300px;
-  height: 200px;
+  width: 48px;
+  height: 32px;
   position: relative;
   cursor: pointer;
-  &:hover {
-    .topSide {
-      transform: rotateX(0deg);
-      z-index: 3;
-      transition-delay: 0.3s;
-    }
-    .image {
-      top: -70%;
-      z-index: 3;
-      transition-delay: 0.6s;
-    }
-  }
+  // &:hover {
+  //   .topSide {
+  //     transform: rotateX(0deg);
+  //     z-index: 3;
+  //     transition-delay: 0.3s;
+  //   }
+  //   .image {
+  //     top: -70%;
+  //     z-index: 3;
+  //     transition-delay: 0.6s;
+  //   }
+  // }
 }
 
 .image {
@@ -31,7 +31,7 @@
 }
 
 .topSide {
-  top: -150px;
+  top: -24px;
   transform-origin: bottom;
   transform: rotateX(180deg);
   transition: all 0.8s ease;
@@ -47,8 +47,8 @@
 
 .topSide,
 .bottomSide {
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
   position: relative;
 }
 
@@ -64,8 +64,8 @@
 
 .leftSide,
 .rightSide {
-  border-top: 100px solid transparent;
-  border-bottom: 100px solid transparent;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
   top: 0;
   z-index: 4;
 }
