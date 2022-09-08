@@ -1,17 +1,18 @@
 import { useTranslation } from 'react-i18next';
 
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+
 const NavLinks = () => {
   const { t } = useTranslation(["layout\\mainMenu"]);
 
   return (
-    <ul>
-      <li>
-        <a href='#'>{t("intro")}</a>
-        <a href='#'>{t("services")}</a>
-        <a href='#'>{t("gallery")}</a>
-        <a href='#'>{t("contact")}</a>
-      </li>
-    </ul>
+    <Box>
+      <Button>{t("intro")}</Button>
+      <Button>{t("services")}</Button>
+      <Button>{t("gallery")}</Button>
+      <Button>{t("contact")}</Button>
+    </Box>
   );
 };
 
