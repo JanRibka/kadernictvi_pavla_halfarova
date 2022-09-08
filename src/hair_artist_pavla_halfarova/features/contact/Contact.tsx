@@ -1,18 +1,19 @@
-import "shared/styles/scss/effects/hover.scss";
+import { forwardRef, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
+import AppContact from 'shared/components/contact/AppContact';
+import AppGoogleMapsIframe from 'shared/components/googleMap/AppGoogleMapsIframe';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
+import { ContactTypeEnum } from 'shared/enums/ContactTypeEnum';
 
-import { forwardRef, Ref } from "react";
-import { useTranslation } from "react-i18next";
-import AppContact from "shared/components/contact/AppContact";
-import AppGoogleMapsIframe from "shared/components/googleMap/AppGoogleMapsIframe";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
-import { ContactTypeEnum } from "shared/enums/ContactTypeEnum";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { Divider, Typography, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import { SxProps, useTheme } from '@mui/material/styles';
 
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import { Divider, Typography, useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import { SxProps, useTheme } from "@mui/material/styles";
+import FacebookIconStyled from './FacebookIconStyled';
+import InstagramIconStyled from './InstagramIconStyled';
 
 interface IProps {}
 
@@ -49,31 +50,6 @@ const Contact = forwardRef(
       flexDirection: breakpointMdUp ? "row" : "column",
     };
 
-    const socialButonStyle: SxProps = {
-      display: "flex !important",
-      alignItems: "center",
-      margin: "0 15px",
-      svg: {
-        margin: "5px",
-        color: theme.palette.secondary.main,
-      },
-      ".MuiTypography-root": {
-        color: theme.palette.text.primary,
-      },
-      ":link": {
-        textDecoration: "none",
-      },
-      ":visited": {
-        textDecoration: "none",
-      },
-      ":hover": {
-        textDecoration: "none",
-      },
-      ":active": {
-        textDecoration: "none",
-      },
-    };
-
     return (
       <Box ref={ref} sx={componentWrapperStyle}>
         <GridContainer sx={gridContainerStyle}>
@@ -103,25 +79,24 @@ const Contact = forwardRef(
                   addressMapLink='https://www.google.com/maps/place/%C4%8Cesk%C3%A1+spo%C5%99itelna,+a.s.+-+ATM/@49.983651,18.0499473,19z/data=!4m5!3m4!1s0x4711616e6b378b61:0xc80b162cab0c5a6d!8m2!3d49.983651!4d18.0499473'
                 />
               </Box>
+              {/* Social buttons */}
               <Box sx={socialButonsWrapperStyle}>
-                <Box
+                <FacebookIconStyled
                   component='a'
-                  href='#'
-                  sx={socialButonStyle}
-                  className='hvr-icon-bob'
+                  title='Facebook'
+                  href='https://www.facebook.com/pavla.halfarova.35'
+                  target='_blank'
                 >
-                  <InstagramIcon className='hvr-icon' />
-                  <Typography variant='subtitle1'>Instagram</Typography>
-                </Box>
-                <Box
+                  <FacebookIcon />
+                </FacebookIconStyled>
+                <InstagramIconStyled
                   component='a'
-                  href=''
-                  sx={socialButonStyle}
-                  className='hvr-icon-bob'
+                  title='Instagram'
+                  href='https://www.instagram.com/halfarova/'
+                  target='_blank'
                 >
-                  <FacebookIcon className='hvr-icon' />
-                  <Typography variant='subtitle1'>Facebook</Typography>
-                </Box>
+                  <InstagramIcon />
+                </InstagramIconStyled>
               </Box>
             </Box>
           </GridItem>
@@ -172,5 +147,7 @@ const constactsWrapperStyle: SxProps = {
 
 const socialButonsWrapperStyle: SxProps = {
   display: "flex",
-  marginTop: "15px",
+  justifyContent: "center",
+  marginTop: "30px",
+  marginBottom: "50px",
 };
