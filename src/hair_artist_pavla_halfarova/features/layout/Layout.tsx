@@ -4,6 +4,7 @@ import { Box } from '@mui/system';
 
 import HairArtistPHPage from '../pages/HairArtistPHPage';
 import Footer from './Footer';
+import MobileMenu from './NavBar/menu/mobileMenu/MobileMenu';
 import NavBar from './NavBar/NavBar';
 
 const Layout = () => {

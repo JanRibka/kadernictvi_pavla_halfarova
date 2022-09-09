@@ -5,10 +5,11 @@ import GridItem from 'shared/components/gridItem/GridItem';
 import { AppBar, Box, Toolbar, useMediaQuery } from '@mui/material';
 import { SxProps, useTheme } from '@mui/material/styles';
 
-import LanguageSelect from './LanguageSelect';
-import Logo from './Logo';
-import MainMenu from './MainMenu';
-import MobileMenu from './MobileMenu';
+import LanguageSelect from './languageSelect/LanguageSelect';
+import Logo from './logo/Logo';
+import MainMenu from './menu/mainMenu/MainMenu';
+import MobileMenu from './menu/mobileMenu/MobileMenu';
+import MobileMenuStyled from './menu/mobileMenu/MobileMenuStyled';
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -81,26 +82,35 @@ const NavBar = (props: IProps) => {
       <AppBar>
         <Toolbar sx={appBarStyle}>
           <GridContainer>
-            <GridItem xs={10} md={5} alignItems='center'>
+            <GridItem xs={12} md={5} alignItems='center'>
               <Logo />
             </GridItem>
             <GridItem xs={7} sx={menuLanguageStyle}>
+              {/* Main menu */}
               <MainMenu
                 onChangeAction={props.tabSelectOnChangeAction}
                 seldTab={props.seldTab}
               />
+              {/* Language select */}
               <LanguageSelect />
             </GridItem>
-            <GridItem sx={menuIconStyle} xs={2} justifyContent='end'>
+            {/* <GridItem sx={menuIconStyle} xs={2} justifyContent='end'>
               <div className='hamburger-icon-button' onClick={handleDrawerOpen}>
                 <div className='icon-1'></div>
                 <div className='icon-2'></div>
                 <div className='icon-3'></div>
               </div>
-            </GridItem>
+            </GridItem> */}
           </GridContainer>
+          {/* Mobile menu */}
+          {/* <Box position='relative'> */}
+          <MobileMenu
+            onClickAction={TabSelectMobileOnClickAction}
+            seldTab={props.seldTab}
+          />
+          {/* </Box> */}
         </Toolbar>
-        {isOpen && (
+        {/* {isOpen && (
           <GridContainer display={{ xs: "block", md: "none" }}>
             <GridItem xs={12}>
               <MobileMenu
@@ -109,7 +119,7 @@ const NavBar = (props: IProps) => {
               />
             </GridItem>
           </GridContainer>
-        )}
+        )} */}
       </AppBar>
     </Box>
   );

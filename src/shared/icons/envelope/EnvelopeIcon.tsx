@@ -5,6 +5,7 @@ import CoverLetter from '../../img/cover-letter.png';
 import classes from './EnvelopeIcon.module.scss';
 
 // Ikona musí být v rozlišení 3/2
+// TODO: Předělat scss na styled a odjebat z ptojektu scss ataky spackage.json
 const EnvelopeIcon = () => {
   // Consts
   const theme = useTheme();
