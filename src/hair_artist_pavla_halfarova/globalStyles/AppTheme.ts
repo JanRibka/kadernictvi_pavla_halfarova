@@ -1,6 +1,7 @@
 import createTheme from '@mui/material/styles/createTheme';
 
 // Colors
+const palettePrimaryLight = "rgb(120, 120, 120)";
 const palettePrimaryMain = "rgb(64, 64, 64)";
 const palettePrimaryDark = "rgb(80, 99, 43)";
 const paletteSecondaryMain = "rgb(212, 120, 168)";
@@ -35,6 +36,7 @@ export const AppTheme = createTheme(AppThemeBase, {
   palette: {
     // mode: "light",
     primary: {
+      light: palettePrimaryLight,
       main: palettePrimaryMain,
       dark: palettePrimaryDark,
     },

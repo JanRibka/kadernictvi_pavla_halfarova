@@ -1,49 +1,75 @@
-import Box from '@mui/material/Box';
+import Box, { BoxProps } from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
-const HamburgerIconStyled = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  top: "1.8rem",
-  left: "2rem",
-  padding: "0",
-  width: "30px",
-  zIndex: "2",
-  cursor: "pointer",
-  "& .line": {
-    padding: "0",
-    width: "30px",
-    background: "#fff",
-    height: "2px",
-    margin: "5px 0",
-    transition: "all 700ms cubic-bezier(.9, 0, .33, 1)",
-    "&.line-1": {
-      width: "30px",
-      transform: "rotate(0) translateY(0)",
-      "&.line-cross": {
-        width: "30px",
-        transform: "rotate(45deg) translateY(10px)",
-        background: "rgba(0,0,0,0.6)",
-      },
-    },
-    "&.line-2": {
-      width: "28px",
-      transform: "translateX(2px)",
-      "&.line-fade-out": {
-        width: "28px",
-        transform: "translate(-30px)",
-        opacity: "0",
-      },
-    },
-    "&.line-3": {
-      width: "20px",
-      transform: "rotate(0) translateY(0) translateX(10px)",
-      "&.line-cross": {
-        width: "30px",
-        transform: "rotate(-45deg) translateY(-10px)",
-        background: "rgba(0,0,0,0.6)",
-      },
-    },
-  },
-}));
+const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
+  <Box {...props} className={className} />
+))`
+  & .mobile-menu-icon {
+    position: fixed;
+    top: 35px;
+    right: 40px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 10;
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 30px;
+      height: 20px;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      border-top: 2px solid #ececee;
+      border-bottom: 2px solid #ececee;
+      transition: border-width 100ms 1500ms ease,
+        top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+        height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+        background-color 200ms ease,
+        transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 22px;
+      height: 2px;
+      z-index: 20;
+      top: 10px;
+      right: 4px;
+      background-color: #ececee;
+      margin-top: -1px;
+      transition: width 100ms 1750ms ease, right 100ms 1750ms ease,
+        margin-top 100ms ease, transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &.is-opened {
+      :before {
+        top: 10px;
+        transform: rotate(45deg);
+        height: 2px;
+        background-color: #ececee;
+        border-width: 0;
+        transition: border-width 100ms 340ms ease,
+          top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+          height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+          background-color 200ms 500ms ease,
+          transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      :after {
+        width: 30px;
+        margin-top: 0;
+        right: 0;
+        transform: rotate(-45deg);
+        transition: width 100ms ease, right 100ms ease,
+          margin-top 100ms 500ms ease,
+          transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+    }
+  }
+`;
 
 export default HamburgerIconStyled;

@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Box from '@mui/material/Box';
 
@@ -11,9 +11,7 @@ interface IProps {
 
 const HamburgerIcon = (props: IProps) => {
   // Refrences
-  const refLine1 = useRef<HTMLDivElement>(null);
-  const refLine2 = useRef<HTMLDivElement>(null);
-  const refLine3 = useRef<HTMLDivElement>(null);
+  const refMobileMenuIcon = useRef<HTMLDivElement>(null);
 
   // Other
   useEffect(() => {
@@ -21,15 +19,11 @@ const HamburgerIcon = (props: IProps) => {
   }, [props.isOpnd]);
 
   const SetOpndClsd = (isOpnd: boolean) => {
-    if (!!refLine1.current && !!refLine2.current && !!refLine3.current) {
+    if (!!refMobileMenuIcon.current) {
       if (isOpnd) {
-        refLine1.current.classList.add("line-cross");
-        refLine2.current.classList.add("line-fade-out");
-        refLine3.current.classList.add("line-cross");
+        refMobileMenuIcon.current.classList.add("is-opened");
       } else {
-        refLine1.current.classList.remove("line-cross");
-        refLine2.current.classList.remove("line-fade-out");
-        refLine3.current.classList.remove("line-cross");
+        refMobileMenuIcon.current.classList.remove("is-opened");
       }
     }
   };
@@ -39,9 +33,7 @@ const HamburgerIcon = (props: IProps) => {
       className='hamburger-btn'
       onClick={props.handleOnClick}
     >
-      <Box ref={refLine1} className='line line-1'></Box>
-      <Box ref={refLine2} className='line line-2'></Box>
-      <Box ref={refLine3} className='line line-3'></Box>
+      <Box ref={refMobileMenuIcon} className='mobile-menu-icon'></Box>
     </HamburgerIconStyled>
   );
 };

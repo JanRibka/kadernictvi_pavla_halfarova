@@ -1,6 +1,6 @@
-import { IconButton } from '@mui/material';
+import { IconButton } from "@mui/material";
 
-import HairArtistPHLogo from '../../../logo/logo_hair_artist_ph_header.svg';
+import HairArtistPHLogo from "../../../logo/logo_hair_artist_ph_header.svg";
 
 const Logo = () => {
   return (
@@ -8,6 +8,7 @@ const Logo = () => {
     <IconButton
       sx={{
         height: "40px",
+        zIndex: 10,
         img: {
           height: "inherit",
         },

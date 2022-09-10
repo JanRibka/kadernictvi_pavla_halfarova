@@ -14,10 +14,10 @@ import { alpha, SxProps, useTheme } from '@mui/material/styles';
 import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
 import Countries from '../../languageSelect/Countries';
 import NavLinks from '../NavLinks';
-import NavLinksStyled from './const NavLinksStyled';
 import HamburgerIcon from './hamburgerIcon/HamburgerIcon';
 import LanguageSelect from './languageSelect/languageSelect';
 import MobileMenuStyled from './MobileMenuStyled';
+import NavLinksStyled from './NavLinksStyled';
 
 interface IProps {
   onClickAction: (event: MouseEvent<HTMLLIElement>) => void;
@@ -49,13 +49,11 @@ const MobileMenu = (props: IProps) => {
   }, [breakpointMdUp]);
 
   const SetNavLinksFadeOut = (isOpnd: boolean) => {
-    if (!!navLinskRef.current && mobileMenuRef.current) {
+    if (!!navLinskRef.current) {
       if (isOpnd) {
-        navLinskRef.current.classList.add("fade-in");
-        mobileMenuRef.current.classList.add("nav-opnd");
+        navLinskRef.current.classList.add("is-opened");
       } else {
-        navLinskRef.current.classList.remove("fade-in");
-        mobileMenuRef.current.classList.remove("nav-opnd");
+        navLinskRef.current.classList.remove("is-opened");
       }
     }
   };
@@ -64,14 +62,25 @@ const MobileMenu = (props: IProps) => {
     setIsOpnd(!isOpnd);
   };
 
-  const toggleButtonStyle: SxProps = {};
-
   return (
-    <MobileMenuStyled ref={mobileMenuRef} display={{ xs: "block", md: "none" }}>
+    <MobileMenuStyled
+      display={{ xs: "block", md: "none" }}
+      className='mobile-menu'
+    >
+      {/* Hamburger Icon */}
       <HamburgerIcon handleOnClick={HandleIsOpnd} isOpnd={isOpnd} />
-      <NavLinksStyled ref={navLinskRef}>
-        <LanguageSelect />
-        <NavLinks />
+      {/* Navigation */}
+      <NavLinksStyled>
+        <Box
+          ref={navLinskRef}
+          className='mobile-menu-nav'
+          sx={{
+            backgroundColor: theme.palette.primary.light,
+          }}
+        >
+          <LanguageSelect />
+          <NavLinks />
+        </Box>
       </NavLinksStyled>
 
       {/* <MenuList sx={menuListStyle}>

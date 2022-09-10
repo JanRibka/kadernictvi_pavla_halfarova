@@ -1,15 +1,15 @@
-import { forwardRef, Ref } from 'react';
-import { useTranslation } from 'react-i18next';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import { forwardRef, Ref } from "react";
+import { useTranslation } from "react-i18next";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { Divider, Typography, useMediaQuery } from '@mui/material';
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
+import { Divider, Typography, useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 
-import Contacts from './contacts/Contacts';
-import GoogleMaps from './googleMaps/GoogleMaps';
-import SocialIcons from './socialIcons/SocialIcons';
+import Contacts from "./contacts/Contacts";
+import GoogleMaps from "./googleMaps/GoogleMaps";
+import SocialIcons from "./socialIcons/SocialIcons";
 
 interface IProps {}
 
