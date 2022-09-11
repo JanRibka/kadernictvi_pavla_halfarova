@@ -12,7 +12,7 @@ import GoogleMaps from "./googleMaps/GoogleMaps";
 import SocialIcons from "./socialIcons/SocialIcons";
 
 interface IProps {}
-
+// TODO: na pozadi bude nejaky obrzek a pres nej cerna barva
 const Contact = forwardRef(
   (props: IProps, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts
@@ -34,14 +34,22 @@ const Contact = forwardRef(
         ref={ref}
         sx={{
           display: "flex",
-          justifyContent: "center",
-          padding: "4em 15px",
+          alignItems: "center",
+          flexDirection: "column",
+          padding: "4em 0px",
           backgroundColor: theme.palette.primary.main,
         }}
       >
-        <GridContainer sx={{ maxWidth: gridContainerMaxWidth }}>
+        <GridContainer
+          sx={{ maxWidth: gridContainerMaxWidth, alignItems: "center" }}
+        >
           {/* Title */}
-          <GridItem xs={12} justifyContent='center'>
+          <GridItem
+            xs={12}
+            sx={{
+              justifyContent: "center",
+            }}
+          >
             <Typography variant='h4'>{t("contact")}</Typography>
           </GridItem>
           {/* Divider */}
@@ -74,6 +82,8 @@ const Contact = forwardRef(
               <SocialIcons />
             </Box>
           </GridItem>
+        </GridContainer>
+        <GridContainer>
           {/* Map */}
           <GridItem height='400px' xs={12}>
             <GoogleMaps />

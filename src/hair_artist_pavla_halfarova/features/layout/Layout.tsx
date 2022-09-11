@@ -1,15 +1,15 @@
-import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from 'react';
+import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from "react";
 
-import { Box } from '@mui/system';
+import { Box } from "@mui/system";
 
-import HairArtistPHPage from '../pages/HairArtistPHPage';
-import Footer from './Footer';
-import MobileMenu from './NavBar/menu/mobileMenu/MobileMenu';
-import NavBar from './NavBar/NavBar';
+import HairArtistPHPage from "../pages/HairArtistPHPage";
+import Footer from "./Footer";
+import MobileMenu from "./NavBar/menu/mobileMenu/MobileMenu";
+import NavBar from "./NavBar/NavBar";
 
 const Layout = () => {
   // State
-  const [seldTab, setSeldTab] = useState<number>(1);
+  const [seldTab, setSeldTab] = useState<number>(0);
 
   // Other
   const TabSelectOnChangeAction = (
@@ -19,9 +19,13 @@ const Layout = () => {
     setSeldTab(value);
   };
 
-  const TabSelectMobileOnClickAction = (event: MouseEvent<HTMLLIElement>) => {
-    debugger;
-    setSeldTab(event.currentTarget.value);
+  const TabSelectMobileOnClickAction = (
+    event: MouseEvent<HTMLButtonElement> | undefined
+  ) => {
+    const value: number = !!event?.currentTarget.value
+      ? Number(event?.currentTarget.value)
+      : 0;
+    setSeldTab(value);
   };
 
   const ref1 = createRef<HTMLDivElement>();

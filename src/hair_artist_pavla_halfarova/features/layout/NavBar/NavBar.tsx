@@ -1,22 +1,24 @@
-import { MouseEvent, SyntheticEvent, useEffect, useRef, useState } from 'react';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import { MouseEvent, SyntheticEvent, useEffect, useRef, useState } from "react";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { AppBar, Box, Toolbar, useMediaQuery } from '@mui/material';
-import { SxProps, useTheme } from '@mui/material/styles';
+import { AppBar, Box, Toolbar, useMediaQuery } from "@mui/material";
+import { SxProps, useTheme } from "@mui/material/styles";
 
-import LanguageSelect from './languageSelect/LanguageSelect';
-import Logo from './logo/Logo';
-import MainMenu from './menu/mainMenu/MainMenu';
-import MobileMenu from './menu/mobileMenu/MobileMenu';
-import MobileMenuStyled from './menu/mobileMenu/MobileMenuStyled';
+import LanguageSelect from "./languageSelect/LanguageSelect";
+import Logo from "./logo/Logo";
+import MainMenu from "./menu/mainMenu/MainMenu";
+import MobileMenu from "./menu/mobileMenu/MobileMenu";
+import MobileMenuStyled from "./menu/mobileMenu/MobileMenuStyled";
 
 interface IProps {
   tabSelectOnChangeAction: (
     event: SyntheticEvent<Element, Event>,
     value: number
   ) => void;
-  tabSelectMobileOnClickAction: (event: MouseEvent<HTMLLIElement>) => void;
+  tabSelectMobileOnClickAction: (
+    event: MouseEvent<HTMLButtonElement> | undefined
+  ) => void;
   seldTab: number;
 }
 
@@ -45,12 +47,13 @@ const NavBar = (props: IProps) => {
 
   const handleDrawerOpen = (event: MouseEvent<HTMLDivElement> | undefined) => {
     if (!isOpen) {
-      debugger;
     }
     setIsOpen(!isOpen);
   };
 
-  const TabSelectMobileOnClickAction = (event: MouseEvent<HTMLLIElement>) => {
+  const TabSelectMobileOnClickAction = (
+    event: MouseEvent<HTMLButtonElement> | undefined
+  ) => {
     props.tabSelectMobileOnClickAction(event);
     setIsOpen(false);
   };
@@ -59,7 +62,7 @@ const NavBar = (props: IProps) => {
     const changeColorOnScrollHeight: number = 400;
     const changeColorOnScrollColor: string = "white";
     const windowScrollTop = window.pageYOffset;
-    debugger;
+
     if (windowScrollTop > changeColorOnScrollHeight) {
       // document.body
       //     .getElementsByTagName("header")[0]

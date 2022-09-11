@@ -1,68 +1,74 @@
-import Box, { BoxProps } from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
-const NavLinksStyled = styled(({ className, ...props }: BoxProps) => (
-  <Box {...props} className={className} />
-))`
-  & .mobile-menu-nav {
-    position: fixed;
-    top: 5px;
-    right: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    padding: 0;
-    margin: 0;
-    z-index: 9;
-    overflow: hidden;
-    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
-    animation: border-transform 7s linear infinite;
-    transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
-      right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
-      transform 250ms 1100ms ease,
-      width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
-      height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    &.is-opened {
-      animation-play-state: paused;
-      top: 50%;
-      right: 50%;
-      transform: translate(50%, -50%);
-      width: 200%;
-      height: 200%;
-      transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
-        right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
-        transform 250ms 700ms ease,
-        width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
-        height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-  }
+const NavLinksStyled = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: "50%",
+  left: "0",
+  display: "block",
+  width: "100%",
+  padding: "0",
+  margin: "0",
+  zIndex: 6,
+  textAlign: "center",
+  transform: "translateY(-50%)",
 
-  @keyframes border-transform {
-    0%,
-    100% {
-      border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
-    }
-    14% {
-      border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
-    }
-    28% {
-      border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
-    }
-    42% {
-      border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
-    }
-    56% {
-      border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
-    }
-    70% {
-      border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
-    }
-    84% {
-      border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
-    }
-  }
-`;
+  "& .nav-links-wrapper": {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    marginTop: "1rem",
+    button: {
+      position: "relative",
+      disply: "block",
+      width: "100%",
+      padding: "0",
+      margin: "10px 0",
+      pointerEvents: "none",
+      opacity: "0",
+      visibility: "hidden",
+      transform: "translateY(30px)",
+      transition: "all 250ms linear",
+      fontSize: "4vh",
+
+      "&:nth-child(1)": {
+        transitionDelay: "200ms",
+      },
+      "&:nth-child(2)": {
+        transitionDelay: "150ms",
+      },
+      "&:nth-child(3)": {
+        transitionDelay: "100ms",
+      },
+      "&:nth-child(4)": {
+        transitionDelay: "50ms",
+      },
+    },
+
+    "&.is-opened": {
+      button: {
+        pointerEvents: "auto",
+        opacity: "1",
+        visibility: "visible",
+        transform: "translateY(0)",
+        transition: "opacity 350ms ease, transform 250ms ease",
+        "&:nth-child(1)": {
+          transitionDelay: "1480ms",
+        },
+        "&:nth-child(2)": {
+          transitionDelay: "1560ms",
+        },
+        "&:nth-child(3)": {
+          transitionDelay: "1640ms",
+        },
+        "&:nth-child(4)": {
+          transitionDelay: "1720ms",
+        },
+
+        "&.active": {},
+      },
+    },
+  },
+}));
 
 export default NavLinksStyled;

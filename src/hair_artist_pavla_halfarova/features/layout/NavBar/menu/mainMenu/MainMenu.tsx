@@ -1,13 +1,13 @@
-import { SyntheticEvent } from 'react';
-import { useTranslation } from 'react-i18next';
+import { SyntheticEvent } from "react";
+import { useTranslation } from "react-i18next";
 
-import { SxProps } from '@mui/material';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
+import { SxProps } from "@mui/material";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 
-import NavLinks from '../NavLinks';
-import MainMenuStyled from './MainMenuStyled';
+import NavLinks from "../navLinks/NavLinks";
+import MainMenuStyled from "./MainMenuStyled";
 
 interface IProps {
   onChangeAction: (
@@ -23,7 +23,7 @@ const MainMenu = (props: IProps) => {
   return (
     // <Box sx={mainMenuWrapperStyle}>
     <MainMenuStyled>
-      <NavLinks />
+      <NavLinks handleOnClick={() => {}} actValue={0} />
       {/* // <Box>
       //   <Tabs
       //     value={props.seldTab}
