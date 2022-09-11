@@ -8,8 +8,8 @@ import NavLinks from "../navLinks/NavLinks";
 import HamburgerIcon from "./hamburgerIcon/HamburgerIcon";
 import LanguageSelect from "./languageSelect/languageSelect";
 import MobileMenuStyled from "./MobileMenuStyled";
-import NavLinksStyled from "./NavLinksStyled";
-import NavLinksWrapperStyled from "./NavLinksWrapperStyled";
+import NavLinksStyled from "./navLinks/NavLinksStyled";
+import NavLinksWrapperStyled from "./navLinks/NavLinksWrapperStyled";
 
 interface IProps {
   onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;

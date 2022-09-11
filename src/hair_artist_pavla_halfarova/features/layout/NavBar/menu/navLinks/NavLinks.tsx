@@ -24,9 +24,10 @@ const NavLinks = forwardRef(
 
     return (
       <Box className='nav-links-wrapper' ref={ref}>
-        {links.map((item) => {
+        {links.map((item, i) => {
           return (
             <Button
+              key={"menu-btn_" + i}
               value={item.Value}
               onClick={props.handleOnClick}
               className={props.actValue === item.Value ? "active" : undefined}

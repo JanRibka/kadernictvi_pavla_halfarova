@@ -31,16 +31,16 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
       transition: "all 250ms linear",
       fontSize: "4vh",
 
-      "&:nth-child(1)": {
+      "&:nth-of-type(1)": {
         transitionDelay: "200ms",
       },
-      "&:nth-child(2)": {
+      "&:nth-of-type(2)": {
         transitionDelay: "150ms",
       },
-      "&:nth-child(3)": {
+      "&:nth-of-type(3)": {
         transitionDelay: "100ms",
       },
-      "&:nth-child(4)": {
+      "&:nth-of-type(4)": {
         transitionDelay: "50ms",
       },
     },
@@ -52,16 +52,16 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
         visibility: "visible",
         transform: "translateY(0)",
         transition: "opacity 350ms ease, transform 250ms ease",
-        "&:nth-child(1)": {
+        "&:nth-of-type(1)": {
           transitionDelay: "1480ms",
         },
-        "&:nth-child(2)": {
+        "&:nth-of-type(2)": {
           transitionDelay: "1560ms",
         },
-        "&:nth-child(3)": {
+        "&:nth-of-type(3)": {
           transitionDelay: "1640ms",
         },
-        "&:nth-child(4)": {
+        "&:nth-of-type(4)": {
           transitionDelay: "1720ms",
         },
 

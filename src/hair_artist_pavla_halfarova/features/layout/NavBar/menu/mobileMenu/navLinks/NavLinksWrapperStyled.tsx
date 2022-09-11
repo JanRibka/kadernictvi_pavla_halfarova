@@ -24,6 +24,7 @@ const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
       transform 250ms 1100ms ease,
       width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
       height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
     &.is-opened {
       animation-play-state: paused;
       top: 50%;
