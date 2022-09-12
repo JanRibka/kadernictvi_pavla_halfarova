@@ -1,10 +1,9 @@
-import SectionTitleStyled from "./SectionTitleStyled";
+import SectionTitleStyled from './SectionTitleStyled';
 
 const SectionTitle = () => {
   return (
-    <SectionTitleStyled>
-      //TODO: toto bude ve v3ech sekc9ch misto typography a divideru
-    </SectionTitleStyled>
+    //TODO: toto bude ve v3ech sekc9ch misto typography a divideru
+    <SectionTitleStyled variant='h4'></SectionTitleStyled>
   );
 };
 

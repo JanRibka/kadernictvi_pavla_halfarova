@@ -1,15 +1,16 @@
-import { forwardRef, Ref } from "react";
-import { useTranslation } from "react-i18next";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
+import { forwardRef, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
+import SectionTitle from 'shared/styles/sectionTitle/SectionTitleStyled';
 
-import { Divider, Typography, useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
+import { Divider, Typography, useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
 
-import Contacts from "./contacts/Contacts";
-import GoogleMaps from "./googleMaps/GoogleMaps";
-import SocialIcons from "./socialIcons/SocialIcons";
+import Contacts from './contacts/Contacts';
+import GoogleMaps from './googleMaps/GoogleMaps';
+import SocialIcons from './socialIcons/SocialIcons';
 
 interface IProps {}
 // TODO: na pozadi bude nejaky obrzek a pres nej cerna barva
@@ -50,10 +51,11 @@ const Contact = forwardRef(
               justifyContent: "center",
             }}
           >
-            <Typography variant='h4'>{t("contact")}</Typography>
+            {/* <Typography variant='h4'>{t("contact")}</Typography> */}
+            <SectionTitle>{t("contact")}</SectionTitle>
           </GridItem>
           {/* Divider */}
-          <GridItem
+          {/* <GridItem
             xs={12}
             sx={{
               display: "flex",
@@ -64,7 +66,7 @@ const Contact = forwardRef(
             <Divider
               sx={{ width: "50px", border: "solid 1px", borderRadius: "5px" }}
             />
-          </GridItem>
+          </GridItem> */}
           {/* Constacts */}
           <GridItem xs={12}>
             <Box
