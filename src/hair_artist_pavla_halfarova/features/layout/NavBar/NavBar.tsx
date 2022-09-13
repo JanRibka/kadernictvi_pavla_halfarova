@@ -5,8 +5,8 @@ import GridItem from 'shared/components/gridItem/GridItem';
 import { AppBar, Box, Toolbar, useMediaQuery } from '@mui/material';
 import { SxProps, useTheme } from '@mui/material/styles';
 
-import LanguageSelect from './languageSelect/LanguageSelect';
 import Logo from './logo/Logo';
+import LanguageSelect from './menu/languageSelect/LanguageSelect';
 import MainMenu from './menu/mainMenu/MainMenu';
 import MobileMenu from './menu/mobileMenu/MobileMenu';
 
@@ -84,10 +84,16 @@ const NavBar = (props: IProps) => {
       <AppBar>
         <Toolbar sx={appBarStyle}>
           <GridContainer>
-            <GridItem xs={12} md={5} alignItems='center'>
+            <GridItem xs={12} md={4} alignItems='center'>
               <Logo />
             </GridItem>
-            <GridItem xs={7} sx={menuLanguageStyle}>
+            <GridItem
+              xs={8}
+              sx={{
+                display: { xs: "none", md: "flex" },
+                justifyContent: "flex-end",
+              }}
+            >
               {/* Main menu */}
               <MainMenu
                 onChangeAction={props.tabSelectOnChangeAction}
@@ -133,17 +139,7 @@ export default NavBar;
 const appBarStyle: SxProps = {
   height: "90px",
 };
-const menuLanguageStyle: SxProps = {
-  display: {
-    xs: "none",
-    sm: "none",
-    md: "flex",
-    lg: "flex",
-    xl: "flex",
-    xxl: "flex",
-  },
-  justifyContent: "end",
-};
+
 const menuIconStyle: SxProps = {
   display: {
     sx: "block",

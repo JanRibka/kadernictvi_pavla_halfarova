@@ -4,10 +4,11 @@ import { LanguageEnum } from 'shared/enums/LanguageEnum';
 import i18n from 'shared/infrastructure/localize/i18n';
 
 import LanguageIcon from '@mui/icons-material/Language';
-import { Box, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 
-import CzechFlag from '../../../../../shared/flags/czech-flag.png';
+import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
 import Countries from './Countries';
+import LanguageSelectStyled from './LanguageSelectStyled';
 
 const LanguageSelect = () => {
   // Consts
@@ -37,22 +38,12 @@ const LanguageSelect = () => {
 
     setSeldCountry(value);
   };
-  // TODO: Nepererenderuje se Select, kdyz zmenim jazyk v mobilnim menu
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        marginLeft: "25px",
-        "&:hover": {
-          borderColor: "red",
-        },
-      }}
-    >
+    <LanguageSelectStyled>
       <LanguageIcon
+        className='main-menu-language-icon'
         sx={{ display: { xs: "none", lg: "block" } }}
-        color='secondary'
       />
       <FormControl size='small' variant='outlined'>
         <Select
@@ -62,16 +53,6 @@ const LanguageSelect = () => {
           inputProps={{
             id: "country-select",
           }}
-          sx={{
-            marginLeft: "5px",
-            "& .MuiSelect-select": {
-              display: "flex",
-              alignItems: "center",
-            },
-            fieldset: {
-              border: "none",
-            },
-          }}
         >
           {Countries.map((option, key) => (
             <MenuItem value={option.Src} key={key}>
@@ -79,13 +60,13 @@ const LanguageSelect = () => {
                 src={option.Src}
                 alt={option.Label}
                 title={option.Label}
-                style={{ height: "20px" }}
+                height='20px'
               />
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-    </Box>
+    </LanguageSelectStyled>
   );
 };
 
