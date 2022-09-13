@@ -1,20 +1,18 @@
-import i18next from "i18next";
-import { forwardRef, MouseEvent, Ref, useState } from "react";
-import { LanguageEnum } from "shared/enums/LanguageEnum";
-import i18n from "shared/infrastructure/localize/i18n";
+import i18next from 'i18next';
+import { forwardRef, MouseEvent, Ref, useState } from 'react';
+import { LanguageEnum } from 'shared/enums/LanguageEnum';
+import i18n from 'shared/infrastructure/localize/i18n';
 
-import { alpha, useTheme } from "@mui/material/styles";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-import CzechFlag from "../../../../../../../shared/flags/czech-flag.png";
-import Countries from "../../../languageSelect/Countries";
-import ToggleButtonGroupStyled from "./ToggleButtonGroupStyled";
+import CzechFlag from '../../../../../../../shared/flags/czech-flag.png';
+import Countries from '../../../languageSelect/Countries';
+import ToggleButtonGroupStyled from './ToggleButtonGroupStyled';
 
 const LanguageSelect = forwardRef(
   (props, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts
-    const theme = useTheme();
     const i18nextLng: string | null =
       i18next.language || localStorage.getItem("i18nextLng");
     const seldLanguage: string | undefined = Countries.find(

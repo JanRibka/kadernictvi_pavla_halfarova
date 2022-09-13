@@ -1,21 +1,21 @@
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from 'react';
 
-import { useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
 
-import NavLinks from "../navLinks/NavLinks";
-import HamburgerIcon from "./hamburgerIcon/HamburgerIcon";
-import LanguageSelect from "./languageSelect/languageSelect";
-import MobileMenuStyled from "./MobileMenuStyled";
-import NavLinksStyled from "./navLinks/NavLinksStyled";
-import NavLinksWrapperStyled from "./navLinks/NavLinksWrapperStyled";
+import NavLinks from '../navLinks/NavLinks';
+import HamburgerIcon from './hamburgerIcon/HamburgerIcon';
+import LanguageSelect from './languageSelect/languageSelect';
+import MobileMenuStyled from './MobileMenuStyled';
+import NavLinksStyled from './navLinks/NavLinksStyled';
+import NavLinksWrapperStyled from './navLinks/NavLinksWrapperStyled';
 
 interface IProps {
   onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
   seldTab: number;
 }
-// https://codepen.io/RSH87/pen/rmgYbo?editors=1100
+
 const MobileMenu = (props: IProps) => {
   // State
   const [isOpnd, setIsOpnd] = useState<boolean>(false);

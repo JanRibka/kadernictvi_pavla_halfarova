@@ -1,5 +1,5 @@
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
 const NavLinksStyled = styled(Box)(({ theme }) => ({
   position: "absolute",
@@ -16,20 +16,51 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
   "& .nav-links-wrapper": {
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     flexDirection: "column",
     marginTop: "1rem",
     button: {
       position: "relative",
       disply: "block",
-      width: "100%",
+      width: "fit-content",
       padding: "0",
-      margin: "10px 0",
+      margin: "25px 0",
       pointerEvents: "none",
       opacity: "0",
       visibility: "hidden",
       transform: "translateY(30px)",
       transition: "all 250ms linear",
       fontSize: "4vh",
+      lineHeight: "1.1",
+      backgroundColor: "transparent",
+
+      "&:before": {
+        content: "''",
+        position: "absolute",
+        top: "100%",
+        left: "0%",
+        width: "100%",
+        height: "0.1em",
+        backgroundColor: theme.palette.secondary.main,
+        transform: "scaleX(0)",
+        transformOrigin: "right",
+        transition: "transform 0.5s",
+      },
+
+      "&.active": {
+        "&:before": {
+          transform: "scaleX(1)",
+          transformOrigin: "left",
+        },
+      },
+
+      "&:hover": {
+        backgroundColor: "transparent",
+      },
+
+      span: {
+        display: "none",
+      },
 
       "&:nth-of-type(1)": {
         transitionDelay: "200ms",

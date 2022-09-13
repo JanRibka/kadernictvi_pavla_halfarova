@@ -1,5 +1,5 @@
-import { alpha, styled } from "@mui/material/styles";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { styled } from '@mui/material/styles';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
   width: "100%",
@@ -21,17 +21,31 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
     transition: "opacity 350ms ease, transform 250ms ease",
     transitionDelay: "1400ms",
   },
-  // TODO: Vybrany jazyk bude ozna4en stejne, jako polo6ky menu
   button: {
     border: "0",
-    borderRadius: "5px !important",
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.secondary.dark, 0.3),
+    position: "realtive",
+
+    "&:before": {
+      position: "absolute",
+      content: "''",
+      top: "100%",
+      left: "0%",
+      width: "100%",
+      height: "0.3em",
+      backgroundColor: theme.palette.secondary.main,
+      transform: "scaleX(0)",
+      transformOrigin: "right",
+      transition: "transform 0.5s",
     },
+
+    "&:active": {
+      backgroundColor: "transparent",
+    },
+
     "&.Mui-selected": {
-      backgroundColor: alpha(theme.palette.secondary.main, 0.3),
-      "&:hover": {
-        backgroundColor: alpha(theme.palette.secondary.dark, 0.3),
+      "&:before": {
+        transform: "scaleX(1)",
+        transformOrigin: "left",
       },
     },
     img: {
