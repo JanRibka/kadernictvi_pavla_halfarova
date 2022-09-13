@@ -1,17 +1,18 @@
 import { styled } from '@mui/material/styles';
-import Typography, { TypographyProps } from '@mui/material/Typography';
+import Typography from '@mui/material/Typography';
 
-const SectionTitleStyled = styled(
-  ({ variant, className, ...props }: TypographyProps) => (
-    <Typography variant='h4' className={className} {...props} />
-  )
-)`
-  margin-bottom: 30px;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 2px;
-  }
-`;
+const SectionTitleStyled = styled(Typography)(({ theme }) => ({
+  marginBottom: "40px",
+  position: "relative",
+  "&:after": {
+    content: "''",
+    backgroundColor: theme.palette.text.primary,
+    position: "absolute",
+    top: "100%",
+    left: "calc(50% - 25px)",
+    width: "50px",
+    height: "2px",
+  },
+}));
+
 export default SectionTitleStyled;

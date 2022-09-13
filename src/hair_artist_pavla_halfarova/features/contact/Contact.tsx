@@ -51,8 +51,7 @@ const Contact = forwardRef(
               justifyContent: "center",
             }}
           >
-            {/* <Typography variant='h4'>{t("contact")}</Typography> */}
-            <SectionTitle>{t("contact")}</SectionTitle>
+            <SectionTitle variant='h4'>{t("contact")}</SectionTitle>
           </GridItem>
           {/* Divider */}
           {/* <GridItem
