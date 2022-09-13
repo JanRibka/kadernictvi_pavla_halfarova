@@ -48,6 +48,9 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
         transformOrigin: "left",
       },
     },
+    span: {
+      display: "none",
+    },
     img: {
       height: "4vh",
       borderRadius: "3px",
