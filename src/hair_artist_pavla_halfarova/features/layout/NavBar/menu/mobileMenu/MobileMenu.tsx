@@ -15,7 +15,7 @@ interface IProps {
   onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
   seldTab: number;
 }
-
+// https://codepen.io/RSH87/pen/rmgYbo?editors=1100
 const MobileMenu = (props: IProps) => {
   // State
   const [isOpnd, setIsOpnd] = useState<boolean>(false);
