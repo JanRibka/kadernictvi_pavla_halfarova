@@ -1,15 +1,14 @@
-import { MouseEvent, SyntheticEvent, useEffect, useRef, useState } from "react";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
+import { MouseEvent, SyntheticEvent, useEffect, useRef, useState } from 'react';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
 
-import { AppBar, Box, Toolbar, useMediaQuery } from "@mui/material";
-import { SxProps, useTheme } from "@mui/material/styles";
+import { AppBar, Box, Toolbar, useMediaQuery } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material/styles';
 
-import LanguageSelect from "./languageSelect/LanguageSelect";
-import Logo from "./logo/Logo";
-import MainMenu from "./menu/mainMenu/MainMenu";
-import MobileMenu from "./menu/mobileMenu/MobileMenu";
-import MobileMenuStyled from "./menu/mobileMenu/MobileMenuStyled";
+import LanguageSelect from './languageSelect/LanguageSelect';
+import Logo from './logo/Logo';
+import MainMenu from './menu/mainMenu/MainMenu';
+import MobileMenu from './menu/mobileMenu/MobileMenu';
 
 interface IProps {
   tabSelectOnChangeAction: (

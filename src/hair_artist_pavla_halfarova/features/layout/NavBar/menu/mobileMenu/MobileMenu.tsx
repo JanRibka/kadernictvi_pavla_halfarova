@@ -7,7 +7,6 @@ import { useTheme } from '@mui/material/styles';
 import NavLinks from '../navLinks/NavLinks';
 import HamburgerIcon from './hamburgerIcon/HamburgerIcon';
 import LanguageSelect from './languageSelect/languageSelect';
-import MobileMenuStyled from './MobileMenuStyled';
 import NavLinksStyled from './navLinks/NavLinksStyled';
 import NavLinksWrapperStyled from './navLinks/NavLinksWrapperStyled';
 
@@ -19,7 +18,6 @@ interface IProps {
 const MobileMenu = (props: IProps) => {
   // State
   const [isOpnd, setIsOpnd] = useState<boolean>(false);
-  // TODO: Zav59t menu při přepnutí na klasické menu
 
   // References
   const refNavLinskWrapper = useRef<HTMLDivElement>(null);
@@ -64,10 +62,7 @@ const MobileMenu = (props: IProps) => {
   };
 
   return (
-    <MobileMenuStyled
-      display={{ xs: "block", md: "none" }}
-      className='mobile-menu'
-    >
+    <Box display={{ xs: "block", md: "none" }} className='mobile-menu'>
       {/* Hamburger Icon */}
       <HamburgerIcon handleOnClick={HandleIsOpnd} isOpnd={isOpnd} />
       {/* Navigation */}
@@ -89,7 +84,7 @@ const MobileMenu = (props: IProps) => {
           </NavLinksStyled>
         </Box>
       </NavLinksWrapperStyled>
-    </MobileMenuStyled>
+    </Box>
   );
 };
 
