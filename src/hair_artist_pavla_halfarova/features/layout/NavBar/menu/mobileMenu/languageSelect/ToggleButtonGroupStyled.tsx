@@ -32,6 +32,7 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
       left: "0%",
       width: "100%",
       height: "0.3em",
+      borderRadius: "50%",
       backgroundColor: theme.palette.secondary.main,
       transform: "scaleX(0)",
       transformOrigin: "right",
