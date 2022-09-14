@@ -12,7 +12,7 @@ interface IProps {
 
 const MainMenu = (props: IProps) => {
   return (
-    <Box>
+    <Box display='flex' alignItems='center'>
       <NavLinksStyled>
         <NavLinks
           handleOnClick={props.onChangeAction}
