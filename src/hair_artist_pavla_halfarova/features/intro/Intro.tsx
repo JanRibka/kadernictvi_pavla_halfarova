@@ -21,7 +21,8 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
         infiniteLoop
         swipeable
         showThumbs={false}
-        interval={10000}
+        showStatus={false}
+        interval={7000}
         transitionTime={1000}
       >
         <div>
