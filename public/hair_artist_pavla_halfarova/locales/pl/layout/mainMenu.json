@@ -1,6 +1,7 @@
 {
-    "intro": "Wprowadzanie",
-    "services": "Usługi",
-    "gallery": "Galeria",
-    "contact": "Kontakt"
+  "intro": "Wprowadzanie",
+  "aboutMe": "O mnie",
+  "gallery": "Galeria",
+  "services": "Usługi",
+  "contact": "Kontakt"
 }

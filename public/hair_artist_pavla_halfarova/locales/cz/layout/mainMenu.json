@@ -1,6 +1,7 @@
 {
-    "intro": "Úvod",
-    "services": "Služby",
-    "gallery": "Galerie",
-    "contact": "Kontakt"
+  "intro": "Úvod",
+  "aboutMe": "O mně",
+  "gallery": "Galerie",
+  "services": "Služby",
+  "contact": "Kontakt"
 }
