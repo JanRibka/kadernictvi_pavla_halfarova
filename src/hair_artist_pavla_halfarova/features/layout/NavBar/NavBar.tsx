@@ -5,6 +5,7 @@ import GridItem from 'shared/components/gridItem/GridItem';
 import { AppBar, Box, Toolbar } from '@mui/material';
 
 import Logo from './logo/Logo';
+import AppBarStyled from './menu/AppBarStyled';
 import LanguageSelect from './menu/languageSelect/LanguageSelect';
 import MainMenu from './menu/mainMenu/MainMenu';
 import MobileMenu from './menu/mobileMenu/MobileMenu';
@@ -43,7 +44,7 @@ const NavBar = (props: IProps) => {
 
   return (
     <Box flexGrow={1}>
-      <AppBar>
+      <AppBarStyled>
         <Toolbar sx={{ height: "90px" }}>
           <GridContainer>
             <GridItem xs={12} md={3} alignItems='center'>
@@ -71,7 +72,7 @@ const NavBar = (props: IProps) => {
             seldTab={props.seldTab}
           />
         </Toolbar>
-      </AppBar>
+      </AppBarStyled>
     </Box>
   );
 };
