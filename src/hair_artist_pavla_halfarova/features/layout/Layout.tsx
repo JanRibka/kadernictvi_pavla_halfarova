@@ -13,9 +13,11 @@ const Layout = () => {
 
   // Other
   const TabSelectOnChangeAction = (
-    event: SyntheticEvent<Element, Event>,
-    value: number
+    event: MouseEvent<HTMLButtonElement> | undefined
   ) => {
+    const value: number = !!event?.currentTarget.value
+      ? Number(event?.currentTarget.value)
+      : 0;
     setSeldTab(value);
   };
 
@@ -41,7 +43,6 @@ const Layout = () => {
     <Box display='flex' flexDirection='column'>
       <NavBar
         tabSelectOnChangeAction={TabSelectOnChangeAction}
-        tabSelectMobileOnClickAction={TabSelectMobileOnClickAction}
         seldTab={seldTab}
       />
       <HairArtistPHPage ref={ref} />
