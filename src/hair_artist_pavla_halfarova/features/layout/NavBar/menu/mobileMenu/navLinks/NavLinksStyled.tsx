@@ -32,7 +32,6 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
       transition: "all 250ms linear",
       fontSize: "3rem",
       lineHeight: "1.1",
-      backgroundColor: "transparent",
 
       "&:before": {
         content: "''",
