@@ -1,9 +1,11 @@
-import { forwardRef, LegacyRef } from 'react';
+import { forwardRef, LegacyRef, Ref } from 'react';
+
+import Box from '@mui/material/Box';
 
 interface IProps {}
 
-const Galerie = forwardRef<HTMLDivElement, IProps>((props, ref) => {
-  return <div style={{ height: "500px" }} ref={ref}></div>;
+const Galerie = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
+  return <Box ref={ref}></Box>;
 });
 
 export default Galerie;

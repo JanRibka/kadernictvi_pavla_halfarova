@@ -1,12 +1,16 @@
 import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
 
+import Box from '@mui/material/Box';
+
 import Contact from '../contact/Contact';
 import Galerie from '../gallery/Gallery';
+import Intro from '../intro/Intro';
 
 interface IProps {}
 
 const KadernictviPage = forwardRef(
   (props: IProps, ref: Ref<unknown> | undefined) => {
+    const refIntro = useRef<HTMLDivElement>(null);
     const refGallery = useRef<HTMLDivElement>(null);
     const refContact = useRef<HTMLDivElement>(null);
 
@@ -28,10 +32,11 @@ const KadernictviPage = forwardRef(
     }));
 
     return (
-      <div style={{ height: "3000px" }}>
+      <Box>
+        <Intro ref={refIntro} />
         <Galerie ref={refGallery} />
         <Contact ref={refContact} />
-      </div>
+      </Box>
     );
   }
 );
