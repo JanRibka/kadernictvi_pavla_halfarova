@@ -1,14 +1,14 @@
-import { MouseEvent, SyntheticEvent, useEffect, useRef, useState } from "react";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
+import { MouseEvent, SyntheticEvent, useEffect, useRef, useState } from 'react';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
 
-import { AppBar, Box, Toolbar, useMediaQuery } from "@mui/material";
-import { SxProps, useTheme } from "@mui/material/styles";
+import { AppBar, Box, Toolbar, useMediaQuery } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material/styles';
 
-import Logo from "./logo/Logo";
-import LanguageSelect from "./menu/languageSelect/LanguageSelect";
-import MainMenu from "./menu/mainMenu/MainMenu";
-import MobileMenu from "./menu/mobileMenu/MobileMenu";
+import Logo from './logo/Logo';
+import LanguageSelect from './menu/languageSelect/LanguageSelect';
+import MainMenu from './menu/mainMenu/MainMenu';
+import MobileMenu from './menu/mobileMenu/MobileMenu';
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -109,7 +109,7 @@ const NavBar = (props: IProps) => {
           {/* Mobile menu */}
           {/* <Box position='relative'> */}
           <MobileMenu
-            onClickAction={TabSelectMobileOnClickAction}
+            onClickAction={props.tabSelectOnChangeAction}
             seldTab={props.seldTab}
           />
           {/* </Box> */}

@@ -61,6 +61,13 @@ const MobileMenu = (props: IProps) => {
     setIsOpnd(!isOpnd);
   };
 
+  const HandleOnCLickAction = (
+    event: MouseEvent<HTMLButtonElement> | undefined
+  ) => {
+    props.onClickAction(event);
+    setIsOpnd(false);
+  };
+
   return (
     <Box display={{ xs: "block", md: "none" }} className='mobile-menu'>
       {/* Hamburger Icon */}
@@ -78,7 +85,7 @@ const MobileMenu = (props: IProps) => {
             <LanguageSelect ref={refLanguageSelect} />
             <NavLinks
               ref={refNavLinks}
-              handleOnClick={props.onClickAction}
+              handleOnClick={HandleOnCLickAction}
               actValue={props.seldTab}
             />
           </NavLinksStyled>

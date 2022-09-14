@@ -1,5 +1,5 @@
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
 const NavLinksStyled = styled(Box)(({ theme }) => ({
   position: "absolute",
@@ -30,7 +30,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
       visibility: "hidden",
       transform: "translateY(30px)",
       transition: "all 250ms linear",
-      fontSize: "2.5rem",
+      fontSize: "3rem",
       lineHeight: "1.1",
       backgroundColor: "transparent",
 
