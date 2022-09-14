@@ -1,5 +1,5 @@
-import { styled } from '@mui/material/styles';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { styled } from "@mui/material/styles";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
   width: "100%",
@@ -53,7 +53,7 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
       display: "none",
     },
     img: {
-      height: "4vh",
+      height: "2.5rem",
       borderRadius: "3px",
     },
   },
