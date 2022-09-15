@@ -2,13 +2,14 @@ import { forwardRef, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
-import SectionTitle from 'shared/styles/sectionTitle/SectionTitleStyled';
+import SectionTitleStyled from 'shared/styles/sectionTitle/SectionTitleStyled';
 
-import { Divider, Typography, useMediaQuery } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
 import Contacts from './contacts/Contacts';
+import ContactStyled from './ContactStyled';
 import GoogleMaps from './googleMaps/GoogleMaps';
 import SocialIcons from './socialIcons/SocialIcons';
 
@@ -31,16 +32,7 @@ const Contact = forwardRef(
       : "100%";
 
     return (
-      <Box
-        ref={ref}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          padding: "4em 0px",
-          backgroundColor: theme.palette.primary.main,
-        }}
-      >
+      <ContactStyled ref={ref}>
         <GridContainer
           sx={{ maxWidth: gridContainerMaxWidth, alignItems: "center" }}
         >
@@ -51,21 +43,8 @@ const Contact = forwardRef(
               justifyContent: "center",
             }}
           >
-            <SectionTitle variant='h4'>{t("contact")}</SectionTitle>
+            <SectionTitleStyled variant='h4'>{t("contact")}</SectionTitleStyled>
           </GridItem>
-          {/* Divider */}
-          {/* <GridItem
-            xs={12}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "50px",
-            }}
-          >
-            <Divider
-              sx={{ width: "50px", border: "solid 1px", borderRadius: "5px" }}
-            />
-          </GridItem> */}
           {/* Constacts */}
           <GridItem xs={12}>
             <Box
@@ -90,7 +69,7 @@ const Contact = forwardRef(
             <GoogleMaps />
           </GridItem>
         </GridContainer>
-      </Box>
+      </ContactStyled>
     );
   }
 );

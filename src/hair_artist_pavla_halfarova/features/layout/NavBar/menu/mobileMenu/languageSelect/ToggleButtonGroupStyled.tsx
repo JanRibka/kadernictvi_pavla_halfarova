@@ -8,7 +8,7 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
   zIndex: 6,
   transform: "translateY(30px)",
   transition: "all 250ms linear",
-  transitionDelay: "250ms",
+  transitionDelay: "300ms",
   pointerEvents: "none",
   opacity: "0",
   visibility: "hidden",

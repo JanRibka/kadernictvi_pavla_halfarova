@@ -3,7 +3,7 @@ import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
 import Box from '@mui/material/Box';
 
 import Contact from '../contact/Contact';
-import Galerie from '../gallery/Gallery';
+import MyWork from '../gallery/MyWork';
 import Intro from '../intro/Intro';
 
 interface IProps {}
@@ -34,7 +34,7 @@ const KadernictviPage = forwardRef(
     return (
       <Box>
         <Intro ref={refIntro} />
-        <Galerie ref={refGallery} />
+        <MyWork ref={refGallery} />
         <Contact ref={refContact} />
       </Box>
     );

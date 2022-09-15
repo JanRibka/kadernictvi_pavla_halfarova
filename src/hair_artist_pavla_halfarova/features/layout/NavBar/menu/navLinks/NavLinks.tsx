@@ -19,7 +19,7 @@ const NavLinks = forwardRef(
       { Label: t("intro"), Value: 0 },
       { Label: t("aboutMe"), Value: 1 },
       { Label: t("services"), Value: 2 },
-      { Label: t("gallery"), Value: 3 },
+      { Label: t("myWork"), Value: 3 },
       { Label: t("contact"), Value: 4 },
     ];
 

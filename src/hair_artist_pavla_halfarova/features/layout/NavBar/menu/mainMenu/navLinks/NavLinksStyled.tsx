@@ -8,6 +8,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     color: "white",
     marginRight: "25px",
     lineHeight: "1rem",
+    backgroundColor: "transparent",
 
     "&:last-of-type": {
       marginRight: "0px",
