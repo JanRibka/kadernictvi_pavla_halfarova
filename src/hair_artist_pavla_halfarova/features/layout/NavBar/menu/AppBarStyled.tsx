@@ -1,8 +1,8 @@
-import AppBar from '@mui/material/AppBar';
-import { styled } from '@mui/material/styles';
+import AppBar from "@mui/material/AppBar";
+import { styled } from "@mui/material/styles";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
-  transition: "background-color 400ms ease-in-out",
+  transition: "background-color 400ms linear",
 
   "&.transparent": {
     backgroundColor: "transparent",
