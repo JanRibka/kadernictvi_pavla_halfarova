@@ -26,23 +26,23 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
         transitionTime={1000}
       >
         <div>
-          <img src={Intro1} alt='Hair artist Pavla Halfarová - Kadeřnictví 1' />
+          <img src={Intro1} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 1' />
           {/* <p className='legend'>x</p> */}
         </div>
         <div>
-          <img src={Intro2} alt='Hair artist Pavla Halfarová - Kadeřnictví 2' />
+          <img src={Intro2} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 2' />
           {/* <p className='legend'>x</p> */}
         </div>
         <div>
-          <img src={Intro3} alt='Hair artist Pavla Halfarová - Kadeřnictví 3' />
+          <img src={Intro3} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 3' />
           {/* <p className='legend'>x</p> */}
         </div>
         <div>
-          <img src={Intro4} alt='Hair artist Pavla Halfarová - Kadeřnictví 4' />
+          <img src={Intro4} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 4' />
           {/* <p className='legend'>x</p> */}
         </div>
         <div>
-          <img src={Intro5} alt='Hair artist Pavla Halfarová - Kadeřnictví 5' />
+          <img src={Intro5} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 5' />
           {/* <p className='legend'>x</p> */}
         </div>
       </Carousel>

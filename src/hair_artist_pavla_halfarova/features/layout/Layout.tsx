@@ -1,11 +1,11 @@
-import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from "react";
+import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from 'react';
 
-import { Box } from "@mui/system";
+import { Box } from '@mui/system';
 
-import HairArtistPHPage from "../pages/HairArtistPHPage";
-import Footer from "./Footer";
-import MobileMenu from "./NavBar/menu/mobileMenu/MobileMenu";
-import NavBar from "./NavBar/NavBar";
+import KadernictviPHPage from '../pages/KadernictviPHPage';
+import Footer from './Footer';
+import MobileMenu from './NavBar/menu/mobileMenu/MobileMenu';
+import NavBar from './NavBar/NavBar';
 
 const Layout = () => {
   // State
@@ -45,7 +45,7 @@ const Layout = () => {
         tabSelectOnChangeAction={TabSelectOnChangeAction}
         seldTab={seldTab}
       />
-      <HairArtistPHPage ref={ref} />
+      <KadernictviPHPage ref={ref} />
       <Footer />
     </Box>
   );
