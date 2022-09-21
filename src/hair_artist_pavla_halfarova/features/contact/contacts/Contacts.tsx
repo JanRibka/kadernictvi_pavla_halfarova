@@ -21,6 +21,7 @@ const Contacts = () => {
       {/* Telephone */}
       <Contact contactType={ContactTypeEnum.Tel} contact='+420 601 123 456' />
       {/* Email */}
+      // TODO: Dopis bude trochu nizzsi, pro zavirani prekryva obalku
       <Contact contactType={ContactTypeEnum.Mail} contact='kh@sawedf.cz' />
       {/* Address */}
       <Contact
