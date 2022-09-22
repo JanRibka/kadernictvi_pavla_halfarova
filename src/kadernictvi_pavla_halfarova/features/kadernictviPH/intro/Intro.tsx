@@ -7,11 +7,11 @@ import { Carousel } from 'react-responsive-carousel';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 
-import Intro1 from '../../../shared/img/Intro_1.jpg';
-import Intro2 from '../../../shared/img/Intro_2.jpg';
-import Intro3 from '../../../shared/img/Intro_3.jpg';
-import Intro4 from '../../../shared/img/Intro_4.jpg';
-import Intro5 from '../../../shared/img/Intro_5.jpg';
+import Intro1 from '../../../../shared/img/Intro_1.jpg';
+import Intro2 from '../../../../shared/img/Intro_2.jpg';
+import Intro3 from '../../../../shared/img/Intro_3.jpg';
+import Intro4 from '../../../../shared/img/Intro_4.jpg';
+import Intro5 from '../../../../shared/img/Intro_5.jpg';
 
 interface IProps {}
 

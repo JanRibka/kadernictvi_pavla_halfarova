@@ -1,40 +1,50 @@
 import createTheme from '@mui/material/styles/createTheme';
 
 // Colors
+const pinkMain = "rgb(229, 46, 113)";
 const palettePrimaryLight = "rgb(120, 120, 120)";
-const palettePrimaryMain = "rgb(64, 64, 64)";
+const palettePrimaryMain = "rgb(1, 1, 1)";
 const palettePrimaryDark = "rgb(80, 99, 43)";
 const paletteSecondaryMain = "rgb(212, 120, 168)";
 const paletteSecondaryDark = "rgb(197, 71, 137)";
 const paletteTextPrimary = "rgb(112, 112, 112)";
 const paletteTextSecondary = "rgb(212, 120, 168)";
+const paletteCustomTextPinkMain = pinkMain;
+const paletteCustomBackgroundPinkMain = pinkMain;
 
-// Base theme
-const AppThemeBase = createTheme({
+// Custom theme
+declare module "@mui/material/styles/createPalette" {
+  interface CommonColors {
+    text: {
+      pink: string;
+    };
+    background: {
+      pink: string;
+    };
+  }
+}
+
+// Typography theme
+const AppThemeTypography = createTheme({
   typography: {},
+});
+
+// Components theme
+const AppThemeComponents = createTheme(AppThemeTypography, {
   components: {
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          // fontWeight: 700,
-          color: "white",
-        },
-      },
-    },
-    MuiSpeedDial: {
-      styleOverrides: {
-        actions: {
-          // zIndex: 1051,
-        },
-      },
-    },
+    // MuiBottomNavigationAction: {
+    //   styleOverrides: {
+    //     root: {
+    //       color: paletteTextPrimary,
+    //     },
+    //   },
+    // },
   },
 });
 
-// App theme
-export const AppTheme = createTheme(AppThemeBase, {
+// Palette theme
+const AppThemePalette = createTheme(AppThemeComponents, {
   palette: {
-    // mode: "light",
     primary: {
       light: palettePrimaryLight,
       main: palettePrimaryMain,
@@ -48,21 +58,15 @@ export const AppTheme = createTheme(AppThemeBase, {
       primary: paletteTextPrimary,
       secondary: paletteTextSecondary,
     },
-  },
-  components: {
-    MuiBottomNavigation: {
-      styleOverrides: {
-        root: {
-          backgroundColor: palettePrimaryMain,
-        },
+    common: {
+      text: {
+        pink: paletteCustomTextPinkMain,
       },
-    },
-    MuiBottomNavigationAction: {
-      styleOverrides: {
-        root: {
-          color: paletteTextPrimary,
-        },
+      background: {
+        pink: paletteCustomBackgroundPinkMain,
       },
     },
   },
 });
+
+export const AppTheme = createTheme(AppThemePalette, {});

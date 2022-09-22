@@ -6,37 +6,36 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     position: "relative",
     fontSize: "1rem",
     color: "white",
-    marginRight: "25px",
+    padding: "6px 0",
+    marginLeft: "1.5rem",
     lineHeight: "1rem",
+    background: "transparent",
     backgroundColor: "transparent",
+    minWidth: "unset",
+    transition: "all 200ms linear",
 
-    "&:last-of-type": {
-      marginRight: "0px",
+    "&:first-of-type": {
+      marginLeft: "0px",
     },
 
-    "&:before": {
+    "&:after": {
       content: "''",
       position: "absolute",
-      top: "100%",
+      bottom: "-6px",
       left: "0%",
       width: "100%",
-      height: "0.2em",
-      borderRadius: "50%",
-      backgroundColor: theme.palette.secondary.main,
-      transform: "scaleX(0)",
-      transformOrigin: "right",
-      transition: "transform 0.5s",
-    },
-
-    "&.active": {
-      "&:before": {
-        transform: "scaleX(1)",
-        transformOrigin: "left",
-      },
+      height: "1px",
+      backgroundColor: theme.palette.common.background.pink,
+      opacity: "0",
+      transition: "all 200ms linear",
     },
 
     "&:hover": {
-      color: theme.palette.text.secondary,
+      color: theme.palette.common.text.pink,
+      "&:after": {
+        bottom: "0",
+        opacity: "1",
+      },
     },
 
     span: {

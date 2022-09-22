@@ -2,9 +2,9 @@ import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
 
 import Box from '@mui/material/Box';
 
-import Contact from '../contact/Contact';
-import MyWork from '../gallery/MyWork';
-import Intro from '../intro/Intro';
+import Contact from '../kadernictviPH/contact/Contact';
+import MyWork from '../kadernictviPH/gallery/MyWork';
+import Intro from '../kadernictviPH/intro/Intro';
 
 interface IProps {}
 
