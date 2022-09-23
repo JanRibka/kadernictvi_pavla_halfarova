@@ -9,7 +9,7 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
     "& .MuiToolbar-root": {
       height: "110px",
       "& .main-menu-logo": {
-        height: "50px",
+        height: "45px",
       },
     },
   },
@@ -19,7 +19,7 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
       height: "80px",
     },
     "& .main-menu-logo": {
-      height: "40px",
+      height: "35px",
     },
   },
 
