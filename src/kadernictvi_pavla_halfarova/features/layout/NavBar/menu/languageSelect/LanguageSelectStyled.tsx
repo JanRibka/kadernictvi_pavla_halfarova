@@ -12,7 +12,7 @@ const LanguageSelectStyled = styled(Box)(({ theme }) => ({
   },
 
   ".main-menu-language-icon": {
-    color: theme.palette.secondary.main,
+    color: theme.palette.common.color.pink,
   },
 
   ".MuiInputBase-root": {
@@ -21,6 +21,10 @@ const LanguageSelectStyled = styled(Box)(({ theme }) => ({
     "& .MuiSelect-select": {
       display: "flex",
       alignItems: "center",
+    },
+
+    "& .MuiSvgIcon-root": {
+      color: "white",
     },
 
     fieldset: {

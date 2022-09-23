@@ -4,15 +4,17 @@ import { styled } from '@mui/material/styles';
 const NavLinksStyled = styled(Box)(({ theme }) => ({
   button: {
     position: "relative",
-    fontSize: "1rem",
+    fontSize: "1.5rem",
     color: "white",
-    padding: "6px 0",
+    padding: "0",
     marginLeft: "1.5rem",
-    lineHeight: "1rem",
+    textTransform: "none",
+    lineHeight: "1.5rem",
     background: "transparent",
     backgroundColor: "transparent",
     minWidth: "unset",
     transition: "all 200ms linear",
+    verticalAlign: "-webkit-baseline-middle",
 
     "&:first-of-type": {
       marginLeft: "0px",
@@ -21,7 +23,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     "&:after": {
       content: "''",
       position: "absolute",
-      bottom: "-6px",
+      bottom: "-10px",
       left: "0%",
       width: "100%",
       height: "1px",
@@ -33,7 +35,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     "&:hover": {
       color: theme.palette.common.text.pink,
       "&:after": {
-        bottom: "0",
+        bottom: "-3px",
         opacity: "1",
       },
     },

@@ -6,8 +6,8 @@ const Logo = () => {
   return (
     // TODO: Po kliku prejit na hlavni stranku
     <IconButton
+      className='main-menu-logo'
       sx={{
-        height: "40px",
         zIndex: 10,
         img: {
           height: "inherit",

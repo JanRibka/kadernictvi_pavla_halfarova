@@ -38,7 +38,7 @@ const LanguageSelect = () => {
 
     setSeldCountry(value);
   };
-
+  // TODO: Barva trojuhelniku pro vyber dropdownu bude bily nebo podle toho, zda je pozadi pruhledne
   return (
     <LanguageSelectStyled>
       <LanguageIcon

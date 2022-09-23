@@ -28,24 +28,30 @@ const NavBar = (props: IProps) => {
   }, []);
 
   const HeaderColorChange = () => {
-    const changeColorOnScrollHeight: number = 400;
+    const changeColorOnScrollHeight: number = 100;
     const windowScrollTop = window.pageYOffset;
 
     if (windowScrollTop > changeColorOnScrollHeight) {
       document.body
         .getElementsByTagName("header")[0]
-        .classList.remove("transparent");
+        .classList.remove("start-style");
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add("scroll-on");
     } else {
       document.body
         .getElementsByTagName("header")[0]
-        .classList.add("transparent");
+        .classList.remove("scroll-on");
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add("start-style");
     }
   };
 
   return (
     <Box flexGrow={1}>
-      <AppBarStyled>
-        <Toolbar sx={{ height: "90px" }}>
+      <AppBarStyled className='start-style'>
+        <Toolbar>
           <GridContainer>
             <GridItem xs={12} md={3} alignItems='center'>
               <Logo />

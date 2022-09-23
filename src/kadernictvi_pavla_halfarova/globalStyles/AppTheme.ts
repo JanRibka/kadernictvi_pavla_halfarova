@@ -21,24 +21,29 @@ declare module "@mui/material/styles/createPalette" {
     background: {
       pink: string;
     };
+    color: {
+      pink: string;
+    };
   }
 }
 
 // Typography theme
 const AppThemeTypography = createTheme({
-  typography: {},
+  typography: {
+    fontFamily: "'Didact Gothic', sans-serif",
+  },
 });
 
 // Components theme
 const AppThemeComponents = createTheme(AppThemeTypography, {
   components: {
-    // MuiBottomNavigationAction: {
-    //   styleOverrides: {
-    //     root: {
-    //       color: paletteTextPrimary,
-    //     },
-    //   },
-    // },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontFamily: "'Teko', sans-serif",
+        },
+      },
+    },
   },
 });
 
@@ -63,6 +68,9 @@ const AppThemePalette = createTheme(AppThemeComponents, {
         pink: paletteCustomTextPinkMain,
       },
       background: {
+        pink: paletteCustomBackgroundPinkMain,
+      },
+      color: {
         pink: paletteCustomBackgroundPinkMain,
       },
     },
