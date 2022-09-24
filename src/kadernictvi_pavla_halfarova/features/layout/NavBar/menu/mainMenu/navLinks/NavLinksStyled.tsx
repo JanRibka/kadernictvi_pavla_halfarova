@@ -1,5 +1,5 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const NavLinksStyled = styled(Box)(({ theme }) => ({
   button: {
@@ -14,7 +14,6 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     backgroundColor: "transparent",
     minWidth: "unset",
     transition: "all 200ms linear",
-    verticalAlign: "-webkit-baseline-middle",
 
     "&:first-of-type": {
       marginLeft: "0px",

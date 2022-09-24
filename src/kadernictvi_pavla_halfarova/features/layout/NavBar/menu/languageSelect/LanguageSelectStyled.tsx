@@ -3,33 +3,12 @@ import { styled } from '@mui/material/styles';
 
 const LanguageSelectStyled = styled(Box)(({ theme }) => ({
   display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
   marginLeft: "25px",
+  height: "20px",
+  transition: "all 200ms linear",
 
   "&:hover": {
-    borderColor: "red",
-  },
-
-  ".main-menu-language-icon": {
-    color: theme.palette.common.color.pink,
-  },
-
-  ".MuiInputBase-root": {
-    marginLeft: "5px",
-
-    "& .MuiSelect-select": {
-      display: "flex",
-      alignItems: "center",
-    },
-
-    "& .MuiSvgIcon-root": {
-      color: "white",
-    },
-
-    fieldset: {
-      border: "none",
-    },
+    paddingBottom: "2px",
   },
 }));
 

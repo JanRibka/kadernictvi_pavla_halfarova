@@ -2,7 +2,7 @@ import { MouseEvent, useEffect } from 'react';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
 
-import { AppBar, Box, Toolbar } from '@mui/material';
+import { Box, Toolbar } from '@mui/material';
 
 import Logo from './logo/Logo';
 import AppBarStyled from './menu/AppBarStyled';
@@ -61,6 +61,7 @@ const NavBar = (props: IProps) => {
               sx={{
                 display: { xs: "none", md: "flex" },
                 justifyContent: "flex-end",
+                alignItems: "center",
               }}
             >
               {/* Main menu */}

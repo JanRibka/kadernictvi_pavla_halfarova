@@ -4,10 +4,13 @@ import { LanguageEnum } from 'shared/enums/LanguageEnum';
 import i18n from 'shared/infrastructure/localize/i18n';
 
 import LanguageIcon from '@mui/icons-material/Language';
-import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { ButtonBase, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 
 import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
 import Countries from './Countries';
+import ImageButtonStyled from './ImageButtonStyled';
+import ImageSrcStyled from './ImageSrcStyled';
+import LanguageSelectDialog from './LanguageSelectDialog';
 import LanguageSelectStyled from './LanguageSelectStyled';
 
 const LanguageSelect = () => {
@@ -24,6 +27,7 @@ const LanguageSelect = () => {
   const [seldCountry, setSeldCountry] = useState<string>(
     seldLanguage ?? deafultCountry
   );
+  const [opnDialog, setOpnDialog] = useState<boolean>(false);
 
   // Functions
   const HandleOnChange = (e: SelectChangeEvent<string>) => {
@@ -38,14 +42,18 @@ const LanguageSelect = () => {
 
     setSeldCountry(value);
   };
+
+  const HandleLanguageButtonOnClick = () => {
+    setOpnDialog(true);
+  };
   // TODO: Barva trojuhelniku pro vyber dropdownu bude bily nebo podle toho, zda je pozadi pruhledne
   return (
     <LanguageSelectStyled>
-      <LanguageIcon
-        className='main-menu-language-icon'
-        sx={{ display: { xs: "none", lg: "block" } }}
-      />
-      <FormControl size='small' variant='outlined'>
+      <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
+        <ImageSrcStyled src={CzechFlag} />
+      </ImageButtonStyled>
+      <LanguageSelectDialog open={opnDialog}></LanguageSelectDialog>
+      {/* <FormControl size='small' variant='outlined'>
         <Select
           name='country-select'
           value={seldCountry}
@@ -65,7 +73,7 @@ const LanguageSelect = () => {
             </MenuItem>
           ))}
         </Select>
-      </FormControl>
+      </FormControl> */}
     </LanguageSelectStyled>
   );
 };
