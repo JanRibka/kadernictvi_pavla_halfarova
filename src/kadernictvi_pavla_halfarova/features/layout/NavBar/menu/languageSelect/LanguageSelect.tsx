@@ -8,9 +8,6 @@ import { ButtonBase, FormControl, MenuItem, Select, SelectChangeEvent } from '@m
 
 import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
 import Countries from './Countries';
-import ImageButtonStyled from './ImageButtonStyled';
-import ImageSrcStyled from './ImageSrcStyled';
-import LanguageSelectDialog from './LanguageSelectDialog';
 import LanguageSelectStyled from './LanguageSelectStyled';
 
 const LanguageSelect = () => {
@@ -49,11 +46,11 @@ const LanguageSelect = () => {
   // TODO: Barva trojuhelniku pro vyber dropdownu bude bily nebo podle toho, zda je pozadi pruhledne
   return (
     <LanguageSelectStyled>
-      <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
+      {/* <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
         <ImageSrcStyled src={CzechFlag} />
       </ImageButtonStyled>
-      <LanguageSelectDialog open={opnDialog}></LanguageSelectDialog>
-      {/* <FormControl size='small' variant='outlined'>
+      <LanguageSelectDialog open={opnDialog}></LanguageSelectDialog> */}
+      <FormControl size='small' variant='outlined'>
         <Select
           name='country-select'
           value={seldCountry}
@@ -73,7 +70,7 @@ const LanguageSelect = () => {
             </MenuItem>
           ))}
         </Select>
-      </FormControl> */}
+      </FormControl>
     </LanguageSelectStyled>
   );
 };

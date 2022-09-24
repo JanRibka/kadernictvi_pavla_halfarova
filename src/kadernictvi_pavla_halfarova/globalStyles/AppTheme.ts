@@ -2,7 +2,7 @@ import createTheme from '@mui/material/styles/createTheme';
 
 // Colors
 const pinkMain = "rgb(229, 46, 113)";
-const palettePrimaryLight = "rgb(120, 120, 120)";
+const palettePrimaryLight = "rgb(16, 16, 16)";
 const palettePrimaryMain = "rgb(1, 1, 1)";
 const palettePrimaryDark = "rgb(80, 99, 43)";
 const paletteSecondaryMain = "rgb(212, 120, 168)";

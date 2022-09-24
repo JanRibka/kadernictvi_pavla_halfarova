@@ -10,11 +10,12 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
     right: 40px;
     display: block;
     width: 30px;
-    height: 30px;
+    height: 20px;
     padding: 0;
     margin: 0;
     cursor: pointer;
     z-index: 10;
+
     &:before {
       position: absolute;
       content: "";
@@ -32,6 +33,7 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
         background-color 200ms ease,
         transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
     }
+
     &:after {
       position: absolute;
       content: "";
@@ -46,6 +48,7 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
       transition: width 100ms 1750ms ease, right 100ms 1750ms ease,
         margin-top 100ms ease, transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
     }
+
     &.is-opened {
       :before {
         top: 10px;
@@ -59,6 +62,7 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
           background-color 200ms 500ms ease,
           transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
       }
+
       :after {
         width: 30px;
         margin-top: 0;

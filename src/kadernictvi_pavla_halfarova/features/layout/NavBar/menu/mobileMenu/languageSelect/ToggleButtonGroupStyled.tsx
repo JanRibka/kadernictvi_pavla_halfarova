@@ -24,16 +24,17 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
   button: {
     border: "0",
     position: "realtive",
+    // background: "transparent",
+    // backgroundColor: "transparent",
 
-    "&:before": {
+    "&:after": {
       position: "absolute",
       content: "''",
-      top: "100%",
+      bottom: "0px",
       left: "0%",
       width: "100%",
-      height: "0.3em",
-      borderRadius: "50%",
-      backgroundColor: theme.palette.secondary.main,
+      height: "2px",
+      backgroundColor: theme.palette.common.background.pink,
       transform: "scaleX(0)",
       transformOrigin: "right",
       transition: "transform 0.5s",
@@ -43,8 +44,20 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
       backgroundColor: "transparent",
     },
 
+    "&:hover": {
+      paddingBottom: "20px",
+      paddingTop: "10px",
+      backgroundColor: "transparent",
+    },
+
     "&.Mui-selected": {
-      "&:before": {
+      backgroundColor: "transparent",
+
+      "&:hover": {
+        backgroundColor: "transparent",
+      },
+
+      "&:after": {
         transform: "scaleX(1)",
         transformOrigin: "left",
       },

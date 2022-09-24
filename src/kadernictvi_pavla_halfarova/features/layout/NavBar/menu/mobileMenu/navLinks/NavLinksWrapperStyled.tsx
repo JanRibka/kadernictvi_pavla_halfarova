@@ -1,5 +1,5 @@
-import Box, { BoxProps } from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box, { BoxProps } from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
 const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
   <Box {...props} className={className} />
@@ -17,13 +17,15 @@ const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
     margin: 0;
     z-index: 9;
     overflow: hidden;
+    opacity: 0;
     box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
     animation: border-transform 7s linear infinite;
     transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
       right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 250ms 1100ms ease,
       width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
-      height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
+      opacity 500ms linear 1500ms;
 
     &.is-opened {
       animation-play-state: paused;
@@ -32,11 +34,12 @@ const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
       transform: translate(50%, -50%);
       width: 200%;
       height: 200%;
+      opacity: 1;
       transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
         right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
         transform 250ms 700ms ease,
         width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
-        height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
+        height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1), opacity 500ms linear;
     }
   }
 

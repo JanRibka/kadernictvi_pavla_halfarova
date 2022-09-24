@@ -20,6 +20,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     flexDirection: "column",
     marginTop: "1rem",
     button: {
+      color: "white",
       position: "relative",
       disply: "block",
       width: "fit-content",
@@ -33,29 +34,32 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
       fontSize: "3rem",
       lineHeight: "1.1",
 
-      "&:before": {
+      "&:after": {
         content: "''",
         position: "absolute",
-        top: "100%",
         left: "0%",
+        bottom: "-10px",
         width: "100%",
-        height: "0.1em",
-        borderRadius: "50%",
-        backgroundColor: theme.palette.secondary.main,
-        transform: "scaleX(0)",
-        transformOrigin: "right",
-        transition: "transform 0.5s",
+        height: "2px",
+        backgroundColor: theme.palette.common.background.pink,
+        opacity: 0,
+        transition: "all 200ms linear",
       },
 
-      "&.active": {
-        "&:before": {
-          transform: "scaleX(1)",
-          transformOrigin: "left",
-        },
-      },
+      // "&.active": {
+      //   "&:after": {
+      //     transform: "scaleX(1)",
+      //     transformOrigin: "left",
+      //   },
+      // },
 
       "&:hover": {
         backgroundColor: "transparent",
+        color: theme.palette.common.text.pink,
+        "&:after": {
+          bottom: "-3px",
+          opacity: "1",
+        },
       },
 
       span: {
