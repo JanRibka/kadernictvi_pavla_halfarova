@@ -1,33 +1,40 @@
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import 'swiper/css/bundle';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css/bundle";
 
-import { forwardRef, Ref } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { createRef, forwardRef, Ref, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
 
 // import { Carousel } from 'react-responsive-carousel';
-import { Typography } from '@mui/material';
-import Box from '@mui/material/Box';
+import { Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 
-import Intro1 from '../../../../shared/img/Intro_1.jpg';
-import Intro2 from '../../../../shared/img/Intro_2.jpg';
-import Intro3 from '../../../../shared/img/Intro_3.jpg';
-import Intro4 from '../../../../shared/img/Intro_4.jpg';
-import Intro5 from '../../../../shared/img/Intro_5.jpg';
-import SwiperSlideStyled from './swiper/SwiperSlideStyled';
-import SwiperStyled from './swiper/SwiperStyled';
+import Intro1 from "../../../../shared/img/Intro_1.jpg";
+import Intro2 from "../../../../shared/img/Intro_2.jpg";
+import Intro3 from "../../../../shared/img/Intro_3.jpg";
+import Intro4 from "../../../../shared/img/Intro_4.jpg";
+import Intro5 from "../../../../shared/img/Intro_5.jpg";
+import SwiperSlideStyled from "./swiper/SwiperSlideStyled";
+import SwiperStyled from "./swiper/SwiperStyled";
 
 interface IProps {}
 
 const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
-  const { t } = useTranslation(["intro\\intro"]);
+  // References
+  const refSwiper = useRef<any>(null);
 
+  // Consts
+  const { t } = useTranslation(["intro\\intro"]);
+  const swiper = useSwiper();
+  const swiperSlide = useSwiperSlide();
+
+  debugger;
   return (
     <Box ref={ref} sx={{ position: "relative" }}>
       <Box // TODO: Udelat styled komponentu
