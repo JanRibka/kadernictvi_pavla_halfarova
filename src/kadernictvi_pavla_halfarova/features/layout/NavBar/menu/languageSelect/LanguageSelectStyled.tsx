@@ -7,10 +7,6 @@ const LanguageSelectStyled = styled(Box)(({ theme }) => ({
   alignItems: "center",
   marginLeft: "25px",
 
-  ".main-menu-language-icon": {
-    color: theme.palette.common.color.pink,
-  },
-
   ".MuiInputBase-root": {
     marginLeft: "5px",
 
