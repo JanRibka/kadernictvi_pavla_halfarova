@@ -1,19 +1,22 @@
 // LOCALIZATION
-import "./shared/infrastructure/localize/i18n";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import './shared/infrastructure/localize/i18n';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/teko';
+import '@fontsource/caveat';
+import '@fontsource/didact-gothic';
 
-import { AppTheme } from "hair_artist_pavla_halfarova/globalStyles/AppTheme";
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { AppTheme } from 'kadernictvi_pavla_halfarova/globalStyles/AppTheme';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import { CssBaseline } from "@mui/material";
-import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import { CssBaseline } from '@mui/material';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
 
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
