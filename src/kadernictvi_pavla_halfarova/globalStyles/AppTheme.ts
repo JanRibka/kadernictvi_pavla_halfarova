@@ -30,7 +30,7 @@ declare module "@mui/material/styles/createPalette" {
 // Typography theme
 const AppThemeTypography = createTheme({
   typography: {
-    fontFamily: "'Didact Gothic', sans-serif",
+    // fontFamily: "'Didact Gothic', sans-serif",
   },
 });
 
