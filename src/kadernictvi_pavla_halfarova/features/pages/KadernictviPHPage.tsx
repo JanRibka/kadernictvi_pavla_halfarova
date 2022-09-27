@@ -15,14 +15,14 @@ const KadernictviPage = forwardRef(
     const refContact = useRef<HTMLDivElement>(null);
     // TODO: První sekce bude mít nadpis h1 kvuli seo a přestylovat na h4
     useImperativeHandle(ref, () => ({
-      get galerie() {
+      get gallery() {
         if (!!refGallery) {
           return refGallery.current;
         } else {
           return undefined;
         }
       },
-      get kontakt() {
+      get contact() {
         if (!!refContact) {
           return refContact.current;
         } else {

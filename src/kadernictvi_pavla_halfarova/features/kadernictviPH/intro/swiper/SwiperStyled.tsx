@@ -18,10 +18,6 @@ const SwiperStyled = styled(Swiper)(({ theme }) => ({
   "& .swiper-pagination-bullet-active": {
     backgroundColor: "#fff",
   },
-
-  "& .MuiTypography-root": {
-    display: "flex",
-  },
 }));
 
 export default SwiperStyled;
