@@ -15,14 +15,14 @@ const KadernictviPage = forwardRef(
     const refContact = useRef<HTMLDivElement>(null);
 
     useImperativeHandle(ref, () => ({
-      get galerie() {
+      get gallery() {
         if (!!refGallery) {
           return refGallery.current;
         } else {
           return undefined;
         }
       },
-      get kontakt() {
+      get contact() {
         if (!!refContact) {
           return refContact.current;
         } else {
