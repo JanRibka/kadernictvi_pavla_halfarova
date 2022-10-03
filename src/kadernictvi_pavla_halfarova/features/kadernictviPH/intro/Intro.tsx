@@ -20,8 +20,8 @@ import Intro4 from '../../../../shared/img/Intro_4.jpg';
 import Intro5 from '../../../../shared/img/Intro_5.jpg';
 import SwiperSlideStyled from './swiper/SwiperSlideStyled';
 import SwiperStyled from './swiper/SwiperStyled';
-import SwiperTextSlide from './swiper/SwiperTextStyled';
 import SwiperText2Styled from './swiper/swiperText/SwiperText2Styled';
+import SwiperTextSlide from './swiper/SwiperTextStyled';
 
 interface IProps {}
 
@@ -62,12 +62,20 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
       >
         <SwiperSlideStyled>
           <SwiperTextSlide className='slide-text'>
-            <Typography variant='h1' sx={{ fontSize: "5rem", fontFamily: "'Teko', sans-serif", color: "white", transition: "all 100ms linear 1000ms" }}>
-              {t("hairArtist")}
-            </Typography>            
-              <SwiperText2Styled variant='h2'>
-                {t("pavlaHalfarova")}
-              </SwiperText2Styled>            
+            <Typography
+              variant='h1'
+              sx={{
+                fontSize: "5rem",
+                fontFamily: "'Teko', sans-serif",
+                color: "white",
+                transition: "all 100ms linear 1000ms",
+              }}
+            >
+              {t("hairdressers")}
+            </Typography>
+            <SwiperText2Styled variant='h2'>
+              {t("pavlaHalfarova")}
+            </SwiperText2Styled>
           </SwiperTextSlide>
           <img src={Intro1} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 1' />
         </SwiperSlideStyled>
