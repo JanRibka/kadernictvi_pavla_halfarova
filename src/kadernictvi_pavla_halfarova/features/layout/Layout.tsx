@@ -32,12 +32,11 @@ const Layout = () => {
 
   const ref1 = createRef<HTMLDivElement>();
   const ref2 = useRef();
-  console.log(ref1);
+
   // const ref = useRef({ ref1, ref2 });
   const ref = useRef();
   // console.log(ref1);
   // console.log(ref2);
-  console.log(ref);
 
   return (
     <Box display='flex' flexDirection='column'>

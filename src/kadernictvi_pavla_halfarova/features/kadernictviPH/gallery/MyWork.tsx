@@ -7,7 +7,7 @@ import SectionTitleStyled from 'shared/styles/sectionTitle/SectionTitleStyled';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-import Intro1 from '../../../../shared/img/Intro_1.jpg';
+import Intro1 from '../../../../shared/img/intro/Intro_1.jpg';
 import Card from './card/Card';
 import CardMedia from './card/CardMedia';
 import CardStyled from './card/CardStyled';
