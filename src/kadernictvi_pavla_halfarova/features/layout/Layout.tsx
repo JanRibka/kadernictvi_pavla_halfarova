@@ -1,6 +1,6 @@
 import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from 'react';
 import { event as eventGA, EventArgs } from 'react-ga';
-import SendEventToGA from 'shared/googleAnalytics/SsendEventToGA';
+import SendEventToGA from 'shared/googleAnalytics/SendEventToGA';
 
 import { Box } from '@mui/system';
 
