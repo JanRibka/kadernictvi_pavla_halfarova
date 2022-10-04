@@ -16,12 +16,13 @@ import { CssBaseline } from '@mui/material';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 
 import App from './App';
+import reportHandler from './reportHandler';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-// P5idat str8nku po v7padku spojeni (no connection page)
+//TODO: P5idat str8nku po v7padku spojeni (no connection page)
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
@@ -34,4 +35,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals(reportHandler);
