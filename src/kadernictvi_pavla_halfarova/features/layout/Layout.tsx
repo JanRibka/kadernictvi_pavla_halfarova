@@ -1,4 +1,6 @@
 import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from 'react';
+import { event as eventGA, EventArgs } from 'react-ga';
+import SendEventToGA from 'shared/googleAnalytics/SendEventToGA';
 
 import { Box } from '@mui/system';
 
@@ -15,10 +17,13 @@ const Layout = () => {
   const TabSelectOnChangeAction = (
     event: MouseEvent<HTMLButtonElement> | undefined
   ) => {
+    const name: string = event?.currentTarget.name ?? "";
     const value: number = !!event?.currentTarget.value
       ? Number(event?.currentTarget.value)
       : 0;
     setSeldTab(value);
+    debugger;
+    SendEventToGA(name, "Stisknutí tlačítka hlavního menu");
   };
 
   const TabSelectMobileOnClickAction = (

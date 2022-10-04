@@ -16,11 +16,11 @@ const NavLinks = forwardRef(
     // Consts
     const { t } = useTranslation(["layout\\mainMenu"]);
     const links: LinkModel[] = [
-      { Label: t("intro"), Value: 0 },
-      { Label: t("aboutMe"), Value: 1 },
-      { Label: t("services"), Value: 2 },
-      { Label: t("myWork"), Value: 3 },
-      { Label: t("contact"), Value: 4 },
+      { Label: t("intro"), Value: 0, Name: "Úvod" },
+      { Label: t("aboutMe"), Value: 1, Name: "O mně" },
+      { Label: t("services"), Value: 2, Name: "Služby" },
+      { Label: t("myWork"), Value: 3, Name: "Galrie" },
+      { Label: t("contact"), Value: 4, Name: "Kontakt" },
     ];
 
     return (
@@ -29,6 +29,7 @@ const NavLinks = forwardRef(
           return (
             <Button
               key={"menu-btn_" + i}
+              name={item.Name}
               value={item.Value}
               onClick={props.handleOnClick}
               className={props.actValue === item.Value ? "active" : undefined}
