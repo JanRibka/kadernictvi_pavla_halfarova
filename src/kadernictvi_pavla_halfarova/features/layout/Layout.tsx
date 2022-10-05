@@ -23,7 +23,7 @@ const Layout = () => {
       : 0;
     setSeldTab(value);
     debugger;
-    SendEventToGA(name, "Stisknutí tlačítka hlavního menu");
+    SendEventToGA("Hlavní menu", name, "Přechod do sekce " + name);
   };
 
   const TabSelectMobileOnClickAction = (
