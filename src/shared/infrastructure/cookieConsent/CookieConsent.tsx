@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import InitGA from 'shared/googleAnalytics/InitGA';
-import { CookieHelper } from 'shared/helpers/cookieHelper';
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import InitGA from "shared/googleAnalytics/InitGA";
+import { CookieHelper } from "shared/helpers/cookieHelper";
 
-import CookieConsentStyled from './CookieConsentStyled';
+import CookieConsentStyled from "./CookieConsentStyled";
 
+// TODO: Udělat cookie podle dobra energie.cz
 const CookienConsent = () => {
   // Consts
   const cookieHelper: CookieHelper = new CookieHelper();
