@@ -3,10 +3,15 @@ import { useState } from 'react';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
 import i18n from 'shared/infrastructure/localize/i18n';
 
-import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
 import Countries from './Countries';
+import ImageButtonStyled from './ImageButtonStyled';
+import ImageSrcStyled from './ImageSrcStyled';
 import LanguageSelectStyled from './LanguageSelectStyled';
 
 const LanguageSelect = () => {
@@ -23,6 +28,7 @@ const LanguageSelect = () => {
   const [seldCountry, setSeldCountry] = useState<string>(
     seldLanguage ?? deafultCountry
   );
+  const [opnDialog, setOpnDialog] = useState<boolean>(false);
 
   // Functions
   const HandleOnChange = (e: SelectChangeEvent<string>) => {
@@ -38,9 +44,16 @@ const LanguageSelect = () => {
     setSeldCountry(value);
   };
 
+  const HandleLanguageButtonOnClick = () => {
+    setOpnDialog(true);
+  };
+
   return (
     <LanguageSelectStyled>
-      <FormControl size='small' variant='outlined'>
+      <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
+        <ImageSrcStyled src={CzechFlag} />
+      </ImageButtonStyled>
+      {/* <FormControl size='small' variant='outlined'>
         <Select
           name='country-select'
           value={seldCountry}
@@ -49,18 +62,20 @@ const LanguageSelect = () => {
             id: "country-select",
           }}
         >
-          {Countries.map((option, key) => (
-            <MenuItem value={option.Src} key={key}>
-              <img
-                src={option.Src}
-                alt={option.Label}
-                title={option.Label}
-                height='20px'
-              />
-            </MenuItem>
-          ))}
+          <Menu open>
+            {Countries.map((option, key) => (
+              <MenuItem value={option.Src} key={key}>
+                <img
+                  src={option.Src}
+                  alt={option.Label}
+                  title={option.Label}
+                  height='20px'
+                />
+              </MenuItem>
+            ))}
+          </Menu>
         </Select>
-      </FormControl>
+      </FormControl> */}
     </LanguageSelectStyled>
   );
 };
