@@ -1,6 +1,6 @@
-import { IconButton } from '@mui/material';
+import { IconButton } from "@mui/material";
 
-import KadernictviPHLogo from '../../../logo/logo_kadernictvi_ph_header.svg';
+import KadernictviPHLogo from "../../../logo/logo_kadernictvi_ph_header.svg";
 
 const Logo = () => {
   return (
