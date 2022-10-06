@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import Box from '@mui/material/Box';
 
-import HamburgerIconStyled from './HamburgerIconStyled';
+import HamburgerIconStyled from './styledComponents/HamburgerIconStyled';
 
 interface IProps {
   handleOnClick: () => void;
