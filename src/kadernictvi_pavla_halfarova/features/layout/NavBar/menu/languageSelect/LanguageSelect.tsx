@@ -1,21 +1,24 @@
-import i18next from "i18next";
-import { MouseEvent, useState } from "react";
-import { LanguageEnum } from "shared/enums/LanguageEnum";
-import i18n from "shared/infrastructure/localize/i18n";
+import i18next from 'i18next';
+import { MouseEvent, useRef, useState } from 'react';
+import { LanguageEnum } from 'shared/enums/LanguageEnum';
+import i18n from 'shared/infrastructure/localize/i18n';
 
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Box from '@mui/material/Box';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import MenuItem from '@mui/material/MenuItem';
+import Paper from '@mui/material/Paper';
 
-import CzechFlag from "../../../../../../shared/flags/czech-flag.png";
-import Countries from "./Countries";
-import ImageButtonStyled from "./ImageButtonStyled";
-import ImageSrcStyled from "./ImageSrcStyled";
-import LanguageSelectStyled from "./LanguageSelectStyled";
+import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
+import Countries from './Countries';
+import ImageButtonStyled from './ImageButtonStyled';
+import ImageSrcStyled from './ImageSrcStyled';
+import LanguageSelectStyled from './LanguageSelectStyled';
+import MenuWrapperStyled from './MenuWrapperStyled';
 
 const LanguageSelect = () => {
+  // References
+  const refMenu = useRef<HTMLDivElement>(null);
+
   // Consts
   const i18nextLng: string | null =
     i18next.language || localStorage.getItem("i18nextLng");
@@ -29,12 +32,11 @@ const LanguageSelect = () => {
   const [seldCountry, setSeldCountry] = useState<string>(
     seldLanguage ?? deafultCountry
   );
-  const [opnDialog, setOpnDialog] = useState<boolean>(false);
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
   // Functions
-  const HandleOnChange = (e: SelectChangeEvent<string>) => {
-    const value: string = e.target.value;
+  const HandleMenuItemOnClick = (e: MouseEvent<HTMLLIElement>) => {
+    const value: string =
+      e?.currentTarget?.firstElementChild?.getAttribute("src") ?? "";
     const newLanguage: LanguageEnum | undefined = Countries.find(
       (f) => f.Src === value
     )?.Value;
@@ -44,80 +46,49 @@ const LanguageSelect = () => {
     }
 
     setSeldCountry(value);
+    refMenu?.current?.classList.remove("opened");
   };
 
-  const HandleLanguageButtonOnClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event?.currentTarget);
+  const HandleLanguageButtonOnClick = () => {
+    if (refMenu?.current?.classList.contains("opened")) {
+      refMenu.current.classList.remove("opened");
+    } else {
+      refMenu?.current?.classList.add("opened");
+    }
   };
 
-  const HandleCloseMenuOnClick = () => {
-    setAnchorEl(null);
+  const HandleOnClicAway = (e: globalThis.MouseEvent | TouchEvent) => {
+    refMenu?.current?.classList.remove("opened");
   };
 
   return (
     <LanguageSelectStyled>
-      <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
-        <ImageSrcStyled src={CzechFlag} />
-      </ImageButtonStyled>
-      {/* Menu */}
-      <Box sx={{ mt: "45px", position: "absolute" }}>
-        {/* <Menu
-          // sx={{ mt: "25px", position: "absolute" }}
-          // id='menu-appbar'
-          // anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          // open={Boolean(anchorEl)}
-          open={true}
-          onClose={HandleCloseMenuOnClick}
-        > */}
-        {Countries.map((option, key) => (
-          <MenuItem
-            value={option.Src}
-            key={key}
-            onClick={HandleCloseMenuOnClick}
-          >
-            <img
-              src={option.Src}
-              alt={option.Label}
-              title={option.Label}
-              height='20px'
-            />
-          </MenuItem>
-        ))}
-        {/* </Menu> */}
-      </Box>
-
-      {/* <FormControl size='small' variant='outlined'>
-        <Select
-          name='country-select'
-          value={seldCountry}
-          onChange={HandleOnChange}
-          inputProps={{
-            id: "country-select",
-          }}
-        >
-          <Menu open>
-            {Countries.map((option, key) => (
-              <MenuItem value={option.Src} key={key}>
-                <img
-                  src={option.Src}
-                  alt={option.Label}
-                  title={option.Label}
-                  height='20px'
-                />
-              </MenuItem>
-            ))}
-          </Menu>
-        </Select>
-      </FormControl> */}
+      <ClickAwayListener onClickAway={HandleOnClicAway}>
+        <Box position='relative'>
+          <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
+            <ImageSrcStyled src={seldCountry} />
+          </ImageButtonStyled>
+          {/* Menu */}
+          <MenuWrapperStyled ref={refMenu}>
+            <Paper>
+              {Countries.map((option, key) => (
+                <MenuItem
+                  value={option.Src}
+                  key={key}
+                  onClick={HandleMenuItemOnClick}
+                >
+                  <img
+                    src={option.Src}
+                    alt={option.Label}
+                    title={option.Label}
+                    height='20px'
+                  />
+                </MenuItem>
+              ))}
+            </Paper>
+          </MenuWrapperStyled>
+        </Box>
+      </ClickAwayListener>
     </LanguageSelectStyled>
   );
 };

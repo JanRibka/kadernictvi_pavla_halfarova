@@ -6,6 +6,7 @@ const LanguageSelectStyled = styled(Box)(({ theme }) => ({
   flexDirection: "row",
   alignItems: "center",
   marginLeft: "25px",
+  marginBottom: "4px",
 
   ".MuiInputBase-root": {
     marginLeft: "5px",
