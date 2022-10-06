@@ -1,6 +1,7 @@
 import i18next from 'i18next';
 import { MouseEvent, useRef, useState } from 'react';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
+import SendEventToGA from 'shared/googleAnalytics/SendEventToGA';
 import i18n from 'shared/infrastructure/localize/i18n';
 
 import Box from '@mui/material/Box';
@@ -9,11 +10,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
 
 import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
-import Countries from './Countries';
-import ImageButtonStyled from './ImageButtonStyled';
-import ImageSrcStyled from './ImageSrcStyled';
-import LanguageSelectStyled from './LanguageSelectStyled';
-import MenuWrapperStyled from './MenuWrapperStyled';
+import Countries from './models/Countries';
+import ImageButtonStyled from './styledComponents/ImageButtonStyled';
+import ImageSrcStyled from './styledComponents/ImageSrcStyled';
+import LanguageSelectStyled from './styledComponents/LanguageSelectStyled';
+import MenuWrapperStyled from './styledComponents/MenuWrapperStyled';
 
 const LanguageSelect = () => {
   // References
@@ -35,6 +36,7 @@ const LanguageSelect = () => {
 
   // Functions
   const HandleMenuItemOnClick = (e: MouseEvent<HTMLLIElement>) => {
+    const title = e?.currentTarget?.firstElementChild?.getAttribute("title");
     const value: string =
       e?.currentTarget?.firstElementChild?.getAttribute("src") ?? "";
     const newLanguage: LanguageEnum | undefined = Countries.find(
@@ -47,6 +49,11 @@ const LanguageSelect = () => {
 
     setSeldCountry(value);
     refMenu?.current?.classList.remove("opened");
+    SendEventToGA(
+      "Hlavní menu",
+      title as string,
+      ("Přepnutí jazyka na " + title) as string
+    );
   };
 
   const HandleLanguageButtonOnClick = () => {
@@ -80,7 +87,7 @@ const LanguageSelect = () => {
                   <img
                     src={option.Src}
                     alt={option.Label}
-                    title={option.Label}
+                    title={option.Title}
                     height='20px'
                   />
                 </MenuItem>

@@ -7,7 +7,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 import CzechFlag from '../../../../../../../shared/flags/czech-flag.png';
-import Countries from '../../languageSelect/Countries';
+import Countries from '../../languageSelect/models/Countries';
 import ToggleButtonGroupStyled from './ToggleButtonGroupStyled';
 
 const LanguageSelect = forwardRef(

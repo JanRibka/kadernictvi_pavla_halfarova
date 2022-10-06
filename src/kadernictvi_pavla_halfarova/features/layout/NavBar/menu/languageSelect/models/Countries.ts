@@ -9,11 +9,13 @@ const Countries: CountryModel[] = [
     Label: "Česky",
     Src: CzechFlag,
     Value: LanguageEnum.Cz,
+    Title: "Česky",
   },
   {
     Label: "Polski",
     Src: PolishFlag,
     Value: LanguageEnum.Pl,
+    Title: "Polsky",
   },
 ];
 
