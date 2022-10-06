@@ -3,7 +3,7 @@ import { MouseEvent } from 'react';
 import Box from '@mui/material/Box';
 
 import NavLinks from '../navLinks/NavLinks';
-import NavLinksStyled from './navLinks/NavLinksStyled';
+import NavLinksStyled from './styledComponents/NavLinksStyled';
 
 interface IProps {
   onChangeAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
