@@ -1,7 +1,12 @@
 import AppLoader from '../loader/AppLoader';
+import SuspenseFallbackStyled from './styledComponents/SuspenseFallbackStyled';
 
 const SuspenseFallback = () => {
-  return <AppLoader />;
+  return (
+    <SuspenseFallbackStyled>
+      <AppLoader />
+    </SuspenseFallbackStyled>
+  );
 };
 
 export default SuspenseFallback;
