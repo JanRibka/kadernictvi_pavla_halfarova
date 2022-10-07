@@ -1,14 +1,14 @@
-import { MouseEvent, useEffect } from 'react';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import { MouseEvent, useEffect } from "react";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { Toolbar } from '@mui/material';
+import { Toolbar } from "@mui/material";
 
-import Logo from './logo/Logo';
-import LanguageSelect from './menu/languageSelect/LanguageSelect';
-import MainMenu from './menu/mainMenu/MainMenu';
-import MobileMenu from './menu/mobileMenu/MobileMenu';
-import AppBarStyled from './menu/styledComponents/AppBarStyled';
+import Logo from "./logo/Logo";
+import LanguageSelect from "./menu/languageSelect/LanguageSelect";
+import MainMenu from "./menu/mainMenu/MainMenu";
+import MobileMenu from "./menu/mobileMenu/MobileMenu";
+import AppBarStyled from "./menu/styledComponents/AppBarStyled";
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -47,7 +47,7 @@ const NavBar = (props: IProps) => {
         .classList.add("start-style");
     }
   };
-
+  // TODO: Zrušit grid a místo toho dát na tlačítka flex grow 1
   return (
     // <Box flexGrow={1}>
     <AppBarStyled className='start-style'>
