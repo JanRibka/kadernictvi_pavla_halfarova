@@ -1,20 +1,19 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const NavLinksStyled = styled(Box)(
   ({ theme }) =>
     `
-  a {
+  button {
     background: transparent;
-    padding: 20px;
-    width: 75px;
+    padding: 15px;    
     text-align: center;
     text-decoration: none;
     position: relative;
     color: white;
     font-size: 1.5em;
     font-family: 'Teko', sans-serief;    
-    letter-spacing: 0.02857em;
+    letter-spacing: 0.02857em;    
 
     span {
       display: inline-block;
@@ -37,6 +36,7 @@ const NavLinksStyled = styled(Box)(
     }
 
     &:hover, &:focus {
+      background: transparent;
       &:before {
         opacity: 0;
         transform: translate(0, 20px);
