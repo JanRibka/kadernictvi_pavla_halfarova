@@ -2,7 +2,6 @@ import { forwardRef, MouseEvent, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 
 import LinkModel from './models/LinkModel';
 
@@ -27,15 +26,21 @@ const NavLinks = forwardRef(
       <Box className='nav-links-wrapper' ref={ref}>
         {links.map((item, i) => {
           return (
-            <Button
+            <Box
+              component='a'
+              href='#'
               key={"menu-btn_" + i}
-              name={item.Name}
-              value={item.Value}
-              onClick={props.handleOnClick}
+              // name={item.Name}
+              // value={item.Value}
+              aria-label={item.Label}
+              data-text={item.Label}
+              // onClick={props.handleOnClick}
               className={props.actValue === item.Value ? "active" : undefined}
             >
-              {item.Label}
-            </Button>
+              {item.Label.split("").map((letter, i) => (
+                <span key={"menu-btn-letter_" + i}>{letter}</span>
+              ))}
+            </Box>
           );
         })}
       </Box>
