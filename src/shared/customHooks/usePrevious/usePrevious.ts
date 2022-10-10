@@ -2,16 +2,16 @@ import { useEffect, useRef } from 'react';
 
 /**
  * Hook gets previous value from current value
- * @param pValue
+ * @param value
  * @returns Previous value
  */
-const usePrevious = <T>(pValue: T): T | undefined => {
+const usePrevious = <T>(value: T): T | undefined => {
   // Consts
   const ref = useRef<T>();
 
   // Other
   useEffect(() => {
-    ref.current = pValue;
+    ref.current = value;
   });
 
   return ref.current;
