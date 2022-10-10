@@ -1,14 +1,15 @@
-import { MouseEvent, useEffect } from "react";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
+import { MouseEvent, useEffect } from 'react';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
+import useScrollPosition from 'shared/customHooks/scrollPosition/useScrollPosition';
 
-import { Toolbar } from "@mui/material";
+import { Toolbar } from '@mui/material';
 
-import Logo from "./logo/Logo";
-import LanguageSelect from "./menu/languageSelect/LanguageSelect";
-import MainMenu from "./menu/mainMenu/MainMenu";
-import MobileMenu from "./menu/mobileMenu/MobileMenu";
-import AppBarStyled from "./menu/styledComponents/AppBarStyled";
+import Logo from './logo/Logo';
+import LanguageSelect from './menu/languageSelect/LanguageSelect';
+import MainMenu from './menu/mainMenu/MainMenu';
+import MobileMenu from './menu/mobileMenu/MobileMenu';
+import AppBarStyled from './menu/styledComponents/AppBarStyled';
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -18,20 +19,19 @@ interface IProps {
 }
 
 const NavBar = (props: IProps) => {
+  // Consts
+  const scrollYPosition: number = useScrollPosition();
+
   // Other
   useEffect(() => {
-    window.addEventListener("scroll", HeaderColorChange);
-
-    return () => {
-      window.removeEventListener("scroll", HeaderColorChange);
-    };
-  }, []);
+    HeaderColorChange();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollYPosition]);
 
   const HeaderColorChange = () => {
     const changeColorOnScrollHeight: number = 100;
-    const windowScrollTop = window.pageYOffset;
 
-    if (windowScrollTop > changeColorOnScrollHeight) {
+    if (scrollYPosition > changeColorOnScrollHeight) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove("start-style");
