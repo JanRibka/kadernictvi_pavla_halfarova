@@ -1,7 +1,7 @@
 import { MouseEvent, useEffect } from 'react';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
-import useScrollPosition from 'shared/customHooks/scrollPosition/useScrollPosition';
+import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
 
 import { Toolbar } from '@mui/material';
 
