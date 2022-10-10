@@ -11,7 +11,7 @@ const usePrevious = <T>(pValue: T): T | undefined => {
 
   // Other
   useEffect(() => {
-    ref.current = pValue as T;
+    ref.current = pValue;
   });
 
   return ref.current;
