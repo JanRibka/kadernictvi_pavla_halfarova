@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
  * @returns Scroll Y position
  */
 const useScrollPosition = () => {
-  //Consts
+  // State
   const [scrollPosition, setScrollPosition] = useState<number>(0);
 
   // Other
