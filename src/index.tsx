@@ -23,6 +23,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 //TODO: P5idat str8nku po v7padku spojeni (no connection page)
+//TODO: Udelat si vlastní hooky na efekty při skrolování a tak
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
