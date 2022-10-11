@@ -1,8 +1,8 @@
+import SectionTitleStyled from 'kadernictvi_pavla_halfarova/globalStyles/styledComponent/sectionTitle/SectionTitleStyled';
 import { forwardRef, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
-import SectionTitleStyled from 'shared/styles/sectionTitle/SectionTitleStyled';
 
 import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
