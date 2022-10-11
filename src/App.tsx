@@ -1,7 +1,7 @@
 import Layout from 'kadernictvi_pavla_halfarova/features/layout/Layout';
 import { useEffect } from 'react';
+import CookieConsent from 'shared/components/cookieConsent/CookieConsent';
 import SendPageViewToGA from 'shared/googleAnalytics/SendPageViewToGA';
-import CookieConsent from 'shared/infrastructure/cookieConsent/CookieConsent';
 
 const App = () => {
   // Other
