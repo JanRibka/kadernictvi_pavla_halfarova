@@ -12,7 +12,7 @@ import NavBar from './NavBar/NavBar';
 const Layout = () => {
   // State
   const [seldTab, setSeldTab] = useState<number>(0);
-
+  // TODO: P5ep9n8n9 tla49tek pri skrolovan9 https://codepen.io/alvarotrigo/pen/MWvXmja
   // Other
   const TabSelectOnChangeAction = (
     event: MouseEvent<HTMLButtonElement> | undefined
