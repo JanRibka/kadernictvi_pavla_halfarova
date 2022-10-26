@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import InitGA from 'shared/googleAnalytics/InitGA';
 import { CookieHelper } from 'shared/helpers/cookieHelper';
 
-import CookieConsentStyled from './CookieConsentStyled';
+import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
+import CookieConsentStyled from './styledComponents/CookieConsentStyled';
 
 // TODO: Udělat cookie podle dobra energie.cz, nebo https://www.energiezamene.cz/, nejlepe podle https://www.stesti.cz/, https://www.online-akce.cz/, https://jakoskala.cz/
 const CookienConsent = () => {
@@ -14,6 +15,7 @@ const CookienConsent = () => {
   debugger;
 
   // Sate
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   // const [viewedCookiePolicy, setViewedCookiePolicy] = useState<string>("");
 
   // Other
@@ -38,8 +40,8 @@ const CookienConsent = () => {
   };
 
   return (
-    <CookieConsentStyled className='cookie-policy-main-dialog'>
-      {t("mainText")}
+    <CookieConsentStyled>
+      <CookieConsentDialog isOpen={isOpen} setIsOpen={setIsOpen} />
     </CookieConsentStyled>
 
     // <AppCookieConsent
