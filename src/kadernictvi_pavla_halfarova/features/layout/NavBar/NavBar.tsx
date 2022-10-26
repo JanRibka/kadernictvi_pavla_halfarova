@@ -9,7 +9,7 @@ import Logo from './logo/Logo';
 import LanguageSelect from './menu/languageSelect/LanguageSelect';
 import MainMenu from './menu/mainMenu/MainMenu';
 import MobileMenu from './menu/mobileMenu/MobileMenu';
-import AppBarStyled from './menu/styledComponents/AppBarStyled';
+import AppBarStyled from './styledComponents/AppBarStyled';
 
 interface IProps {
   tabSelectOnChangeAction: (
