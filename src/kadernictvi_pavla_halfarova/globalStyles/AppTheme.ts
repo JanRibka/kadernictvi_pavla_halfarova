@@ -2,9 +2,9 @@ import createTheme from '@mui/material/styles/createTheme';
 
 // Colors
 const pinkMain = "rgb(229, 46, 113)";
-const palettePrimaryLight = "rgb(16, 16, 16)";
+// const palettePrimaryLight = "rgb(16, 16, 16)";
 const palettePrimaryMain = "rgb(1, 1, 1)";
-const palettePrimaryDark = "rgb(80, 99, 43)";
+const palettePrimaryDark = "rgb(40, 40, 40)";
 const paletteSecondaryMain = "rgb(212, 120, 168)";
 const paletteSecondaryDark = "rgb(197, 71, 137)";
 const paletteTextPrimary = "rgb(112, 112, 112)";
@@ -51,7 +51,7 @@ const AppThemeComponents = createTheme(AppThemeTypography, {
 const AppThemePalette = createTheme(AppThemeComponents, {
   palette: {
     primary: {
-      light: palettePrimaryLight,
+      // light: palettePrimaryLight,
       main: palettePrimaryMain,
       dark: palettePrimaryDark,
     },

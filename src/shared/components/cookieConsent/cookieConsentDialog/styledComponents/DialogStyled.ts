@@ -6,6 +6,10 @@ const DialogStyled = styled(Dialog)(({ theme }) => ({
   right: 0,
   bottom: 0,
   left: "auto",
+
+  [theme.breakpoints.down("md")]: {
+    left: 0,
+  },
 }));
 
 export default DialogStyled;

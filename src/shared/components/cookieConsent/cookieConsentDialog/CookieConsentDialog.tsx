@@ -2,11 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@mui/material/Button';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
+import DialogActionsStyled from './styledComponents/DialogActionsStyled';
 import DialogStyled from './styledComponents/DialogStyled';
 
 interface IProps {
@@ -22,12 +22,14 @@ const CookieConsentDialog = (props: IProps) => {
     <DialogStyled open={props.isOpen} disableScrollLock hideBackdrop>
       <DialogTitle>{t("dialoHeader")}</DialogTitle>
       <DialogContent>
-        <DialogContentText>asd</DialogContentText>
+        <DialogContentText color='text.primary' align='justify'>
+          {t("dialogContent")}
+        </DialogContentText>
       </DialogContent>
-      <DialogActions>
-        <Button>as</Button>
-        <Button>asd</Button>
-      </DialogActions>
+      <DialogActionsStyled>
+        <Button variant='contained'>{t("dialogBtnAcceptAll")}</Button>
+        <Button variant='text'>{t("dialogBtnSettings")}</Button>
+      </DialogActionsStyled>
     </DialogStyled>
   );
 };
