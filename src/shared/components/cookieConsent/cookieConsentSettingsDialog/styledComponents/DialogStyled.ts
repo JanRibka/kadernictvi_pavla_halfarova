@@ -16,7 +16,7 @@ const DialogStyled = styled(Dialog)(({ theme }) => ({
 
   [theme.breakpoints.up("md")]: {
     "& .MuiDialog-paper": {
-      maxHeight: "28.4em",
+      maxHeight: "26.4em",
     },
   },
 }));

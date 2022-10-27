@@ -1,10 +1,10 @@
 import { Dispatch } from 'react';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from '@mui/material/Accordion';
 import Switch from '@mui/material/Switch';
 
 import AccordionDetailsStyled from './styledComponents/AccordionDetailsStyled';
-import AccordionStyled from './styledComponents/AccordionStyled';
 import AccordionSummaryStyled from './styledComponents/AccordionSummaryStyled';
 import AccordionSummaryWrapperStyled from './styledComponents/AccordionSummaryWrapperStyled';
 
@@ -18,7 +18,7 @@ interface IProps {
 
 const CookieItem: React.FC<IProps> = (props) => {
   return (
-    <AccordionStyled>
+    <Accordion>
       <AccordionSummaryWrapperStyled>
         <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
           {props.cookieName}
@@ -32,7 +32,7 @@ const CookieItem: React.FC<IProps> = (props) => {
         />
       </AccordionSummaryWrapperStyled>
       <AccordionDetailsStyled>{props.cookieDescription}</AccordionDetailsStyled>
-    </AccordionStyled>
+    </Accordion>
   );
 };
 
