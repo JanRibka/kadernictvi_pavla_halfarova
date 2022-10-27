@@ -1,9 +1,11 @@
 export class CookieHelper {
   Set(name: string, value: string, exDays: number) {
     const d = new Date();
-    const expires: string = "expores=" + d.toUTCString();
 
     d.setTime(d.getTime() + exDays * 24 * 60 * 60 * 1000);
+
+    const expires: string = "expires=" + d.toUTCString();
+
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
   }
 
