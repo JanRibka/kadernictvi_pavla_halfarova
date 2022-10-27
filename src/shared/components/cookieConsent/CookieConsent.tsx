@@ -7,6 +7,7 @@ import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieCon
 
 const CookienConsent = () => {
   // Consts
+  const cookieExpiresIn: number = 180;
   const cookieHelper: CookieHelper = new CookieHelper();
   const googleAnalyticsHelper: GoogleAnalyticsHelper =
     new GoogleAnalyticsHelper();
@@ -39,7 +40,7 @@ const CookienConsent = () => {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
 
-    cookieHelper.Set("CookieConsent", "true", 180);
+    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
     setIsOpen(false);
   };
 
@@ -56,7 +57,7 @@ const CookienConsent = () => {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
 
-    cookieHelper.Set("CookieConsent", "true", 180);
+    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
     setIsOpenSettings(false);
     setIsOpen(false);
   };
@@ -68,7 +69,7 @@ const CookienConsent = () => {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
 
-    cookieHelper.Set("CookieConsent", "true", 180);
+    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
     setIsOpenSettings(false);
     setIsOpen(false);
   };
