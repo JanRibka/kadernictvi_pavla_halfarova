@@ -39,9 +39,7 @@ const AppThemeComponents = createTheme(AppThemeTypography, {
   components: {
     MuiButton: {
       styleOverrides: {
-        root: {
-          fontFamily: "'Teko', sans-serif",
-        },
+        root: {},
       },
     },
   },

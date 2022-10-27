@@ -1,5 +1,5 @@
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
 const NavLinksStyled = styled(Box)(
   ({ theme }) =>
@@ -11,8 +11,7 @@ const NavLinksStyled = styled(Box)(
     text-decoration: none;
     position: relative;
     color: white;
-    font-size: 1.5em;
-    font-family: 'Teko', sans-serief;    
+    font-size: 1.5em;     
     letter-spacing: 0.02857em;    
 
     span {

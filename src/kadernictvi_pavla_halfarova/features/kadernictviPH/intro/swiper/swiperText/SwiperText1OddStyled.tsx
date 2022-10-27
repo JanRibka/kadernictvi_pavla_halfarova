@@ -5,8 +5,7 @@ const SwiperText2Styled = styled(Typography)(
   ({ theme }) =>
     `
     font-size: 5rem;
-    visibility: hidden;
-    font-family: 'Teko', sans-serif;
+    visibility: hidden;    
     color: white;    
     transition: font-size 100ms linear 700ms, visibility 1ms linear 700ms;
     
