@@ -6,7 +6,7 @@ import { CookieHelper } from 'shared/helpers/cookieHelper';
 import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
 import CookieConsentStyled from './styledComponents/CookieConsentStyled';
 
-// TODO: Udělat cookie podle dobra energie.cz, nebo https://www.energiezamene.cz/, nejlepe podle https://www.stesti.cz/, https://www.online-akce.cz/, https://jakoskala.cz/
+// TODO: Udělat cookie podle dobra energie.cz, nebo https://www.energiezamene.cz/, nejlepe podle https://www.stesti.cz/, https://www.online-akce.cz/, https://jakoskala.cz/, https://www.svetandroida.cz/
 const CookienConsent = () => {
   // Consts
   const cookieHelper: CookieHelper = new CookieHelper();
