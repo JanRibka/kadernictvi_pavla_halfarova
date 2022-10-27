@@ -9,6 +9,7 @@ const App = () => {
     SendPageViewToGA();
   }, []);
   //TODO: https://dev.to/ramonak/react-enable-google-analytics-after-a-user-grants-consent-5bg3
+  //TODO: Sjednotit písma
   return (
     <>
       <Layout />
