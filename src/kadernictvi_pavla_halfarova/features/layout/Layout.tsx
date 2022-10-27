@@ -1,6 +1,6 @@
 import { createRef, MouseEvent, SyntheticEvent, useRef, useState } from 'react';
 import { event as eventGA, EventArgs } from 'react-ga';
-import SendEventToGA from 'shared/googleAnalytics/SendEventToGA';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
 import { Box } from '@mui/system';
 
@@ -10,6 +10,10 @@ import MobileMenu from './NavBar/menu/mobileMenu/MobileMenu';
 import NavBar from './NavBar/NavBar';
 
 const Layout = () => {
+  // Constants
+  const googleAnalyticsHelper: GoogleAnalyticsHelper =
+    new GoogleAnalyticsHelper();
+
   // State
   const [seldTab, setSeldTab] = useState<number>(0);
   // TODO: P5ep9n8n9 tla49tek pri skrolovan9 https://codepen.io/alvarotrigo/pen/MWvXmja
@@ -23,7 +27,11 @@ const Layout = () => {
       : 0;
     setSeldTab(value);
     debugger;
-    SendEventToGA("Hlavní menu", name, "Přechod do sekce " + name);
+    googleAnalyticsHelper.SendEventToGA(
+      "Hlavní menu",
+      name,
+      "Přechod do sekce " + name
+    );
   };
 
   const TabSelectMobileOnClickAction = (

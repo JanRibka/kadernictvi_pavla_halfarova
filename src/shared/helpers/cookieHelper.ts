@@ -8,7 +8,7 @@ export class CookieHelper {
   }
 
   Get(name: string) {
-    const cname = name + "=";
+    const cName = name + "=";
     const ca = document.cookie.split(";");
 
     for (let i = 0; i < ca.length; i++) {
@@ -16,10 +16,14 @@ export class CookieHelper {
       while (c.charAt(0) === " ") {
         c = c.substring(1);
       }
-      if (c.indexOf(cname) === 0) {
-        return c.substring(cname.length, c.length);
+      if (c.indexOf(cName) === 0) {
+        return c.substring(cName.length, c.length);
       }
     }
     return "";
+  }
+
+  Remove(name: string) {
+    document.cookie = name + "=; max-age=0;";
   }
 }

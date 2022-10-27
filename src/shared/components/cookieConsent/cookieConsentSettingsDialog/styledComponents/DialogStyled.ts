@@ -2,18 +2,21 @@ import Dialog from '@mui/material/Dialog';
 import { styled } from '@mui/material/styles';
 
 const DialogStyled = styled(Dialog)(({ theme }) => ({
-  top: "auto",
-  right: 0,
-  bottom: 0,
-  left: "auto",
-
   [theme.breakpoints.down("md")]: {
-    left: 0,
+    padding: "1em",
 
     "& .MuiDialog-paper": {
-      margin: "1em",
+      height: "100%",
+      maxHeight: "100%",
       width: "100%",
       maxWidth: "100%",
+      margin: 0,
+    },
+  },
+
+  [theme.breakpoints.up("md")]: {
+    "& .MuiDialog-paper": {
+      maxHeight: "28.4em",
     },
   },
 }));

@@ -1,65 +1,97 @@
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import InitGA from 'shared/googleAnalytics/InitGA';
+import { MouseEvent, useEffect, useState } from 'react';
 import { CookieHelper } from 'shared/helpers/cookieHelper';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
 import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
-import CookieConsentStyled from './styledComponents/CookieConsentStyled';
+import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
 
-// TODO: Udělat cookie podle dobra energie.cz, nebo https://www.energiezamene.cz/, nejlepe podle https://www.stesti.cz/, https://www.online-akce.cz/, https://jakoskala.cz/, https://www.svetandroida.cz/
 const CookienConsent = () => {
   // Consts
   const cookieHelper: CookieHelper = new CookieHelper();
-  const { t } = useTranslation(["cookieConsent\\cookieConsent"]);
-
-  debugger;
+  const googleAnalyticsHelper: GoogleAnalyticsHelper =
+    new GoogleAnalyticsHelper();
 
   // Sate
-  const [isOpen, setIsOpen] = useState<boolean>(true);
-  // const [viewedCookiePolicy, setViewedCookiePolicy] = useState<string>("");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
+  const [necCookieValue, setNecCookieValue] = useState<boolean>(true);
+  const [diagCookieValue, setDiagCookieValue] = useState<boolean>(false);
 
   // Other
   useEffect(() => {
-    GetViewedCookiePolicyValue();
+    GetCookieConsentValue();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const GetViewedCookiePolicyValue = () => {
-    const value: string = cookieHelper.Get("viewed-cookie-policy");
+  const GetCookieConsentValue = () => {
+    const value: string = cookieHelper.Get("CookieConsent");
 
-    if (value !== "") {
-      // TODO: Nastavit na wrapper visibilitu, defauktne je display none
+    if (value === "") {
+      googleAnalyticsHelper.RemoveGA();
+      setIsOpen(true);
     }
-    // setViewedCookiePolicy(value);
   };
 
-  const handleAcceptCookie = () => {
+  const HandleAccepAllOnClickAction = (
+    event: MouseEvent<HTMLButtonElement>
+  ) => {
     if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
-      InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+      googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
+
+    cookieHelper.Set("CookieConsent", "true", 180);
+    setIsOpen(false);
+  };
+
+  const HandleOpenSettingsOnClickAction = (
+    event: MouseEvent<HTMLButtonElement>
+  ) => {
+    setIsOpenSettings(true);
+  };
+
+  const HandleAgreeAllOnClickAction = (
+    event: MouseEvent<HTMLButtonElement>
+  ) => {
+    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
+      googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+    }
+
+    cookieHelper.Set("CookieConsent", "true", 180);
+    setIsOpenSettings(false);
+    setIsOpen(false);
+  };
+
+  const HandleSaveSettingsOnClickAction = (
+    event: MouseEvent<HTMLButtonElement>
+  ) => {
+    if (diagCookieValue && process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
+      googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+    }
+
+    cookieHelper.Set("CookieConsent", "true", 180);
+    setIsOpenSettings(false);
+    setIsOpen(false);
   };
 
   return (
-    <CookieConsentStyled>
-      <CookieConsentDialog isOpen={isOpen} setIsOpen={setIsOpen} />
-    </CookieConsentStyled>
+    <>
+      <CookieConsentDialog
+        isOpen={isOpen}
+        accepAllOnClickAction={HandleAccepAllOnClickAction}
+        openSettingsOnClickAction={HandleOpenSettingsOnClickAction}
+      />
 
-    // <AppCookieConsent
-    //   location='bottom'
-    //   buttonText={t("buttonText")}
-    //   cookieName='viewed_cookie_policy'
-    //   style={{ background: "rgba(12, 35, 43, 0.8)" }}
-    //   onAccept={handleAcceptCookie}
-    //   buttonStyle={{
-    //     color: "#4e503b",
-    //     fontSize: "13px",
-    //     height: "30px",
-    //     borderRadius: "10px",
-    //   }}
-    //   expires={150}
-    // >
-    //   {t("mainText")}
-    // </AppCookieConsent>
+      <CookieConsentSettingsDialog
+        isOpen={isOpenSettings}
+        setIsOpen={setIsOpenSettings}
+        necCookieValue={necCookieValue}
+        setNecCookieValue={setNecCookieValue}
+        diagCookieValue={diagCookieValue}
+        setDiagCookieValue={setDiagCookieValue}
+        agreeAllOnClickAction={HandleAgreeAllOnClickAction}
+        saveSettingsOnClickAction={HandleSaveSettingsOnClickAction}
+      />
+    </>
   );
 };
 

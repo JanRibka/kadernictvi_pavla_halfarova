@@ -1,4 +1,4 @@
-import React from 'react';
+import { MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@mui/material/Button';
@@ -11,7 +11,8 @@ import DialogStyled from './styledComponents/DialogStyled';
 
 interface IProps {
   isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  accepAllOnClickAction: (event: MouseEvent<HTMLButtonElement>) => void;
+  openSettingsOnClickAction: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const CookieConsentDialog = (props: IProps) => {
@@ -27,8 +28,12 @@ const CookieConsentDialog = (props: IProps) => {
         </DialogContentText>
       </DialogContent>
       <DialogActionsStyled>
-        <Button variant='contained'>{t("dialogBtnAcceptAll")}</Button>
-        <Button variant='text'>{t("dialogBtnSettings")}</Button>
+        <Button variant='contained' onClick={props.accepAllOnClickAction}>
+          {t("dialogBtnAcceptAll")}
+        </Button>
+        <Button variant='text' onClick={props.openSettingsOnClickAction}>
+          {t("dialogBtnSettings")}
+        </Button>
       </DialogActionsStyled>
     </DialogStyled>
   );

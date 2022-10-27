@@ -2,5 +2,14 @@
   "dialogHeader": "Používáme cookies",
   "dialogContent": "Tyto webové stránky používají nezbytné soubory cookie k zajištění správného fungování a sledovací soubory cookie, abychom pochopili, jak s nimi komunikujete. Sledovací soubory cookie budou nastaveny až po Vašem souhlasu.",
   "dialogBtnAcceptAll": "Přijmout vše",
-  "dialogBtnSettings": "Nastavení"
+  "dialogBtnSettings": "Nastavení",
+  "dialogSettingsHeader": "Nastavení cookies",
+  "dialogSettingsContentHeader": "Použití souborů cookie",
+  "dialogSettingsContentText": "Pro fungování webových stránek využíváme soubory cookie, což jsou malé soubory, které naše stránky pomocí prohlížeče ukládají do vašeho zařízení nebo z něj čtou. Soubory cookie používáme k zajištění základních funkcí webu a k analýze údajů o našich návštěvnících. Používáním tohoto webu s tímto používáním souhlasíte.",
+  "necCookieName": "Funkční cookies",
+  "necCookieDescription": "Jedná se o soubory cookie, které jsou nezbytné k tomu, aby web správně fungoval, takže není možné je vypnout.",
+  "diagCookieName": "Analytické cookies",
+  "diagCookieDescription": "Tyto soubory cookie shromažďují informace o tom, jak webovou stránku používáte, které stránky jste navštívili a na které odkazy jste klikli. Všechna data jsou anonymizována a nelze je použít k vaší identifikaci.",
+  "dialogSettingBtnAgreeAll": "Souhlasím se vším",
+  "dialogSettingBtnSaveSettings": "Uložit nastavení"
 }

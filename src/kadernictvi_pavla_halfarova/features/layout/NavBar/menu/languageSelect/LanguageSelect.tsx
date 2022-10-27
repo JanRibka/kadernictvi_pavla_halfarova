@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { MouseEvent, useRef, useState } from 'react';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
-import SendEventToGA from 'shared/googleAnalytics/SendEventToGA';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 import i18n from 'shared/infrastructure/localize/i18n';
 
 import Box from '@mui/material/Box';
@@ -21,6 +21,8 @@ const LanguageSelect = () => {
   const refMenu = useRef<HTMLDivElement>(null);
 
   // Consts
+  const googleAnalyticsHelper: GoogleAnalyticsHelper =
+    new GoogleAnalyticsHelper();
   const i18nextLng: string | null =
     i18next.language || localStorage.getItem("i18nextLng");
   const seldLanguage: string | undefined = Countries.find(
@@ -49,7 +51,7 @@ const LanguageSelect = () => {
 
     setSeldCountry(value);
     refMenu?.current?.classList.remove("opened");
-    SendEventToGA(
+    googleAnalyticsHelper.SendEventToGA(
       "Hlavní menu",
       title as string,
       ("Přepnutí jazyka na " + title) as string

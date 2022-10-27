@@ -2,5 +2,14 @@
   "dialogHeader": "Używamy plików cookie",
   "dialogContent": "Ta strona korzysta z niezbędnych plików cookie, aby zapewnić prawidłowe działanie i śledzące pliki cookie, aby zrozumieć, w jaki sposób wchodzisz z nimi w interakcję. Śledzące pliki cookie zostaną ustawione dopiero po wyrażeniu przez Ciebie zgody.",
   "dialogBtnAcceptAll": "Zaakceptuj wszystko",
-  "dialogBtnSettings": "Ustawienia"
+  "dialogBtnSettings": "Ustawienia",
+  "dialogSettingsHeader": "Ustawienia plików cookie",
+  "dialogSettingsContentHeader": "Korzystanie z plików cookie",
+  "dialogSettingsContentText": "Do działania serwisu używamy cookies, czyli małych plików, które nasza strona przechowuje na Twoim urządzeniu lub odczytuje z niego przez Twoją przeglądarkę. Używamy plików cookie, aby zapewnić podstawową funkcjonalność witryny i analizować dane o naszych gościach. Korzystając z tej strony, zgadzasz się na to użycie.",
+  "necCookieName": "Funkcjonalne pliki cookie",
+  "necCookieDescription": "Są to pliki cookies, które są niezbędne do prawidłowego działania serwisu, dlatego nie ma możliwości ich wyłączenia.",
+  "diagCookieName": "Analityczne pliki cookie",
+  "diagCookieDescription": "Te pliki cookie zbierają informacje o tym, jak korzystasz z witryny, które strony odwiedziłeś i które linki kliknąłeś. Wszystkie dane są anonimizowane i nie można ich wykorzystać do identyfikacji użytkownika.",
+  "dialogSettingBtnAgreeAll": "Zgadzam się ze wszystkim",
+  "dialogSettingBtnSaveSettings": "Zapisz ustawienia"
 }
