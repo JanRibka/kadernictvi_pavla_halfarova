@@ -11,5 +11,6 @@
   "diagCookieName": "Analityczne pliki cookie",
   "diagCookieDescription": "Te pliki cookie zbierają informacje o tym, jak korzystasz z witryny, które strony odwiedziłeś i które linki kliknąłeś. Wszystkie dane są anonimizowane i nie można ich wykorzystać do identyfikacji użytkownika.",
   "dialogSettingBtnAgreeAll": "Zgadzam się ze wszystkim",
-  "dialogSettingBtnSaveSettings": "Zapisz ustawienia"
+  "dialogSettingBtnSaveSettings": "Zapisz ustawienia",
+  "dialogSettingBtnRejectAll": "Odrzuć wszystko"
 }

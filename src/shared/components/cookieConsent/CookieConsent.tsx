@@ -75,6 +75,14 @@ const CookienConsent = () => {
     setIsOpen(false);
   };
 
+  const HandleRejectAllOnClickAction = (
+    event: MouseEvent<HTMLButtonElement>
+  ) => {
+    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
+    setIsOpenSettings(false);
+    setIsOpen(false);
+  };
+
   return (
     <>
       <CookieConsentDialog
@@ -92,6 +100,7 @@ const CookienConsent = () => {
         setDiagCookieValue={setDiagCookieValue}
         agreeAllOnClickAction={HandleAgreeAllOnClickAction}
         saveSettingsOnClickAction={HandleSaveSettingsOnClickAction}
+        rejectAllOnClickAction={HandleRejectAllOnClickAction}
       />
     </>
   );

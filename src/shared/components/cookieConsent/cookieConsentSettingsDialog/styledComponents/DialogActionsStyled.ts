@@ -8,8 +8,17 @@ const DialogActionsStyled = styled(DialogActions)(({ theme }) => ({
 
     button: {
       width: "100%",
+
+      ":first-of-type": {
+        margin: "0 0 5px 0",
+      },
+
       ":not(:first-of-type)": {
-        marginLeft: 0,
+        margin: "5px 0 5px 0",
+      },
+
+      ":last-of-type": {
+        margin: "5px 0 0 0",
       },
     },
   },

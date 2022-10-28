@@ -23,6 +23,7 @@ interface IProps {
   setDiagCookieValue: Dispatch<React.SetStateAction<boolean>>;
   agreeAllOnClickAction: (event: MouseEvent<HTMLButtonElement>) => void;
   saveSettingsOnClickAction: (event: MouseEvent<HTMLButtonElement>) => void;
+  rejectAllOnClickAction: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const CookieConsentSettingsDialog = (props: IProps) => {
@@ -70,6 +71,9 @@ const CookieConsentSettingsDialog = (props: IProps) => {
         </Button>
         <Button onClick={props.saveSettingsOnClickAction}>
           {t("dialogSettingBtnSaveSettings")}
+        </Button>
+        <Button onClick={props.saveSettingsOnClickAction}>
+          {t("dialogSettingBtnRejectAll")}
         </Button>
       </DialogActionsStyled>
     </DialogStyled>

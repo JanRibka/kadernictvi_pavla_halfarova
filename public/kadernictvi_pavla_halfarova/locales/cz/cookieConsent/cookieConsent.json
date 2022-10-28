@@ -11,5 +11,6 @@
   "diagCookieName": "Analytické cookies",
   "diagCookieDescription": "Tyto soubory cookie shromažďují informace o tom, jak webovou stránku používáte, které stránky jste navštívili a na které odkazy jste klikli. Všechna data jsou anonymizována a nelze je použít k vaší identifikaci.",
   "dialogSettingBtnAgreeAll": "Souhlasím se vším",
-  "dialogSettingBtnSaveSettings": "Uložit nastavení"
+  "dialogSettingBtnSaveSettings": "Uložit nastavení",
+  "dialogSettingBtnRejectAll": "Odmítnout vše"
 }
