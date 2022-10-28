@@ -25,6 +25,10 @@ const DialogContentStyled = styled(DialogContent)(
       box-shadow: inset 0 0 10px 10px ${theme.palette.grey[500]};
     }
   }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
 `
 );
 
