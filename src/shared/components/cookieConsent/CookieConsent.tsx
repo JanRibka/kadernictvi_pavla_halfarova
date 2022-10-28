@@ -5,6 +5,7 @@ import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
 import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
 
+// TODO: Přidat tlačítko na dialog s nastavením "Odmítnout vše". Tlačítko bude na konci a vzhled bude jako uložit nastavení
 const CookienConsent = () => {
   // Consts
   const cookieExpiresIn: number = 180;
