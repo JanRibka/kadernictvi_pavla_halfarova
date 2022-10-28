@@ -11,7 +11,7 @@ const NavLinksStyled = styled(Box)(
     text-decoration: none;
     position: relative;
     color: white;
-    font-size: 1.5em;     
+    font-size: 1.1em;     
     letter-spacing: 0.02857em;    
 
     span {
@@ -32,6 +32,10 @@ const NavLinksStyled = styled(Box)(
       text-transform: uppercase;      
       opacity: 1;
       transform: translate(0,0px);      
+    }
+
+    & .MuiTouchRipple-root {
+      color: transparent;
     }
 
     &:hover, &:focus {
