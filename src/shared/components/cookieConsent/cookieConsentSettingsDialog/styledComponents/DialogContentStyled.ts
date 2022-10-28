@@ -7,22 +7,22 @@ const DialogContentStyled = styled(DialogContent)(
   overflow-y: auto;
 
   &::-webkit-scrollbar {
-    width: 0.4em;
-    height: 100%;  
+    width: 10px;
   }
 
-  // &::-webkit-scrollbar-track {
-  //   -webkit-box-shadow: inset 0 0 0.9em rgba(0,0,0,0.3);
-  // }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px 10px ${theme.palette.grey[200]};
+    border: solid 3px transparent;
+    border-radius: 10px;
+  }
 
   &::-webkit-scrollbar-thumb {
-    border: 0.25em solid ${theme.palette.grey[400]};  
-    background-color: darkgrey;
-    // outline: 1px solid slategrey;
+    box-shadow: inset 0 0 10px 10px ${theme.palette.grey[400]};
+    border: solid 3px transparent;
     border-radius: 10px;
 
     &:hover {
-      border: 0.25em solid ${theme.palette.grey[500]};  
+      box-shadow: inset 0 0 10px 10px ${theme.palette.grey[500]};
     }
   }
 `
