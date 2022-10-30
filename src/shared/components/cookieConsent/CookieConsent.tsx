@@ -1,9 +1,9 @@
-import { MouseEvent, useEffect, useState } from 'react';
-import { CookieHelper } from 'shared/helpers/cookieHelper';
-import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
+import { MouseEvent, useEffect, useState } from "react";
+import { CookieHelper } from "shared/helpers/cookieHelper";
+import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
 
-import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
-import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
+import CookieConsentDialog from "./cookieConsentDialog/CookieConsentDialog";
+import CookieConsentSettingsDialog from "./cookieConsentSettingsDialog/CookieConsentSettingsDialog";
 
 // TODO: Přidat tlačítko na dialog s nastavením "Odmítnout vše". Tlačítko bude na konci a vzhled bude jako uložit nastavení
 const CookienConsent = () => {
@@ -75,14 +75,6 @@ const CookienConsent = () => {
     setIsOpen(false);
   };
 
-  const HandleRejectAllOnClickAction = (
-    event: MouseEvent<HTMLButtonElement>
-  ) => {
-    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
-    setIsOpenSettings(false);
-    setIsOpen(false);
-  };
-
   return (
     <>
       <CookieConsentDialog
@@ -100,7 +92,6 @@ const CookienConsent = () => {
         setDiagCookieValue={setDiagCookieValue}
         agreeAllOnClickAction={HandleAgreeAllOnClickAction}
         saveSettingsOnClickAction={HandleSaveSettingsOnClickAction}
-        rejectAllOnClickAction={HandleRejectAllOnClickAction}
       />
     </>
   );
