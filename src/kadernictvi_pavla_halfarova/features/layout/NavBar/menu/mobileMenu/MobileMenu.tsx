@@ -7,8 +7,8 @@ import { useTheme } from '@mui/material/styles';
 import NavLinks from '../navLinks/NavLinks';
 import HamburgerIcon from './hamburgerIcon/HamburgerIcon';
 import LanguageSelect from './languageSelect/languageSelect';
-import NavLinksStyled from './navLinks/NavLinksStyled';
-import NavLinksWrapperStyled from './navLinks/NavLinksWrapperStyled';
+import NavLinksStyled from './navLinks/styledComponents/NavLinksStyled';
+import NavLinksWrapperStyled from './navLinks/styledComponents/NavLinksWrapperStyled';
 
 interface IProps {
   onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
