@@ -1,8 +1,8 @@
-import createTheme from '@mui/material/styles/createTheme';
+import createTheme from "@mui/material/styles/createTheme";
 
 // Colors
 const pinkMain = "rgb(229, 46, 113)";
-// const palettePrimaryLight = "rgb(16, 16, 16)";
+const palettePrimaryLight = "rgb(40, 40, 40)";
 const palettePrimaryMain = "rgb(1, 1, 1)";
 const palettePrimaryDark = "rgb(40, 40, 40)";
 const paletteSecondaryMain = "rgb(212, 120, 168)";
@@ -49,7 +49,7 @@ const AppThemeComponents = createTheme(AppThemeTypography, {
 const AppThemePalette = createTheme(AppThemeComponents, {
   palette: {
     primary: {
-      // light: palettePrimaryLight,
+      light: palettePrimaryLight,
       main: palettePrimaryMain,
       dark: palettePrimaryDark,
     },
