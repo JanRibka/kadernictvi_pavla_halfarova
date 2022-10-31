@@ -43,7 +43,7 @@ const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
         height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1), opacity 500ms linear;
     }
 
-    &.scroll-on {
+    &.scroll-on:not(.is-opened) {
       top: 9px;
     }
   }
