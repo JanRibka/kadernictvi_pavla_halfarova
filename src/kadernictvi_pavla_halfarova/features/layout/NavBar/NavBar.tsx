@@ -38,13 +38,25 @@ const NavBar = (props: IProps) => {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add("scroll-on");
+      document.body
+        .getElementsByClassName("mobile-menu-icon")[0]
+        .classList.add("scroll-on");
+      document.body
+        .getElementsByClassName("mobile-menu-nav")[0]
+        .classList.add("scroll-on");
     } else {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add("start-style");
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove("scroll-on");
       document.body
-        .getElementsByTagName("header")[0]
-        .classList.add("start-style");
+        .getElementsByClassName("mobile-menu-icon")[0]
+        .classList.remove("scroll-on");
+      document.body
+        .getElementsByClassName("mobile-menu-nav")[0]
+        .classList.remove("scroll-on");
     }
   };
   // TODO: Zrušit grid a místo toho dát na tlačítka flex grow 1

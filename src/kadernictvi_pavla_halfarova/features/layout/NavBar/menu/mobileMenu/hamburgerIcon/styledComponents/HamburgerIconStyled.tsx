@@ -6,7 +6,7 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
 ))`
   & .mobile-menu-icon {
     position: fixed;
-    top: 35px;
+    top: 45px;
     right: 40px;
     display: block;
     width: 30px;
@@ -15,6 +15,7 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
     margin: 0;
     cursor: pointer;
     z-index: 10;
+    transition: top 300ms ease-out;
 
     &:before {
       position: absolute;
@@ -47,6 +48,10 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
       margin-top: -1px;
       transition: width 100ms 1750ms ease, right 100ms 1750ms ease,
         margin-top 100ms ease, transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &.scroll-on {
+      top: 30px;
     }
 
     &.is-opened {

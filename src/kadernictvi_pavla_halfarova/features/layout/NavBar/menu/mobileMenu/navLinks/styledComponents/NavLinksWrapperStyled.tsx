@@ -6,8 +6,8 @@ const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
 ))`
   & .mobile-menu-nav {
     position: fixed;
-    top: 14px;
-    right: 24px;
+    top: 23px;
+    right: 23px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,8 +18,9 @@ const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
     z-index: 9;
     overflow: hidden;
     opacity: 0;
+    border-radius: 50%;
     box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
-    animation: border-transform 7s linear infinite;
+    //animation: border-transform 7s linear infinite;
     transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
       right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
       transform 250ms 1100ms ease,
@@ -40,6 +41,10 @@ const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
         transform 250ms 700ms ease,
         width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
         height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1), opacity 500ms linear;
+    }
+
+    &.scroll-on {
+      top: 9px;
     }
   }
 

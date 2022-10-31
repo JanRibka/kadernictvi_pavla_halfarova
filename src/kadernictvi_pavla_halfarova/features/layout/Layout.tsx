@@ -26,7 +26,7 @@ const Layout = () => {
       ? Number(event?.currentTarget.value)
       : 0;
     setSeldTab(value);
-    debugger;
+
     googleAnalyticsHelper.SendEventToGA(
       "Hlavní menu",
       name,
