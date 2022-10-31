@@ -1,9 +1,9 @@
-import { MouseEvent, useEffect, useState } from "react";
-import { CookieHelper } from "shared/helpers/cookieHelper";
-import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
+import { MouseEvent, useEffect, useState } from 'react';
+import { CookieHelper } from 'shared/helpers/cookieHelper';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
-import CookieConsentDialog from "./cookieConsentDialog/CookieConsentDialog";
-import CookieConsentSettingsDialog from "./cookieConsentSettingsDialog/CookieConsentSettingsDialog";
+import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
+import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
 
 // TODO: Přidat tlačítko na dialog s nastavením "Odmítnout vše". Tlačítko bude na konci a vzhled bude jako uložit nastavení
 const CookienConsent = () => {
@@ -38,7 +38,7 @@ const CookienConsent = () => {
     event: MouseEvent<HTMLButtonElement>
   ) => {
     if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
-      googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+      googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID); // TODO: Zmenit id na nové google analytics
     }
 
     cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
