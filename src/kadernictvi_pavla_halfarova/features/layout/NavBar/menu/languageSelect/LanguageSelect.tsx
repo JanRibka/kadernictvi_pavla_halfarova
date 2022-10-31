@@ -4,6 +4,7 @@ import { LanguageEnum } from 'shared/enums/LanguageEnum';
 import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 import i18n from 'shared/infrastructure/localize/i18n';
 
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Box from '@mui/material/Box';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import MenuItem from '@mui/material/MenuItem';
@@ -76,6 +77,7 @@ const LanguageSelect = () => {
         <Box position='relative'>
           <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
             <ImageSrcStyled src={seldCountry} />
+            <ArrowDropDownIcon />
           </ImageButtonStyled>
           {/* Menu */}
           <MenuWrapperStyled ref={refMenu}>
