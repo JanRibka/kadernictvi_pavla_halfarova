@@ -16,7 +16,7 @@ const ToggleButtonStyled = styled(ToggleButton)(({ theme }) => ({
     backgroundColor: "white",
     transform: "scaleX(0)",
     transformOrigin: "center",
-    transition: "transform 0.5s",
+    transition: "transform 500ms ease-in-out",
   },
 
   "&:active": {
