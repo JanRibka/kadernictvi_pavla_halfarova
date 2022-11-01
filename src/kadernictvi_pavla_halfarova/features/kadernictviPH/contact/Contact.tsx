@@ -1,11 +1,10 @@
-import SectionTitleStyled from 'kadernictvi_pavla_halfarova/globalStyles/styledComponent/sectionTitle/SectionTitleStyled';
 import { forwardRef, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
+import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
 
 import { useMediaQuery } from '@mui/material';
-import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
 import Contacts from './contacts/Contacts';
@@ -44,7 +43,10 @@ const Contact = forwardRef(
               justifyContent: "center",
             }}
           >
-            <SectionTitleStyled variant='h4'>{t("contact")}</SectionTitleStyled>
+            <SectionTitle
+              mainText={t("headerMain")}
+              secondaryText={t("headerSecondary")}
+            />
           </GridItem>
           {/* Constacts */}
           <GridItem xs={12}>

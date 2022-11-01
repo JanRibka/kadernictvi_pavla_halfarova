@@ -1,8 +1,8 @@
-import SectionTitleStyled from 'kadernictvi_pavla_halfarova/globalStyles/styledComponent/sectionTitle/SectionTitleStyled';
 import { forwardRef, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
+import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
 
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -43,7 +43,11 @@ const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             justifyContent: "center",
           }}
         >
-          <SectionTitleStyled variant='h4'>{t("myWork")}</SectionTitleStyled>
+          <SectionTitle
+            mainText={t("myWork")}
+            secondaryText='asd'
+            color='secondary'
+          />
         </GridItem>
         {/* Fotky */}
         <GridItemStyled xs={4}>
