@@ -5,7 +5,7 @@ import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 import { Box } from '@mui/system';
 
 import KadernictviPHPage from '../pages/KadernictviPHPage';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 import MobileMenu from './NavBar/menu/mobileMenu/MobileMenu';
 import NavBar from './NavBar/NavBar';
 
