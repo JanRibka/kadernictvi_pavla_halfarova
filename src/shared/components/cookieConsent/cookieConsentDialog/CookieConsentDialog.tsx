@@ -21,9 +21,9 @@ const CookieConsentDialog = (props: IProps) => {
 
   return (
     <DialogStyled open={props.isOpen} disableScrollLock hideBackdrop>
-      <DialogTitle>{t("dialogHeader")}</DialogTitle>
+      <DialogTitle color='text.secondary'>{t("dialogHeader")}</DialogTitle>
       <DialogContent>
-        <DialogContentText color='text.primary' align='justify'>
+        <DialogContentText color='text.secondary' align='justify'>
           {t("dialogContent")}
         </DialogContentText>
       </DialogContent>

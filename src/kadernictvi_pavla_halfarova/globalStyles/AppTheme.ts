@@ -8,7 +8,7 @@ const palettePrimaryDark = "rgb(0, 0, 0)";
 const paletteSecondaryMain = "rgb(212, 120, 168)";
 const paletteSecondaryDark = "rgb(197, 71, 137)";
 const paletteTextPrimary = "rgb(238, 238, 238)";
-const paletteTextSecondary = "rgb(212, 120, 168)";
+const paletteTextSecondary = "rgb(42, 42, 42)";
 const paletteCustomTextPinkMain = pinkMain;
 const paletteCustomBackgroundPinkMain = pinkMain;
 

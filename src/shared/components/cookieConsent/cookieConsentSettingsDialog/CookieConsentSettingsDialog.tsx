@@ -1,18 +1,18 @@
-import React, { Dispatch, MouseEvent } from "react";
-import { useTranslation } from "react-i18next";
+import React, { Dispatch, MouseEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import CloseIcon from "@mui/icons-material/Close";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import DialogTitle from "@mui/material/DialogTitle";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+import CloseIcon from '@mui/icons-material/Close';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import DialogTitle from '@mui/material/DialogTitle';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 
-import CookieItem from "./cookieItem/CookieItem";
-import DialogActionsStyled from "./styledComponents/DialogActionsStyled";
-import DialogContentStyled from "./styledComponents/DialogContentStyled";
-import DialogStyled from "./styledComponents/DialogStyled";
-import DialogTitleWrapperStyled from "./styledComponents/DialogTitleWrapperStyled";
+import CookieItem from './cookieItem/CookieItem';
+import DialogActionsStyled from './styledComponents/DialogActionsStyled';
+import DialogContentStyled from './styledComponents/DialogContentStyled';
+import DialogStyled from './styledComponents/DialogStyled';
+import DialogTitleWrapperStyled from './styledComponents/DialogTitleWrapperStyled';
 
 interface IProps {
   isOpen: boolean;
@@ -32,7 +32,9 @@ const CookieConsentSettingsDialog = (props: IProps) => {
   return (
     <DialogStyled open={props.isOpen} disableScrollLock={false}>
       <DialogTitleWrapperStyled>
-        <DialogTitle>{t("dialogSettingsHeader")}</DialogTitle>
+        <DialogTitle color='text.secondary'>
+          {t("dialogSettingsHeader")}
+        </DialogTitle>
         <IconButton
           onClick={() => {
             props.setIsOpen(false);
@@ -44,10 +46,10 @@ const CookieConsentSettingsDialog = (props: IProps) => {
       </DialogTitleWrapperStyled>
 
       <DialogContentStyled dividers>
-        <Typography fontWeight='bold'>
+        <Typography color='text.secondary' fontWeight='bold'>
           {t("dialogSettingsContentHeader")}
         </Typography>
-        <Box component='p' textAlign='justify'>
+        <Box component='p' textAlign='justify' color='text.secondary'>
           {t("dialogSettingsContentText")}
         </Box>
         <CookieItem
