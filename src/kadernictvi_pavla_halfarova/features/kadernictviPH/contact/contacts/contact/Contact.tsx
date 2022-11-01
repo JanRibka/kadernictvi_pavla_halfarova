@@ -4,11 +4,11 @@ import EnvelopeIcon from 'shared/icons/envelope/EnvelopeIcon';
 
 import PhoneIcon from '@mui/icons-material/Phone';
 import PlaceIcon from '@mui/icons-material/Place';
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 
-import AppContactWrapperStyled from './AppContactWrapperStyled';
+import AppContactWrapperStyled from './styledComponents/AppContactWrapperStyled';
+import ContactWrapperStyled from './styledComponents/ContactWrapperStyled';
+import IconWrapperStyled from './styledComponents/IconWrapperStyled';
+import LabelWrapperStyled from './styledComponents/LabelWrapperStyled';
 
 interface IProps {
   contactType: ContactTypeEnum;
@@ -19,7 +19,6 @@ interface IProps {
 const AppContact = (props: IProps) => {
   // Consts
   const { t } = useTranslation(["shared\\contact\\appContact"]);
-  const theme = useTheme();
   const href: string | undefined =
     props.contactType === ContactTypeEnum.Tel
       ? "tel:" + props.contact.replaceAll(" ", "")
@@ -44,16 +43,7 @@ const AppContact = (props: IProps) => {
       className={wrapperClassName}
     >
       {/* Icon */}
-      <Box
-        sx={{
-          color: theme.palette.secondary.main,
-          height: "48px",
-          width: "48px",
-          svg: {
-            fontSize: "xxx-large",
-          },
-        }}
-      >
+      <IconWrapperStyled>
         {(() => {
           switch (props.contactType) {
             case ContactTypeEnum.Tel:
@@ -66,10 +56,10 @@ const AppContact = (props: IProps) => {
               return <PlaceIcon className='hvr-icon' />;
           }
         })()}
-      </Box>
+      </IconWrapperStyled>
 
       {/* Label */}
-      <Typography variant='h6' color={theme.palette.text.primary}>
+      <LabelWrapperStyled variant='h6'>
         {(() => {
           switch (props.contactType) {
             case ContactTypeEnum.Tel:
@@ -82,16 +72,10 @@ const AppContact = (props: IProps) => {
               return t("address");
           }
         })()}
-      </Typography>
+      </LabelWrapperStyled>
 
       {/* Contact */}
-      <Typography
-        variant='h6'
-        textAlign='center'
-        color={theme.palette.text.primary}
-      >
-        {props.contact}
-      </Typography>
+      <ContactWrapperStyled variant='h6'>{props.contact}</ContactWrapperStyled>
     </AppContactWrapperStyled>
   );
 };

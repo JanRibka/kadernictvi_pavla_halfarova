@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import Contact from './Contact';
+import Contact from './contact/Contact';
 
 const Contacts = () => {
   // Consts

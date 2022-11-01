@@ -9,9 +9,9 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
 import Contacts from './contacts/Contacts';
-import ContactStyled from './ContactStyled';
 import GoogleMaps from './googleMaps/GoogleMaps';
 import SocialIcons from './socialIcons/SocialIcons';
+import ContactStyled from './styledComponents/ContactStyled';
 
 interface IProps {}
 // TODO: na pozadi bude nejaky obrzek a pres nej cerna barva

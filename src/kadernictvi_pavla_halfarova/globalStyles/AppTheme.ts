@@ -1,13 +1,13 @@
-import createTheme from "@mui/material/styles/createTheme";
+import createTheme from '@mui/material/styles/createTheme';
 
 // Colors
 const pinkMain = "rgb(229, 46, 113)";
-const palettePrimaryLight = "rgb(40, 40, 40)";
-const palettePrimaryMain = "rgb(1, 1, 1)";
-const palettePrimaryDark = "rgb(40, 40, 40)";
+const palettePrimaryLight = "rgb(61, 61, 61)";
+const palettePrimaryMain = "rgb(42, 42, 42)";
+const palettePrimaryDark = "rgb(0, 0, 0)";
 const paletteSecondaryMain = "rgb(212, 120, 168)";
 const paletteSecondaryDark = "rgb(197, 71, 137)";
-const paletteTextPrimary = "rgb(112, 112, 112)";
+const paletteTextPrimary = "#eee";
 const paletteTextSecondary = "rgb(212, 120, 168)";
 const paletteCustomTextPinkMain = pinkMain;
 const paletteCustomBackgroundPinkMain = pinkMain;
