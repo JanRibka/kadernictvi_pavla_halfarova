@@ -19,6 +19,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     alignItems: "center",
     flexDirection: "column",
     marginTop: "1rem",
+
     button: {
       color: "white",
       position: "relative",
@@ -35,31 +36,28 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
       lineHeight: "1.1",
 
       "&:after": {
-        content: "''",
         position: "absolute",
+        content: "''",
         left: "0%",
-        bottom: "-10px",
+        bottom: "-5px",
         width: "100%",
         height: "2px",
-        backgroundColor: theme.palette.common.background.pink,
-        opacity: 0,
-        transition: "all 200ms linear",
+        backgroundColor: "white",
+        transform: "scaleX(0)",
+        transformOrigin: "center",
+        transition: "transform 300ms ease-in-out",
       },
 
-      // "&.active": {
-      //   "&:after": {
-      //     transform: "scaleX(1)",
-      //     transformOrigin: "left",
-      //   },
-      // },
+      "&.active": {
+        "&:after": {
+          transform: "scaleX(1)",
+          transformOrigin: "center",
+        },
+      },
 
       "&:hover": {
-        backgroundColor: "transparent",
-        color: theme.palette.common.text.pink,
-        "&:after": {
-          bottom: "-3px",
-          opacity: "1",
-        },
+        paddingBottom: "10px",
+        marginTop: "15px",
       },
 
       span: {
@@ -89,21 +87,27 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
         opacity: "1",
         visibility: "visible",
         transform: "translateY(0)",
-        transition: "opacity 350ms ease, transform 250ms ease",
+        transition:
+          "opacity 350ms ease, transform 250ms ease, margin 200ms ease-in-out, padding 200ms ease-in-out",
         "&:nth-of-type(1)": {
-          transitionDelay: "1480ms",
+          transitionDelay: "1480ms, 0ms, 0ms, 0ms",
+          transitionProperty: "opacity, transform, margin, padding",
         },
         "&:nth-of-type(2)": {
-          transitionDelay: "1560ms",
+          transitionDelay: "1560ms, 0ms, 0ms, 0ms",
+          transitionProperty: "opacity, transform, margin, padding",
         },
         "&:nth-of-type(3)": {
-          transitionDelay: "1640ms",
+          transitionDelay: "1640ms, 0ms, 0ms, 0ms",
+          transitionProperty: "opacity, transform, margin, padding",
         },
         "&:nth-of-type(4)": {
-          transitionDelay: "1720ms",
+          transitionDelay: "1720ms, 0ms, 0ms, 0ms",
+          transitionProperty: "opacity, transform, margin, padding",
         },
         "&:nth-of-type(5)": {
-          transitionDelay: "1800ms",
+          transitionDelay: "1800ms, 0ms, 0ms, 0ms",
+          transitionProperty: "opacity, transform, margin, padding",
         },
 
         "&.active": {},
