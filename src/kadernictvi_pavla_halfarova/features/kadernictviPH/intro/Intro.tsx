@@ -51,27 +51,31 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
               {t("hairdressers")}
             </SwiperText1OddStyled>
             <SwiperText2OddStyled variant='h2'>
-              {t("pavlaHalfarova")}
+              {t("pavlaHalfarova")
+                .split("")
+                .map((letter, i) => (
+                  <span key={"menu-btn-letter_" + i}>{letter}</span>
+                ))}
             </SwiperText2OddStyled>
           </SwiperTextWrapperOddStyled>
           <img src={Intro1} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 1' />
         </SwiperSlideOddStyled>
         {/* Slide 2 */}
-        <SwiperSlideEvenStyled>
+        {/* <SwiperSlideEvenStyled>
           <img src={Intro2} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 2' />
-        </SwiperSlideEvenStyled>
+        </SwiperSlideEvenStyled> */}
         {/* Slide 3 */}
-        <SwiperSlideOddStyled>
+        {/* <SwiperSlideOddStyled>
           <img src={Intro3} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 3' />
-        </SwiperSlideOddStyled>
+        </SwiperSlideOddStyled> */}
         {/* Slide 4 */}
-        <SwiperSlideEvenStyled>
+        {/* <SwiperSlideEvenStyled>
           <img src={Intro4} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 4' />
-        </SwiperSlideEvenStyled>
+        </SwiperSlideEvenStyled> */}
         {/* Slide 5 */}
-        <SwiperSlideOddStyled>
+        {/* <SwiperSlideOddStyled>
           <img src={Intro5} alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 5' />
-        </SwiperSlideOddStyled>
+        </SwiperSlideOddStyled> */}
       </SwiperStyled>
     </Box>
   );

@@ -22,7 +22,6 @@ const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
 
     "& .slide-text": {
       "& .MuiTypography-root:nth-of-type(1)": {
-        fontSize: "6rem",
         visibility: "visible",
 
         [theme.breakpoints.down("md")]: {
