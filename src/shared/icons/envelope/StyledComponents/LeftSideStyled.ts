@@ -8,7 +8,7 @@ const LeftSideStyled = styled(Box)(({ theme }) => ({
   borderTop: "16px solid transparent",
   borderBottom: "16px solid transparent",
   zIndex: 4,
-  borderLeft: "20px solid " + theme.palette.secondary.dark,
+  borderLeft: "20px solid " + theme.palette.grey[400],
 }));
 
 export default LeftSideStyled;

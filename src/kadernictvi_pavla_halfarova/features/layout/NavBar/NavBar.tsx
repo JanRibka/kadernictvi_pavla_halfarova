@@ -3,13 +3,12 @@ import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
 import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
 
-import { Toolbar } from '@mui/material';
-
 import Logo from './logo/Logo';
 import LanguageSelect from './menu/languageSelect/LanguageSelect';
 import MainMenu from './menu/mainMenu/MainMenu';
 import MobileMenu from './menu/mobileMenu/MobileMenu';
 import AppBarStyled from './styledComponents/AppBarStyled';
+import ToolbarStyled from './styledComponents/ToolbarStyled';
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -61,9 +60,8 @@ const NavBar = (props: IProps) => {
   };
   // TODO: Zrušit grid a místo toho dát na tlačítka flex grow 1
   return (
-    // <Box flexGrow={1}>
     <AppBarStyled className='start-style'>
-      <Toolbar>
+      <ToolbarStyled>
         <GridContainer>
           <GridItem xs={12} md={3} alignItems='center'>
             <Logo />
@@ -90,9 +88,8 @@ const NavBar = (props: IProps) => {
           onClickAction={props.tabSelectOnChangeAction}
           seldTab={props.seldTab}
         />
-      </Toolbar>
+      </ToolbarStyled>
     </AppBarStyled>
-    // </Box>
   );
 };
 

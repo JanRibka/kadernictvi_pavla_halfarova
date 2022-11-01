@@ -1,9 +1,9 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-import FacebookIconStyled from './FacebookIconStyled';
-import InstagramIconStyled from './InstagramIconStyled';
-import SocialIconStyled from './SocialIconStyled';
+import FacebookIconStyled from './styledComponents/FacebookIconStyled';
+import InstagramIconStyled from './styledComponents/InstagramIconStyled';
+import SocialIconStyled from './styledComponents/SocialIconStyled';
 
 const SocialIcons = () => {
   return (

@@ -12,6 +12,7 @@ import Contacts from './contacts/Contacts';
 import GoogleMaps from './googleMaps/GoogleMaps';
 import SocialIcons from './socialIcons/SocialIcons';
 import ContactStyled from './styledComponents/ContactStyled';
+import ContactsWrapperStyled from './styledComponents/ContactsWrapperStyled';
 
 interface IProps {}
 // TODO: na pozadi bude nejaky obrzek a pres nej cerna barva
@@ -19,7 +20,7 @@ const Contact = forwardRef(
   (props: IProps, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts
     const theme = useTheme();
-    const { t } = useTranslation(["contact\\contact"]);
+    const { t } = useTranslation(["kadernictviPH\\contact\\contact"]);
     const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
     const breakpointLgUp: boolean = useMediaQuery(theme.breakpoints.up("lg"));
     const breakpointXlUp: boolean = useMediaQuery(theme.breakpoints.up("xl"));
@@ -47,20 +48,12 @@ const Contact = forwardRef(
           </GridItem>
           {/* Constacts */}
           <GridItem xs={12}>
-            <Box
-              sx={{
-                width: "100%",
-                margin: "0 15px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-            >
+            <ContactsWrapperStyled>
               {/* Tel, email, address */}
               <Contacts />
               {/* Social Icons */}
               <SocialIcons />
-            </Box>
+            </ContactsWrapperStyled>
           </GridItem>
         </GridContainer>
         <GridContainer>

@@ -8,7 +8,7 @@ const BottomSideStyled = styled(Box)(
   z-index: 4;
   border-left: 24px solid transparent;
   border-right: 24px solid transparent;  
-  border-bottom: 24px solid ${theme.palette.secondary.dark};
+  border-bottom: 24px solid ${theme.palette.grey[400]};
 `
 );
 
