@@ -1,4 +1,5 @@
 const Footer = () => {
+  // TODO: Pridat na stránku
   return <></>;
 };
 
