@@ -3,12 +3,10 @@ import { forwardRef, MouseEvent, Ref, useState } from 'react';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
 import i18n from 'shared/infrastructure/localize/i18n';
 
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-
 import CzechFlag from '../../../../../../../shared/flags/czech-flag.png';
 import Countries from '../../languageSelect/models/Countries';
 import ToggleButtonGroupStyled from './styledComponents/ToggleButtonGroupStyled';
+import ToggleButtonStyled from './styledComponents/ToggleButtonStyled';
 
 const LanguageSelect = forwardRef(
   (props, ref: Ref<HTMLDivElement> | undefined) => {
@@ -42,18 +40,21 @@ const LanguageSelect = forwardRef(
     };
 
     return (
-      <ToggleButtonGroupStyled ref={ref}>
-        <ToggleButtonGroup size='large' exclusive value={seldCountry}>
-          {Countries.map((item, key) => (
-            <ToggleButton
-              value={item.Src}
-              key={key}
-              onClick={HandleLanguageOnChange}
-            >
-              <img src={item.Src} alt={item.Label} />
-            </ToggleButton>
-          ))}
-        </ToggleButtonGroup>
+      <ToggleButtonGroupStyled
+        ref={ref}
+        size='large'
+        exclusive
+        value={seldCountry}
+      >
+        {Countries.map((item, key) => (
+          <ToggleButtonStyled
+            value={item.Src}
+            key={key}
+            onClick={HandleLanguageOnChange}
+          >
+            <img src={item.Src} alt={item.Label} />
+          </ToggleButtonStyled>
+        ))}
       </ToggleButtonGroupStyled>
     );
   }
