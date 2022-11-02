@@ -10,7 +10,7 @@ const SwiperStyledEvenStyled = styled(SwiperSlide)(({ theme }) => ({
   "& img": {
     display: "block",
     width: "100%",
-    height: "100%",
+    height: "100vh",
     objectFit: "cover",
     transform: "scale(1.15) rotate(0.0deg)",
     transition: "all 10s linear",

@@ -15,12 +15,12 @@ import Intro2 from '../../../../shared/img/intro/Intro_2.jpg';
 import Intro3 from '../../../../shared/img/intro/Intro_3.jpg';
 import Intro4 from '../../../../shared/img/intro/Intro_4.jpg';
 import Intro5 from '../../../../shared/img/intro/Intro_5.jpg';
-import SwiperSlideEvenStyled from './swiper/swiperSlide/SwiperSlideEvenStyled';
-import SwiperSlideOddStyled from './swiper/swiperSlide/SwiperSlideOddStyled';
-import SwiperStyled from './swiper/SwiperStyled';
-import SwiperText1OddStyled from './swiper/swiperText/SwiperText1OddStyled';
-import SwiperText2OddStyled from './swiper/swiperText/SwiperText2OddStyled';
-import SwiperTextWrapperOddStyled from './swiper/swiperText/SwiperTextWrapperOddStyled';
+import SwiperStyled from './swiper/styledComponents/SwiperStyled';
+import SwiperSlideEvenStyled from './swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled';
+import SwiperSlideOddStyled from './swiper/swiperSlide/styledComponents/SwiperSlideOddStyled';
+import SwiperText1OddStyled from './swiper/swiperText/styledComponents/SwiperText1OddStyled';
+import SwiperText2OddStyled from './swiper/swiperText/styledComponents/SwiperText2OddStyled';
+import SwiperTextWrapperOddStyled from './swiper/swiperText/styledComponents/SwiperTextWrapperOddStyled';
 
 interface IProps {}
 
@@ -41,6 +41,7 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
         fadeEffect={{
           crossFade: true,
         }}
+        height={100}
         pagination={{ dynamicBullets: true, clickable: true }}
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
       >

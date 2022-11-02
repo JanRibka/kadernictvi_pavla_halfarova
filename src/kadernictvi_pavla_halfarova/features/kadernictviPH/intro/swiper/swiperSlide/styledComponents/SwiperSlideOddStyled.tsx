@@ -10,7 +10,7 @@ const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
   "& img": {
     display: "block",
     width: "100%",
-    height: "100%",
+    height: "100vh",
     objectFit: "cover",
     transition: "all 10s linear",
   },
