@@ -29,8 +29,9 @@ const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
         },
       },
       "& .MuiTypography-root:nth-of-type(2)": {
-        animationName: "typing",
-        opacity: 1,
+        span: {
+          opacity: 1,
+        },
       },
     },
   },
