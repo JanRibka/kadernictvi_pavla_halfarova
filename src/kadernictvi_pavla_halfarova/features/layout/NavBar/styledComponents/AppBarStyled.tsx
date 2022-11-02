@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   flexGrow: 1,
-  opacity: "0.9",
   transition: "all 300ms ease-out",
   "&.start-style": {
     // backgroundColor: "transparent",
