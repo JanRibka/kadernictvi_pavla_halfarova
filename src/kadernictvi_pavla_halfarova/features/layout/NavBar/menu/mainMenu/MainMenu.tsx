@@ -1,7 +1,5 @@
 import { MouseEvent } from 'react';
 
-import Box from '@mui/material/Box';
-
 import NavLinks from '../navLinks/NavLinks';
 import NavLinksStyled from './styledComponents/NavLinksStyled';
 
@@ -12,14 +10,9 @@ interface IProps {
 
 const MainMenu = (props: IProps) => {
   return (
-    <Box display='flex' alignItems='center'>
-      <NavLinksStyled>
-        <NavLinks
-          handleOnClick={props.onChangeAction}
-          actValue={props.seldTab}
-        />
-      </NavLinksStyled>
-    </Box>
+    <NavLinksStyled display={{ xs: "none", md: "flex" }}>
+      <NavLinks handleOnClick={props.onChangeAction} actValue={props.seldTab} />
+    </NavLinksStyled>
   );
 };
 

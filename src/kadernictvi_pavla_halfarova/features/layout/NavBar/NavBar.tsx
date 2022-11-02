@@ -1,6 +1,4 @@
 import { MouseEvent, useEffect } from 'react';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
 import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
 
 import Logo from './logo/Logo';
@@ -58,31 +56,19 @@ const NavBar = (props: IProps) => {
         .classList.remove("scroll-on");
     }
   };
-  // TODO: Zrušit grid a místo toho dát na tlačítka flex grow 1
+
   return (
     <AppBarStyled className='start-style'>
       <ToolbarStyled>
-        <GridContainer>
-          <GridItem xs={12} md={3} alignItems='center'>
-            <Logo />
-          </GridItem>
-          <GridItem
-            xs={9}
-            sx={{
-              display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
-              alignItems: "center",
-            }}
-          >
-            {/* Main menu */}
-            <MainMenu
-              onChangeAction={props.tabSelectOnChangeAction}
-              seldTab={props.seldTab}
-            />
-            {/* Language select */}
-            <LanguageSelect />
-          </GridItem>
-        </GridContainer>
+        {/* Logo */}
+        <Logo />
+        {/* Main menu */}
+        <MainMenu
+          onChangeAction={props.tabSelectOnChangeAction}
+          seldTab={props.seldTab}
+        />
+        {/* Language select */}
+        <LanguageSelect />
         {/* Mobile menu */}
         <MobileMenu
           onClickAction={props.tabSelectOnChangeAction}

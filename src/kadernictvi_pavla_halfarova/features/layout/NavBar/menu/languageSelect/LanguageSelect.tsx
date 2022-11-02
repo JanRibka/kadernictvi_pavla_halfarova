@@ -77,7 +77,7 @@ const LanguageSelect = () => {
   };
 
   return (
-    <LanguageSelectStyled>
+    <LanguageSelectStyled display={{ xs: "none", md: "flex" }}>
       <ClickAwayListener onClickAway={HandleOnClicAway}>
         <Box position='relative'>
           <ImageButtonStyled onClick={HandleLanguageButtonOnClick}>
