@@ -9,10 +9,10 @@ import { useTheme } from '@mui/material/styles';
 
 import Intro1 from '../../../../shared/img/intro/Intro_1.jpg';
 import Card from './card/Card';
-import CardMedia from './card/CardMedia';
-import CardStyled from './card/CardStyled';
+import CardMedia from './card/cardMedia/styledComponents/CardMedia';
+import CardStyled from './card/styledComponents/CardStyled';
 import GridItemStyled from './gridItem/GridItemStyled';
-import GalleryStyled from './MyWorkStyled';
+import GalleryStyled from './styledComponents/MyWorkStyled';
 
 interface IProps {}
 

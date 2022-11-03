@@ -5,7 +5,6 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/caveat';
-import '@fontsource/didact-gothic';
 
 import { AppTheme } from 'kadernictvi_pavla_halfarova/globalStyles/AppTheme';
 import React, { Suspense } from 'react';
