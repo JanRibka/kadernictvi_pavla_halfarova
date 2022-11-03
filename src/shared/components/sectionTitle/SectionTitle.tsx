@@ -20,12 +20,12 @@ interface IProps {
     | "body2";
   mainText: string;
   secondaryText: string;
-  color?: "primary" | "secondary";
+  color: string;
 }
 
 const SectionTitle: React.FC<IProps> = (props) => {
   return (
-    <SectionTitleStyled>
+    <SectionTitleStyled color={props.color}>
       <Typography className='main-text' variant={props.variantMainText}>
         {props.mainText}
       </Typography>
@@ -39,7 +39,6 @@ const SectionTitle: React.FC<IProps> = (props) => {
 // Default props
 SectionTitle.defaultProps = {
   variantMainText: "h2",
-  color: "primary",
 };
 
 export default SectionTitle;

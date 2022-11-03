@@ -46,6 +46,7 @@ const Contact = forwardRef(
             <SectionTitle
               mainText={t("headerMain")}
               secondaryText={t("headerSecondary")}
+              color={theme.palette.text.primary}
             />
           </GridItem>
           {/* Constacts */}

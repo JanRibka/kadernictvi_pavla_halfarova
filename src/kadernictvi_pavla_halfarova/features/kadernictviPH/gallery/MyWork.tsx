@@ -46,7 +46,7 @@ const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
           <SectionTitle
             mainText={t("myWork")}
             secondaryText='asd'
-            color='secondary'
+            color={theme.palette.text.secondary}
           />
         </GridItem>
         {/* Fotky */}
