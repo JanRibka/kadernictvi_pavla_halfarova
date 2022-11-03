@@ -19,7 +19,7 @@ interface IProps {}
 const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
   // Consts
   const theme = useTheme();
-  const { t } = useTranslation(["myWork\\myWork"]);
+  const { t } = useTranslation(["kadernictviPH\\myWork\\myWork"]);
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
   const breakpointLgUp: boolean = useMediaQuery(theme.breakpoints.up("lg"));
   const breakpointXlUp: boolean = useMediaQuery(theme.breakpoints.up("xl"));
@@ -44,8 +44,8 @@ const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
           }}
         >
           <SectionTitle
-            mainText={t("myWork")}
-            secondaryText='asd'
+            mainText={t("headerMain")}
+            secondaryText={t("headerSecondary")}
             color={theme.palette.text.secondary}
           />
         </GridItem>
