@@ -1,6 +1,6 @@
 import { CardProps } from '@mui/material/Card';
 
-import CardStyled from './CardStyled';
+import CardStyled from './styledComponents/CardStyled';
 
 const Card = (props: CardProps) => {
   return (

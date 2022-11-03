@@ -9,7 +9,7 @@ import { useTheme } from '@mui/material/styles';
 
 import Intro1 from '../../../../shared/img/intro/Intro_1.jpg';
 import Card from './card/Card';
-import CardMedia from './card/cardMedia/styledComponents/CardMedia';
+import CardMedia from './card/cardMedia/CardMedia';
 import CardStyled from './card/styledComponents/CardStyled';
 import GridItemStyled from './gridItem/GridItemStyled';
 import GalleryStyled from './styledComponents/MyWorkStyled';

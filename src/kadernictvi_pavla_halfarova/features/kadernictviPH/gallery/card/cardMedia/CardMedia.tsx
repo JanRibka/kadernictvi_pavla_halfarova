@@ -1,6 +1,6 @@
 import { CardMediaProps } from '@mui/material/CardMedia';
 
-import CardMediaStyled from './CardMediaStyled';
+import CardMediaStyled from './styledComponents/CardMediaStyled';
 
 const CardMedia = (props: CardMediaProps) => {
   return <CardMediaStyled {...props}></CardMediaStyled>;
