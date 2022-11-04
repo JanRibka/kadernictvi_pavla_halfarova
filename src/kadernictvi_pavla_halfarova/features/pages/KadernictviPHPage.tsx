@@ -2,6 +2,7 @@ import { forwardRef, Ref, useImperativeHandle, useRef } from 'react';
 
 import Box from '@mui/material/Box';
 
+import AboutMe from '../kadernictviPH/aboutMe/AboutMe';
 import Contact from '../kadernictviPH/contact/Contact';
 import MyWork from '../kadernictviPH/gallery/MyWork';
 import Intro from '../kadernictviPH/intro/Intro';
@@ -36,6 +37,7 @@ const KadernictviPage = forwardRef(
     return (
       <Box>
         <Intro ref={refIntro} />
+        <AboutMe />
         <Services ref={refServices} />
         <MyWork ref={refGallery} />
         <Contact ref={refContact} />
