@@ -9,7 +9,8 @@ const SwiperText2OddStyled = styled(Typography)(
     overflow: hidden; /* Ensures the content is not revealed until the animation */    
     white-space: nowrap; /* Keeps the content on a single line */    
     letter-spacing: .15em; /* Adjust as needed */
-    transition: opacity 1ms linear;    
+    transition: opacity 1ms linear;  
+    color: ${theme.palette.common.third.main}; 
 
     span {
       opacity: 0;

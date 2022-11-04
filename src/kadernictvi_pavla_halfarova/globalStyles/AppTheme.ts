@@ -1,7 +1,6 @@
 import createTheme from '@mui/material/styles/createTheme';
 
 // Colors
-const pinkMain = "rgb(229, 46, 113)";
 const palettePrimaryLight = "rgb(61, 61, 61)";
 const palettePrimaryMain = "rgb(42, 42, 42)";
 const palettePrimaryDark = "rgb(0, 0, 0)";
@@ -9,20 +8,17 @@ const paletteSecondaryMain = "rgb(212, 120, 168)";
 const paletteSecondaryDark = "rgb(197, 71, 137)";
 const paletteTextPrimary = "rgb(238, 238, 238)";
 const paletteTextSecondary = "rgb(42, 42, 42)";
-const paletteCustomTextPinkMain = pinkMain;
-const paletteCustomBackgroundPinkMain = pinkMain;
+const paletteCustomThirdLight = "rgb(184, 103, 33)";
+const paletteCustomThirdMain = "rgb(163, 91, 29)";
+const paletteCustomThirdDark = "rgb(140, 78, 25)";
 
 // Custom theme
 declare module "@mui/material/styles/createPalette" {
   interface CommonColors {
-    text: {
-      pink: string;
-    };
-    background: {
-      pink: string;
-    };
-    color: {
-      pink: string;
+    third: {
+      light: string;
+      main: string;
+      dark: string;
     };
   }
 }
@@ -62,14 +58,10 @@ const AppThemePalette = createTheme(AppThemeComponents, {
       secondary: paletteTextSecondary,
     },
     common: {
-      text: {
-        pink: paletteCustomTextPinkMain,
-      },
-      background: {
-        pink: paletteCustomBackgroundPinkMain,
-      },
-      color: {
-        pink: paletteCustomBackgroundPinkMain,
+      third: {
+        light: paletteCustomThirdLight,
+        main: paletteCustomThirdMain,
+        dark: paletteCustomThirdDark,
       },
     },
   },

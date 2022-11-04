@@ -27,10 +27,10 @@ const NavLinksStyled = styled(Box)(
         bottom: 10px;
         width: calc(100% - 30px);
         height: 2px;
-        background-color: white;            
+        background-color: ${theme.palette.common.third.main};            
         transform: translateX(15px) scaleX(0);
         transform-origin: center;
-        transition: transform 300ms ease-in-out;      
+        transition: transform 300ms ease-in-out;         
       }
 
       & .MuiTouchRipple-root {

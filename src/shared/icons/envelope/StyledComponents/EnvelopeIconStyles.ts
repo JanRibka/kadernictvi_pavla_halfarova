@@ -5,7 +5,7 @@ const EnvelopeIconStyled = styled(Box)(({ theme }) => ({
   width: "48px",
   height: "32px",
   position: "relative",
-  background: theme.palette.text.primary,
+  background: theme.palette.common.third.main,
   cursor: "pointer",
 
   "&:hover": {

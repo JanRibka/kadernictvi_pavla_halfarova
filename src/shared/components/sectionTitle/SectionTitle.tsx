@@ -20,16 +20,25 @@ interface IProps {
     | "body2";
   mainText: string;
   secondaryText: string;
-  color: string;
+  colorMain: string;
+  colorSecondary: string;
 }
 
 const SectionTitle: React.FC<IProps> = (props) => {
   return (
-    <SectionTitleStyled color={props.color}>
-      <Typography className='main-text' variant={props.variantMainText}>
+    <SectionTitleStyled>
+      <Typography
+        className='main-text'
+        variant={props.variantMainText}
+        color={props.colorMain}
+      >
         {props.mainText}
       </Typography>
-      <Typography className='secondary-text' variant='h5'>
+      <Typography
+        className='secondary-text'
+        variant='h5'
+        color={props.colorSecondary}
+      >
         {props.secondaryText}
       </Typography>
     </SectionTitleStyled>

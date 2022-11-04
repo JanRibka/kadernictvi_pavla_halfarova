@@ -8,7 +8,7 @@ const RightSideStyled = styled(Box)(({ theme }) => ({
   borderTop: "16px solid transparent",
   borderBottom: "16px solid transparent",
   zIndex: 4,
-  borderRight: "20px solid " + theme.palette.grey[400],
+  borderRight: "20px solid " + theme.palette.common.third.main,
 }));
 
 export default RightSideStyled;

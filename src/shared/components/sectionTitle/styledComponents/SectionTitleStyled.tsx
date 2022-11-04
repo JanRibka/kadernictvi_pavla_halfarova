@@ -1,20 +1,14 @@
-import Box, { BoxProps } from '@mui/material/Box';
+import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
-import { color } from '@mui/system';
 
-interface IProps extends BoxProps {
-  color: string;
-}
-
-const SectionTitleStyled = styled(({ color, ...props }: IProps) => (
-  <Box {...props} />
-))`
+const SectionTitleStyled = styled(Box)(
+  ({ theme }) =>
+    `
   margin-bottom: 40px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  ${color};
 
   & .main-text {
     font-weight: 400;
@@ -26,6 +20,7 @@ const SectionTitleStyled = styled(({ color, ...props }: IProps) => (
   & .secondary-text {
     font-family: "Caveat", cursive;
   }
-`;
+`
+);
 
 export default SectionTitleStyled;
