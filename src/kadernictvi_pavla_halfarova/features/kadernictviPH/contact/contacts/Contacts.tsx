@@ -19,9 +19,12 @@ const Contacts = () => {
       }}
     >
       {/* Telephone */}
-      <Contact contactType={ContactTypeEnum.Tel} contact='+420 601 123 456' />
+      <Contact contactType={ContactTypeEnum.Tel} contact='+420 702 635 908' />
       {/* Email */}
-      <Contact contactType={ContactTypeEnum.Mail} contact='kh@sawedf.cz' />
+      <Contact
+        contactType={ContactTypeEnum.Mail}
+        contact='HairSalonPH@gmail.com'
+      />
       {/* Address */}
       <Contact
         contactType={ContactTypeEnum.Address}
