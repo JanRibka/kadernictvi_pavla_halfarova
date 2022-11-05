@@ -7,7 +7,7 @@ import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-import GalleryStyled from './styledComponents/ServicesStyled';
+import ServicesStyled from './styledComponents/ServicesStyled';
 
 interface IProps {}
 
@@ -27,26 +27,40 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
     : "100%";
 
   return (
-    <GalleryStyled ref={ref}>
+    <ServicesStyled ref={ref}>
+      {/* Title */}
+      <SectionTitle
+        mainText={t("headerMain")}
+        secondaryText={t("headerSecondary")}
+        colorMain={theme.palette.text.primary}
+        colorSecondary={theme.palette.common.third.main}
+      />
+      {/* Services */}
       <GridContainer
         sx={{ maxWidth: gridContainerMaxWidth, alignItems: "center" }}
       >
-        {/* Title */}
+        {/* Cutting */}
         <GridItem
           xs={12}
+          md={6}
           sx={{
             justifyContent: "center",
           }}
         >
-          <SectionTitle
-            mainText={t("headerMain")}
-            secondaryText={t("headerSecondary")}
-            colorMain={theme.palette.text.primary}
-            colorSecondary={theme.palette.common.third.main}
-          />
+          <Services />
+        </GridItem>
+        {/* Coloring */}
+        <GridItem
+          xs={12}
+          md={6}
+          sx={{
+            justifyContent: "center",
+          }}
+        >
+          <Services />
         </GridItem>
       </GridContainer>
-    </GalleryStyled>
+    </ServicesStyled>
   );
 });
 
