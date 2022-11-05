@@ -7,6 +7,15 @@ const ImageWrapperStyled = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "auto",
   maxWidth: "483px",
+  transition: "padding 500ms ease",
+
+  "&:hover": {
+    padding: "8.9185px 25px 28.9185px 15px",
+    img: {
+      width: "calc(100% - 10px)",
+      transformOrigin: "center",
+    },
+  },
 
   "&:before": {
     content: "''",
@@ -24,6 +33,7 @@ const ImageWrapperStyled = styled(Box)(({ theme }) => ({
   img: {
     width: "inherit",
     height: "inherit",
+    transition: "all 500ms ease",
   },
 }));
 
