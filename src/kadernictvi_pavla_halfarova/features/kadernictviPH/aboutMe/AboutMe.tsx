@@ -1,14 +1,14 @@
-import { forwardRef, Ref } from 'react';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import { forwardRef, Ref } from "react";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
-import Description from './description/Description';
-import Photo from './photo/Photo';
-import PhotoWrapperStyled from './photo/styledComponents/PhotoWrapperStyled';
-import AboutMeStyled from './styledComponents/AboutMeStyled';
+import Description from "./description/Description";
+import Photo from "./photo/Photo";
+import PhotoWrapperStyled from "./photo/styledComponents/PhotoWrapperStyled";
+import AboutMeStyled from "./styledComponents/AboutMeStyled";
 
 interface IProps {}
 // TODO: na pozadi bude nejaky obrzek a pres nej cerna barva
