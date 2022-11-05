@@ -4,6 +4,9 @@ import { styled } from '@mui/material/styles';
 const ImageWrapperStyled = styled(Box)(({ theme }) => ({
   position: "relative",
   padding: "0 20px 20px 10px",
+  width: "100%",
+  height: "auto",
+  maxWidth: "483px",
 
   "&:before": {
     content: "''",
@@ -14,6 +17,13 @@ const ImageWrapperStyled = styled(Box)(({ theme }) => ({
     left: "45px",
     border: "1px solid " + theme.palette.common.third.main,
     zIndex: "-1",
+    width: "auto",
+    height: "auto",
+  },
+
+  img: {
+    width: "inherit",
+    height: "inherit",
   },
 }));
 

@@ -8,7 +8,6 @@ const SectionTitleStyled = styled(Box)(
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   & .main-text {
     font-weight: 400;

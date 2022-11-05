@@ -22,11 +22,12 @@ interface IProps {
   secondaryText: string;
   colorMain: string;
   colorSecondary: string;
+  textAlign?: "center" | "start";
 }
 
 const SectionTitle: React.FC<IProps> = (props) => {
   return (
-    <SectionTitleStyled>
+    <SectionTitleStyled alignItems={props.textAlign}>
       <Typography
         className='main-text'
         variant={props.variantMainText}
@@ -48,6 +49,7 @@ const SectionTitle: React.FC<IProps> = (props) => {
 // Default props
 SectionTitle.defaultProps = {
   variantMainText: "h2",
+  textAlign: "center",
 };
 
 export default SectionTitle;
