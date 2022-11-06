@@ -1,13 +1,14 @@
-import { forwardRef, Ref } from 'react';
-import { useTranslation } from 'react-i18next';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
-import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
+import { forwardRef, Ref } from "react";
+import { useTranslation } from "react-i18next";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
+import SectionTitle from "shared/components/sectionTitle/SectionTitle";
 
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
-import ServicesStyled from './styledComponents/ServicesStyled';
+import Service from "./service/Service";
+import ServicesStyled from "./styledComponents/ServicesStyled";
 
 interface IProps {}
 
@@ -47,7 +48,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             justifyContent: "center",
           }}
         >
-          <Services />
+          <Service />
         </GridItem>
         {/* Coloring */}
         <GridItem
@@ -57,7 +58,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             justifyContent: "center",
           }}
         >
-          <Services />
+          <Service />
         </GridItem>
       </GridContainer>
     </ServicesStyled>
