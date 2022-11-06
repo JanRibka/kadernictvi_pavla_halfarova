@@ -1,12 +1,12 @@
-import { MouseEvent, useEffect } from 'react';
-import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
+import { MouseEvent, useEffect } from "react";
+import useScrollPosition from "shared/customHooks/useScrollPosition/useScrollPosition";
 
-import Logo from './logo/Logo';
-import LanguageSelect from './menu/languageSelect/LanguageSelect';
-import MainMenu from './menu/mainMenu/MainMenu';
-import MobileMenu from './menu/mobileMenu/MobileMenu';
-import AppBarStyled from './styledComponents/AppBarStyled';
-import ToolbarStyled from './styledComponents/ToolbarStyled';
+import Logo from "./logo/Logo";
+import LanguageSelect from "./menu/languageSelect/LanguageSelect";
+import MainMenu from "./menu/mainMenu/MainMenu";
+import MobileMenu from "./menu/mobileMenu/MobileMenu";
+import AppBarStyled from "./styledComponents/AppBarStyled";
+import ToolbarStyled from "./styledComponents/ToolbarStyled";
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -14,7 +14,7 @@ interface IProps {
   ) => void;
   seldTab: number;
 }
-
+// TODO: Zkusit udělat horní lištu místo černé barvy gradient. Z vrchu tmava a dole světlá
 const NavBar = (props: IProps) => {
   // Consts
   const scrollYPosition: number = useScrollPosition();
