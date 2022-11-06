@@ -1,6 +1,6 @@
 import { IconButton } from "@mui/material";
 
-import KadernictviPHLogo from "../../../logo/logo_kadernictvi_ph_header.svg";
+import HairSalonPHLogo from "../../../logo/logo_hairsalon_ph.svg";
 
 const Logo = () => {
   return (
@@ -15,10 +15,7 @@ const Logo = () => {
       }}
       onClick={() => {}}
     >
-      <img
-        src={KadernictviPHLogo}
-        alt='Kadeřnictví Pavla halfarová - Logo'
-      ></img>
+      <img src={HairSalonPHLogo} alt='Hair Salon PH - Logo'></img>
     </IconButton>
   );
 };
