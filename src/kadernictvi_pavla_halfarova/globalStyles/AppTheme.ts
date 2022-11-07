@@ -4,7 +4,7 @@ import createTheme from '@mui/material/styles/createTheme';
 const palettePrimaryLight = "rgb(61, 61, 61)";
 const palettePrimaryMain = "rgb(42, 42, 42)";
 const palettePrimaryDark = "rgb(0, 0, 0)";
-const paletteSecondaryMain = "rgb(212, 120, 168)";
+const paletteSecondaryMain = "rgb(238, 238, 238)";
 const paletteSecondaryDark = "rgb(197, 71, 137)";
 const paletteTextPrimary = "rgb(238, 238, 238)";
 const paletteTextSecondary = "rgb(42, 42, 42)";

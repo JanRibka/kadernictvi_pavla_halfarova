@@ -1,14 +1,17 @@
-import { forwardRef, Ref } from "react";
-import { useTranslation } from "react-i18next";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
-import SectionTitle from "shared/components/sectionTitle/SectionTitle";
+import { forwardRef, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
+import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
 
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
-import Service from "./service/Service";
-import ServicesStyled from "./styledComponents/ServicesStyled";
+import hairColoring from './img/hairColoring.png';
+import hairCut from './img/hairCut.png';
+import { IItemProps } from './service/content/item/Item';
+import Service from './service/Service';
+import ServicesStyled from './styledComponents/ServicesStyled';
 
 interface IProps {}
 
@@ -26,6 +29,22 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
     : breakpointMdUp
     ? "860px"
     : "100%";
+  const cuttingItems: IItemProps[] = [
+    { name: "Dámský střih", price: 200 },
+    { name: "Pánský střih", price: 150 },
+    { name: "Dětský střih", price: 100 },
+  ];
+  const coloringItems: IItemProps[] = [
+    { name: "Barva (dle délky)", price: 600 },
+    { name: "Melír (dle délky)", price: 800 },
+    {
+      name: "Speciální melírovací techniky (badayage, neco neco)",
+      price: 1000,
+    },
+    { name: "Stahování barvy", price: 1000 },
+    { name: "Hloubková regenerace", price: 500 },
+  ];
+  // TODO: Texty dát do překladů
 
   return (
     <ServicesStyled ref={ref}>
@@ -38,7 +57,12 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
       />
       {/* Services */}
       <GridContainer
-        sx={{ maxWidth: gridContainerMaxWidth, alignItems: "center" }}
+        sx={{
+          maxWidth: gridContainerMaxWidth,
+          alignItems: "baseline",
+          backgroundColor: theme.palette.secondary.main,
+          borderRadius: "20px",
+        }}
       >
         {/* Cutting */}
         <GridItem
@@ -48,7 +72,12 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             justifyContent: "center",
           }}
         >
-          <Service />
+          <Service
+            icon={hairCut}
+            iconDescription='Stříhání vlasů'
+            description={t("serviceCutting")}
+            items={cuttingItems}
+          />
         </GridItem>
         {/* Coloring */}
         <GridItem
@@ -56,9 +85,15 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
           md={6}
           sx={{
             justifyContent: "center",
+            width: "100%",
           }}
         >
-          <Service />
+          <Service
+            icon={hairColoring}
+            iconDescription='Barvení vlasů'
+            description={t("serviceColoring")}
+            items={coloringItems}
+          />
         </GridItem>
       </GridContainer>
     </ServicesStyled>
