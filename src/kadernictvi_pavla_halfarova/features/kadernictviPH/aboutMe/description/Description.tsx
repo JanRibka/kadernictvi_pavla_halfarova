@@ -15,7 +15,7 @@ const Description = () => {
   const { t } = useTranslation(["kadernictviPH\\aboutMe\\aboutMe"]);
   const theme = useTheme();
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
-
+  // TODO: Předělat ikonu podle services
   return (
     <DescriptionStyled>
       <SectionTitle
