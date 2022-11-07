@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import scissors from './img/scissors.png';
+import DescriptionStyled from './styledComponents/DescriptionStyled';
 import ScissorsWrapperStyled from './styledComponents/ScissorsWrapperStyled';
 import TypographyStyled from './styledComponents/TypographyStyled';
 
@@ -16,7 +17,7 @@ const Description = () => {
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <Box sx={{ margin: "0 40px" }}>
+    <DescriptionStyled>
       <SectionTitle
         mainText={t("headerMain")}
         secondaryText={t("headerSecondary")}
@@ -33,7 +34,7 @@ const Description = () => {
       <ScissorsWrapperStyled>
         <img src={scissors} alt='Scissors' loading='lazy' />
       </ScissorsWrapperStyled>
-    </Box>
+    </DescriptionStyled>
   );
 };
 
