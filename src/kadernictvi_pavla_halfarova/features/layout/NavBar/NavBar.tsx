@@ -15,7 +15,6 @@ interface IProps {
   seldTab: number;
 }
 // TODO: Zkusit udělat horní lištu místo černé barvy gradient. Z vrchu tmava a dole světlá
-// TODO: Pri vetších sirkach okna nastavit maximalni sizky headeru
 const NavBar = (props: IProps) => {
   // Consts
   const scrollYPosition: number = useScrollPosition();
