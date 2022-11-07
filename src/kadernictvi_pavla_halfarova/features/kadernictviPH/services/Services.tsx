@@ -38,7 +38,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
     { name: "Barva (dle délky)", price: 600 },
     { name: "Melír (dle délky)", price: 800 },
     {
-      name: "Speciální melírovací techniky (badayage, neco neco)",
+      name: "Speciální melírovací techniky (badayage, ombre, airtouch)",
       price: 1000,
     },
     { name: "Stahování barvy", price: 1000 },
