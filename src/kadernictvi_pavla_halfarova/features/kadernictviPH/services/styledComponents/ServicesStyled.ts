@@ -1,5 +1,5 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const ServicesStyled = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -7,6 +7,10 @@ const ServicesStyled = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   padding: "4em 0px",
   backgroundColor: theme.palette.primary.dark,
+
+  [theme.breakpoints.down("md")]: {
+    padding: "4em 40px",
+  },
 }));
 
 export default ServicesStyled;

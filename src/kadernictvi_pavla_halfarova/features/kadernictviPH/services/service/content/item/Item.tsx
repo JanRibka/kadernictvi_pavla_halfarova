@@ -1,8 +1,12 @@
-import CheckIcon from '@mui/icons-material/Check';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import CountUp from "react-countup";
 
-import ItemStyled from './styledComponents/ItemStyled';
+import CheckIcon from "@mui/icons-material/Check";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+import ItemStyled from "./styledComponents/ItemStyled";
 
 export interface IItemProps {
   name: string;
@@ -10,6 +14,10 @@ export interface IItemProps {
 }
 // TOTO: Texty do překladů
 const Item = (props: IItemProps) => {
+  //Consts
+  const theme = useTheme();
+  const breakpointMdDwn: boolean = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <ItemStyled>
       <Box
@@ -24,6 +32,7 @@ const Item = (props: IItemProps) => {
       <Typography
         sx={{
           color: "primary.main",
+          marginRight: "20px",
         }}
       >
         {props.name}
@@ -44,17 +53,26 @@ const Item = (props: IItemProps) => {
           od
         </Typography>
         {/* Price */}
-        <Typography
-          variant='h5'
-          sx={{
-            color: "common.third.main",
-            marginRight: "5px",
-            width: "52px",
-            textAlign: "end",
-          }}
-        >
-          {props.price}
-        </Typography>
+        <CountUp start={0} end={props.price} delay={2}>
+          {({ countUpRef }) => (
+            <Typography
+              ref={countUpRef}
+              variant='h4'
+              sx={{
+                color: "common.third.main",
+                marginRight: "5px",
+                width: breakpointMdDwn ? "52px" : "75px",
+                fontSize: breakpointMdDwn ? "1.5rem" : undefined,
+                lineHeight: breakpointMdDwn ? "1.334" : undefined,
+                letterSpacing: breakpointMdDwn ? "0em" : undefined,
+                textAlign: "end",
+              }}
+            >
+              {/* {props.price} */}
+            </Typography>
+          )}
+        </CountUp>
+
         {/* Currency */}
         <Typography
           variant='h5'

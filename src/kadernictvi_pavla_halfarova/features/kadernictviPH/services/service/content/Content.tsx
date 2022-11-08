@@ -1,6 +1,6 @@
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 
-import Item, { IItemProps } from './item/Item';
+import Item, { IItemProps } from "./item/Item";
 
 interface IProps {
   items: IItemProps[];
@@ -23,7 +23,7 @@ const Content = (props: IProps) => {
     return result;
   };
 
-  return <Box sx={{ margin: "40px 0" }}>{RenderItems()}</Box>;
+  return <Box sx={{ margin: "40px 0 60px 0" }}>{RenderItems()}</Box>;
 };
 
 export default Content;
