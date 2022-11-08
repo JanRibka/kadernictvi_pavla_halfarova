@@ -21,7 +21,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     marginTop: "1rem",
 
     button: {
-      color: "white",
+      color: theme.palette.text.primary,
       position: "relative",
       disply: "block",
       width: "fit-content",
