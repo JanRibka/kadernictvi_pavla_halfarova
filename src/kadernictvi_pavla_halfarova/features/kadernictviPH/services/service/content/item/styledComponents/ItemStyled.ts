@@ -2,9 +2,11 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 const ItemStyled = styled(Box)(({ theme }) => ({
-  display: "flex",
+  display: "grid",
+  gridTemplateColumns: "35px 250px 120px",
   justifyContent: "start",
   margin: "0 20px 10px 20px",
+  alignItems: "center",
 
   "&:hover": {
     svg: {

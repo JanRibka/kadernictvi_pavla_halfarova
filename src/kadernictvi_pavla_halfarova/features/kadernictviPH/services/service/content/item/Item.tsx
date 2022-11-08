@@ -30,28 +30,34 @@ const Item = (props: IItemProps) => {
       <Box
         sx={{
           display: "flex",
+          alignItems: "center",
         }}
       >
         <Typography
           sx={{
             color: "primary.main",
+            marginRight: "5px",
           }}
         >
           od
         </Typography>
+
         <Typography
+          variant='h5'
           sx={{
             color: "common.third.main",
+            marginRight: "5px",
           }}
         >
           {props.price}
         </Typography>
         <Typography
+          variant='h5'
           sx={{
             color: "common.third.main",
           }}
         >
-          ,-
+          Kč
         </Typography>
       </Box>
     </ItemStyled>
