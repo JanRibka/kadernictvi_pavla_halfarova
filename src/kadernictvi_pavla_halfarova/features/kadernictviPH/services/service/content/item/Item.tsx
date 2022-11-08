@@ -56,6 +56,7 @@ const Item = (props: IItemProps) => {
         <CountUp
           start={0}
           end={props.price}
+          duration={1}
           enableScrollSpy
           scrollSpyOnce
           scrollSpyDelay={100}
