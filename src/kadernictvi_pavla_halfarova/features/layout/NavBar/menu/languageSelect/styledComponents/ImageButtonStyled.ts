@@ -10,6 +10,7 @@ const ImageButtonStyled = styled(ButtonBase)(({ theme }) => ({
   },
 
   ".MuiSvgIcon-root": {
+    color: theme.palette.text.primary,
     "&.opened": {
       rotate: "180deg",
     },
