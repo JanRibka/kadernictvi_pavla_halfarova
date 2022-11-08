@@ -8,7 +8,7 @@ export interface IItemProps {
   name: string;
   price: number;
 }
-
+// TOTO: Texty do překladů
 const Item = (props: IItemProps) => {
   return (
     <ItemStyled>
@@ -20,6 +20,7 @@ const Item = (props: IItemProps) => {
       >
         <CheckIcon />
       </Box>
+      {/* Name */}
       <Typography
         sx={{
           color: "primary.main",
@@ -33,6 +34,7 @@ const Item = (props: IItemProps) => {
           alignItems: "center",
         }}
       >
+        {/* Price from */}
         <Typography
           sx={{
             color: "primary.main",
@@ -41,16 +43,19 @@ const Item = (props: IItemProps) => {
         >
           od
         </Typography>
-
+        {/* Price */}
         <Typography
           variant='h5'
           sx={{
             color: "common.third.main",
             marginRight: "5px",
+            width: "52px",
+            textAlign: "end",
           }}
         >
           {props.price}
         </Typography>
+        {/* Currency */}
         <Typography
           variant='h5'
           sx={{
