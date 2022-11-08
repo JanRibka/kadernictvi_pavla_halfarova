@@ -1,21 +1,21 @@
-import i18next from 'i18next';
-import { MouseEvent, useRef, useState } from 'react';
-import { LanguageEnum } from 'shared/enums/LanguageEnum';
-import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
-import i18n from 'shared/infrastructure/localize/i18n';
+import i18next from "i18next";
+import { MouseEvent, useRef, useState } from "react";
+import { LanguageEnum } from "shared/enums/LanguageEnum";
+import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
+import i18n from "shared/infrastructure/localize/i18n";
 
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Box from '@mui/material/Box';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import MenuItem from '@mui/material/MenuItem';
-import Paper from '@mui/material/Paper';
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Box from "@mui/material/Box";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import MenuItem from "@mui/material/MenuItem";
+import Paper from "@mui/material/Paper";
 
-import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
-import Countries from './models/Countries';
-import ImageButtonStyled from './styledComponents/ImageButtonStyled';
-import ImageSrcStyled from './styledComponents/ImageSrcStyled';
-import LanguageSelectStyled from './styledComponents/LanguageSelectStyled';
-import MenuWrapperStyled from './styledComponents/MenuWrapperStyled';
+import CzechFlag from "../../../../../../shared/flags/czech-flag.png";
+import Countries from "./models/Countries";
+import ImageButtonStyled from "./styledComponents/ImageButtonStyled";
+import ImageSrcStyled from "./styledComponents/ImageSrcStyled";
+import LanguageSelectStyled from "./styledComponents/LanguageSelectStyled";
+import MenuWrapperStyled from "./styledComponents/MenuWrapperStyled";
 
 const LanguageSelect = () => {
   // References
