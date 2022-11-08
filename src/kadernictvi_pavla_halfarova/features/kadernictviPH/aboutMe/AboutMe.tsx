@@ -7,11 +7,11 @@ import { useTheme } from '@mui/material/styles';
 
 import Description from './description/Description';
 import Photo from './photo/Photo';
-import PhotoWrapperStyled from './photo/styledComponents/PhotoWrapperStyled';
 import AboutMeStyled from './styledComponents/AboutMeStyled';
+import PhotoWrapperStyled from './styledComponents/PhotoWrapperStyled';
 
 interface IProps {}
-// TODO: na pozadi bude nejaky obrzek a pres nej cerna barva
+
 const AboutMe = forwardRef(
   (props: IProps, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts
