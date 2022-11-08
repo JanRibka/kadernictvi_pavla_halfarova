@@ -53,7 +53,13 @@ const Item = (props: IItemProps) => {
           od
         </Typography>
         {/* Price */}
-        <CountUp start={0} end={props.price} delay={2}>
+        <CountUp
+          start={0}
+          end={props.price}
+          enableScrollSpy
+          scrollSpyOnce
+          scrollSpyDelay={100}
+        >
           {({ countUpRef }) => (
             <Typography
               ref={countUpRef}

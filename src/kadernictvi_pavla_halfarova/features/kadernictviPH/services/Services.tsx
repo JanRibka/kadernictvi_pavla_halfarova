@@ -1,17 +1,17 @@
-import { forwardRef, Ref } from 'react';
-import { useTranslation } from 'react-i18next';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
-import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
+import { forwardRef, Ref } from "react";
+import { useTranslation } from "react-i18next";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
+import SectionTitle from "shared/components/sectionTitle/SectionTitle";
 
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
-import hairColoring from './img/hairColoring.png';
-import hairCut from './img/hairCut.png';
-import { IItemProps } from './service/content/item/Item';
-import Service from './service/Service';
-import ServicesStyled from './styledComponents/ServicesStyled';
+import hairColoring from "./img/hairColoring.png";
+import hairCut from "./img/hairCut.png";
+import { IItemProps } from "./service/content/item/Item";
+import Service from "./service/Service";
+import ServicesStyled from "./styledComponents/ServicesStyled";
 
 interface IProps {}
 
