@@ -1,17 +1,18 @@
-import { forwardRef, Ref } from "react";
-import { useTranslation } from "react-i18next";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
-import SectionTitle from "shared/components/sectionTitle/SectionTitle";
+import { forwardRef, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
+import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
 
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
-import hairColoring from "./img/hairColoring.png";
-import hairCut from "./img/hairCut.png";
-import { IItemProps } from "./service/content/item/Item";
-import Service from "./service/Service";
-import ServicesStyled from "./styledComponents/ServicesStyled";
+import hairColoring from './img/hairColoring.png';
+import hairCut from './img/hairCut.png';
+import { IItemProps } from './service/content/item/Item';
+import Service from './service/Service';
+import ServicesStyled from './styledComponents/ServicesStyled';
 
 interface IProps {}
 
@@ -30,21 +31,20 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
     ? "860px"
     : "100%";
   const cuttingItems: IItemProps[] = [
-    { name: "Dámský střih", price: 200 },
-    { name: "Pánský střih", price: 150 },
-    { name: "Dětský střih", price: 100 },
+    { name: t("cutingService1Name"), price: 200 },
+    { name: t("cutingService2Name"), price: 150 },
+    { name: t("cutingService3Name"), price: 100 },
   ];
   const coloringItems: IItemProps[] = [
-    { name: "Barva (dle délky)", price: 600 },
-    { name: "Melír (dle délky)", price: 800 },
+    { name: t("coloringService1Name"), price: 600 },
+    { name: t("coloringService2Name"), price: 800 },
     {
-      name: "Speciální melírovací techniky (badayage, ombre, airtouch)",
+      name: t("coloringService3Name"),
       price: 1000,
     },
-    { name: "Stahování barvy", price: 1000 },
-    { name: "Hloubková regenerace", price: 500 },
+    { name: t("coloringService4Name"), price: 1000 },
+    { name: t("coloringService5Name"), price: 500 },
   ];
-  // TODO: Texty dát do překladů
 
   return (
     <ServicesStyled ref={ref}>
@@ -96,6 +96,11 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
           />
         </GridItem>
       </GridContainer>
+      <GridItem xs={12} sx={{ marginTop: "50px" }}>
+        <Typography sx={{ textAlign: "justify", textAlignLast: "center" }}>
+          {t("priceListDesc")}
+        </Typography>
+      </GridItem>
     </ServicesStyled>
   );
 });

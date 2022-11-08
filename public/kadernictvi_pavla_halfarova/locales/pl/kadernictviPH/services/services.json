@@ -2,5 +2,15 @@
   "headerMain": "Usługi",
   "headerSecondary": "Cennik",
   "serviceCutting": "Ścinanie",
-  "serviceColoring": "Kolorystyka i pasemka"
+  "serviceColoring": "Kolorystyka i pasemka",
+  "cutingService1Name": "Krój damski",
+  "cutingService2Name": "Męski krój",
+  "cutingService3Name": "Krój dziecięcy",
+  "coloringService1Name": "Kolor (według długości)",
+  "coloringService2Name": "Podświetl (według długości)",
+  "coloringService3Name": "Specjalne techniki rozświetlania (badayage, ombre, airtouch)",
+  "coloringService4Name": "Pobieranie kolorówPobieranie kolorów",
+  "coloringService5Name": "Głęboka regeneracja",
+  "servicePriceFrom": "z",
+  "priceListDesc": "Cena zależy od wydajności i może ulec zmianie w zależności od zużycia produktu i materiału. Cennik usług ma charakter orientacyjny."
 }

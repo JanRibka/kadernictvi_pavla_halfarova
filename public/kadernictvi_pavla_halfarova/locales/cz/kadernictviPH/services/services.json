@@ -2,5 +2,15 @@
   "headerMain": "Služby",
   "headerSecondary": "Ceník",
   "serviceCutting": "Střih",
-  "serviceColoring": "Barvení a melíry"
+  "serviceColoring": "Barvení a melíry",
+  "cutingService1Name": "Dámský střih",
+  "cutingService2Name": "Pánský střih",
+  "cutingService3Name": "Dětský střih",
+  "coloringService1Name": "Barva (dle délky)",
+  "coloringService2Name": "Melír (dle délky)",
+  "coloringService3Name": "Speciální melírovací techniky (badayage, ombre, airtouch)",
+  "coloringService4Name": "Stahování barvy",
+  "coloringService5Name": "Hloubková regenerace",
+  "servicePriceFrom": "od",
+  "priceListDesc": "Cena závisí dle výkonu a může se měnit dle spotřeby produktu a materiálu. Ceník služeb je pouze orientační."
 }

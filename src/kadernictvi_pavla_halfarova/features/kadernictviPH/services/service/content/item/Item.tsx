@@ -1,20 +1,22 @@
-import CountUp from "react-countup";
+import CountUp from 'react-countup';
+import { useTranslation } from 'react-i18next';
 
-import CheckIcon from "@mui/icons-material/Check";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import CheckIcon from '@mui/icons-material/Check';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-import ItemStyled from "./styledComponents/ItemStyled";
+import ItemStyled from './styledComponents/ItemStyled';
 
 export interface IItemProps {
   name: string;
   price: number;
 }
-// TOTO: Texty do překladů
+
 const Item = (props: IItemProps) => {
   //Consts
+  const { t } = useTranslation(["kadernictviPH\\services\\services"]);
   const theme = useTheme();
   const breakpointMdDwn: boolean = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -50,7 +52,7 @@ const Item = (props: IItemProps) => {
             marginRight: "5px",
           }}
         >
-          od
+          {t("servicePriceFrom")}
         </Typography>
         {/* Price */}
         <CountUp
@@ -74,9 +76,7 @@ const Item = (props: IItemProps) => {
                 letterSpacing: breakpointMdDwn ? "0em" : undefined,
                 textAlign: "end",
               }}
-            >
-              {/* {props.price} */}
-            </Typography>
+            ></Typography>
           )}
         </CountUp>
 
