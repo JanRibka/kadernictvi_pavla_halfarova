@@ -1,5 +1,5 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const NavLinksStyled = styled(Box)(
   ({ theme }) =>
@@ -10,7 +10,7 @@ const NavLinksStyled = styled(Box)(
     justify-content: end;
     
     button {
-      color: white;
+      color: ${theme.palette.text.primary};
       position: relative;
       padding: 15px;    
       background: transparent;
