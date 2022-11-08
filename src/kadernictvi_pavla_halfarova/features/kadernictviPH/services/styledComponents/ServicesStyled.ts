@@ -5,7 +5,7 @@ const ServicesStyled = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   flexDirection: "column",
-  padding: "4em 0px",
+  padding: "8em 0px",
   backgroundColor: theme.palette.primary.dark,
 
   [theme.breakpoints.down("md")]: {
