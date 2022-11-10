@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 const SuspenseFallbackStyled = styled(Box)(({ theme }) => ({
   width: "100vw",
-  height: "100vh",
+  height: "80vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
