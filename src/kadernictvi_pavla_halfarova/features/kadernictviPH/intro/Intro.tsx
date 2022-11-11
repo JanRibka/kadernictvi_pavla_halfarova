@@ -1,26 +1,26 @@
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-import "swiper/css/bundle";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import 'swiper/css/bundle';
 
-import { forwardRef, Ref } from "react";
-import { useTranslation } from "react-i18next";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
+import { forwardRef, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
 
-import Box from "@mui/material/Box";
+import Box from '@mui/material/Box';
 
-import Intro1 from "../../../../shared/img/intro/Intro_1.jpg";
-import Intro2 from "../../../../shared/img/intro/Intro_2.jpg";
-import Intro3 from "../../../../shared/img/intro/Intro_3.jpg";
-import Intro4 from "../../../../shared/img/intro/Intro_4.jpg";
-import Intro5 from "../../../../shared/img/intro/Intro_5.jpg";
-import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
-import SwiperSlideEvenStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled";
-import SwiperSlideOddStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideOddStyled";
-import SwiperText1OddStyled from "./swiper/swiperText/styledComponents/SwiperText1OddStyled";
-import SwiperText2OddStyled from "./swiper/swiperText/styledComponents/SwiperText2OddStyled";
-import SwiperTextWrapperOddStyled from "./swiper/swiperText/styledComponents/SwiperTextWrapperOddStyled";
+import Intro1 from '../../../../shared/img/intro/Intro_1.jpg';
+import Intro2 from '../../../../shared/img/intro/Intro_2.jpg';
+import Intro3 from '../../../../shared/img/intro/Intro_3.jpg';
+import Intro4 from '../../../../shared/img/intro/Intro_4.jpg';
+import Intro5 from '../../../../shared/img/intro/Intro_5.jpg';
+import SwiperStyled from './swiper/styledComponents/SwiperStyled';
+import SwiperSlideEvenStyled from './swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled';
+import SwiperSlideOddStyled from './swiper/swiperSlide/styledComponents/SwiperSlideOddStyled';
+import SwiperText1OddStyled from './swiper/swiperText/styledComponents/SwiperText1OddStyled';
+import SwiperText2OddStyled from './swiper/swiperText/styledComponents/SwiperText2OddStyled';
+import SwiperTextWrapperOddStyled from './swiper/swiperText/styledComponents/SwiperTextWrapperOddStyled';
 
 interface IProps {}
 
@@ -29,7 +29,7 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
   const { t } = useTranslation(["kadernictviPH\\intro\\intro"]);
 
   return (
-    <Box ref={ref} sx={{ position: "relative" }}>
+    <Box ref={ref} sx={{ position: "sticky", top: 0, zIndex: "-1" }}>
       {/* Swiper */}
       <SwiperStyled
         navigation

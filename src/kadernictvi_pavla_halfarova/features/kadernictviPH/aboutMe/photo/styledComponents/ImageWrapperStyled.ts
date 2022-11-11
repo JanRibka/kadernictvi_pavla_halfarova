@@ -6,6 +6,7 @@ const ImageWrapperStyled = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "auto",
   maxWidth: "483px",
+  zIndex: 1,
 
   "&:hover": {
     img: {
@@ -14,7 +15,7 @@ const ImageWrapperStyled = styled(Box)(({ theme }) => ({
     },
   },
 
-  "&:before": {
+  "&:after": {
     content: "''",
     position: "absolute",
     top: "30px",
