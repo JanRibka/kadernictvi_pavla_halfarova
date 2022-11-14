@@ -7,11 +7,7 @@ import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-import Intro1 from '../../../../shared/img/intro/Intro_1.jpg';
-import Card from './card/Card';
-import CardMedia from './card/cardMedia/CardMedia';
-import CardStyled from './card/styledComponents/CardStyled';
-import GridItemStyled from './gridItem/GridItemStyled';
+import Photos from './photos/Photos';
 import GalleryStyled from './styledComponents/MyWorkStyled';
 
 interface IProps {}
@@ -50,13 +46,9 @@ const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             colorSecondary={theme.palette.common.third.main}
           />
         </GridItem>
-        {/* Fotky */}
-        <GridItemStyled xs={4}>
-          <Card>
-            <CardMedia image={Intro1} />
-          </Card>
-        </GridItemStyled>
       </GridContainer>
+      {/* Fotky */}
+      <Photos />
     </GalleryStyled>
   );
 });

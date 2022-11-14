@@ -13,6 +13,7 @@ const paletteCustomThirdMain = "rgb(163, 91, 29)";
 const paletteCustomThirdDark = "rgb(140, 78, 25)";
 
 // Custom theme
+// Colors
 declare module "@mui/material/styles/createPalette" {
   interface CommonColors {
     third: {
@@ -20,6 +21,13 @@ declare module "@mui/material/styles/createPalette" {
       main: string;
       dark: string;
     };
+  }
+}
+
+// Breakpoints
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    xxl: true;
   }
 }
 
@@ -41,8 +49,18 @@ const AppThemeComponents = createTheme(AppThemeTypography, {
   },
 });
 
+// Breakpoints
+// TODO: Breakpoint nefunguje. Opravit
+const AppThemeBreakpoints = createTheme(AppThemeComponents, {
+  breakpoints: {
+    values: {
+      xxl: 1921,
+    },
+  },
+});
+
 // Palette theme
-const AppThemePalette = createTheme(AppThemeComponents, {
+const AppThemePalette = createTheme(AppThemeBreakpoints, {
   palette: {
     primary: {
       light: palettePrimaryLight,
