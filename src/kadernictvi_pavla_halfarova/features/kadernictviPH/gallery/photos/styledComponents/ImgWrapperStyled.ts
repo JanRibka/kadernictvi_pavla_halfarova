@@ -5,6 +5,8 @@ import { styled } from '@mui/material/styles';
 const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
   padding: "20px 40px",
   maxWidth: "400px",
+  transform: "scale(1)",
+  transition: "all 300ms ease",
 
   [theme.breakpoints.down("md")]: {
     maxWidth: "100%",
