@@ -1,6 +1,6 @@
 import GridItem from 'shared/components/gridItem/GridItem';
 
-import { styled } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles';
 
 const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
   padding: "20px 40px",

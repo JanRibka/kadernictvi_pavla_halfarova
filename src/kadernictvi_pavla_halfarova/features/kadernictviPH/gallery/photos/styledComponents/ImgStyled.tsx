@@ -1,5 +1,5 @@
-import Box, { BoxProps } from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box, { BoxProps } from '@mui/material/Box';
+import { alpha, styled } from '@mui/material/styles';
 
 interface IProps extends BoxProps {
   src: string;

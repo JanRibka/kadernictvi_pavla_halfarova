@@ -1,6 +1,6 @@
-import { SwiperSlide } from "swiper/react";
+import { SwiperSlide } from 'swiper/react';
 
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
 const SwiperStyledStyled = styled(SwiperSlide)(({ theme }) => ({
   position: "relative",
@@ -10,8 +10,8 @@ const SwiperStyledStyled = styled(SwiperSlide)(({ theme }) => ({
 
   "& img": {
     display: "block",
-    // width: "100%",
-    // height: "80vh",
+    width: "90%",
+    height: "90%",
     // objectFit: "cover",
     // transform: "scale(1.15) rotate(0.0deg)",
     // transition: "all 10s linear",
