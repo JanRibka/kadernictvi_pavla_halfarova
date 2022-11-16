@@ -1,25 +1,26 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/bundle';
-import 'swiper/css/zoom';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/bundle";
+import "swiper/css/zoom";
 
-import { Dispatch, Suspense, useEffect, useState } from 'react';
-import AppLoader from 'shared/components/loader/AppLoader';
-import Swiper, { Navigation, Pagination, Zoom } from 'swiper';
+import { Dispatch, Suspense, useEffect, useState } from "react";
+import AppLoader from "shared/components/loader/AppLoader";
+import Swiper, { Navigation, Pagination, Zoom } from "swiper";
 
-import CloseIcon from '@mui/icons-material/Close';
-import DownloadIcon from '@mui/icons-material/Download';
-import ZoomInIcon from '@mui/icons-material/ZoomIn';
-import ZoomOutIcon from '@mui/icons-material/ZoomOut';
-import IconButton from '@mui/material/IconButton';
+import CloseIcon from "@mui/icons-material/Close";
+import DownloadIcon from "@mui/icons-material/Download";
+import ZoomInIcon from "@mui/icons-material/ZoomIn";
+import ZoomOutIcon from "@mui/icons-material/ZoomOut";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
 
-import Images from '../Images';
-import DialogContentStyled from './styledComponents/DialogContentStyled';
-import DialogStyled from './styledComponents/DialogStyled';
-import DialogTitleWrapperStyled from './styledComponents/DialogTitleWrapperStyled';
-import SwiperStyled from './swiper/styledComponents/SwiperStyled';
-import SwiperSlideStyled from './swiper/swiperSlide/styledComponents/SwiperSlideStyled';
+import Images from "../Images";
+import DialogContentStyled from "./styledComponents/DialogContentStyled";
+import DialogStyled from "./styledComponents/DialogStyled";
+import DialogTitleWrapperStyled from "./styledComponents/DialogTitleWrapperStyled";
+import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
+import SwiperSlideStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideStyled";
 
 interface IProps {
   open: boolean;
@@ -113,9 +114,14 @@ const PhotosDialog = (props: IProps) => {
     <Suspense fallback={<AppLoader />}>
       <DialogStyled open={props.open} disableScrollLock={false}>
         <DialogTitleWrapperStyled>
-          <IconButton color='secondary'>
+          <Box
+            component='a'
+            href={Images[0][0].SrcDialog}
+            download
+            color='secondary'
+          >
             <DownloadIcon />
-          </IconButton>
+          </Box>
           <IconButton color='secondary' onClick={HandleZoomIn}>
             <ZoomInIcon />
           </IconButton>
