@@ -2,7 +2,6 @@ import { MouseEvent, useState } from 'react';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 
 import Images from './Images';
-import Photo1 from './img/12.jpg';
 import PhotosDialog from './photosDialog/PhotosDialog';
 import ImgStyled from './styledComponents/ImgStyled';
 import ImgWrapperStyled from './styledComponents/ImgWrapperStyled';
@@ -10,11 +9,14 @@ import ImgWrapperStyled from './styledComponents/ImgWrapperStyled';
 // TODO: Při scrolovani se budou fotky postupně zobrazovat
 const Photos = () => {
   // State
-  const [open, setOpen] = useState<boolean>(false);
+  const [openData, setOpenData] = useState<{ open: boolean; index: number }>({
+    open: false,
+    index: 0,
+  });
 
   // Other
-  const HandleOnClick = (e: MouseEvent<HTMLDivElement>, name: string) => {
-    setOpen(true);
+  const HandleOnClick = (e: MouseEvent<HTMLDivElement>, index: number) => {
+    setOpenData({ open: true, index: index });
   };
 
   const RenderPhotos = () => {
@@ -33,7 +35,7 @@ const Photos = () => {
                   src={image.SrcSection}
                   alt={image.Alt}
                   loading='lazy'
-                  onClick={(e) => HandleOnClick(e, Photo1.toString())}
+                  onClick={(e) => HandleOnClick(e, image.Index)}
                 />
               </ImgWrapperStyled>
             );
@@ -47,7 +49,11 @@ const Photos = () => {
     <>
       {RenderPhotos()}
       {/* Photos dialog */}
-      <PhotosDialog open={open} setOpen={setOpen} />
+      <PhotosDialog
+        open={openData.open}
+        setOpenData={setOpenData}
+        index={openData.index}
+      />
     </>
   );
 };

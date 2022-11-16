@@ -1,5 +1,5 @@
-import Dialog from "@mui/material/Dialog";
-import { alpha, styled } from "@mui/material/styles";
+import Dialog from '@mui/material/Dialog';
+import { alpha, styled } from '@mui/material/styles';
 
 const DialogStyled = styled(Dialog)(({ theme }) => ({
   "& .MuiDialog-paper": {
@@ -8,7 +8,7 @@ const DialogStyled = styled(Dialog)(({ theme }) => ({
     maxWidth: "100vw",
     height: "100vh",
     maxHeight: "100vh",
-    background: alpha(theme.palette.primary.dark, 0.85),
+    background: alpha(theme.palette.primary.dark, 0.9),
     overflowX: "hidden",
   },
 }));

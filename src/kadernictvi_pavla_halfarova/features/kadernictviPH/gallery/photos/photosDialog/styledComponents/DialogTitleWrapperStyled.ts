@@ -1,5 +1,5 @@
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
 const DialogTitleWrapperStyled = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -7,6 +7,7 @@ const DialogTitleWrapperStyled = styled(Box)(({ theme }) => ({
   justifyContent: "end",
 
   button: {
+    padding: "20px",
     transition: "all 150ms linear",
 
     "&:hover": {
