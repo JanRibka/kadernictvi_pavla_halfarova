@@ -5,11 +5,11 @@ import { styled } from '@mui/material/styles';
 const SwiperStyledStyled = styled(SwiperSlide)(({ theme }) => ({
   position: "relative",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
   justifyContent: "center",
 
   "& div": {
-    alignItems: "baseline",
+    alignItems: "center",
 
     "& img": {
       display: "block",
