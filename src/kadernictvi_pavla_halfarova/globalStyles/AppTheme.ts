@@ -24,13 +24,6 @@ declare module "@mui/material/styles/createPalette" {
   }
 }
 
-// Breakpoints
-declare module "@mui/material/styles" {
-  interface BreakpointOverrides {
-    xxl: true;
-  }
-}
-
 // Typography theme
 const AppThemeTypography = createTheme({
   typography: {
@@ -49,18 +42,8 @@ const AppThemeComponents = createTheme(AppThemeTypography, {
   },
 });
 
-// Breakpoints
-// TODO: Breakpoint nefunguje. Opravit
-const AppThemeBreakpoints = createTheme(AppThemeComponents, {
-  breakpoints: {
-    values: {
-      xxl: 1921,
-    },
-  },
-});
-
 // Palette theme
-const AppThemePalette = createTheme(AppThemeBreakpoints, {
+const AppThemePalette = createTheme(AppThemeComponents, {
   palette: {
     primary: {
       light: palettePrimaryLight,
