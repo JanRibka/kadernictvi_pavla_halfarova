@@ -8,12 +8,17 @@ const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
   transform: "scale(1)",
   transition: "all 300ms ease",
 
+  [theme.breakpoints.up("sm")]: {
+    margin: "15px 0",
+  },
+
   [theme.breakpoints.down("md")]: {
     maxWidth: "100%",
   },
 
   [theme.breakpoints.between("md", "xl")]: {
     padding: "10px 40px",
+    margin: "25px 0",
   },
 
   [`@media (min-width: 1921px)`]: {
