@@ -10,6 +10,8 @@ import Swiper, { Navigation, Pagination, Zoom } from "swiper";
 
 import CloseIcon from "@mui/icons-material/Close";
 import DownloadIcon from "@mui/icons-material/Download";
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ZoomOutIcon from "@mui/icons-material/ZoomOut";
 import Box from "@mui/material/Box";
@@ -28,9 +30,22 @@ interface IProps {
   index: number;
 }
 
+interface FsDocument extends Document {
+  webkitExitFullScreen?: () => void;
+  mozExitFullScreen?: () => void;
+  msExitFullscreen?: () => void;
+}
+
+interface FsDocumentElement extends HTMLElement {
+  webkitRequestFullScreen?: () => void;
+  mozRequestFullScreen?: () => void;
+  msRequestFullScreen?: () => void;
+}
+
 const PhotosDialog = (props: IProps) => {
   // State
   const [swiperRef, setSwiperRef] = useState<Swiper | null>(null);
+  const [fullScreen, setFullScreen] = useState<boolean>(false);
 
   // Other
   useEffect(() => {
@@ -108,6 +123,55 @@ const PhotosDialog = (props: IProps) => {
 
     img.style.transform = "translate3d(0px, 0px, 0px) scale(" + scale + ")";
   };
+
+  const HandleFullScreen = () => {
+    const elem: FsDocumentElement = document.documentElement;
+
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullScreen) {
+      elem.webkitRequestFullScreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.msRequestFullScreen) {
+      elem.msRequestFullScreen();
+    }
+
+    setFullScreen(true);
+  };
+
+  const HandleFullScreenExit = () => {
+    const doc: FsDocument = document;
+
+    if (doc.exitFullscreen) {
+      doc.exitFullscreen();
+    } else if (doc.webkitExitFullScreen) {
+      doc.webkitExitFullScreen();
+    } else if (doc.mozExitFullScreen) {
+      doc.mozExitFullScreen();
+    } else if (doc.msExitFullscreen) {
+      doc.msExitFullscreen();
+    }
+
+    setFullScreen(false);
+  };
+
+  const RenderFullScreenButton = () => {
+    debugger;
+    if (fullScreen) {
+      return (
+        <IconButton color='secondary' onClick={HandleFullScreenExit}>
+          <FullscreenExitIcon />
+        </IconButton>
+      );
+    } else {
+      return (
+        <IconButton color='secondary' onClick={HandleFullScreen}>
+          <FullscreenIcon />
+        </IconButton>
+      );
+    }
+  };
   // TODO: Dialog se p5i otev5en9 zvetsi na cele okno
   // TODO: Po dobu na49t8n9 bude loading
   return (
@@ -128,6 +192,7 @@ const PhotosDialog = (props: IProps) => {
           <IconButton color='secondary' onClick={HandleZoomOut}>
             <ZoomOutIcon />
           </IconButton>
+          {RenderFullScreenButton()}
           <IconButton
             onClick={() => props.setOpenData({ open: false, index: 0 })}
             color='secondary'

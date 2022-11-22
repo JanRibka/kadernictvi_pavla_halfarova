@@ -1,6 +1,6 @@
-import GridItem from 'shared/components/gridItem/GridItem';
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
 const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
   padding: "20px 40px",
@@ -22,15 +22,15 @@ const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
   },
 
   [`@media (min-width: 1921px)`]: {
-    margin: "0 30px",
+    margin: "30px 30px",
     maxWidth: "440px",
 
     "&:first-of-type": {
-      margin: "0 30px 0 0 ",
+      margin: "30px 30px 30px 0 ",
     },
 
     "&:last-of-type": {
-      margin: "0 0 0 30px",
+      margin: "30px 0 30px 30px",
     },
   },
 }));
