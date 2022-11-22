@@ -1,28 +1,28 @@
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/bundle";
-import "swiper/css/zoom";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/bundle';
+import 'swiper/css/zoom';
 
-import { Dispatch, Suspense, useEffect, useState } from "react";
-import AppLoader from "shared/components/loader/AppLoader";
-import Swiper, { Navigation, Pagination, Zoom } from "swiper";
+import { Dispatch, Suspense, useEffect, useState } from 'react';
+import AppLoader from 'shared/components/loader/AppLoader';
+import Swiper, { Navigation, Pagination, Zoom } from 'swiper';
 
-import CloseIcon from "@mui/icons-material/Close";
-import DownloadIcon from "@mui/icons-material/Download";
-import FullscreenIcon from "@mui/icons-material/Fullscreen";
-import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
-import ZoomInIcon from "@mui/icons-material/ZoomIn";
-import ZoomOutIcon from "@mui/icons-material/ZoomOut";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+import CloseIcon from '@mui/icons-material/Close';
+import DownloadIcon from '@mui/icons-material/Download';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
+import ZoomOutIcon from '@mui/icons-material/ZoomOut';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
 
-import Images from "../Images";
-import DialogContentStyled from "./styledComponents/DialogContentStyled";
-import DialogStyled from "./styledComponents/DialogStyled";
-import DialogTitleWrapperStyled from "./styledComponents/DialogTitleWrapperStyled";
-import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
-import SwiperSlideStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideStyled";
+import Images from '../Images';
+import DialogContentStyled from './styledComponents/DialogContentStyled';
+import DialogStyled from './styledComponents/DialogStyled';
+import DialogTitleWrapperStyled from './styledComponents/DialogTitleWrapperStyled';
+import SwiperStyled from './swiper/styledComponents/SwiperStyled';
+import SwiperSlideStyled from './swiper/swiperSlide/styledComponents/SwiperSlideStyled';
 
 interface IProps {
   open: boolean;
@@ -31,6 +31,9 @@ interface IProps {
 }
 
 interface FsDocument extends Document {
+  webkitFullscreenElement: Element | null;
+  mozFullScreenElement: Element | null;
+  msFullscreenElement: Element | null;
   webkitExitFullScreen?: () => void;
   mozExitFullScreen?: () => void;
   msExitFullscreen?: () => void;
@@ -45,7 +48,7 @@ interface FsDocumentElement extends HTMLElement {
 const PhotosDialog = (props: IProps) => {
   // State
   const [swiperRef, setSwiperRef] = useState<Swiper | null>(null);
-  const [fullScreen, setFullScreen] = useState<boolean>(false);
+  const [, setFullScreen] = useState<boolean>(false);
 
   // Other
   useEffect(() => {
@@ -157,6 +160,7 @@ const PhotosDialog = (props: IProps) => {
   };
 
   const RenderFullScreenButton = () => {
+    let fullScreen = document.fullscreenElement;
     debugger;
     if (fullScreen) {
       return (
