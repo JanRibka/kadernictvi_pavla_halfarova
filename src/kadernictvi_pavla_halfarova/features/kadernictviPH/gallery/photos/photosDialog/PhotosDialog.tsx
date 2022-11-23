@@ -31,6 +31,9 @@ interface IProps {
 }
 
 interface FsDocument extends Document {
+  webkitFullscreenElement: Element | null;
+  mozFullScreenElement: Element | null;
+  msFullscreenElement: Element | null;
   webkitExitFullScreen?: () => void;
   mozExitFullScreen?: () => void;
   msExitFullscreen?: () => void;
@@ -45,7 +48,7 @@ interface FsDocumentElement extends HTMLElement {
 const PhotosDialog = (props: IProps) => {
   // State
   const [swiperRef, setSwiperRef] = useState<Swiper | null>(null);
-  const [fullScreen, setFullScreen] = useState<boolean>(false);
+  const [, setFullScreen] = useState<boolean>(false);
 
   // Other
   useEffect(() => {
@@ -160,6 +163,7 @@ const PhotosDialog = (props: IProps) => {
   // TODO: http://jellydemos.com/wordpress/murdock/dark/#home
 
   const RenderFullScreenButton = () => {
+    let fullScreen = document.fullscreenElement;
     debugger;
     if (fullScreen) {
       return (
