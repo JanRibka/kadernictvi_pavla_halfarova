@@ -1,28 +1,28 @@
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/bundle";
-import "swiper/css/zoom";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/bundle';
+import 'swiper/css/zoom';
 
-import { Dispatch, Suspense, useEffect, useState } from "react";
-import AppLoader from "shared/components/loader/AppLoader";
-import Swiper, { Navigation, Pagination, Zoom } from "swiper";
+import { Dispatch, Suspense, useEffect, useState } from 'react';
+import AppLoader from 'shared/components/loader/AppLoader';
+import Swiper, { Navigation, Pagination, Zoom } from 'swiper';
 
-import CloseIcon from "@mui/icons-material/Close";
-import DownloadIcon from "@mui/icons-material/Download";
-import FullscreenIcon from "@mui/icons-material/Fullscreen";
-import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
-import ZoomInIcon from "@mui/icons-material/ZoomIn";
-import ZoomOutIcon from "@mui/icons-material/ZoomOut";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+import CloseIcon from '@mui/icons-material/Close';
+import DownloadIcon from '@mui/icons-material/Download';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
+import ZoomOutIcon from '@mui/icons-material/ZoomOut';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
 
-import Images from "../Images";
-import DialogContentStyled from "./styledComponents/DialogContentStyled";
-import DialogStyled from "./styledComponents/DialogStyled";
-import DialogTitleWrapperStyled from "./styledComponents/DialogTitleWrapperStyled";
-import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
-import SwiperSlideStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideStyled";
+import Images from '../Images';
+import DialogContentStyled from './styledComponents/DialogContentStyled';
+import DialogStyled from './styledComponents/DialogStyled';
+import DialogTitleWrapperStyled from './styledComponents/DialogTitleWrapperStyled';
+import SwiperStyled from './swiper/styledComponents/SwiperStyled';
+import SwiperSlideStyled from './swiper/swiperSlide/styledComponents/SwiperSlideStyled';
 
 interface IProps {
   open: boolean;
@@ -155,6 +155,9 @@ const PhotosDialog = (props: IProps) => {
 
     setFullScreen(false);
   };
+
+  // TODO: https://stackoverflow.com/questions/51998594/how-to-make-google-chrome-go-full-screen-in-angular-4-application
+  // TODO: http://jellydemos.com/wordpress/murdock/dark/#home
 
   const RenderFullScreenButton = () => {
     debugger;
