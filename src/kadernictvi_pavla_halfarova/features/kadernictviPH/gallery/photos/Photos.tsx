@@ -1,5 +1,7 @@
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, useRef, useState } from 'react';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
+
+import Box from '@mui/material/Box';
 
 import Images from './Images';
 import PhotosDialog from './photosDialog/PhotosDialog';
@@ -20,6 +22,8 @@ const Photos = () => {
   };
 
   const RenderPhotos = () => {
+    const refImgWrpper = useRef<HTMLDivElement | null>(null);
+
     return Images.map((row, index) => {
       return (
         <GridContainer key={"imagesRowContainer_" + index}>
@@ -30,6 +34,7 @@ const Photos = () => {
                 sm={6}
                 lg={3}
                 key={"imageWrapper_" + index}
+                ref={refImgWrpper}
               >
                 <ImgStyled
                   src={image.SrcSection}
@@ -37,6 +42,10 @@ const Photos = () => {
                   loading='lazy'
                   onClick={(e) => HandleOnClick(e, image.Index)}
                 />
+                <Box className='line top'></Box>
+                <Box className='line right'></Box>
+                <Box className='line bottom'></Box>
+                <Box className='line left'></Box>
               </ImgWrapperStyled>
             );
           })}

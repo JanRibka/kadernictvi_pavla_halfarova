@@ -1,37 +1,63 @@
-import GridItem from "shared/components/gridItem/GridItem";
+import GridItem from 'shared/components/gridItem/GridItem';
 
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
 const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
-  padding: "20px 40px",
-  maxWidth: "400px",
-  transform: "scale(1)",
   transition: "all 300ms ease",
+  position: "relative",
 
-  [theme.breakpoints.up("sm")]: {
-    margin: "15px 0",
-  },
-
-  [theme.breakpoints.down("md")]: {
-    maxWidth: "100%",
-  },
-
-  [theme.breakpoints.between("md", "xl")]: {
-    padding: "10px 40px",
-    margin: "25px 0",
-  },
-
-  [`@media (min-width: 1921px)`]: {
-    margin: "30px 30px",
-    maxWidth: "440px",
-
-    "&:first-of-type": {
-      margin: "30px 30px 30px 0 ",
+  "&:hover": {
+    "& .top": {
+      left: "10%",
+      width: "80%",
+      height: "1px",
     },
 
-    "&:last-of-type": {
-      margin: "30px 0 30px 30px",
+    "& .right": {
+      top: "10%",
+      height: "80%",
+      width: "1px",
     },
+
+    "& .bottom": {
+      left: "10%",
+      width: "80%",
+      height: "1px",
+    },
+
+    "& .left": {
+      top: "10%",
+      height: "80%",
+      width: "1px",
+    },
+  },
+
+  ".line": {
+    position: "absolute",
+    width: "0px",
+    height: "0px",
+    transition: "all 500ms ease",
+    background: "white",
+  },
+
+  ".top": {
+    top: "10%",
+    left: "50%",
+  },
+
+  ".right": {
+    top: "50%",
+    right: "10%",
+  },
+
+  ".bottom": {
+    bottom: "10%",
+    left: "50%",
+  },
+
+  ".left": {
+    left: "10%",
+    top: "50%",
   },
 }));
 
