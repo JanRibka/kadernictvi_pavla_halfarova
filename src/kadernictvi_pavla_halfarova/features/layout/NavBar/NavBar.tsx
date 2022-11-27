@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect } from 'react';
+import { MouseEvent, useEffect, useRef } from 'react';
 import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
 
 import Logo from './logo/Logo';
@@ -14,14 +14,23 @@ interface IProps {
   ) => void;
   seldTab: number;
 }
-// TODO: Zkusit udělat horní lištu místo černé barvy gradient. Z vrchu tmava a dole světlá
+
 const NavBar = (props: IProps) => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // Consts
   const scrollYPosition: number = useScrollPosition();
 
   // Other
   useEffect(() => {
-    HeaderColorChange();
+    if (effectRan.current === true) {
+      HeaderColorChange();
+    }
+
+    return () => {
+      effectRan.current = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollYPosition]);
 

@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * Hook gets current Y scroll position
  * @returns Scroll Y position
  */
 const useScrollPosition = () => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // State
   const [scrollPosition, setScrollPosition] = useState<number>(0);
 
@@ -15,9 +18,15 @@ const useScrollPosition = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", UpdatePosition);
-    UpdatePosition();
 
-    return () => window.removeEventListener("scroll", UpdatePosition);
+    if (effectRan.current === true) {
+      UpdatePosition();
+    }
+
+    return () => {
+      window.removeEventListener("scroll", UpdatePosition);
+      effectRan.current = true;
+    };
   }, []);
 
   return scrollPosition;

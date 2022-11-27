@@ -10,12 +10,21 @@ interface IProps {
 }
 
 const HamburgerIcon = (props: IProps) => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // Refrences
   const refMobileMenuIcon = useRef<HTMLDivElement>(null);
 
   // Other
   useEffect(() => {
-    SetOpndClsd(props.isOpnd);
+    if (effectRan.current === true) {
+      SetOpndClsd(props.isOpnd);
+    }
+
+    return () => {
+      effectRan.current = true;
+    };
   }, [props.isOpnd]);
 
   const SetOpndClsd = (isOpnd: boolean) => {

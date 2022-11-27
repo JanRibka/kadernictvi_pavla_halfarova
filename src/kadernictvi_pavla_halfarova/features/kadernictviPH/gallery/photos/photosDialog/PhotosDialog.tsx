@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/bundle';
 import 'swiper/css/zoom';
 
-import { Dispatch, Suspense, useEffect, useState } from 'react';
+import { Dispatch, Suspense, useEffect, useRef, useState } from 'react';
 import AppLoader from 'shared/components/loader/AppLoader';
 import Swiper, { Navigation, Pagination, Zoom } from 'swiper';
 
@@ -25,12 +25,21 @@ interface IProps {
 }
 
 const PhotosDialog = (props: IProps) => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // State
   const [swiperRef, setSwiperRef] = useState<Swiper | null>(null);
 
   // Other
   useEffect(() => {
-    swiperRef?.slideTo(props.index, 1000);
+    if (effectRan.current === true) {
+      swiperRef?.slideTo(props.index, 1000);
+    }
+
+    return () => {
+      effectRan.current = true;
+    };
   }, [props.index, swiperRef]);
 
   const RenderPhotos = () => {

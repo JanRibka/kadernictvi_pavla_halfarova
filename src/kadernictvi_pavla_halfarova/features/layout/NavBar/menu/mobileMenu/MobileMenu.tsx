@@ -16,6 +16,10 @@ interface IProps {
 }
 
 const MobileMenu = (props: IProps) => {
+  // References
+  const effectSetNavLinksRan = useRef<boolean>(false);
+  const effectSetIsOpenRan = useRef<boolean>(false);
+
   // State
   const [isOpnd, setIsOpnd] = useState<boolean>(false);
 
@@ -30,13 +34,23 @@ const MobileMenu = (props: IProps) => {
 
   // Other
   useEffect(() => {
-    SetNavLinksFadeOut(isOpnd);
+    if (effectSetNavLinksRan.current === true) {
+      SetNavLinksFadeOut(isOpnd);
+    }
+
+    return () => {
+      effectSetNavLinksRan.current = true;
+    };
   }, [isOpnd]);
 
   useEffect(() => {
-    if (!breakpointMdUp) {
+    if (effectSetIsOpenRan.current === true && !breakpointMdUp) {
       setIsOpnd(false);
     }
+
+    return () => {
+      effectSetIsOpenRan.current = true;
+    };
   }, [breakpointMdUp]);
 
   const SetNavLinksFadeOut = (isOpnd: boolean) => {

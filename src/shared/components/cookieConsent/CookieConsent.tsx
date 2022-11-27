@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useRef, useState } from 'react';
 import { CookieHelper } from 'shared/helpers/cookieHelper';
 import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
@@ -6,6 +6,9 @@ import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
 import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
 
 const CookienConsent = () => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // Consts
   const cookieExpiresIn: number = 180;
   const cookieHelper: CookieHelper = new CookieHelper();
@@ -20,7 +23,13 @@ const CookienConsent = () => {
 
   // Other
   useEffect(() => {
-    GetCookieConsentValue();
+    if (effectRan.current === true) {
+      GetCookieConsentValue();
+    }
+
+    return () => {
+      effectRan.current = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

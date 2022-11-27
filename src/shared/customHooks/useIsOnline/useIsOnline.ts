@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const useIsOnline = () => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // State
   const [isOnLine, setIsOnline] = useState<boolean>(false);
 
@@ -9,7 +12,13 @@ const useIsOnline = () => {
    * On initization set the isOnline state.
    */
   useEffect(() => {
-    setIsOnline(navigator.onLine);
+    if (effectRan.current === true) {
+      setIsOnline(navigator.onLine);
+    }
+
+    return () => {
+      effectRan.current = true;
+    };
   }, []);
 
   /**

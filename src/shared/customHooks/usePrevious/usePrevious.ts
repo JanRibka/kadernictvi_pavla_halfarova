@@ -6,12 +6,21 @@ import { useEffect, useRef } from 'react';
  * @returns Previous value
  */
 const usePrevious = <T>(value: T): T | undefined => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // Consts
   const ref = useRef<T>();
 
   // Other
   useEffect(() => {
-    ref.current = value;
+    if (effectRan.current === true) {
+      ref.current = value;
+    }
+
+    return () => {
+      effectRan.current = true;
+    };
   });
 
   return ref.current;

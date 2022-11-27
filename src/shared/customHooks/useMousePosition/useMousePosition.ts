@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * Hook gets actial mouse position
  * @returns Actial mouse position
  */
 const useMousePosition = () => {
+  // References
+  const effectRan = useRef<boolean>(false);
+
   // State
   const [mousePosition, setMousePosition] = useState<{
     x: number | null;
@@ -19,9 +22,14 @@ const useMousePosition = () => {
     const updateMousePosition = (ev: MouseEvent) => {
       setMousePosition({ x: ev.clientX, y: ev.clientY });
     };
-    window.addEventListener("mousemove", updateMousePosition);
+
+    if (effectRan.current === true) {
+      window.addEventListener("mousemove", updateMousePosition);
+    }
+
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
+      effectRan.current = true;
     };
   }, []);
 
