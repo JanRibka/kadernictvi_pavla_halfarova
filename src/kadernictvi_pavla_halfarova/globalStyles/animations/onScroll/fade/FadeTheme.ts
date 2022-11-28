@@ -1,6 +1,8 @@
-import { createTheme } from '@mui/system';
+import { AppTheme } from 'kadernictvi_pavla_halfarova/globalStyles/AppTheme';
 
-const fadeTheme = createTheme({
+import createTheme from '@mui/material/styles/createTheme';
+
+const fadeTheme = createTheme(AppTheme, {
   components: {
     FadeInnerWrapperStyled: {
       variants: [
