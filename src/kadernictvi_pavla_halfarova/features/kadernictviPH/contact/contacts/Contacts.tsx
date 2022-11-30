@@ -28,8 +28,8 @@ const Contacts = () => {
       {/* Address */}
       <Contact
         contactType={ContactTypeEnum.Address}
-        contact='Slezská 104/57, Dům, 747 27 Kobeřice'
-        addressMapLink='https://www.google.com/maps/search/Slezsk%C3%A1+104%2F57,+D%C5%AFm,+747+27+Kobe%C5%99ice/@49.9836586,18.0493027,19z'
+        contact='Slezská 57, 747 27 Kobeřice'
+        addressMapLink='https://www.google.com/maps/place/Slezsk%C3%A1+104%2F57,+747+27+Kobe%C5%99ice/@49.9837184,18.0495592,19.25z/data=!4m5!3m4!1s0x4711616e6b5b1b55:0xcbf9c14250f2684c!8m2!3d49.9837204!4d18.0500168?hl=cs'
       />
     </Box>
   );
