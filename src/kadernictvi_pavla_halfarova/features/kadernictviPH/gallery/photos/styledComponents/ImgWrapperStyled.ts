@@ -38,7 +38,7 @@ const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
     },
 
     ".image": {
-      filter: "brightness(0.5)",
+      filter: "brightness(0.4)",
     },
   },
 
@@ -47,7 +47,7 @@ const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
     width: "0px",
     height: "0px",
     transition: "all 500ms ease",
-    background: "white",
+    background: theme.palette.text.primary,
   },
 
   ".top": {
