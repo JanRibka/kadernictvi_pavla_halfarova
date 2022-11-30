@@ -5,6 +5,7 @@ import GridContainer from 'shared/components/gridContainer/GridContainer';
 import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 import Images from './Images';
 import PhotosDialog from './photosDialog/PhotosDialog';
@@ -31,49 +32,70 @@ const Photos = () => {
   const RenderPhotos = () => {
     // Consts
     let auxIndex = 0;
+    let rowIndex = 0;
     let delay = 0;
     const picsPerRow = breakPointLgDwn ? 2 : breakPointSmDwn ? 1 : 4;
+    const result: JSX.Element[] = [];
+    let auxResult: JSX.Element[] = [];
 
-    return Images.map((row, index) => {
-      return (
-        <GridContainer key={"imagesRowContainer_" + index}>
-          {row.map((image, index) => {
-            if (auxIndex !== 0 && auxIndex < picsPerRow) {
-              delay = delay + 300;
-            } else if (auxIndex >= picsPerRow) {
-              delay = 0;
-              auxIndex = 0;
-            }
+    Images.forEach((image, index) => {
+      if (auxIndex < picsPerRow) {
+        if (auxIndex !== 0) delay = delay + 300;
 
-            auxIndex += 1;
+        auxResult.push(
+          <ImgWrapperStyled
+            xs={12}
+            sm={6}
+            lg={3}
+            key={"imageWrapper_" + auxIndex}
+          >
+            <Fade once delay={delay}>
+              <Box>
+                <ImgStyled
+                  src={image.SrcSection}
+                  alt={image.Alt}
+                  loading='lazy'
+                  className='image'
+                />
+                <Box className='line top'></Box>
+                <Box className='line right'></Box>
+                <Box className='line bottom'></Box>
+                <Box className='line left'></Box>
+                <Box
+                  className='description-wrapper'
+                  onClick={(e) => HandleOnClick(e, image.Index)}
+                >
+                  <Typography
+                    className='description'
+                    variant='h4'
+                    textAlign='center'
+                  >
+                    {image.Alt}
+                  </Typography>
+                </Box>
+              </Box>
+            </Fade>
+          </ImgWrapperStyled>
+        );
 
-            return (
-              <ImgWrapperStyled
-                xs={12}
-                sm={6}
-                lg={3}
-                key={"imageWrapper_" + index}
-              >
-                <Fade once delay={delay}>
-                  <Box>
-                    <ImgStyled
-                      src={image.SrcSection}
-                      alt={image.Alt}
-                      loading='lazy'
-                      onClick={(e) => HandleOnClick(e, image.Index)}
-                    />
-                    <Box className='line top'></Box>
-                    <Box className='line right'></Box>
-                    <Box className='line bottom'></Box>
-                    <Box className='line left'></Box>
-                  </Box>
-                </Fade>
-              </ImgWrapperStyled>
-            );
-          })}
-        </GridContainer>
-      );
+        auxIndex += 1;
+      }
+
+      if (auxIndex === picsPerRow || index === Images.length - 1) {
+        result.push(
+          <GridContainer key={"imagesRowContainer_" + rowIndex}>
+            {auxResult}
+          </GridContainer>
+        );
+
+        auxIndex = 0;
+        delay = 0;
+        rowIndex += 1;
+        auxResult = [];
+      }
     });
+
+    return result;
   };
 
   return (

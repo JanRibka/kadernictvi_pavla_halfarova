@@ -12,12 +12,7 @@ const ImgStyled = styled(({ src, alt, loading, ...props }: IProps) => (
 ))`
   width: 100%;
   height: auto;
-  cursor: pointer;
   transition: filter 500ms ease;
-
-  &:hover {
-    filter: brightness(0.6);
-  }
 `;
 
 export default ImgStyled;

@@ -45,16 +45,14 @@ const PhotosDialog = (props: IProps) => {
   const RenderPhotos = () => {
     let result: JSX.Element[] = [];
 
-    Images.forEach((row, rowIndex) => {
-      row.forEach((image, index) => {
-        result.push(
-          <SwiperSlideStyled key={"dialogImage_" + rowIndex * 100 + index}>
-            <div className='swiper-zoom-container'>
-              <img src={image.SrcDialog} alt={image.Alt} loading='lazy' />
-            </div>
-          </SwiperSlideStyled>
-        );
-      });
+    Images.forEach((image, index) => {
+      result.push(
+        <SwiperSlideStyled key={"dialogImage_" + index}>
+          <div className='swiper-zoom-container'>
+            <img src={image.SrcDialog} alt={image.Alt} loading='lazy' />
+          </div>
+        </SwiperSlideStyled>
+      );
     });
 
     return result;

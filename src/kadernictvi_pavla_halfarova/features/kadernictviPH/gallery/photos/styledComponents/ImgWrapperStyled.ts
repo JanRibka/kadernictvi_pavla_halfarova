@@ -30,6 +30,16 @@ const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
       height: "80%",
       width: "1px",
     },
+
+    ".description-wrapper": {
+      ".description": {
+        opacity: 1,
+      },
+    },
+
+    ".image": {
+      filter: "brightness(0.5)",
+    },
   },
 
   ".line": {
@@ -58,6 +68,25 @@ const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
   ".left": {
     left: "10%",
     top: "50%",
+  },
+
+  ".description-wrapper": {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    cursor: "pointer",
+
+    ".description": {
+      opacity: 0,
+      transition: "all 500ms ease",
+      color: theme.palette.text.primary,
+      width: "60%",
+    },
   },
 }));
 
