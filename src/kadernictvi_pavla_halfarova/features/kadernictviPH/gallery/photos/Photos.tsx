@@ -15,7 +15,6 @@ import ImgWrapperStyled from './styledComponents/ImgWrapperStyled';
 const Photos = () => {
   // Consts
   const theme = useTheme();
-  const breakPointXlDwn = useMediaQuery(theme.breakpoints.down("xl"));
   const breakPointLgDwn = useMediaQuery(theme.breakpoints.down("lg"));
   const breakPointSmDwn = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -38,7 +37,6 @@ const Photos = () => {
     const picsPerRow = breakPointLgDwn ? 2 : breakPointSmDwn ? 1 : 4;
     const result: JSX.Element[] = [];
     let auxResult: JSX.Element[] = [];
-    const descVariant = breakPointLgDwn ? "h5" : breakPointXlDwn ? "h6" : "h5";
 
     Images.forEach((image, index) => {
       if (auxIndex < picsPerRow) {
@@ -69,7 +67,7 @@ const Photos = () => {
                 >
                   <Typography
                     className='description'
-                    variant={descVariant}
+                    variant='h6'
                     textAlign='center'
                   >
                     {image.Alt}
