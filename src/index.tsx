@@ -22,6 +22,7 @@ const root = ReactDOM.createRoot(
 );
 //TODO: P5idat str8nku po v7padku spojeni (no connection page)
 //TODO: Udelat si vlastní hooky na efekty při skrolování a tak
+// TODO: Na sekce, kde by to mohlo spadnout dát error boundary
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
