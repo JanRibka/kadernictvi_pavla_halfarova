@@ -1,17 +1,15 @@
-import AppBar from '@mui/material/AppBar';
-import { styled } from '@mui/material/styles';
+import AppBar from "@mui/material/AppBar";
+import { styled } from "@mui/material/styles";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   flexGrow: 1,
   transition: "all 300ms ease-out",
+
   "&.start-style": {
-    // backgroundColor: "transparent",
     boxShadow: "none",
+
     "& .MuiToolbar-root": {
       height: "110px",
-      "& .main-menu-logo": {
-        height: "45px",
-      },
     },
   },
 
@@ -19,8 +17,11 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
     "& .MuiToolbar-root": {
       height: "80px",
     },
+    "& .main-menu-logo-background": {
+      marginTop: "80px",
+    },
     "& .main-menu-logo": {
-      height: "35px",
+      top: "10px",
     },
   },
 

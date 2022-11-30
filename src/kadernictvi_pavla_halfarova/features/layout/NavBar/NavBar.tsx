@@ -1,12 +1,13 @@
-import { MouseEvent, useEffect, useRef } from 'react';
-import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
+import { MouseEvent, useEffect, useRef } from "react";
+import useScrollPosition from "shared/customHooks/useScrollPosition/useScrollPosition";
 
-import Logo from './logo/Logo';
-import LanguageSelect from './menu/languageSelect/LanguageSelect';
-import MainMenu from './menu/mainMenu/MainMenu';
-import MobileMenu from './menu/mobileMenu/MobileMenu';
-import AppBarStyled from './styledComponents/AppBarStyled';
-import ToolbarStyled from './styledComponents/ToolbarStyled';
+import Logo from "./logo/Logo";
+import LanguageSelect from "./menu/languageSelect/LanguageSelect";
+import MainMenu from "./menu/mainMenu/MainMenu";
+import MobileMenu from "./menu/mobileMenu/MobileMenu";
+import AppBarStyled from "./styledComponents/AppBarStyled";
+import LogoBackgroundStyled from "./styledComponents/LogoBackgroundStyled";
+import ToolbarStyled from "./styledComponents/ToolbarStyled";
 
 interface IProps {
   tabSelectOnChangeAction: (
@@ -69,8 +70,8 @@ const NavBar = (props: IProps) => {
   return (
     <AppBarStyled className='start-style'>
       <ToolbarStyled>
-        {/* Logo */}
-        <Logo />
+        {/* Logo background */}
+        <LogoBackgroundStyled className='main-menu-logo-background' />
         {/* Main menu */}
         <MainMenu
           onChangeAction={props.tabSelectOnChangeAction}
@@ -84,6 +85,8 @@ const NavBar = (props: IProps) => {
           seldTab={props.seldTab}
         />
       </ToolbarStyled>
+      {/* Logo */}
+      <Logo />
     </AppBarStyled>
   );
 };
