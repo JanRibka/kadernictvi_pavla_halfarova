@@ -13,7 +13,7 @@ const SocialIcons = () => {
         <FacebookIconStyled
           component='a'
           title='Facebook'
-          href='https://www.facebook.com/pavla.halfarova.35'
+          href='https://www.facebook.com/profile.php?id=100088112567779'
           target='_blank'
         >
           <FacebookIcon />
@@ -22,7 +22,7 @@ const SocialIcons = () => {
         <InstagramIconStyled
           component='a'
           title='Instagram'
-          href='https://www.instagram.com/halfarova/'
+          href='https://www.instagram.com/hairsalonph/'
           target='_blank'
         >
           <InstagramIcon />
