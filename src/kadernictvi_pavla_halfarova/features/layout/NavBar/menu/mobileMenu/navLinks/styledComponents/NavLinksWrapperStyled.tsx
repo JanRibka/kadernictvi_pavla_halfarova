@@ -1,5 +1,5 @@
-import Box, { BoxProps } from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box, { BoxProps } from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const NavLinksWrapperStyled = styled(({ className, ...props }: BoxProps) => (
   <Box {...props} className={className} />

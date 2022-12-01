@@ -9,6 +9,7 @@ const LogoStyled = styled(IconButton)(({ theme }) => ({
   top: "40px",
   left: "50px",
   transition: "all 300ms ease-out",
+  boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.75)",
 
   img: {
     borderRadius: "50%",
