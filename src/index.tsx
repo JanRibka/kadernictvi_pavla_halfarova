@@ -1,21 +1,21 @@
 // LOCALIZATION
-import './shared/infrastructure/localize/i18n';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import '@fontsource/caveat';
+import "./shared/infrastructure/localize/i18n";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/caveat";
 
-import { AppTheme } from 'kadernictvi_pavla_halfarova/globalStyles/AppTheme';
-import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom/client';
-import SuspenseFallback from 'shared/components/suspenseFallback/SuspenseFallback';
+import { AppTheme } from "kadernictvi_pavla_halfarova/globalStyles/AppTheme";
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import SuspenseFallback from "shared/components/suspenseFallback/SuspenseFallback";
 
-import { CssBaseline } from '@mui/material';
-import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import { CssBaseline } from "@mui/material";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -23,6 +23,7 @@ const root = ReactDOM.createRoot(
 //TODO: P5idat str8nku po v7padku spojeni (no connection page)
 //TODO: Udelat si vlastní hooky na efekty při skrolování a tak
 // TODO: Na sekce, kde by to mohlo spadnout dát error boundary
+// TODO: Pokud jsem na mobilu zmením posuvník ve stylu cookies
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
