@@ -1,9 +1,9 @@
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
 
 const NavLinksStyled = styled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "50%",
+  top: "53%",
   left: "0",
   display: "block",
   width: "100%",

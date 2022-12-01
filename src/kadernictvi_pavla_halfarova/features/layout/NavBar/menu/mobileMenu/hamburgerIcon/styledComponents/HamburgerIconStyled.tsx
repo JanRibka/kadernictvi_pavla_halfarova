@@ -55,6 +55,9 @@ const HamburgerIconStyled = styled(({ className, ...props }: BoxProps) => (
     }
 
     &.is-opened {
+      top: 45px;
+      transition: top 300ms ease-out 1000ms;
+
       :before {
         top: 10px;
         transform: rotate(45deg);

@@ -1,14 +1,14 @@
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from 'react';
 
-import { useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
 
-import NavLinks from "../navLinks/NavLinks";
-import HamburgerIcon from "./hamburgerIcon/HamburgerIcon";
-import LanguageSelect from "./languageSelect/languageSelect";
-import NavLinksStyled from "./navLinks/styledComponents/NavLinksStyled";
-import NavLinksWrapperStyled from "./navLinks/styledComponents/NavLinksWrapperStyled";
+import NavLinks from '../navLinks/NavLinks';
+import HamburgerIcon from './hamburgerIcon/HamburgerIcon';
+import LanguageSelect from './languageSelect/languageSelect';
+import NavLinksStyled from './navLinks/styledComponents/NavLinksStyled';
+import NavLinksWrapperStyled from './navLinks/styledComponents/NavLinksWrapperStyled';
 
 interface IProps {
   onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
@@ -60,10 +60,16 @@ const MobileMenu = (props: IProps) => {
       !!refLanguageSelect.current
     ) {
       if (isOpnd) {
+        document.body
+          .getElementsByClassName("main-menu-logo")[0]
+          .classList.add("mobile-menu-opened");
         refNavLinskWrapper.current.classList.add("is-opened");
         refNavLinks.current.classList.add("is-opened");
         refLanguageSelect.current.classList.add("is-opened");
       } else {
+        document.body
+          .getElementsByClassName("main-menu-logo")[0]
+          .classList.remove("mobile-menu-opened");
         refNavLinskWrapper.current.classList.remove("is-opened");
         refNavLinks.current.classList.remove("is-opened");
         refLanguageSelect.current.classList.remove("is-opened");
