@@ -27,7 +27,7 @@ const Layout = () => {
     if (!!ref) {
       const auxRef = ref?.current as any;
       const currentRef = auxRef[name] as RefObject<HTMLDivElement>;
-
+      // TODO: scrollIntoView nefunguje na safari. Zkusit toto https://www.npmjs.com/package/seamless-scroll-polyfill  a zjistit, zda funguje na vsech prohlizecich
       currentRef.current?.scrollIntoView({
         behavior: "smooth",
         block: "start",
