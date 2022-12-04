@@ -24,6 +24,7 @@ const App = () => {
   }, []);
   //TODO: https://dev.to/ramonak/react-enable-google-analytics-after-a-user-grants-consent-5bg3
   //TODO: Sjednotit písma
+  // TODO: GA hlásí v konzoli nějaký warning
   return (
     <>
       <Layout />
