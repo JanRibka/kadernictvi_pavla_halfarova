@@ -13,21 +13,43 @@ interface IProps {}
 const KadernictviPage = forwardRef(
   (props: IProps, ref: Ref<unknown> | undefined) => {
     const refIntro = useRef<HTMLDivElement>(null);
+    const refAboutMe = useRef<HTMLDivElement>(null);
     const refServices = useRef<HTMLDivElement>(null);
-    const refGallery = useRef<HTMLDivElement>(null);
+    const refMyWork = useRef<HTMLDivElement>(null);
     const refContact = useRef<HTMLDivElement>(null);
-    // TODO: První sekce bude mít nadpis h1 kvuli seo a přestylovat na h4
+
     useImperativeHandle(ref, () => ({
-      get gallery() {
-        if (!!refGallery) {
-          return refGallery.current;
+      get intro() {
+        if (!!refIntro) {
+          return refIntro;
+        } else {
+          return undefined;
+        }
+      },
+      get aboutMe() {
+        if (!!refAboutMe) {
+          return refAboutMe;
+        } else {
+          return undefined;
+        }
+      },
+      get services() {
+        if (!!refServices) {
+          return refServices;
+        } else {
+          return undefined;
+        }
+      },
+      get myWork() {
+        if (!!refMyWork) {
+          return refMyWork;
         } else {
           return undefined;
         }
       },
       get contact() {
         if (!!refContact) {
-          return refContact.current;
+          return refContact;
         } else {
           return undefined;
         }
@@ -37,9 +59,9 @@ const KadernictviPage = forwardRef(
     return (
       <Box>
         <Intro ref={refIntro} />
-        <AboutMe />
+        <AboutMe ref={refAboutMe} />
         <Services ref={refServices} />
-        <MyWork ref={refGallery} />
+        <MyWork ref={refMyWork} />
         <Contact ref={refContact} />
       </Box>
     );

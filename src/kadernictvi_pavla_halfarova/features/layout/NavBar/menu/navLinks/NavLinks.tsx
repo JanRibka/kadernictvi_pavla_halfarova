@@ -16,11 +16,11 @@ const NavLinks = forwardRef(
     // Consts
     const { t } = useTranslation(["layout\\mainMenu"]);
     const links: LinkModel[] = [
-      { Label: t("intro"), Value: 0, Name: "Úvod" },
-      { Label: t("aboutMe"), Value: 1, Name: "O mně" },
-      { Label: t("services"), Value: 2, Name: "Služby" },
-      { Label: t("myWork"), Value: 3, Name: "Galrie" },
-      { Label: t("contact"), Value: 4, Name: "Kontakt" },
+      { Label: t("intro"), Value: 0, Name: "intro" },
+      { Label: t("aboutMe"), Value: 1, Name: "aboutMe" },
+      { Label: t("services"), Value: 2, Name: "services" },
+      { Label: t("myWork"), Value: 3, Name: "myWork" },
+      { Label: t("contact"), Value: 4, Name: "contact" },
     ];
 
     return (
