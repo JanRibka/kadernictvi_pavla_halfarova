@@ -41,7 +41,7 @@ const CookienConsent = () => {
       setIsOpen(true);
     }
   };
-
+  // TODO: Cookie budou defaulně zaškrtnuté
   const HandleAccepAllOnClickAction = (
     event: MouseEvent<HTMLButtonElement>
   ) => {
