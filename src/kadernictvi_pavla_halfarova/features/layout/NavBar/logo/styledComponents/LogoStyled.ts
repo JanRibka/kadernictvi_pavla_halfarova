@@ -11,6 +11,10 @@ const LogoStyled = styled(IconButton)(({ theme }) => ({
   transition: "all 300ms ease-out",
   boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.75)",
 
+  [theme.breakpoints.down("sm")]: {
+    left: "10px",
+  },
+
   "&.mobile-menu-opened": {
     top: "10px",
     left: "10px",
