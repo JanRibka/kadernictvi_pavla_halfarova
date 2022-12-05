@@ -19,7 +19,7 @@ const CookienConsent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
   const [necCookieValue, setNecCookieValue] = useState<boolean>(true);
-  const [diagCookieValue, setDiagCookieValue] = useState<boolean>(false);
+  const [diagCookieValue, setDiagCookieValue] = useState<boolean>(true);
 
   // Other
   useEffect(() => {
