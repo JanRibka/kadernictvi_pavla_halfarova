@@ -1,4 +1,5 @@
 import { MouseEvent, RefObject, useRef, useState } from 'react';
+import { scrollIntoView } from 'seamless-scroll-polyfill';
 import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
 import { Box } from '@mui/system';
@@ -27,11 +28,8 @@ const Layout = () => {
     if (!!ref) {
       const auxRef = ref?.current as any;
       const currentRef = auxRef[name] as RefObject<HTMLDivElement>;
-      // TODO: scrollIntoView nefunguje na safari. Zkusit toto https://www.npmjs.com/package/seamless-scroll-polyfill  a zjistit, zda funguje na vsech prohlizecich. Nebo to nechat a nechat to n2k7m vyzkou3et
-      currentRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+
+      scrollIntoView(currentRef.current as Element, { behavior: "smooth" }); // TODO: otestovat na ruzn7ch prohlizecich, hlavne safari
     }
 
     googleAnalyticsHelper.SendEventToGA(
