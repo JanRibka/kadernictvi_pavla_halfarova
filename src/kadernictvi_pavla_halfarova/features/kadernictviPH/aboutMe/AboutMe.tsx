@@ -32,7 +32,7 @@ const AboutMe = forwardRef(
       : "100%";
 
     return (
-      <AboutMeStyled ref={ref}>
+      <AboutMeStyled ref={ref} data-index={1}>
         <GridContainer
           sx={{
             maxWidth: gridContainerMaxWidth,

@@ -1,5 +1,6 @@
-import { MouseEvent, RefObject, useRef, useState } from 'react';
+import { MouseEvent, RefObject, useEffect, useRef, useState } from 'react';
 import { scrollIntoView } from 'seamless-scroll-polyfill';
+import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
 import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
 import { Box } from '@mui/system';
@@ -11,15 +12,97 @@ import NavBar from './NavBar/NavBar';
 const Layout = () => {
   // References
   const ref = useRef<Object>(null);
+  const effectRan = useRef<boolean>(false);
 
   // Constants
+  const scrollYPosition: number = useScrollPosition();
   const googleAnalyticsHelper: GoogleAnalyticsHelper =
     new GoogleAnalyticsHelper();
 
   // State
   const [seldTab, setSeldTab] = useState<number>(0);
-  // TODO: P5ep9n8n9 tla49tek pri skrolovan9 https://codepen.io/alvarotrigo/pen/MWvXmja
+
   // Other
+  useEffect(() => {
+    if (effectRan.current === true) {
+      HeaderColorChange();
+      SetSelectedSectionButton();
+    }
+
+    return () => {
+      effectRan.current = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollYPosition]);
+
+  const HeaderColorChange = () => {
+    const changeColorOnScrollHeight: number = 100;
+
+    if (scrollYPosition > changeColorOnScrollHeight) {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.remove("start-style");
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add("scroll-on");
+      document.body
+        .getElementsByClassName("mobile-menu-icon")[0]
+        .classList.add("scroll-on");
+      document.body
+        .getElementsByClassName("mobile-menu-nav")[0]
+        .classList.add("scroll-on");
+    } else {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.add("start-style");
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.remove("scroll-on");
+      document.body
+        .getElementsByClassName("mobile-menu-icon")[0]
+        .classList.remove("scroll-on");
+      document.body
+        .getElementsByClassName("mobile-menu-nav")[0]
+        .classList.remove("scroll-on");
+    }
+  };
+
+  const SetSelectedSectionButton = () => {
+    if (!!ref) {
+      const auxRef = ref?.current as any;
+      const refKeys = Object.keys(auxRef);
+
+      refKeys?.forEach((key, i) => {
+        const currentRef = auxRef[key] as RefObject<HTMLDivElement>;
+        const offset = (currentRef.current?.offsetTop as number) - 250;
+        const heightOffset = 350;
+
+        if (i === refKeys.length - 1) {
+          if (scrollYPosition - offset + heightOffset > 0) {
+            const index = parseInt(
+              currentRef.current?.dataset.index as string
+            ) as number;
+
+            if (seldTab !== index) {
+              setSeldTab(index);
+            }
+          }
+        } else if (
+          scrollYPosition >= offset &&
+          scrollYPosition < offset + heightOffset
+        ) {
+          const index = parseInt(
+            currentRef.current?.dataset.index as string
+          ) as number;
+
+          if (seldTab !== index) {
+            setSeldTab(index);
+          }
+        }
+      });
+    }
+  };
+
   const TabSelectOnChangeAction = (
     event: MouseEvent<HTMLButtonElement> | undefined
   ) => {

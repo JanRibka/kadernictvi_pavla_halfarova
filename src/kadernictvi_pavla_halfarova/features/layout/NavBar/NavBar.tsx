@@ -1,5 +1,4 @@
-import { MouseEvent, useEffect, useRef } from 'react';
-import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
+import { MouseEvent } from 'react';
 
 import Logo from './logo/Logo';
 import LanguageSelect from './menu/languageSelect/LanguageSelect';
@@ -17,57 +16,6 @@ interface IProps {
 }
 
 const NavBar = (props: IProps) => {
-  // References
-  const effectRan = useRef<boolean>(false);
-
-  // Consts
-  const scrollYPosition: number = useScrollPosition();
-  // P5esunout do layout a+t mu6u animovat menu
-
-  // Other
-  useEffect(() => {
-    if (effectRan.current === true) {
-      HeaderColorChange();
-    }
-
-    return () => {
-      effectRan.current = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollYPosition]);
-
-  const HeaderColorChange = () => {
-    const changeColorOnScrollHeight: number = 100;
-
-    if (scrollYPosition > changeColorOnScrollHeight) {
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove("start-style");
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.add("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-icon")[0]
-        .classList.add("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-nav")[0]
-        .classList.add("scroll-on");
-    } else {
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.add("start-style");
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-icon")[0]
-        .classList.remove("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-nav")[0]
-        .classList.remove("scroll-on");
-    }
-  };
-
   return (
     <AppBarStyled className='start-style'>
       <ToolbarStyled>

@@ -47,7 +47,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
   ];
 
   return (
-    <ServicesStyled ref={ref}>
+    <ServicesStyled ref={ref} data-index={2}>
       {/* Title */}
       <SectionTitle
         mainText={t("headerMain")}
