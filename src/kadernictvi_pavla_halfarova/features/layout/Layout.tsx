@@ -1,18 +1,19 @@
-import { MouseEvent, RefObject, useEffect, useRef, useState } from 'react';
-import { scrollIntoView } from 'seamless-scroll-polyfill';
-import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
-import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
+import { MouseEvent, RefObject, useEffect, useRef, useState } from "react";
+import { scrollIntoView } from "seamless-scroll-polyfill";
+import useScrollPosition from "shared/customHooks/useScrollPosition/useScrollPosition";
+import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
 
-import { Box } from '@mui/system';
+import { Box } from "@mui/system";
 
-import KadernictviPHPage from '../pages/KadernictviPHPage';
-import Footer from './footer/Footer';
-import NavBar from './NavBar/NavBar';
+import KadernictviPHPage from "../pages/KadernictviPHPage";
+import Footer from "./footer/Footer";
+import NavBar from "./NavBar/NavBar";
 
 const Layout = () => {
   // References
   const ref = useRef<Object>(null);
-  const effectRan = useRef<boolean>(false);
+  const effectStyleRan = useRef<boolean>(false);
+  const effectClassListRan = useRef<boolean>(false);
 
   // Constants
   const scrollYPosition: number = useScrollPosition();
@@ -24,21 +25,36 @@ const Layout = () => {
 
   // Other
   useEffect(() => {
-    if (effectRan.current === true) {
-      HeaderColorChange();
+    if (effectStyleRan.current === true) {
+      document.body
+        .getElementsByTagName("header")[0]
+        .classList.remove("loaded");
+      setTimeout(() => {
+        document.body.getElementsByTagName("header")[0].classList.add("loaded");
+      }, 1000);
+    }
+
+    return () => {
+      effectStyleRan.current = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (effectClassListRan.current === true) {
+      HeaderClassListChange();
       SetSelectedSectionButton();
     }
 
     return () => {
-      effectRan.current = true;
+      effectClassListRan.current = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollYPosition]);
 
-  const HeaderColorChange = () => {
-    const changeColorOnScrollHeight: number = 100;
+  const HeaderClassListChange = () => {
+    const heightOffset: number = 100;
 
-    if (scrollYPosition > changeColorOnScrollHeight) {
+    if (scrollYPosition > heightOffset) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove("start-style");
