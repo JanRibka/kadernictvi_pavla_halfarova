@@ -1,12 +1,12 @@
-import { MouseEvent } from 'react';
+import { MouseEvent } from "react";
 
-import Logo from './logo/Logo';
-import LanguageSelect from './menu/languageSelect/LanguageSelect';
-import MainMenu from './menu/mainMenu/MainMenu';
-import MobileMenu from './menu/mobileMenu/MobileMenu';
-import AppBarStyled from './styledComponents/AppBarStyled';
-import LogoBackgroundStyled from './styledComponents/LogoBackgroundStyled';
-import ToolbarStyled from './styledComponents/ToolbarStyled';
+import Logo from "./logo/Logo";
+import LanguageSelect from "./menu/languageSelect/LanguageSelect";
+import MainMenu from "./menu/mainMenu/MainMenu";
+import MobileMenu from "./menu/mobileMenu/MobileMenu";
+import AppBarStyled from "./styledComponents/AppBarStyled";
+import LogoBackgroundStyled from "./styledComponents/LogoBackgroundStyled";
+import ToolbarStyled from "./styledComponents/ToolbarStyled";
 
 interface IProps {
   tabSelectOnChangeAction: (

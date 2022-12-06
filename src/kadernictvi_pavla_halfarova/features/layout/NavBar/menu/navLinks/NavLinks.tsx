@@ -1,10 +1,10 @@
-import { forwardRef, MouseEvent, Ref } from 'react';
-import { useTranslation } from 'react-i18next';
+import { forwardRef, MouseEvent, Ref } from "react";
+import { useTranslation } from "react-i18next";
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
-import LinkModel from './models/LinkModel';
+import LinkModel from "./models/LinkModel";
 
 interface IProps {
   handleOnClick: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
@@ -35,6 +35,9 @@ const NavLinks = forwardRef(
               data-text={item.Label}
               onClick={props.handleOnClick}
               className={props.actValue === item.Value ? "active" : undefined}
+              style={{
+                backgroundColor: "transparent",
+              }}
             >
               {item.Label}
             </Button>

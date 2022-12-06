@@ -3,7 +3,29 @@ import { styled } from "@mui/material/styles";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   flexGrow: 1,
-  transition: "all 300ms ease-out",
+  transition: "all 500ms ease-out",
+  backgroundColor: "transparent",
+
+  "&.loaded": {
+    "& .main-menu-logo": {
+      width: "130px",
+      height: "130px",
+      top: "10px",
+      left: "50px",
+      borderRadius: "50%",
+      boxShadow: "0px 0px 15px 0px rgba(0,0,0,0.75)",
+
+      [theme.breakpoints.down("sm")]: {
+        left: "10px",
+      },
+
+      button: {
+        width: "130px",
+        height: "130px",
+        borderRadius: "50%",
+      },
+    },
+  },
 
   "&.start-style": {
     boxShadow: "none",
@@ -16,20 +38,37 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
   "&.scroll-on": {
     "& .MuiToolbar-root": {
       height: "80px",
+      backgroundColor: theme.palette.primary.dark,
     },
+
     "& .main-menu-logo-background": {
       marginTop: "80px",
     },
+
     "& .main-menu-logo": {
+      width: "110px",
+      height: "110px",
       top: "10px",
+      left: "50px",
+      boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.75)",
+      // transition: `height 300ms ease-out,
+      // width 300ms ease-out,
+      // top 300ms ease-out,
+      // left 300ms ease-out,
+      // box-shadow 300ms ease-out`,
+
+      [theme.breakpoints.down("sm")]: {
+        left: "10px",
+      },
+
+      button: {
+        width: "110px",
+        height: "110px",
+      },
     },
   },
 
   "& .MuiToolbar-root": {
-    transition: "all 300ms ease-out",
-  },
-
-  "& .main-menu-logo": {
     transition: "all 300ms ease-out",
   },
 }));

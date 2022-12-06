@@ -1,7 +1,7 @@
-import { MouseEvent } from 'react';
+import { MouseEvent } from "react";
 
-import NavLinks from '../navLinks/NavLinks';
-import NavLinksStyled from './styledComponents/NavLinksStyled';
+import NavLinks from "../navLinks/NavLinks";
+import NavLinksStyled from "./styledComponents/NavLinksStyled";
 
 interface IProps {
   onChangeAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
