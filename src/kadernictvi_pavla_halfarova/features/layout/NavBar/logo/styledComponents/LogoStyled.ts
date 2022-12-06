@@ -1,27 +1,27 @@
-import IconButton from '@mui/material/IconButton';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
-const LogoStyled = styled(IconButton)(({ theme }) => ({
-  width: "110px",
-  height: "110px",
-  borderRadius: "50%",
+const LogoStyled = styled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "40px",
-  left: "50px",
-  transition: "all 300ms ease-out",
-  boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.75)",
-
-  [theme.breakpoints.down("sm")]: {
-    left: "10px",
-  },
+  zIndex: 10,
+  top: "0",
+  left: "0",
+  height: "100vh",
+  width: "100vw",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: 0,
+  boxShadow: "unset",
+  transition: `height 500ms ease-out, 
+    width 500ms ease-out, 
+    top 500ms ease-out, 
+    left 500ms ease-out,
+    box-shadow 500ms ease-out 500ms`,
 
   "&.mobile-menu-opened": {
     top: "10px",
-    left: "10px",
-  },
-
-  img: {
-    borderRadius: "50%",
+    left: "10px !important",
   },
 }));
 
