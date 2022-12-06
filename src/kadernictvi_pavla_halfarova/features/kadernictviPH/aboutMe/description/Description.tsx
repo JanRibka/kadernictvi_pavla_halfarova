@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
+import { useTranslation } from "react-i18next";
+import SectionTitle from "shared/components/sectionTitle/SectionTitle";
 
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-import scissors from './img/scissors.png';
-import DescriptionStyled from './styledComponents/DescriptionStyled';
-import ScissorsWrapperStyled from './styledComponents/ScissorsWrapperStyled';
-import TypographyStyled from './styledComponents/TypographyStyled';
+import scissors from "./img/scissors.png";
+import DescriptionStyled from "./styledComponents/DescriptionStyled";
+import ScissorsWrapperStyled from "./styledComponents/ScissorsWrapperStyled";
+import TypographyStyled from "./styledComponents/TypographyStyled";
 
 const Description = () => {
   // Consts
