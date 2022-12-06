@@ -16,6 +16,7 @@ const Description = () => {
   const theme = useTheme();
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
   // TODO: Předělat ikonu podle services
+  // TODO: H1 by mel byt nadpis na intro
   return (
     <DescriptionStyled>
       <SectionTitle
