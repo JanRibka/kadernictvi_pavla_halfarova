@@ -1,3 +1,4 @@
+import NumberCount from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/numberCount/NumberCount';
 import CountUp from 'react-countup';
 import { useTranslation } from 'react-i18next';
 
@@ -55,7 +56,7 @@ const Item = (props: IItemProps) => {
           {t("servicePriceFrom")}
         </Typography>
         {/* Price */}
-        <CountUp
+        {/* <CountUp
           start={0}
           end={props.price}
           duration={1}
@@ -63,22 +64,25 @@ const Item = (props: IItemProps) => {
           scrollSpyOnce
           scrollSpyDelay={100}
         >
-          {({ countUpRef }) => (
-            <Typography
-              ref={countUpRef}
-              variant='h4'
-              sx={{
-                color: "common.third.main",
-                marginRight: "5px",
-                width: breakpointMdDwn ? "52px" : "75px",
-                fontSize: breakpointMdDwn ? "1.5rem" : undefined,
-                lineHeight: breakpointMdDwn ? "1.334" : undefined,
-                letterSpacing: breakpointMdDwn ? "0em" : undefined,
-                textAlign: "end",
-              }}
-            ></Typography>
-          )}
-        </CountUp>
+          {({ countUpRef }) => ( */}
+        <NumberCount start={0} end={props.price} once>
+          <Typography
+            // ref={countUpRef}
+            variant='h4'
+            sx={{
+              color: "common.third.main",
+              marginRight: "5px",
+              width: breakpointMdDwn ? "52px" : "75px",
+              fontSize: breakpointMdDwn ? "1.5rem" : undefined,
+              lineHeight: breakpointMdDwn ? "1.334" : undefined,
+              letterSpacing: breakpointMdDwn ? "0em" : undefined,
+              textAlign: "end",
+            }}
+          ></Typography>
+        </NumberCount>
+
+        {/* )} */}
+        {/* </CountUp> */}
 
         {/* Currency */}
         <Typography
