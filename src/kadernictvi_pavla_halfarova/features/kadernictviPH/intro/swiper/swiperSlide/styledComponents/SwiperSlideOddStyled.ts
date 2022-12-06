@@ -1,6 +1,6 @@
-import { SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from "swiper/react";
 
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
 const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
   position: "relative",
@@ -10,16 +10,11 @@ const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
   "& img": {
     display: "block",
     width: "100%",
-    height: "80vh",
+    height: "100vh",
     objectFit: "cover",
-    transition: "all 10s linear",
   },
 
   "&.swiper-slide-active, &.swiper-slide-duplicate-active": {
-    "& img": {
-      transform: "scale(1.15) rotate(0.0deg)",
-    },
-
     "& .slide-text": {
       "& .MuiTypography-root:nth-of-type(1)": {
         visibility: "visible",

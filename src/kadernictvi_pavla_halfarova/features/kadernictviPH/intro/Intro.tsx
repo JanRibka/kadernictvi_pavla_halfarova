@@ -1,26 +1,22 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import 'swiper/css/bundle';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css/bundle";
 
-import { forwardRef, Ref } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
+import { forwardRef, Ref } from "react";
+import { useTranslation } from "react-i18next";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 
-import Intro1 from '../../../../shared/img/intro/Intro_1.jpg';
-import Intro2 from '../../../../shared/img/intro/Intro_2.jpg';
-import Intro3 from '../../../../shared/img/intro/Intro_3.jpg';
-import Intro4 from '../../../../shared/img/intro/Intro_4.jpg';
-import Intro5 from '../../../../shared/img/intro/Intro_5.jpg';
-import SwiperStyled from './swiper/styledComponents/SwiperStyled';
-import SwiperSlideEvenStyled from './swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled';
-import SwiperSlideOddStyled from './swiper/swiperSlide/styledComponents/SwiperSlideOddStyled';
-import SwiperText1OddStyled from './swiper/swiperText/styledComponents/SwiperText1OddStyled';
-import SwiperText2OddStyled from './swiper/swiperText/styledComponents/SwiperText2OddStyled';
-import SwiperTextWrapperOddStyled from './swiper/swiperText/styledComponents/SwiperTextWrapperOddStyled';
+import Intro1 from "./img/Intro_1.jpg";
+import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
+import SwiperSlideEvenStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled";
+import SwiperSlideOddStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideOddStyled";
+import SwiperText1OddStyled from "./swiper/swiperText/styledComponents/SwiperText1OddStyled";
+import SwiperText2OddStyled from "./swiper/swiperText/styledComponents/SwiperText2OddStyled";
+import SwiperTextWrapperOddStyled from "./swiper/swiperText/styledComponents/SwiperTextWrapperOddStyled";
 
 interface IProps {}
 
@@ -66,37 +62,37 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
           />
         </SwiperSlideOddStyled>
         {/* Slide 2 */}
-        <SwiperSlideEvenStyled>
+        {/* <SwiperSlideEvenStyled>
           <img
             src={Intro2}
             alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 2'
             loading='lazy'
           />
-        </SwiperSlideEvenStyled>
+        </SwiperSlideEvenStyled> */}
         {/* Slide 3 */}
-        <SwiperSlideOddStyled>
+        {/* <SwiperSlideOddStyled>
           <img
             src={Intro3}
             alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 3'
             loading='lazy'
           />
-        </SwiperSlideOddStyled>
+        </SwiperSlideOddStyled> */}
         {/* Slide 4 */}
-        <SwiperSlideEvenStyled>
+        {/* <SwiperSlideEvenStyled>
           <img
             src={Intro4}
             alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 4'
             loading='lazy'
           />
-        </SwiperSlideEvenStyled>
+        </SwiperSlideEvenStyled> */}
         {/* Slide 5 */}
-        <SwiperSlideOddStyled>
+        {/* <SwiperSlideOddStyled>
           <img
             src={Intro5}
             alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 5'
             loading='lazy'
           />
-        </SwiperSlideOddStyled>
+        </SwiperSlideOddStyled> */}
       </SwiperStyled>
     </Box>
   );
