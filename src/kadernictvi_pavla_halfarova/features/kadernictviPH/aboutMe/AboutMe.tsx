@@ -1,15 +1,15 @@
-import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
-import { forwardRef, Ref } from 'react';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import Fade from "kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade";
+import { forwardRef, Ref } from "react";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
-import Description from './description/Description';
-import Photo from './photo/Photo';
-import AboutMeStyled from './styledComponents/AboutMeStyled';
-import PhotoWrapperStyled from './styledComponents/PhotoWrapperStyled';
+import Description from "./description/Description";
+import Photo from "./photo/Photo";
+import AboutMeStyled from "./styledComponents/AboutMeStyled";
+import PhotoWrapperStyled from "./styledComponents/PhotoWrapperStyled";
 
 interface IProps {}
 

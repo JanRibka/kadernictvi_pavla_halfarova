@@ -1,5 +1,5 @@
-import pavlaHalfarova from './img/pavlaHalfarova.jpg';
-import ImageWrapperStyled from './styledComponents/ImageWrapperStyled';
+import pavlaHalfarova from "./img/pavlaHalfarova.jpg";
+import ImageWrapperStyled from "./styledComponents/ImageWrapperStyled";
 
 const Photo = () => {
   return (

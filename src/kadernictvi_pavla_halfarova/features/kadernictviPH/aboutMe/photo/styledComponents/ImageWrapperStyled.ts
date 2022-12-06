@@ -1,5 +1,5 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const ImageWrapperStyled = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -25,6 +25,11 @@ const ImageWrapperStyled = styled(Box)(({ theme }) => ({
     zIndex: "-1",
     width: "auto",
     height: "auto",
+
+    [theme.breakpoints.down("sm")]: {
+      right: "-20px",
+      bottom: "-20px",
+    },
   },
 
   img: {
