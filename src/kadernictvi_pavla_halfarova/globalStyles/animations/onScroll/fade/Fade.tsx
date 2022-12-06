@@ -1,10 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
-import Box from '@mui/material/Box';
-import { ThemeProvider } from '@mui/system';
+import Box from "@mui/material/Box";
+import { ThemeProvider } from "@mui/system";
 
-import fadeTheme from './FadeTheme';
-import FadeInnerWrapperStyled from './styledComponents/FadeInnerWrapperStyled';
+import fadeTheme from "./FadeTheme";
+import FadeInnerWrapperStyled from "./styledComponents/FadeInnerWrapperStyled";
 
 interface IProps {
   direction?: "up" | "right" | "down" | "left";
@@ -68,7 +68,7 @@ const Fade: React.FC<IProps> = (props) => {
   };
 
   return (
-    <Box ref={refWrapper}>
+    <Box ref={refWrapper} sx={{ lineHeight: 0 }}>
       <ThemeProvider theme={fadeTheme}>
         <FadeInnerWrapperStyled
           direction={props.direction}
