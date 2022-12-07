@@ -38,7 +38,6 @@ const CookieConsentSettingsDialog = (props: IProps) => {
         <IconButton
           onClick={() => {
             props.setIsOpen(false);
-            props.setDiagCookieValue(false);
           }}
         >
           <CloseIcon />

@@ -1,16 +1,16 @@
-import { ContactTypeEnum } from "shared/enums/ContactTypeEnum";
+import { ContactTypeEnum } from 'shared/enums/ContactTypeEnum';
 
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-import Contact from "./contact/Contact";
+import Contact from './contact/Contact';
 
 const Contacts = () => {
   // Consts
   const theme = useTheme();
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
-  // TODO: Dopis bude trochu nizzsi, pro zavirani prekryva obalku
+
   return (
     <Box
       sx={{

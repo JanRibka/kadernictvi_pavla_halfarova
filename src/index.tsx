@@ -20,10 +20,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-//TODO: P5idat str8nku po v7padku spojeni (no connection page)
-//TODO: Udelat si vlastní hooky na efekty při skrolování a tak
 // TODO: Na sekce, kde by to mohlo spadnout dát error boundary
-// TODO: Pokud jsem na mobilu zmením posuvník ve stylu cookies
 // TODO: Scroll po refreshi na poslední pozici. Ulozit do LS
 root.render(
   <React.StrictMode>

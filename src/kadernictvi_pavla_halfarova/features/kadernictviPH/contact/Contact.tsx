@@ -14,7 +14,7 @@ import ContactStyled from './styledComponents/ContactStyled';
 import ContactsWrapperStyled from './styledComponents/ContactsWrapperStyled';
 
 interface IProps {}
-// TODO: na pozadi bude nejaky obrzek a pres nej cerna barva
+
 const Contact = forwardRef(
   (props: IProps, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts

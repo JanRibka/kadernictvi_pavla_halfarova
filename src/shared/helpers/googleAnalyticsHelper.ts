@@ -20,7 +20,6 @@ export class GoogleAnalyticsHelper {
     event(args);
   };
 
-  // TODO: Predelat na helper
   SendPageViewToGA = () => {
     pageview(window.location.href);
   };

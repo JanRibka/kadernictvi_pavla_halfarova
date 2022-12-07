@@ -14,7 +14,7 @@ interface IProps {
   onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
   seldTab: number;
 }
-// TODO: Zmensit text menu a posunout dolu kvuli loga
+
 const MobileMenu = (props: IProps) => {
   // References
   const effectSetNavLinksRan = useRef<boolean>(false);
