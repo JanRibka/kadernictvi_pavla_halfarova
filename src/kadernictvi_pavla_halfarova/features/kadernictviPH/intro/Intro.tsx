@@ -1,22 +1,22 @@
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-import "swiper/css/bundle";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import 'swiper/css/bundle';
 
-import { forwardRef, Ref } from "react";
-import { useTranslation } from "react-i18next";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
+import { forwardRef, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper';
 
-import Box from "@mui/material/Box";
+import Box from '@mui/material/Box';
 
-import Intro1 from "./img/Intro_1.jpg";
-import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
-import SwiperSlideEvenStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled";
-import SwiperSlideOddStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideOddStyled";
-import SwiperText1OddStyled from "./swiper/swiperText/styledComponents/SwiperText1OddStyled";
-import SwiperText2OddStyled from "./swiper/swiperText/styledComponents/SwiperText2OddStyled";
-import SwiperTextWrapperOddStyled from "./swiper/swiperText/styledComponents/SwiperTextWrapperOddStyled";
+import Intro1 from './img/Intro_1.jpg';
+import SwiperStyled from './swiper/styledComponents/SwiperStyled';
+import SwiperSlideEvenStyled from './swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled';
+import SwiperSlideOddStyled from './swiper/swiperSlide/styledComponents/SwiperSlideOddStyled';
+import SwiperText1OddStyled from './swiper/swiperText/styledComponents/SwiperText1OddStyled';
+import SwiperText2OddStyled from './swiper/swiperText/styledComponents/SwiperText2OddStyled';
+import SwiperTextWrapperOddStyled from './swiper/swiperText/styledComponents/SwiperTextWrapperOddStyled';
 
 interface IProps {}
 

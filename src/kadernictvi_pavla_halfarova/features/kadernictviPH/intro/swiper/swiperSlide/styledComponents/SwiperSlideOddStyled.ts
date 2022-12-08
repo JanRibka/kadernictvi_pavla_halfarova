@@ -1,6 +1,6 @@
-import { SwiperSlide } from "swiper/react";
+import { SwiperSlide } from 'swiper/react';
 
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
 const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
   position: "relative",
@@ -18,9 +18,11 @@ const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
     "& .slide-text": {
       "& .MuiTypography-root:nth-of-type(1)": {
         visibility: "visible",
+        fontSize: "5rem",
 
         [theme.breakpoints.down("md")]: {
           fontSize: "3rem",
+          height: "2.2rem",
         },
       },
       "& .MuiTypography-root:nth-of-type(2)": {

@@ -14,57 +14,57 @@ const SwiperText2OddStyled = styled(Typography)(
 
     span {
       opacity: 0;
-      transition: opacity 200ms linear;
+      transition: opacity 300ms linear;
 
       &:nth-of-type(1) {
-        transition-delay: 1200ms;        
+        transition-delay: 2000ms;        
       }
       &:nth-of-type(2) {
-        transition-delay: 1250ms;        
+        transition-delay: 2050ms;        
       }
       &:nth-of-type(3) {
-        transition-delay: 1300ms;        
+        transition-delay: 2100ms;        
       }
       &:nth-of-type(4) {
-        transition-delay: 1350ms;        
+        transition-delay: 2150ms;        
       }
       &:nth-of-type(5) {
-        transition-delay: 1400ms;        
+        transition-delay: 2200ms;        
       }
       &:nth-of-type(6) {
-        transition-delay: 1450ms;        
+        transition-delay: 2250ms;        
       }
       &:nth-of-type(7) {
-        transition-delay: 1500ms;        
+        transition-delay: 2300ms;        
       }
       &:nth-of-type(8) {
-        transition-delay: 1550ms;        
+        transition-delay: 2350ms;        
       }
       &:nth-of-type(9) {
-        transition-delay: 1600ms;        
+        transition-delay: 2400ms;        
       }
       &:nth-of-type(10) {
-        transition-delay: 1650ms;        
+        transition-delay: 2450ms;        
       }
       &:nth-of-type(11) {
-        transition-delay: 1700ms;        
+        transition-delay: 2500ms;        
       }
       &:nth-of-type(12) {
-        transition-delay: 1750ms;        
+        transition-delay: 2550ms;        
       }
       &:nth-of-type(13) {
-        transition-delay: 1800ms;        
+        transition-delay: 2600ms;        
       }
       &:nth-of-type(14) {
-        transition-delay: 1850ms;        
+        transition-delay: 2650ms;        
       }
       &:nth-of-type(15) {
-        transition-delay: 1900ms;        
+        transition-delay: 2700ms;        
       }
     }
 
     ${theme.breakpoints.down("md")} {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
 
     /* The typing effect */
