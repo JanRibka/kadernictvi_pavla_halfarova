@@ -1,6 +1,6 @@
-import GridItem from 'shared/components/gridItem/GridItem';
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
 const PhotoWrapperStyled = styled(GridItem)(({ theme }) => ({
   justifyContent: "end",
@@ -8,7 +8,7 @@ const PhotoWrapperStyled = styled(GridItem)(({ theme }) => ({
 
   [theme.breakpoints.down("md")]: {
     justifyContent: "cenger",
-    marginTop: "50px",
+    marginTop: "80px",
   },
 
   [theme.breakpoints.up("xl")]: {
