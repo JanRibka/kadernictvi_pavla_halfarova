@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 
 interface IProps {
   start: number;
@@ -18,7 +18,10 @@ const NumberCount: React.FC<IProps> = (props) => {
 
   // Other
   useEffect(() => {
-    if (refEffectListenerRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      refEffectListenerRan.current === true
+    ) {
       window.addEventListener("scroll", AddClassActive);
     }
 

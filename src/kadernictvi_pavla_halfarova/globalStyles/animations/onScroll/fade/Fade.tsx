@@ -22,7 +22,10 @@ const Fade: React.FC<IProps> = (props) => {
 
   // Other
   useEffect(() => {
-    if (refEffectListenerRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      refEffectListenerRan.current === true
+    ) {
       window.addEventListener("scroll", AddClassActive);
     }
 
@@ -34,7 +37,10 @@ const Fade: React.FC<IProps> = (props) => {
   }, []);
 
   useEffect(() => {
-    if (refEffectRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      refEffectRan.current === true
+    ) {
       AddFadeClass();
     }
 

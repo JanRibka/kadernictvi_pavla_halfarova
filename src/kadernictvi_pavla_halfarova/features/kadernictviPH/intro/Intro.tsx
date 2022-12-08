@@ -58,7 +58,7 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
           <img
             src={Intro1}
             alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 1'
-            loading='lazy'
+            // loading='lazy'
           />
         </SwiperSlideOddStyled>
         {/* Slide 2 */}

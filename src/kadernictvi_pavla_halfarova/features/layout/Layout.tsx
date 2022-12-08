@@ -25,7 +25,10 @@ const Layout = () => {
 
   // Other
   useEffect(() => {
-    if (effectStyleRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectStyleRan.current === true
+    ) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove("loaded");
@@ -40,7 +43,10 @@ const Layout = () => {
   }, []);
 
   useEffect(() => {
-    if (effectClassListRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectClassListRan.current === true
+    ) {
       HeaderClassListChange();
       SetSelectedSectionButton();
     }

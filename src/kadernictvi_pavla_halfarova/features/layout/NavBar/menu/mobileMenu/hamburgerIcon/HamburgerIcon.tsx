@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 
-import HamburgerIconStyled from './styledComponents/HamburgerIconStyled';
+import HamburgerIconStyled from "./styledComponents/HamburgerIconStyled";
 
 interface IProps {
   handleOnClick: () => void;
@@ -18,7 +18,10 @@ const HamburgerIcon = (props: IProps) => {
 
   // Other
   useEffect(() => {
-    if (effectRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectRan.current === true
+    ) {
       SetOpndClsd(props.isOpnd);
     }
 

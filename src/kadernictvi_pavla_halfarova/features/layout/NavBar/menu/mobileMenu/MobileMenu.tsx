@@ -1,14 +1,14 @@
-import { MouseEvent, useEffect, useRef, useState } from 'react';
+import { MouseEvent, useEffect, useRef, useState } from "react";
 
-import { useMediaQuery } from '@mui/material';
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 
-import NavLinks from '../navLinks/NavLinks';
-import HamburgerIcon from './hamburgerIcon/HamburgerIcon';
-import LanguageSelect from './languageSelect/languageSelect';
-import NavLinksStyled from './navLinks/styledComponents/NavLinksStyled';
-import NavLinksWrapperStyled from './navLinks/styledComponents/NavLinksWrapperStyled';
+import NavLinks from "../navLinks/NavLinks";
+import HamburgerIcon from "./hamburgerIcon/HamburgerIcon";
+import LanguageSelect from "./languageSelect/languageSelect";
+import NavLinksStyled from "./navLinks/styledComponents/NavLinksStyled";
+import NavLinksWrapperStyled from "./navLinks/styledComponents/NavLinksWrapperStyled";
 
 interface IProps {
   onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
@@ -34,7 +34,10 @@ const MobileMenu = (props: IProps) => {
 
   // Other
   useEffect(() => {
-    if (effectSetNavLinksRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectSetNavLinksRan.current === true
+    ) {
       SetNavLinksFadeOut(isOpnd);
     }
 
@@ -44,7 +47,10 @@ const MobileMenu = (props: IProps) => {
   }, [isOpnd]);
 
   useEffect(() => {
-    if (effectSetIsOpenRan.current === true && !breakpointMdUp) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      (effectSetIsOpenRan.current === true && !breakpointMdUp)
+    ) {
       setIsOpnd(false);
     }
 

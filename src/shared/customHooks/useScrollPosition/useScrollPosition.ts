@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Hook gets current Y scroll position
@@ -19,7 +19,10 @@ const useScrollPosition = () => {
   useEffect(() => {
     window.addEventListener("scroll", UpdatePosition);
 
-    if (effectRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectRan.current === true
+    ) {
       UpdatePosition();
     }
 

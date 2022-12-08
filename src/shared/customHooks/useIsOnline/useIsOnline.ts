@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const useIsOnline = () => {
   // References
@@ -12,7 +12,10 @@ const useIsOnline = () => {
    * On initization set the isOnline state.
    */
   useEffect(() => {
-    if (effectRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectRan.current === true
+    ) {
       setIsOnline(navigator.onLine);
     }
 

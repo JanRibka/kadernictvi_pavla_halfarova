@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Hook gets actial mouse position
@@ -23,7 +23,10 @@ const useMousePosition = () => {
       setMousePosition({ x: ev.clientX, y: ev.clientY });
     };
 
-    if (effectRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectRan.current === true
+    ) {
       window.addEventListener("mousemove", updateMousePosition);
     }
 

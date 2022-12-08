@@ -1,9 +1,9 @@
-import { MouseEvent, useEffect, useRef, useState } from 'react';
-import { CookieHelper } from 'shared/helpers/cookieHelper';
-import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
+import { MouseEvent, useEffect, useRef, useState } from "react";
+import { CookieHelper } from "shared/helpers/cookieHelper";
+import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
 
-import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
-import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
+import CookieConsentDialog from "./cookieConsentDialog/CookieConsentDialog";
+import CookieConsentSettingsDialog from "./cookieConsentSettingsDialog/CookieConsentSettingsDialog";
 
 const CookienConsent = () => {
   // References
@@ -23,7 +23,10 @@ const CookienConsent = () => {
 
   // Other
   useEffect(() => {
-    if (effectRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectRan.current === true
+    ) {
       GetCookieConsentValue();
     }
 

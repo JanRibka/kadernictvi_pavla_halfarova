@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 /**
  * Hook gets previous value from current value
@@ -14,7 +14,10 @@ const usePrevious = <T>(value: T): T | undefined => {
 
   // Other
   useEffect(() => {
-    if (effectRan.current === true) {
+    if (
+      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
+      effectRan.current === true
+    ) {
       ref.current = value;
     }
 
