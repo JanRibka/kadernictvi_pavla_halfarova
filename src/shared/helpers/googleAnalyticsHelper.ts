@@ -12,16 +12,26 @@ export class GoogleAnalyticsHelper {
   // TODO: priskrolovani zavolat event pokud je dana sekce aktivni
   // TODO: https://blog.saeloun.com/2022/02/17/how-to-integrate-react-app-with-google-analytics.html
   SendEventToGA = (category: string, action: string, label: string = "") => {
-    const args: EventArgs = {
-      category: category,
-      action: action,
-      label: label,
-    };
-    event(args);
+    const value: string = cookieHelper.Get("CookieConsent");
+
+    if (value === "true") {
+      const args: EventArgs = {
+        category: category,
+        action: action,
+        label: label,
+      };
+
+      event(args);
+    }
   };
 
   SendPageViewToGA = () => {
-    pageview(window.location.href);
+    const value: string = cookieHelper.Get("CookieConsent");
+
+    if (value === "true") {
+      // TODO: ukládat do cookies hodnotu pro analztické cookie
+      pageview(window.location.href);
+    }
   };
 
   RemoveGA() {
