@@ -12,7 +12,7 @@ import Box from '@mui/material/Box';
 
 import Intro1 from './img/Intro_1.jpg';
 import SwiperStyled from './swiper/styledComponents/SwiperStyled';
-import SwiperSlideEvenStyled from './swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled';
+// import SwiperSlideEvenStyled from './swiper/swiperSlide/styledComponents/SwiperSlideEvenStyled';
 import SwiperSlideOddStyled from './swiper/swiperSlide/styledComponents/SwiperSlideOddStyled';
 import SwiperText1OddStyled from './swiper/swiperText/styledComponents/SwiperText1OddStyled';
 import SwiperText2OddStyled from './swiper/swiperText/styledComponents/SwiperText2OddStyled';

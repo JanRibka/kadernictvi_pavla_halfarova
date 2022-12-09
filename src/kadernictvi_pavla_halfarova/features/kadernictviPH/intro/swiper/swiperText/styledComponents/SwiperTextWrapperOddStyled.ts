@@ -7,6 +7,14 @@ const SwiperTextWrapperOddSlide = styled(Box)(({ theme }) => ({
   position: "absolute",
   transition: "all 1ms linear 1000ms",
 
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    left: 0,
+    flexDirection: "column",
+    alignItems: "center",
+    width: "100%",
+  },
+
   "& .MuiTypography-root:nth-of-type(1)": {
     lineHeight: "0.7",
   },
