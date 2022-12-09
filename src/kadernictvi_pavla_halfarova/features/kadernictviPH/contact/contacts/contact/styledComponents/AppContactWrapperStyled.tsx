@@ -1,5 +1,5 @@
-import Box, { BoxProps } from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box, { BoxProps } from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 interface IProps extends BoxProps {
   href: string | undefined;
@@ -14,7 +14,7 @@ const AppContactWrapperStyled = styled(({ className, ...props }: IProps) => (
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 0;
+  margin: 15px 0;
   &:link {
     text-decoration: none;
   }

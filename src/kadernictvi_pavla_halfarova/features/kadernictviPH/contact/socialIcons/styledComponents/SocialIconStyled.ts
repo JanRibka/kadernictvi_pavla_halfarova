@@ -1,9 +1,9 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const SocialIconStyled = styled(Box)(({ theme }) => ({
   marginTop: "30px",
-  marginBottom: "50px",
+  marginBottom: "60px",
   display: "flex",
   justifyContent: "center",
   "& .MuiBox-root": {

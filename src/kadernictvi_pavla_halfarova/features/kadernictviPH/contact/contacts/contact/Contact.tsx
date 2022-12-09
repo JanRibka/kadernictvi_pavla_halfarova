@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import { ContactTypeEnum } from 'shared/enums/ContactTypeEnum';
-import EnvelopeIcon from 'shared/icons/envelope/EnvelopeIcon';
+import { useTranslation } from "react-i18next";
+import { ContactTypeEnum } from "shared/enums/ContactTypeEnum";
+import EnvelopeIcon from "shared/icons/envelope/EnvelopeIcon";
 
-import PhoneIcon from '@mui/icons-material/Phone';
-import PlaceIcon from '@mui/icons-material/Place';
+import PhoneIcon from "@mui/icons-material/Phone";
+import PlaceIcon from "@mui/icons-material/Place";
 
-import AppContactWrapperStyled from './styledComponents/AppContactWrapperStyled';
-import ContactWrapperStyled from './styledComponents/ContactWrapperStyled';
-import IconWrapperStyled from './styledComponents/IconWrapperStyled';
-import LabelWrapperStyled from './styledComponents/LabelWrapperStyled';
+import AppContactWrapperStyled from "./styledComponents/AppContactWrapperStyled";
+import ContactWrapperStyled from "./styledComponents/ContactWrapperStyled";
+import IconWrapperStyled from "./styledComponents/IconWrapperStyled";
+import LabelWrapperStyled from "./styledComponents/LabelWrapperStyled";
 
 interface IProps {
   contactType: ContactTypeEnum;
