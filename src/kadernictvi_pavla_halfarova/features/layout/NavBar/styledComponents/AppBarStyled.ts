@@ -1,5 +1,5 @@
-import AppBar from "@mui/material/AppBar";
-import { styled } from "@mui/material/styles";
+import AppBar from '@mui/material/AppBar';
+import { styled } from '@mui/material/styles';
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   flexGrow: 1,
@@ -13,15 +13,27 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
       top: "10px",
       left: "50px",
       borderRadius: "50%",
-      boxShadow: "0px 0px 15px 0px rgba(0,0,0,0.75)",
+      boxShadow: "0px 0px 20px -5px rgba(0,0,0,0.75)",
 
       [theme.breakpoints.down("sm")]: {
         left: "10px",
+        width: "110px",
+        height: "110px",
+
+        button: {
+          width: "110px",
+          height: "110px",
+        },
+      },
+
+      [theme.breakpoints.up("sm")]: {
+        button: {
+          width: "130px",
+          height: "130px",
+        },
       },
 
       button: {
-        width: "130px",
-        height: "130px",
         borderRadius: "50%",
       },
     },
@@ -51,19 +63,24 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
       top: "10px",
       left: "50px",
       boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.75)",
-      // transition: `height 300ms ease-out,
-      // width 300ms ease-out,
-      // top 300ms ease-out,
-      // left 300ms ease-out,
-      // box-shadow 300ms ease-out`,
 
       [theme.breakpoints.down("sm")]: {
+        top: "10px",
         left: "10px",
+        width: "90px",
+        height: "90px",
+
+        button: {
+          width: "90px",
+          height: "90px",
+        },
       },
 
-      button: {
-        width: "110px",
-        height: "110px",
+      [theme.breakpoints.up("sm")]: {
+        button: {
+          width: "110px",
+          height: "110px",
+        },
       },
     },
   },
