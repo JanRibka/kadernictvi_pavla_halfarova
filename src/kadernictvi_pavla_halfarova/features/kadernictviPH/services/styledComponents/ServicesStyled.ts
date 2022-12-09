@@ -9,7 +9,7 @@ const ServicesStyled = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.primary.dark,
 
   [theme.breakpoints.down("md")]: {
-    padding: "8em 40px",
+    padding: "8em 20px",
   },
 }));
 

@@ -18,6 +18,23 @@ const ItemStyled = styled(Box)(({ theme }) => ({
     gridTemplateColumns: "35px auto 110px",
   },
 
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    flexFlow: "row wrap",
+    justifyContent: "center",
+    listStyle: "none",
+
+    "&>p:first-of-type": {
+      flex: 1,
+    },
+
+    ".price-from": {
+      width: "100%",
+      margin: "5px 0",
+      justifyContent: "center",
+    },
+  },
+
   "& svg": {
     transition: "scale 100ms ease-in-out",
   },
