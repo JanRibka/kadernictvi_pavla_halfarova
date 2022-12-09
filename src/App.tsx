@@ -1,7 +1,7 @@
-import Layout from "kadernictvi_pavla_halfarova/features/layout/Layout";
-import { useEffect, useRef } from "react";
-import CookieConsent from "shared/components/cookieConsent/CookieConsent";
-import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
+import Layout from 'kadernictvi_pavla_halfarova/features/layout/Layout';
+import { useEffect, useRef } from 'react';
+import CookieConsent from 'shared/components/cookieConsent/CookieConsent';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
 const App = () => {
   // References
@@ -17,6 +17,7 @@ const App = () => {
       process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
       effectRan.current === true
     ) {
+      // TODO: Nacist y cookies hodnotu pro analzticke cookie a pokud je true, tak yavolat inicializaci
       googleAnalyticsHelper.SendPageViewToGA();
     }
 
