@@ -14,7 +14,7 @@ import ContactStyled from './styledComponents/ContactStyled';
 import ContactsWrapperStyled from './styledComponents/ContactsWrapperStyled';
 
 interface IProps {}
-
+//TODO: P5idal bych tu i provozn9 dobu
 const Contact = forwardRef(
   (props: IProps, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts
