@@ -1,4 +1,5 @@
 import { event, EventArgs, initialize, pageview } from 'react-ga';
+import CookieConstentModel from 'shared/components/cookieConsent/CookieConsentModel';
 
 import { CookieHelper } from './cookieHelper';
 
@@ -10,12 +11,11 @@ export class GoogleAnalyticsHelper {
   }
 
   // TODO: priskrolovani zavolat event pokud je dana sekce aktivni
-  // TODO: Bude zde metoda, která bude načátat hodnoty z cookies a vratí hodnotu pro analztické cookie
   // TODO: https://blog.saeloun.com/2022/02/17/how-to-integrate-react-app-with-google-analytics.html
   SendEventToGA = (category: string, action: string, label: string = "") => {
-    const value: string = cookieHelper.Get("CookieConsent");
+    const consent: CookieConstentModel = GetCookieConsentCookieValue();
 
-    if (value === "true") {
+    if (consent.diag === true) {
       const args: EventArgs = {
         category: category,
         action: action,
@@ -27,10 +27,9 @@ export class GoogleAnalyticsHelper {
   };
 
   SendPageViewToGA = () => {
-    const value: string = cookieHelper.Get("CookieConsent");
+    const consent: CookieConstentModel = GetCookieConsentCookieValue();
 
-    if (value === "true") {
-      // TODO: ukládat do cookies hodnotu pro analztické cookie
+    if (consent.diag === true) {
       pageview(window.location.href);
     }
   };
@@ -41,3 +40,15 @@ export class GoogleAnalyticsHelper {
     cookieHelper.Remove("_gat");
   }
 }
+
+export const GetCookieConsentCookieValue = () => {
+  const cookieHelper: CookieHelper = new CookieHelper();
+  const value: string = cookieHelper.Get("CookieConsent");
+  let result: CookieConstentModel = { funct: true, diag: false };
+
+  if (value !== "") {
+    result = JSON.parse(value);
+  }
+
+  return result;
+};

@@ -1,9 +1,10 @@
-import { MouseEvent, useEffect, useRef, useState } from "react";
-import { CookieHelper } from "shared/helpers/cookieHelper";
-import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
+import { MouseEvent, useEffect, useRef, useState } from 'react';
+import { CookieHelper } from 'shared/helpers/cookieHelper';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
-import CookieConsentDialog from "./cookieConsentDialog/CookieConsentDialog";
-import CookieConsentSettingsDialog from "./cookieConsentSettingsDialog/CookieConsentSettingsDialog";
+import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
+import CookieConstentModel from './CookieConsentModel';
+import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
 
 const CookienConsent = () => {
   // References
@@ -18,7 +19,7 @@ const CookienConsent = () => {
   // Sate
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
-  const [necCookieValue, setNecCookieValue] = useState<boolean>(true);
+  const [functCookieValue, setFunctCookieValue] = useState<boolean>(true);
   const [diagCookieValue, setDiagCookieValue] = useState<boolean>(true);
 
   // Other
@@ -52,7 +53,12 @@ const CookienConsent = () => {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID); // TODO: Zmenit id na nové google analytics
     }
 
-    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
+    const consent: CookieConstentModel = {
+      funct: functCookieValue,
+      diag: diagCookieValue,
+    };
+
+    cookieHelper.Set("CookieConsent", JSON.stringify(consent), cookieExpiresIn);
     setIsOpen(false);
   };
 
@@ -73,7 +79,12 @@ const CookienConsent = () => {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
 
-    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
+    const consent: CookieConstentModel = {
+      funct: true,
+      diag: true,
+    };
+
+    cookieHelper.Set("CookieConsent", JSON.stringify(consent), cookieExpiresIn);
     setIsOpenSettings(false);
     setIsOpen(false);
   };
@@ -85,7 +96,12 @@ const CookienConsent = () => {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
 
-    cookieHelper.Set("CookieConsent", "true", cookieExpiresIn);
+    const consent: CookieConstentModel = {
+      funct: functCookieValue,
+      diag: diagCookieValue,
+    };
+
+    cookieHelper.Set("CookieConsent", JSON.stringify(consent), cookieExpiresIn);
     setIsOpenSettings(false);
     setIsOpen(false);
   };
@@ -101,8 +117,8 @@ const CookienConsent = () => {
       <CookieConsentSettingsDialog
         isOpen={isOpenSettings}
         setIsOpen={setIsOpenSettings}
-        necCookieValue={necCookieValue}
-        setNecCookieValue={setNecCookieValue}
+        necCookieValue={functCookieValue}
+        setNecCookieValue={setFunctCookieValue}
         diagCookieValue={diagCookieValue}
         setDiagCookieValue={setDiagCookieValue}
         agreeAllOnClickAction={HandleAgreeAllOnClickAction}
