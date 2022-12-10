@@ -3,10 +3,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
 import "swiper/css/zoom";
+import "swiper/css/lazy";
 
 import { Dispatch, Suspense, useEffect, useRef, useState } from "react";
 import AppLoader from "shared/components/loader/AppLoader";
-import Swiper, { Navigation, Pagination, Zoom } from "swiper";
+import Swiper, { Lazy, Navigation, Pagination, Zoom } from "swiper";
 
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
@@ -52,7 +53,12 @@ const PhotosDialog = (props: IProps) => {
       result.push(
         <SwiperSlideStyled key={"dialogImage_" + index}>
           <div className='swiper-zoom-container'>
-            <img src={image.SrcDialog} alt={image.Alt} loading='lazy' />
+            <img
+              src={image.SrcDialog}
+              alt={image.Alt}
+              className='swiper-lazy'
+            />
+            <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
           </div>
         </SwiperSlideStyled>
       );
@@ -80,10 +86,11 @@ const PhotosDialog = (props: IProps) => {
             navigation
             loop
             zoom
+            lazy
             slidesPerView={1}
             speed={1500}
             pagination={{ type: "fraction" }}
-            modules={[Pagination, Navigation, Zoom]}
+            modules={[Pagination, Navigation, Zoom, Lazy]}
             onSwiper={setSwiperRef}
           >
             {RenderPhotos()}

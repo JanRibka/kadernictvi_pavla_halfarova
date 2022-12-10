@@ -1,9 +1,9 @@
-import Photo21 from '../../../../../shared/img/intro/Intro_1.jpg';
-import Photo22 from '../../../../../shared/img/intro/Intro_2.jpg';
-import Photo23 from '../../../../../shared/img/intro/Intro_3.jpg';
-import Photo24 from '../../../../../shared/img/intro/Intro_4.jpg';
-import ImageModel from './ImageModel';
-import Photo1 from './img/12.jpg';
+import Photo21 from "../../../../../shared/img/intro/Intro_1.jpg";
+import Photo22 from "../../../../../shared/img/intro/Intro_2.jpg";
+import Photo23 from "../../../../../shared/img/intro/Intro_3.jpg";
+import Photo24 from "../../../../../shared/img/intro/Intro_4.jpg";
+import ImageModel from "./ImageModel";
+import Photo1 from "./img/12.jpg";
 
 const Photos: ImageModel[] = [
   {
