@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
 
@@ -6,6 +7,7 @@ import { useTheme } from '@mui/material/styles';
 
 const GoToGallery = () => {
   // Consts
+  const { t } = useTranslation(["kadernictviPH\\myWork\\myWork"]);
   const theme = useTheme();
 
   return (
@@ -26,7 +28,7 @@ const GoToGallery = () => {
             },
           }}
         >
-          Zobrazit celou galerii
+          {t("goToGallery")}
         </Button>
       </GridItem>
     </GridContainer>
