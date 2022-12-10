@@ -1,23 +1,23 @@
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/bundle";
-import "swiper/css/zoom";
-import "swiper/css/lazy";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/bundle';
+import 'swiper/css/zoom';
+import 'swiper/css/lazy';
 
-import { Dispatch, Suspense, useEffect, useRef, useState } from "react";
-import AppLoader from "shared/components/loader/AppLoader";
-import Swiper, { Lazy, Navigation, Pagination, Zoom } from "swiper";
+import { Dispatch, Suspense, useEffect, useRef, useState } from 'react';
+import AppLoader from 'shared/components/loader/AppLoader';
+import Swiper, { Lazy, Navigation, Pagination, Zoom } from 'swiper';
 
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
-import Images from "../Images";
-import DialogContentStyled from "./styledComponents/DialogContentStyled";
-import DialogStyled from "./styledComponents/DialogStyled";
-import DialogTitleWrapperStyled from "./styledComponents/DialogTitleWrapperStyled";
-import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
-import SwiperSlideStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideStyled";
+import Images from '../Images';
+import DialogContentStyled from './styledComponents/DialogContentStyled';
+import DialogStyled from './styledComponents/DialogStyled';
+import DialogTitleWrapperStyled from './styledComponents/DialogTitleWrapperStyled';
+import SwiperStyled from './swiper/styledComponents/SwiperStyled';
+import SwiperSlideStyled from './swiper/swiperSlide/styledComponents/SwiperSlideStyled';
 
 interface IProps {
   open: boolean;
@@ -57,6 +57,7 @@ const PhotosDialog = (props: IProps) => {
               src={image.SrcDialog}
               alt={image.Alt}
               className='swiper-lazy'
+              loading='lazy'
             />
             <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
           </div>
@@ -90,7 +91,7 @@ const PhotosDialog = (props: IProps) => {
             slidesPerView={1}
             speed={1500}
             pagination={{ type: "fraction" }}
-            modules={[Pagination, Navigation, Zoom, Lazy]}
+            modules={[Lazy, Pagination, Navigation, Zoom]}
             onSwiper={setSwiperRef}
           >
             {RenderPhotos()}

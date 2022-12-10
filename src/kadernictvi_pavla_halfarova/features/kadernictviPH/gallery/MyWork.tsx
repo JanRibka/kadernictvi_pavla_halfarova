@@ -1,14 +1,15 @@
-import { forwardRef, Ref } from 'react';
-import { useTranslation } from 'react-i18next';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
-import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
+import { forwardRef, Ref } from "react";
+import { useTranslation } from "react-i18next";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
+import SectionTitle from "shared/components/sectionTitle/SectionTitle";
 
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
-import Photos from './photos/Photos';
-import GalleryStyled from './styledComponents/MyWorkStyled';
+import GoToGallery from "./goToGallery/GoToGallery";
+import Photos from "./photos/Photos";
+import GalleryStyled from "./styledComponents/MyWorkStyled";
 
 interface IProps {}
 // TODO: Pri rozsireni okna se zobrazi poze 2 fotky z leva a zbytek ne
@@ -49,6 +50,8 @@ const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
       </GridContainer>
       {/* Fotky */}
       <Photos />
+      {/* Zobrazit celou galerii */}
+      <GoToGallery />
     </GalleryStyled>
   );
 });
