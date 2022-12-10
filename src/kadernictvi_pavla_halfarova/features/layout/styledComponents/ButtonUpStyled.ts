@@ -8,6 +8,7 @@ const ButtonUpStyled = styled(IconButton)(({ theme }) => ({
   borderRadius: "5px",
   color: theme.palette.primary.dark,
   backgroundColor: theme.palette.common.third.main,
+  zIndex: 1,
   transform: "translateY(100px)",
   transition: "transform 450ms ease-in-out",
 
