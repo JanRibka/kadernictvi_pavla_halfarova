@@ -1,19 +1,22 @@
-import { MouseEvent, RefObject, useEffect, useRef, useState } from "react";
-import { scrollIntoView } from "seamless-scroll-polyfill";
-import useScrollPosition from "shared/customHooks/useScrollPosition/useScrollPosition";
-import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
+import { MouseEvent, RefObject, useEffect, useRef, useState } from 'react';
+import { scrollIntoView } from 'seamless-scroll-polyfill';
+import useScrollPosition from 'shared/customHooks/useScrollPosition/useScrollPosition';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
-import { Box } from "@mui/system";
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Box } from '@mui/system';
 
-import KadernictviPHPage from "../pages/KadernictviPHPage";
-import Footer from "./footer/Footer";
-import NavBar from "./NavBar/NavBar";
+import KadernictviPHPage from '../pages/KadernictviPHPage';
+import Footer from './footer/Footer';
+import NavBar from './NavBar/NavBar';
+import ButtonUpStyled from './styledComponents/ButtonUpStyled';
 
 const Layout = () => {
   // References
   const ref = useRef<Object>(null);
-  const effectStyleRan = useRef<boolean>(false);
-  const effectClassListRan = useRef<boolean>(false);
+  const refEffectStyleRan = useRef<boolean>(false);
+  const refEffectClassListRan = useRef<boolean>(false);
+  const refBtnUp = useRef<HTMLButtonElement>(null);
 
   // Constants
   const scrollYPosition: number = useScrollPosition();
@@ -27,7 +30,7 @@ const Layout = () => {
   useEffect(() => {
     if (
       process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
-      effectStyleRan.current === true
+      refEffectStyleRan.current === true
     ) {
       document.body
         .getElementsByTagName("header")[0]
@@ -38,21 +41,21 @@ const Layout = () => {
     }
 
     return () => {
-      effectStyleRan.current = true;
+      refEffectStyleRan.current = true;
     };
   }, []);
 
   useEffect(() => {
     if (
       process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
-      effectClassListRan.current === true
+      refEffectClassListRan.current === true
     ) {
       HeaderClassListChange();
       SetSelectedSectionButton();
     }
 
     return () => {
-      effectClassListRan.current = true;
+      refEffectClassListRan.current = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollYPosition]);
@@ -73,6 +76,8 @@ const Layout = () => {
       document.body
         .getElementsByClassName("mobile-menu-nav")[0]
         .classList.add("scroll-on");
+
+      refBtnUp.current?.classList.add("to-top-active");
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -86,6 +91,8 @@ const Layout = () => {
       document.body
         .getElementsByClassName("mobile-menu-nav")[0]
         .classList.remove("scroll-on");
+
+      refBtnUp.current?.classList.remove("to-top-active");
     }
   };
 
@@ -144,6 +151,15 @@ const Layout = () => {
     );
   };
 
+  const ScrollToTopHandler = () => {
+    if (!!ref) {
+      const auxRef = ref?.current as any;
+      const currentRef = auxRef["intro"] as RefObject<HTMLDivElement>;
+
+      scrollIntoView(currentRef.current as Element, { behavior: "smooth" }); // TODO: otestovat na ruzn7ch prohlizecich, hlavne safari
+    }
+  };
+
   // TODO: Dole bude tlačítko pro scroll nahoru
   return (
     <Box display='flex' flexDirection='column'>
@@ -153,6 +169,9 @@ const Layout = () => {
       />
       <KadernictviPHPage ref={ref} />
       <Footer />
+      <ButtonUpStyled onClick={ScrollToTopHandler} ref={refBtnUp}>
+        <KeyboardArrowUpIcon />
+      </ButtonUpStyled>
     </Box>
   );
 };
