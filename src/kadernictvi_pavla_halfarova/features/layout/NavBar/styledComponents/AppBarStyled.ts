@@ -63,6 +63,7 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
       top: "10px",
       left: "50px",
       boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.75)",
+      borderRadius: "50%",
 
       [theme.breakpoints.down("sm")]: {
         top: "10px",
@@ -81,6 +82,10 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
           width: "110px",
           height: "110px",
         },
+      },
+
+      button: {
+        borderRadius: "50%",
       },
     },
   },
