@@ -12,9 +12,14 @@ const SwiperStyledStyled = styled(SwiperSlide)(({ theme }) => ({
     alignItems: "center",
 
     "& img": {
-      display: "block",
-      height: "94%",
       width: "auto",
+      height: "auto",
+      maxWidth: "100%",
+      maxHeight: "94%",
+      transform: "translate(-50%, -50%)",
+      position: "absolute",
+      left: "50%",
+      top: "50%",
     },
   },
 }));
