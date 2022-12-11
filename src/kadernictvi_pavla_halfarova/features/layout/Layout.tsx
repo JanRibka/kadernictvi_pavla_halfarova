@@ -160,7 +160,6 @@ const Layout = () => {
     }
   };
 
-  // TODO: Dole bude tlačítko pro scroll nahoru
   return (
     <Box display='flex' flexDirection='column'>
       <NavBar
