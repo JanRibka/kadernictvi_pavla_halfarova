@@ -9,6 +9,7 @@ import '@fontsource/caveat';
 import { AppTheme } from 'kadernictvi_pavla_halfarova/globalStyles/AppTheme';
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
+import { useSSR } from 'react-i18next';
 import SuspenseFallback from 'shared/components/suspenseFallback/SuspenseFallback';
 
 import { CssBaseline } from '@mui/material';
@@ -17,9 +18,29 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// const AppContainer = () => {
+//   useSSR(window.initialI18nStore, window.initialLanguage);
+//   return (
+//     <React.StrictMode>
+//       <ThemeProvider theme={AppTheme}>
+//         <CssBaseline />
+//         <Suspense fallback={<SuspenseFallback />}>
+//           <App />
+//         </Suspense>
+//       </ThemeProvider>
+//     </React.StrictMode>
+//   );
+// };
+
+// ReactDOM.hydrateRoot(
+//   document.getElementById("root") as HTMLElement,
+//   AppContainer()
+// );
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 // TODO: Uslideru v galeriri, zkusit pridat lazu loading a dát tam načítani
 root.render(
   <React.StrictMode>
