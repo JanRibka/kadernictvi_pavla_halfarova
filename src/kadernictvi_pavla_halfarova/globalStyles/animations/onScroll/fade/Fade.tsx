@@ -13,7 +13,7 @@ interface IProps {
   delay?: number;
   children: JSX.Element;
 }
-// TODO: animace budou podle toho https://animate.style/
+// TODO: animace budou podle toho https://animate.style/ a https://www.npmjs.com/package/wowjs
 const Fade: React.FC<IProps> = (props) => {
   // References
   const refEffectListenerRan = useRef<boolean>(false);
