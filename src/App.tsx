@@ -1,10 +1,14 @@
-import Layout from 'kadernictvi_pavla_halfarova/features/layout/Layout';
-import { useEffect, useRef } from 'react';
-import CookieConsent from 'shared/components/cookieConsent/CookieConsent';
-import CookieConstentModel from 'shared/components/cookieConsent/CookieConsentModel';
+import "animate.css";
+import "wow.js";
+
+import Layout from "kadernictvi_pavla_halfarova/features/layout/Layout";
+import { useEffect, useRef } from "react";
+import CookieConsent from "shared/components/cookieConsent/CookieConsent";
+import CookieConstentModel from "shared/components/cookieConsent/CookieConsentModel";
 import {
-    GetCookieConsentCookieValue, GoogleAnalyticsHelper
-} from 'shared/helpers/googleAnalyticsHelper';
+  GetCookieConsentCookieValue,
+  GoogleAnalyticsHelper,
+} from "shared/helpers/googleAnalyticsHelper";
 
 const App = () => {
   // References
