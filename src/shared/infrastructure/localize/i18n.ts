@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend, { BackendOptions } from 'i18next-http-backend';
+import Backend, { HttpBackendOptions } from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
 
@@ -25,7 +25,7 @@ const getLoadPath = (): string => {
 };
 
 // Konfigurace pro načítání překladů
-const backendOptions: BackendOptions = {
+const backendOptions: HttpBackendOptions = {
   loadPath: getLoadPath(),
 };
 
