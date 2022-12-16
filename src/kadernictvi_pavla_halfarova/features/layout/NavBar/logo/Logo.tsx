@@ -1,6 +1,6 @@
-import HairSalonPHLogo from "../../../../../shared/img/logo/logo_hairsalon_ph.jpg";
-import ImgWrapperStyled from "./styledComponents/ImgWrapperStyled";
-import LogoStyled from "./styledComponents/LogoStyled";
+import HairSalonPHLogo from '../../../../../shared/img/logo/logo_hairsalon_ph.svg';
+import ImgWrapperStyled from './styledComponents/ImgWrapperStyled';
+import LogoStyled from './styledComponents/LogoStyled';
 
 const Logo = () => {
   return (
