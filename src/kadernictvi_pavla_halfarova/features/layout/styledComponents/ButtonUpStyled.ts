@@ -23,6 +23,7 @@ const ButtonUpStyled = styled(IconButton)(({ theme }) => ({
 
   ":hover": {
     backgroundColor: theme.palette.common.third.dark,
+    transform: "translateY(-10px)",
   },
 }));
 
