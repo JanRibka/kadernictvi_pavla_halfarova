@@ -26,7 +26,7 @@ const LanguageSelect = () => {
   useEffect(() => {
     SetHeadTexts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [i18next.language]);
 
   // Consts
   const { t } = useTranslation(["\\head\\head"]);
@@ -77,8 +77,6 @@ const LanguageSelect = () => {
       title as string,
       ("Přepnutí jazyka na " + title) as string
     );
-
-    SetHeadTexts();
   };
 
   const HandleLanguageButtonOnClick = () => {
