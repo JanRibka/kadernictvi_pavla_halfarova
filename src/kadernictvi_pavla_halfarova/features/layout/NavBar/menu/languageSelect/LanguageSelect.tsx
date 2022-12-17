@@ -1,28 +1,35 @@
-import i18next from "i18next";
-import { MouseEvent, useRef, useState } from "react";
-import { LanguageEnum } from "shared/enums/LanguageEnum";
-import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
-import i18n from "shared/infrastructure/localize/i18n";
+import i18next from 'i18next';
+import { MouseEvent, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { LanguageEnum } from 'shared/enums/LanguageEnum';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
+import i18n from 'shared/infrastructure/localize/i18n';
 
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import Box from "@mui/material/Box";
-import ClickAwayListener from "@mui/material/ClickAwayListener";
-import MenuItem from "@mui/material/MenuItem";
-import Paper from "@mui/material/Paper";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Box from '@mui/material/Box';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import MenuItem from '@mui/material/MenuItem';
+import Paper from '@mui/material/Paper';
 
-import CzechFlag from "../../../../../../shared/flags/czech-flag.png";
-import Countries from "./models/Countries";
-import ImageButtonStyled from "./styledComponents/ImageButtonStyled";
-import ImageSrcStyled from "./styledComponents/ImageSrcStyled";
-import LanguageSelectStyled from "./styledComponents/LanguageSelectStyled";
-import MenuWrapperStyled from "./styledComponents/MenuWrapperStyled";
+import CzechFlag from '../../../../../../shared/flags/czech-flag.png';
+import Countries from './models/Countries';
+import ImageButtonStyled from './styledComponents/ImageButtonStyled';
+import ImageSrcStyled from './styledComponents/ImageSrcStyled';
+import LanguageSelectStyled from './styledComponents/LanguageSelectStyled';
+import MenuWrapperStyled from './styledComponents/MenuWrapperStyled';
 
 const LanguageSelect = () => {
   // References
   const refMenu = useRef<HTMLDivElement>(null);
   const refArrowIcon = useRef<SVGSVGElement>(null);
 
+  useEffect(() => {
+    SetHeadTexts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Consts
+  const { t } = useTranslation(["\\head\\head"]);
   const googleAnalyticsHelper: GoogleAnalyticsHelper =
     new GoogleAnalyticsHelper();
   const i18nextLng: string | null =
@@ -39,6 +46,17 @@ const LanguageSelect = () => {
   );
 
   // Functions
+  const SetHeadTexts = () => {
+    // Změna jazyka na html elementu
+    document.documentElement.lang = i18next.language;
+
+    // Změna document title
+    document.title = t("title");
+
+    // Description
+    const desc = document.querySelector("meta[name='description']");
+    desc?.setAttribute("content", t("description"));
+  };
   const HandleMenuItemOnClick = (e: MouseEvent<HTMLLIElement>) => {
     const title = e?.currentTarget?.firstElementChild?.getAttribute("title");
     const value: string =
@@ -59,6 +77,8 @@ const LanguageSelect = () => {
       title as string,
       ("Přepnutí jazyka na " + title) as string
     );
+
+    SetHeadTexts();
   };
 
   const HandleLanguageButtonOnClick = () => {
