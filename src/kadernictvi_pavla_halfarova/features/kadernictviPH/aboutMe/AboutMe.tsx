@@ -17,14 +17,10 @@ const AboutMe = forwardRef(
   (props: IProps, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts
     const theme = useTheme();
-    const breakpointMdDwn: boolean = useMediaQuery(
-      theme.breakpoints.down("md")
-    );
     const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
     const breakpointLgUp: boolean = useMediaQuery(theme.breakpoints.up("lg"));
     const breakpointXlUp: boolean = useMediaQuery(theme.breakpoints.up("xl"));
-    const photoDirection = breakpointMdDwn ? "fadeInUp" : "fadeInLeft";
-    const descriptionDirection = breakpointMdDwn ? "fadeInUp" : "fadeInRight";
+
     const gridContainerMaxWidth: string = breakpointXlUp
       ? "1280px"
       : breakpointLgUp
@@ -42,13 +38,13 @@ const AboutMe = forwardRef(
         >
           {/* Photo */}
           <PhotoWrapperStyled xs={12} md={6}>
-            <Fade animation={photoDirection}>
+            <Fade animation='fadeInLeft'>
               <Photo />
             </Fade>
           </PhotoWrapperStyled>
           {/* Description */}
           <GridItem xs={12} md={6} alignSelf='baseline'>
-            <Fade animation={descriptionDirection}>
+            <Fade animation='fadeInRight'>
               <Description />
             </Fade>
           </GridItem>
