@@ -1,18 +1,19 @@
-import { forwardRef, Ref } from "react";
-import { useTranslation } from "react-i18next";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
-import SectionTitle from "shared/components/sectionTitle/SectionTitle";
+import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
+import { forwardRef, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
+import SectionTitle from 'shared/components/sectionTitle/SectionTitle';
 
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
-import hairColoring from "./img/hairColoring.png";
-import hairCut from "./img/hairCut.png";
-import { IItemProps } from "./service/content/item/Item";
-import Service from "./service/Service";
-import ServicesStyled from "./styledComponents/ServicesStyled";
+import hairColoring from './img/hairColoring.png';
+import hairCut from './img/hairCut.png';
+import { IItemProps } from './service/content/item/Item';
+import Service from './service/Service';
+import ServicesStyled from './styledComponents/ServicesStyled';
 
 interface IProps {}
 
@@ -65,6 +66,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
         }}
       >
         {/* Cutting */}
+
         <GridItem
           xs={12}
           md={6}
@@ -77,8 +79,10 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             iconDescription='Stříhání vlasů'
             description={t("serviceCutting")}
             items={cuttingItems}
+            animation='fadeInLeft'
           />
         </GridItem>
+
         {/* Coloring */}
         <GridItem
           xs={12}
@@ -93,13 +97,16 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             iconDescription='Barvení vlasů'
             description={t("serviceColoring")}
             items={coloringItems}
+            animation='fadeInRight'
           />
         </GridItem>
       </GridContainer>
-      <GridItem xs={12} sx={{ marginTop: "50px" }}>
-        <Typography sx={{ textAlign: "justify", textAlignLast: "center" }}>
-          {t("priceListDesc")}
-        </Typography>
+      <GridItem xs={12} sx={{ marginTop: "50px" }} justifyContent='center'>
+        <Fade animation='fadeInUp'>
+          <Typography sx={{ textAlign: "justify", textAlignLast: "center" }}>
+            {t("priceListDesc")}
+          </Typography>
+        </Fade>
       </GridItem>
     </ServicesStyled>
   );

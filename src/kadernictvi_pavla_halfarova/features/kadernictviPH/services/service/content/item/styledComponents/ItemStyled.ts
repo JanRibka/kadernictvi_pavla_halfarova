@@ -31,7 +31,7 @@ const ItemStyled = styled(Box)(({ theme }) => ({
     ".price-from": {
       width: "100%",
       margin: "5px 0 15px 0",
-      justifyContent: "center",
+      justifyContent: "end",
     },
   },
 

@@ -1,16 +1,19 @@
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
 
-import Content from "./content/Content";
-import { IItemProps } from "./content/item/Item";
-import Icon from "./icon/Icon";
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+import Content from './content/Content';
+import { IItemProps } from './content/item/Item';
+import Icon from './icon/Icon';
 
 interface IProps {
   icon: string;
   iconDescription: string;
   description: string;
   items: IItemProps[];
+  animation: "fadeInLeft" | "fadeInRight";
 }
 
 const Service = (props: IProps) => {
@@ -24,14 +27,18 @@ const Service = (props: IProps) => {
 
   return (
     <Box sx={{ width: "100%", margin: wrapperMargin }}>
-      {/* Icon */}
-      <Icon
-        icon={props.icon}
-        iconDescription={props.iconDescription}
-        description={props.description}
-      />
-      {/* Content */}
-      <Content items={props.items} />
+      <Fade animation={props.animation}>
+        <>
+          {/* Icon */}
+          <Icon
+            icon={props.icon}
+            iconDescription={props.iconDescription}
+            description={props.description}
+          />
+          {/* Content */}
+          <Content items={props.items} />
+        </>
+      </Fade>
     </Box>
   );
 };
