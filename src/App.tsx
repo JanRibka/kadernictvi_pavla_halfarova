@@ -35,7 +35,8 @@ const App = () => {
 
       googleAnalyticsHelper.SendPageViewToGA();
 
-      new WOW().init();
+      // Inicializace WOW
+      new WOW.WOW().init();
     }
 
     return () => {

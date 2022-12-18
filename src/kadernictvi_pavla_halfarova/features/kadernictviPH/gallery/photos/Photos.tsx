@@ -1,16 +1,16 @@
-import Fade from "kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade";
-import { MouseEvent, useState } from "react";
-import GridContainer from "shared/components/gridContainer/GridContainer";
+import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
+import { MouseEvent, useState } from 'react';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
 
-import { useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
+import { useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
-import Images from "./Images";
-import PhotosDialog from "./photosDialog/PhotosDialog";
-import ImgStyled from "./styledComponents/ImgStyled";
-import ImgWrapperStyled from "./styledComponents/ImgWrapperStyled";
+import Images from './Images';
+import PhotosDialog from './photosDialog/PhotosDialog';
+import ImgStyled from './styledComponents/ImgStyled';
+import ImgWrapperStyled from './styledComponents/ImgWrapperStyled';
 
 const Photos = () => {
   // Consts
@@ -49,7 +49,7 @@ const Photos = () => {
             lg={3}
             key={"imageWrapper_" + auxIndex}
           >
-            <Fade once delay={delay}>
+            <Fade animation='fadeInUp' delay={delay}>
               <Box>
                 <ImgStyled
                   src={image.SrcSection}

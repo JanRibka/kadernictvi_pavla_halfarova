@@ -1,15 +1,15 @@
-import Fade from "kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade";
-import { forwardRef, Ref } from "react";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
+import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
+import { forwardRef, Ref } from 'react';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
 
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
-import Description from "./description/Description";
-import Photo from "./photo/Photo";
-import AboutMeStyled from "./styledComponents/AboutMeStyled";
-import PhotoWrapperStyled from "./styledComponents/PhotoWrapperStyled";
+import Description from './description/Description';
+import Photo from './photo/Photo';
+import AboutMeStyled from './styledComponents/AboutMeStyled';
+import PhotoWrapperStyled from './styledComponents/PhotoWrapperStyled';
 
 interface IProps {}
 
@@ -23,8 +23,8 @@ const AboutMe = forwardRef(
     const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
     const breakpointLgUp: boolean = useMediaQuery(theme.breakpoints.up("lg"));
     const breakpointXlUp: boolean = useMediaQuery(theme.breakpoints.up("xl"));
-    const photoDirection = breakpointMdDwn ? "up" : "right";
-    const descriptionDirection = breakpointMdDwn ? "up" : "left";
+    const photoDirection = breakpointMdDwn ? "fadeInUp" : "fadeInLeft";
+    const descriptionDirection = breakpointMdDwn ? "fadeInUp" : "fadeInRight";
     const gridContainerMaxWidth: string = breakpointXlUp
       ? "1280px"
       : breakpointLgUp
@@ -42,13 +42,13 @@ const AboutMe = forwardRef(
         >
           {/* Photo */}
           <PhotoWrapperStyled xs={12} md={6}>
-            <Fade direction={photoDirection} once>
+            <Fade animation={photoDirection}>
               <Photo />
             </Fade>
           </PhotoWrapperStyled>
           {/* Description */}
           <GridItem xs={12} md={6} alignSelf='baseline'>
-            <Fade direction={descriptionDirection} once>
+            <Fade animation={descriptionDirection}>
               <Description />
             </Fade>
           </GridItem>
