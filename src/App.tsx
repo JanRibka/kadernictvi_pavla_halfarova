@@ -1,14 +1,13 @@
-import "animate.css";
-import "wow.js";
+import 'animate.css';
 
-import Layout from "kadernictvi_pavla_halfarova/features/layout/Layout";
-import { useEffect, useRef } from "react";
-import CookieConsent from "shared/components/cookieConsent/CookieConsent";
-import CookieConstentModel from "shared/components/cookieConsent/CookieConsentModel";
+import Layout from 'kadernictvi_pavla_halfarova/features/layout/Layout';
+import { useEffect, useRef } from 'react';
+import CookieConsent from 'shared/components/cookieConsent/CookieConsent';
+import CookieConstentModel from 'shared/components/cookieConsent/CookieConsentModel';
 import {
-  GetCookieConsentCookieValue,
-  GoogleAnalyticsHelper,
-} from "shared/helpers/googleAnalyticsHelper";
+    GetCookieConsentCookieValue, GoogleAnalyticsHelper
+} from 'shared/helpers/googleAnalyticsHelper';
+import WOW from 'wowjs';
 
 const App = () => {
   // References
@@ -35,6 +34,8 @@ const App = () => {
       }
 
       googleAnalyticsHelper.SendPageViewToGA();
+
+      new WOW().init();
     }
 
     return () => {
