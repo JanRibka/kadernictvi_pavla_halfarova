@@ -1,4 +1,4 @@
-import FadeWrapperStyled from './styledComponents/FadeWrapperStyled';
+import FadeWrapperStyled from "./styledComponents/FadeWrapperStyled";
 
 interface IProps {
   /** Animation name */
@@ -12,6 +12,16 @@ interface IProps {
     | "fade-up-left"
     | "fade-down-right"
     | "fade-down-left";
+  anchorPlacement?:
+    | "top-bottom"
+    | "top-center"
+    | "top-top"
+    | "center-bottom"
+    | "center-center"
+    | "center-top"
+    | "bottom-bottom"
+    | "bottom-center"
+    | "bottom-top";
   /** Animation duration (ms) */
   duration?: number;
   /** Delay before the animation starts (ms) */
@@ -28,6 +38,7 @@ const Fade: React.FC<IProps> = (props) => {
       data-aos-offset={props.offset}
       data-aos-delay={props.delay}
       data-aos-duration={props.duration}
+      data-aos-anchor-placement={props.anchorPlacement}
     >
       {props.children}
     </FadeWrapperStyled>
