@@ -1,3 +1,4 @@
+import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
 import { forwardRef, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
@@ -50,7 +51,9 @@ const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
       {/* Fotky */}
       <Photos />
       {/* Zobrazit celou galerii */}
-      <GoToGallery />
+      <Fade animation='fade-up'>
+        <GoToGallery />
+      </Fade>
     </GalleryStyled>
   );
 });

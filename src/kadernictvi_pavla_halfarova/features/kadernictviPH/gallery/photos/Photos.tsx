@@ -49,7 +49,7 @@ const Photos = () => {
             lg={3}
             key={"imageWrapper_" + auxIndex}
           >
-            <Fade animation='fadeInUp' delay={delay}>
+            <Fade animation='fade-up' delay={delay}>
               <Box>
                 <ImgStyled
                   src={image.SrcSection}

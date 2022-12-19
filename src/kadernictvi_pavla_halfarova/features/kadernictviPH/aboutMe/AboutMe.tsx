@@ -5,6 +5,7 @@ import GridItem from 'shared/components/gridItem/GridItem';
 
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import Box from '@mui/system/Box';
 
 import Description from './description/Description';
 import Photo from './photo/Photo';
@@ -38,13 +39,15 @@ const AboutMe = forwardRef(
         >
           {/* Photo */}
           <PhotoWrapperStyled xs={12} md={6}>
-            <Fade animation='fadeInLeft'>
-              <Photo />
-            </Fade>
+            <Box component={"div"} className='photo-wrapper'>
+              <Fade animation='fade-right'>
+                <Photo />
+              </Fade>
+            </Box>
           </PhotoWrapperStyled>
           {/* Description */}
           <GridItem xs={12} md={6} alignSelf='baseline'>
-            <Fade animation='fadeInRight'>
+            <Fade animation='fade-left'>
               <Description />
             </Fade>
           </GridItem>

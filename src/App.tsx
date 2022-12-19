@@ -1,5 +1,7 @@
 import 'animate.css';
+import 'aos/dist/aos.css';
 
+import AOS from 'aos';
 import Layout from 'kadernictvi_pavla_halfarova/features/layout/Layout';
 import { useEffect, useRef } from 'react';
 import CookieConsent from 'shared/components/cookieConsent/CookieConsent';
@@ -7,7 +9,6 @@ import CookieConstentModel from 'shared/components/cookieConsent/CookieConsentMo
 import {
     GetCookieConsentCookieValue, GoogleAnalyticsHelper
 } from 'shared/helpers/googleAnalyticsHelper';
-import WOW from 'wowjs';
 
 const App = () => {
   // References
@@ -35,8 +36,14 @@ const App = () => {
 
       googleAnalyticsHelper.SendPageViewToGA();
 
-      // Inicializace WOW
-      new WOW.WOW().init();
+      // Inicialiyace AOS
+      AOS.init({
+        once: true,
+        duration: 1000,
+        delay: 0,
+        offset: 120,
+        easing: "ease-in-out",
+      });
     }
 
     return () => {

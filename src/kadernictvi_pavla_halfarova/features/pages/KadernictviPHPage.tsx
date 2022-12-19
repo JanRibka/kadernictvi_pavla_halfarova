@@ -57,7 +57,11 @@ const KadernictviPage = forwardRef(
     }));
 
     return (
-      <Box>
+      <Box
+        sx={{
+          overflow: "hidden",
+        }}
+      >
         <Intro ref={refIntro} />
         <AboutMe ref={refAboutMe} />
         <Services ref={refServices} />

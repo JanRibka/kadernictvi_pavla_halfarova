@@ -11,10 +11,7 @@ const GoToGallery = () => {
   const theme = useTheme();
 
   return (
-    <GridContainer
-      className='wow animate__animated animate__bounce animate__repeat-1'
-      sx={{ marginTop: "50px", justifyContent: "center" }}
-    >
+    <GridContainer sx={{ marginTop: "50px", justifyContent: "center" }}>
       <GridItem xs={12} justifyContent='center'>
         <Button
           variant='contained'

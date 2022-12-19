@@ -13,7 +13,7 @@ interface IProps {
   iconDescription: string;
   description: string;
   items: IItemProps[];
-  animation: "fadeInLeft" | "fadeInRight";
+  animation: "fade-left" | "fade-right";
 }
 
 const Service = (props: IProps) => {

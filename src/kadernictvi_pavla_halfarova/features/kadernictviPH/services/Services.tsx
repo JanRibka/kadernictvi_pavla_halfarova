@@ -79,7 +79,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             iconDescription='Stříhání vlasů'
             description={t("serviceCutting")}
             items={cuttingItems}
-            animation='fadeInLeft'
+            animation='fade-right'
           />
         </GridItem>
 
@@ -97,12 +97,12 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             iconDescription='Barvení vlasů'
             description={t("serviceColoring")}
             items={coloringItems}
-            animation='fadeInRight'
+            animation='fade-left'
           />
         </GridItem>
       </GridContainer>
       <GridItem xs={12} sx={{ marginTop: "50px" }} justifyContent='center'>
-        <Fade animation='fadeInUp'>
+        <Fade animation='fade-up'>
           <Typography sx={{ textAlign: "justify", textAlignLast: "center" }}>
             {t("priceListDesc")}
           </Typography>
