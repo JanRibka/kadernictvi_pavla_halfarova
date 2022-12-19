@@ -1,7 +1,7 @@
 export default interface ImageModel {
-  SrcSection: string;
-  SrcDialog: string;
+  GalleryName: string;
+  Src: string;
   Alt: string;
   Description: string;
-  Index: number;
+  MainPhoto: boolean;
 }

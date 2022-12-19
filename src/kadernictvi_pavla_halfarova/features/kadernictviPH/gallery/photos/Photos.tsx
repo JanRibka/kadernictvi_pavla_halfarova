@@ -1,16 +1,24 @@
-import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
-import { MouseEvent, useState } from 'react';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
+import Fade from "kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade";
+import { lazy, MouseEvent, Suspense, useState } from "react";
+import GridContainer from "shared/components/gridContainer/GridContainer";
 
-import { useMediaQuery } from '@mui/material';
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
+import { useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
-import Images from './Images';
-import PhotosDialog from './photosDialog/PhotosDialog';
-import ImgStyled from './styledComponents/ImgStyled';
-import ImgWrapperStyled from './styledComponents/ImgWrapperStyled';
+import ImageModel from "./ImageModel";
+import IntroSection01 from "./img/Intro01_Preview.jpg";
+import IntroSection02 from "./img/Intro02_Preview.jpg";
+import IntroSection03 from "./img/Intro03_Preview.jpg";
+import IntroSection04 from "./img/Intro04_Preview.jpg";
+import IntroSection05 from "./img/Intro05_Preview.jpg";
+import ImgStyled from "./styledComponents/ImgStyled";
+import ImgWrapperStyled from "./styledComponents/ImgWrapperStyled";
+
+const PhotosDialog = lazy(() => import("./photosDialog/PhotosDialog"));
+
+export let products: ImageModel[] = [];
 
 const Photos = () => {
   // Consts
@@ -19,14 +27,51 @@ const Photos = () => {
   const breakPointSmDwn = useMediaQuery(theme.breakpoints.down("sm"));
 
   // State
-  const [openData, setOpenData] = useState<{ open: boolean; index: number }>({
-    open: false,
-    index: 0,
-  });
+  const [open, setOpen] = useState<boolean>(false);
+
+  //#region Gallery
+  products = [
+    {
+      GalleryName: "",
+      Src: IntroSection01,
+      Alt: "Lorem ipsum",
+      Description: "Lorem ipsum",
+      MainPhoto: true,
+    },
+    {
+      GalleryName: "",
+      Src: IntroSection02,
+      Alt: "Lorem ipsum",
+      Description: "Lorem ipsum",
+      MainPhoto: false,
+    },
+    {
+      GalleryName: "",
+      Src: IntroSection03,
+      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum",
+      Description: "Lorem ipsum",
+      MainPhoto: false,
+    },
+    {
+      GalleryName: "",
+      Src: IntroSection04,
+      Alt: "Lorem ipsum",
+      Description: "Lorem ipsum",
+      MainPhoto: true,
+    },
+    {
+      GalleryName: "",
+      Src: IntroSection05,
+      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+      Description: "Lorem ipsum",
+      MainPhoto: true,
+    },
+  ];
+  //#endregion
 
   // Other
-  const HandleOnClick = (e: MouseEvent<HTMLDivElement>, index: number) => {
-    setOpenData({ open: true, index: index });
+  const HandleOnClick = (e: MouseEvent<HTMLDivElement>) => {
+    setOpen(true);
   };
 
   const RenderPhotos = () => {
@@ -38,7 +83,7 @@ const Photos = () => {
     const result: JSX.Element[] = [];
     let auxResult: JSX.Element[] = [];
 
-    Images.forEach((image, index) => {
+    products.forEach((image, index) => {
       if (auxIndex < picsPerRow) {
         if (auxIndex !== 0) delay = delay + 300;
 
@@ -52,7 +97,7 @@ const Photos = () => {
             <Fade animation='fade-up' delay={delay}>
               <Box>
                 <ImgStyled
-                  src={image.SrcSection}
+                  src={image.Src}
                   alt={image.Alt}
                   loading='lazy'
                   className='image'
@@ -63,7 +108,7 @@ const Photos = () => {
                 <Box className='line left'></Box>
                 <Box
                   className='description-wrapper'
-                  onClick={(e) => HandleOnClick(e, image.Index)}
+                  onClick={(e) => HandleOnClick(e)}
                 >
                   <Typography
                     className='description'
@@ -81,7 +126,7 @@ const Photos = () => {
         auxIndex += 1;
       }
 
-      if (auxIndex === picsPerRow || index === Images.length - 1) {
+      if (auxIndex === picsPerRow || index === products.length - 1) {
         result.push(
           <GridContainer key={"imagesRowContainer_" + rowIndex}>
             {auxResult}
@@ -102,11 +147,9 @@ const Photos = () => {
     <>
       {RenderPhotos()}
       {/* Photos dialog */}
-      <PhotosDialog
-        open={openData.open}
-        setOpenData={setOpenData}
-        index={openData.index}
-      />
+      <Suspense fallback={<div>...Loading</div>}>
+        <PhotosDialog open={open} setOpen={setOpen} />
+      </Suspense>
     </>
   );
 };
