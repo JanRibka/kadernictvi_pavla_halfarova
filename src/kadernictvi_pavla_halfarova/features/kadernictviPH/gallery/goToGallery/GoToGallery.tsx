@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import { useTranslation } from "react-i18next";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import Button from '@mui/material/Button';
-import { useTheme } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 
 const GoToGallery = () => {
   // Consts
@@ -13,23 +13,31 @@ const GoToGallery = () => {
   return (
     <GridContainer sx={{ marginTop: "50px", justifyContent: "center" }}>
       <GridItem xs={12} justifyContent='center'>
-        <Button
-          variant='contained'
-          onClick={() =>
-            window.open("https://www.instagram.com/hairsalonph/", "_blank")
-          }
+        <Box
+          component='a'
+          href='https://www.instagram.com/hairsalonph/'
+          target='_blank'
+          // variant='contained'
+          // onClick={() =>
+          //   window.open(", "_blank")
+          // }
           sx={{
             borderRadius: "23px",
             height: "46px",
             backgroundColor: theme.palette.common.third.main,
             textTransform: "none",
+            display: "flex",
+            alignItems: "center",
+            padding: "0 20px",
+            textDecoration: "none",
+            color: theme.palette.text.primary,
             ":hover": {
               backgroundColor: theme.palette.common.third.dark,
             },
           }}
         >
           {t("goToGallery")}
-        </Button>
+        </Box>
       </GridItem>
     </GridContainer>
   );

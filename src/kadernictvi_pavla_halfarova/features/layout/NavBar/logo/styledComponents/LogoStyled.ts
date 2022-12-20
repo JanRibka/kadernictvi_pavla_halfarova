@@ -23,6 +23,12 @@ const LogoStyled = styled(Box)(({ theme }) => ({
     top: "10px",
     left: "10px !important",
   },
+
+  img: {
+    height: "inherit",
+    borderRadius: "inherit",
+    backgroundColor: theme.palette.secondary.main,
+  },
 }));
 
 export default LogoStyled;

@@ -1,5 +1,5 @@
-import AppBar from '@mui/material/AppBar';
-import { styled } from '@mui/material/styles';
+import AppBar from "@mui/material/AppBar";
+import { styled } from "@mui/material/styles";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   flexGrow: 1,
@@ -20,20 +20,20 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
         width: "110px",
         height: "110px",
 
-        button: {
+        a: {
           width: "110px",
           height: "110px",
         },
       },
 
       [theme.breakpoints.up("sm")]: {
-        button: {
+        a: {
           width: "130px",
           height: "130px",
         },
       },
 
-      button: {
+      a: {
         borderRadius: "50%",
       },
     },
@@ -71,20 +71,20 @@ const AppBarStyled = styled(AppBar)(({ theme }) => ({
         width: "90px",
         height: "90px",
 
-        button: {
+        a: {
           width: "90px",
           height: "90px",
         },
       },
 
       [theme.breakpoints.up("sm")]: {
-        button: {
+        a: {
           width: "110px",
           height: "110px",
         },
       },
 
-      button: {
+      a: {
         borderRadius: "50%",
       },
     },
