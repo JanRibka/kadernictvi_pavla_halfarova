@@ -17,10 +17,6 @@ const GoToGallery = () => {
           component='a'
           href='https://www.instagram.com/hairsalonph/'
           target='_blank'
-          // variant='contained'
-          // onClick={() =>
-          //   window.open(", "_blank")
-          // }
           sx={{
             borderRadius: "23px",
             height: "46px",
