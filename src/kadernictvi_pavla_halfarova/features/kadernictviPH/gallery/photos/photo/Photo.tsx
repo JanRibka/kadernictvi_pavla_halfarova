@@ -1,14 +1,13 @@
-import Fade from "kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade";
-import { MouseEvent, Suspense, useState } from "react";
-import AppLoader from "shared/components/loader/AppLoader";
+import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
+import { MouseEvent, useState } from 'react';
 
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
-import PhotoModel from "../PhotoModel";
-import PhotosDialog from "../photosDialog/PhotosDialog";
-import ImgStyled from "./styledComponents/ImgStyled";
-import PhotoWrapperStyled from "./styledComponents/PhotoWrapperStyled";
+import PhotoModel from '../PhotoModel';
+import PhotosDialog from '../photosDialog/PhotosDialog';
+import ImgStyled from './styledComponents/ImgStyled';
+import PhotoWrapperStyled from './styledComponents/PhotoWrapperStyled';
 
 interface IProps {
   delay: number;
@@ -59,9 +58,7 @@ const Photo = (props: IProps) => {
       </PhotoWrapperStyled>
 
       {/* Photos dialog */}
-      <Suspense fallback={<AppLoader />}>
-        <PhotosDialog open={open} setOpen={setOpen} photos={props.photos} />
-      </Suspense>
+      <PhotosDialog open={open} setOpen={setOpen} photos={props.photos} />
     </>
   );
 };
