@@ -1,10 +1,10 @@
-import { forwardRef, MouseEvent, Ref } from "react";
-import { useTranslation } from "react-i18next";
+import { forwardRef, MouseEvent, Ref } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
-import LinkModel from "./models/LinkModel";
+import LinkModel from './models/LinkModel';
 
 interface IProps {
   handleOnClick: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
@@ -19,7 +19,7 @@ const NavLinks = forwardRef(
       { Label: t("intro"), Value: 0, Name: "intro" },
       { Label: t("aboutMe"), Value: 1, Name: "aboutMe" },
       { Label: t("services"), Value: 2, Name: "services" },
-      { Label: t("myWork"), Value: 3, Name: "myWork" },
+      { Label: t("gallery"), Value: 3, Name: "gallery" },
       { Label: t("contact"), Value: 4, Name: "contact" },
     ];
 

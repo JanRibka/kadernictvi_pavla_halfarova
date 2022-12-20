@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 
 import AboutMe from '../kadernictviPH/aboutMe/AboutMe';
 import Contact from '../kadernictviPH/contact/Contact';
-import MyWork from '../kadernictviPH/gallery/MyWork';
+import Gallery from '../kadernictviPH/gallery/Gallery';
 import Intro from '../kadernictviPH/intro/Intro';
 import Services from '../kadernictviPH/services/Services';
 
@@ -15,7 +15,7 @@ const KadernictviPage = forwardRef(
     const refIntro = useRef<HTMLDivElement>(null);
     const refAboutMe = useRef<HTMLDivElement>(null);
     const refServices = useRef<HTMLDivElement>(null);
-    const refMyWork = useRef<HTMLDivElement>(null);
+    const refGallery = useRef<HTMLDivElement>(null);
     const refContact = useRef<HTMLDivElement>(null);
 
     useImperativeHandle(ref, () => ({
@@ -40,9 +40,9 @@ const KadernictviPage = forwardRef(
           return undefined;
         }
       },
-      get myWork() {
-        if (!!refMyWork) {
-          return refMyWork;
+      get gallery() {
+        if (!!refGallery) {
+          return refGallery;
         } else {
           return undefined;
         }
@@ -65,7 +65,7 @@ const KadernictviPage = forwardRef(
         <Intro ref={refIntro} />
         <AboutMe ref={refAboutMe} />
         <Services ref={refServices} />
-        <MyWork ref={refMyWork} />
+        <Gallery ref={refGallery} />
         <Contact ref={refContact} />
       </Box>
     );

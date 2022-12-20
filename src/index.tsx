@@ -21,7 +21,7 @@ const root = ReactDOM.createRoot(
 );
 
 // TODO: Uslideru v galeriri, zkusit pridat lazu loading a dát tam načítani
-// TODO: Na v3echny eventy by m2l b7t jeden event listener na scroll
+// TODO: Předělat na next js a SSR https://blog.logrocket.com/implementing-ssr-next-js-dynamic-routing-prefetching/
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>

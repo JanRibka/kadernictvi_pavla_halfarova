@@ -7,7 +7,7 @@ import { useTheme } from '@mui/material/styles';
 
 const GoToGallery = () => {
   // Consts
-  const { t } = useTranslation(["kadernictviPH\\myWork\\myWork"]);
+  const { t } = useTranslation(["kadernictviPH\\gallery\\gallery"]);
   const theme = useTheme();
 
   return (

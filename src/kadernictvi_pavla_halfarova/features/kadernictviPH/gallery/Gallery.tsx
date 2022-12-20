@@ -10,13 +10,13 @@ import { useTheme } from '@mui/material/styles';
 
 import GoToGallery from './goToGallery/GoToGallery';
 import Photos from './photos/Photos';
-import GalleryStyled from './styledComponents/MyWorkStyled';
+import GalleryStyled from './styledComponents/GalleryStyled';
 
 interface IProps {}
-const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
+const Gallery = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
   // Consts
   const theme = useTheme();
-  const { t } = useTranslation(["kadernictviPH\\myWork\\myWork"]);
+  const { t } = useTranslation(["kadernictviPH\\gallery\\gallery"]);
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
   const breakpointLgUp: boolean = useMediaQuery(theme.breakpoints.up("lg"));
   const breakpointXlUp: boolean = useMediaQuery(theme.breakpoints.up("xl"));
@@ -58,4 +58,4 @@ const MyWork = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
   );
 });
 
-export default MyWork;
+export default Gallery;
