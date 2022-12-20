@@ -1,7 +1,6 @@
-export default interface ImageModel {
+export default interface PhotoModel {
   GalleryName: string;
   Src: string;
   Alt: string;
-  Description: string;
   MainPhoto: boolean;
 }

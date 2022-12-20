@@ -2,7 +2,7 @@ import GridItem from 'shared/components/gridItem/GridItem';
 
 import { styled } from '@mui/material/styles';
 
-const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
+const PhotoWrapperStyled = styled(GridItem)(({ theme }) => ({
   transition: "all 300ms ease",
   position: "relative",
 
@@ -90,4 +90,4 @@ const ImgWrapperStyled = styled(GridItem)(({ theme }) => ({
   },
 }));
 
-export default ImgWrapperStyled;
+export default PhotoWrapperStyled;

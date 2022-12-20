@@ -1,5 +1,9 @@
 {
   "headerMain": "Mé práce",
   "headerSecondary": "Galerie",
-  "goToGallery": "Zobrazit celou galerii"
+  "goToGallery": "Zobrazit celou galerii",
+  "gallery1Name": "Produkty",
+  "gallery2Name": "Péče",
+  "gallery3Name": "Blond",
+  "gallery4Name": "Jiné barvy"
 }
