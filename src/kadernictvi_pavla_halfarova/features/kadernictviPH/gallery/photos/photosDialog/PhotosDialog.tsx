@@ -1,63 +1,43 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/bundle';
-import 'swiper/css/zoom';
-import 'swiper/css/lazy';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/bundle";
+import "swiper/css/zoom";
+import "swiper/css/lazy";
 
-import { Dispatch, Suspense, useEffect, useRef, useState } from 'react';
-import AppLoader from 'shared/components/loader/AppLoader';
-import Swiper, { Lazy, Navigation, Pagination, Zoom } from 'swiper';
+import { Dispatch, Suspense } from "react";
+import AppLoader from "shared/components/loader/AppLoader";
+import { Lazy, Navigation, Pagination, Zoom } from "swiper";
 
-import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
 
-import Images from '../Images';
-import DialogContentStyled from './styledComponents/DialogContentStyled';
-import DialogStyled from './styledComponents/DialogStyled';
-import DialogTitleWrapperStyled from './styledComponents/DialogTitleWrapperStyled';
-import SwiperStyled from './swiper/styledComponents/SwiperStyled';
-import SwiperSlideStyled from './swiper/swiperSlide/styledComponents/SwiperSlideStyled';
+import { products } from "../Photos";
+import DialogContentStyled from "./styledComponents/DialogContentStyled";
+import DialogStyled from "./styledComponents/DialogStyled";
+import DialogTitleWrapperStyled from "./styledComponents/DialogTitleWrapperStyled";
+import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
+import SwiperSlideStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideStyled";
 
 interface IProps {
   open: boolean;
-  setOpenData: Dispatch<React.SetStateAction<{ open: boolean; index: number }>>;
-  index: number;
+  setOpen: Dispatch<React.SetStateAction<boolean>>;
 }
 // TODO: Vycentrovat obrazky, zdaji ae mi moc dole
 const PhotosDialog = (props: IProps) => {
-  // References
-  const effectRan = useRef<boolean>(false);
-
-  // State
-  const [swiperRef, setSwiperRef] = useState<Swiper | null>(null);
-
   // Other
-  useEffect(() => {
-    if (
-      process.env.REACT_APP_INSTANCE_NAME === "Prod" ||
-      effectRan.current === true
-    ) {
-      swiperRef?.slideTo(props.index, 1000);
-    }
-
-    return () => {
-      effectRan.current = true;
-    };
-  }, [props.index, swiperRef]);
-
   const RenderPhotos = () => {
     let result: JSX.Element[] = [];
 
-    Images.forEach((image, index) => {
+    products.forEach((image, index) => {
       result.push(
         <SwiperSlideStyled key={"dialogImage_" + index}>
           <div className='swiper-zoom-container'>
             <img
-              src={image.SrcDialog}
+              src={image.Src}
               alt={image.Alt}
-              className='swiper-lazy'
-              loading='lazy'
+              // className='swiper-lazy'
+              // loading='eager'
             />
             <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
           </div>
@@ -74,10 +54,7 @@ const PhotosDialog = (props: IProps) => {
     <Suspense fallback={<AppLoader />}>
       <DialogStyled open={props.open} disableScrollLock={false}>
         <DialogTitleWrapperStyled>
-          <IconButton
-            onClick={() => props.setOpenData({ open: false, index: 0 })}
-            color='secondary'
-          >
+          <IconButton onClick={() => props.setOpen(false)} color='secondary'>
             <CloseIcon />
           </IconButton>
         </DialogTitleWrapperStyled>
@@ -92,7 +69,6 @@ const PhotosDialog = (props: IProps) => {
             speed={1500}
             pagination={{ type: "fraction" }}
             modules={[Lazy, Pagination, Navigation, Zoom]}
-            onSwiper={setSwiperRef}
           >
             {RenderPhotos()}
           </SwiperStyled>
