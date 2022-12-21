@@ -1,4 +1,6 @@
-import FadeWrapperStyled from "./styledComponents/FadeWrapperStyled";
+import { SxProps } from '@mui/material';
+
+import FadeWrapperStyled from './styledComponents/FadeWrapperStyled';
 
 interface IProps {
   /** Animation name */
@@ -29,6 +31,7 @@ interface IProps {
   /** Distance to start the animation (related to the browser bottom) (px) */
   offset?: number;
   children: JSX.Element;
+  sx?: SxProps;
 }
 
 const Fade: React.FC<IProps> = (props) => {
@@ -39,6 +42,7 @@ const Fade: React.FC<IProps> = (props) => {
       data-aos-delay={props.delay}
       data-aos-duration={props.duration}
       data-aos-anchor-placement={props.anchorPlacement}
+      sx={props.sx}
     >
       {props.children}
     </FadeWrapperStyled>

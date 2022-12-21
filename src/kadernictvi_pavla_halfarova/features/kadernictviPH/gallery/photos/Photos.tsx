@@ -1,136 +1,103 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 
-import IntroSection01 from './img/Intro01_Preview.jpg';
-import IntroSection02 from './img/Intro02_Preview.jpg';
-import IntroSection03 from './img/Intro03_Preview.jpg';
-import IntroSection04 from './img/Intro04_Preview.jpg';
-import IntroSection05 from './img/Intro05_Preview.jpg';
+import Produkt01 from './img/gallery1/Produkt01.jpg';
 import Photo from './photo/Photo';
 import PhotoModel from './PhotoModel';
 
-const Gallery1 = lazy(() => import("../galleries/Gallery1"));
-export let gallery2: PhotoModel[] = [];
-export let gallery3: PhotoModel[] = [];
-export let gallery4: PhotoModel[] = [];
+const Gallery1 = lazy(() => import("../galleries/gallery1/Gallery1"));
+const Gallery2 = lazy(() => import("../galleries/gallery2/Gallery2"));
+const Gallery3 = lazy(() => import("../galleries/gallery3/Gallery3"));
+const Gallery4 = lazy(() => import("../galleries/gallery4/Gallery4"));
 
 const Photos = () => {
+  // State
+  const [openGallery1, setOpenGallery1] = useState<boolean>(false);
+  const [openGallery2, setOpenGallery2] = useState<boolean>(false);
+  const [openGallery3, setOpenGallery3] = useState<boolean>(false);
+  const [openGallery4, setOpenGallery4] = useState<boolean>(false);
+
   // Consts
   const { t } = useTranslation(["kadernictviPH\\gallery\\gallery"]);
+  const tGallery1 = useTranslation(["kadernictviPH\\gallery\\gallery1"]).t;
+  const tGallery2 = useTranslation(["kadernictviPH\\gallery\\gallery2"]).t;
+  const tGallery3 = useTranslation(["kadernictviPH\\gallery\\gallery3"]).t;
+  const tGallery4 = useTranslation(["kadernictviPH\\gallery\\gallery4"]).t;
 
-  //#region Gallery
+  const gallery1MainPhoto: PhotoModel = {
+    Src: Produkt01,
+    Alt: tGallery1("photo1Alt"),
+    MainPhoto: true,
+  };
 
-  gallery2 = [
-    {
-      GalleryName: t("gallery2Name"),
-      Src: IntroSection01,
-      Alt: "Lorem ipsum",
-      MainPhoto: true,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection02,
-      Alt: "Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection03,
-      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection04,
-      Alt: "Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection05,
-      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
-      MainPhoto: false,
-    },
-  ];
+  const gallery2MainPhoto: PhotoModel = {
+    Src: Produkt01,
+    Alt: tGallery2("photo1Alt"),
+    MainPhoto: true,
+  };
 
-  gallery3 = [
-    {
-      GalleryName: t("gallery3Name"),
-      Src: IntroSection01,
-      Alt: "Lorem ipsum",
-      MainPhoto: true,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection02,
-      Alt: "Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection03,
-      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection04,
-      Alt: "Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection05,
-      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
-      MainPhoto: false,
-    },
-  ];
+  const gallery3MainPhoto: PhotoModel = {
+    Src: Produkt01,
+    Alt: tGallery3("photo1Alt"),
+    MainPhoto: true,
+  };
 
-  gallery4 = [
-    {
-      GalleryName: t("gallery4Name"),
-      Src: IntroSection01,
-      Alt: "Lorem ipsum",
-      MainPhoto: true,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection02,
-      Alt: "Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection03,
-      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection04,
-      Alt: "Lorem ipsum",
-      MainPhoto: false,
-    },
-    {
-      GalleryName: "",
-      Src: IntroSection05,
-      Alt: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
-      MainPhoto: false,
-    },
-  ];
-  //#endregion
+  const gallery4MainPhoto: PhotoModel = {
+    Src: Produkt01,
+    Alt: tGallery4("photo1Alt"),
+    MainPhoto: true,
+  };
 
   return (
     <GridContainer>
       {/* Gallery 1 */}
-      <Suspense fallback={<div>...Loading</div>}>
-        <Gallery1 delay={0} />
-      </Suspense>
+      <Photo
+        delay={0}
+        mainPhoto={gallery1MainPhoto}
+        galleryName={tGallery1("galleryName")}
+        setOpen={setOpenGallery1}
+      >
+        <Suspense fallback={<div>...Loading</div>}>
+          <Gallery1 open={openGallery1} setOpen={setOpenGallery1} />
+        </Suspense>
+      </Photo>
 
-      <Photo delay={300} photos={gallery2} />
-      <Photo delay={600} photos={gallery3} />
-      <Photo delay={900} photos={gallery4} />
+      {/* Gallery 2 */}
+      <Photo
+        delay={300}
+        mainPhoto={gallery2MainPhoto}
+        galleryName={tGallery2("galleryName")}
+        setOpen={setOpenGallery2}
+      >
+        <Suspense fallback={<div>...Loading</div>}>
+          <Gallery2 open={openGallery2} setOpen={setOpenGallery2} />
+        </Suspense>
+      </Photo>
+
+      {/* Gallery 3 */}
+      <Photo
+        delay={600}
+        mainPhoto={gallery3MainPhoto}
+        galleryName={tGallery3("galleryName")}
+        setOpen={setOpenGallery3}
+      >
+        <Suspense fallback={<div>...Loading</div>}>
+          <Gallery3 open={openGallery3} setOpen={setOpenGallery3} />
+        </Suspense>
+      </Photo>
+
+      {/* Gallery 4 */}
+      <Photo
+        delay={900}
+        mainPhoto={gallery4MainPhoto}
+        galleryName={tGallery4("galleryName")}
+        setOpen={setOpenGallery4}
+      >
+        <Suspense fallback={<div>...Loading</div>}>
+          <Gallery4 open={openGallery4} setOpen={setOpenGallery4} />
+        </Suspense>
+      </Photo>
     </GridContainer>
   );
 };

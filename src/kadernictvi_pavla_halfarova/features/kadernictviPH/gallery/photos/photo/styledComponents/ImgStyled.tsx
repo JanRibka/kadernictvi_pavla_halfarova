@@ -10,8 +10,8 @@ interface IProps extends BoxProps {
 const ImgStyled = styled(({ src, alt, loading, ...props }: IProps) => (
   <Box component='img' src={src} alt={alt} loading={loading} {...props} />
 ))`
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   transition: filter 500ms ease;
 `;
 
