@@ -40,14 +40,14 @@ const AboutMe = forwardRef(
           {/* Photo */}
           <PhotoWrapperStyled xs={12} md={6}>
             <Box component={"div"} className='photo-wrapper'>
-              <Fade animation='fade-right'>
+              <Fade animation={breakpointMdUp ? "fade-right" : "fade-left"}>
                 <Photo />
               </Fade>
             </Box>
           </PhotoWrapperStyled>
           {/* Description */}
           <GridItem xs={12} md={6} alignSelf='baseline'>
-            <Fade animation='fade-left'>
+            <Fade animation={breakpointMdUp ? "fade-left" : "fade-right"}>
               <Description />
             </Fade>
           </GridItem>
