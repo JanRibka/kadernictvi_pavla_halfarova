@@ -5,11 +5,13 @@ import { Typography, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
+import Logo from '../NavBar/logo/Logo';
 import FooterStyled from './styledComponents/FooterStyled';
 
 const Footer = () => {
   // Consts
   const theme = useTheme();
+  const actYear: number = new Date().getFullYear();
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
   const breakpointLgUp: boolean = useMediaQuery(theme.breakpoints.up("lg"));
   const breakpointXlUp: boolean = useMediaQuery(theme.breakpoints.up("xl"));
@@ -29,42 +31,43 @@ const Footer = () => {
             sx={{
               width: "100%",
               height: "3rem",
-              backgroundColor: "secondary.main",
+              backgroundColor: "primary.main.dark",
             }}
           ></Box>
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ maxWidth: gridContainerMaxWidth }}>
-        <GridItem xs={12}>
-          <Typography
-            sx={{
-              width: "100%",
-              height: "4rem",
-              backgroundColor: "primary.dark",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "start",
-              color: "#7E7E7E",
+      <GridContainer sx={{ backgroundColor: "common.third.main" }}>
+        <Box sx={{ maxWidth: gridContainerMaxWidth, width: "100%" }}>
+          <GridItem xs={12}>
+            <Typography
+              sx={{
+                width: "100%",
+                height: "3rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "start",
+                color: "text.primary",
 
-              [theme.breakpoints.down("md")]: {
-                justifyContent: "center",
-              },
-            }}
-          >
-            &#169; 2022 Hairsalon PH,
-            <Box
-              sx={{ textDecoration: "none", color: "#7E7E7E" }}
-              component='a'
-              href='mailto:weby.ribka@gmail.com'
+                [theme.breakpoints.down("md")]: {
+                  justifyContent: "center",
+                },
+              }}
             >
-              {" "}
-              &nbsp; Webdesign by JAN RIBKA
-            </Box>
-          </Typography>
-        </GridItem>
+              Copyright &#169; 2022 - {actYear} Hairsalon PH,
+              <Box
+                sx={{ textDecoration: "none", color: "text.primary" }}
+                component='a'
+                href='mailto:weby.ribka@gmail.com'
+              >
+                {" "}
+                &nbsp; Webdesign by JAN RIBKA
+              </Box>
+            </Typography>
+          </GridItem>
+        </Box>
       </GridContainer>
     </FooterStyled>
   );
 };
-// TODO: V případě použití administrace napojit odkaz na Copyright 2022
+
 export default Footer;
