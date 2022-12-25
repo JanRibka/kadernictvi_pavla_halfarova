@@ -1,3 +1,4 @@
+import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
 import { forwardRef, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
@@ -53,10 +54,14 @@ const Contact = forwardRef(
           {/* Constacts */}
           <GridItem xs={12}>
             <ContactsWrapperStyled>
-              {/* Tel, email, address */}
-              <Contacts />
-              {/* Social Icons */}
-              <SocialIcons />
+              <Fade animation='fade-up'>
+                <>
+                  {/* Tel, email, address */}
+                  <Contacts />
+                  {/* Social Icons */}
+                  <SocialIcons />
+                </>
+              </Fade>
             </ContactsWrapperStyled>
           </GridItem>
         </GridContainer>
