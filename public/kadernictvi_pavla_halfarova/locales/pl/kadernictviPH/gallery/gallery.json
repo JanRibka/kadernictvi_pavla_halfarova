@@ -1,9 +1,5 @@
 {
-  "headerMain": "Moja praca",
-  "headerSecondary": "Galeria",
-  "goToGallery": "Zobacz całą galerię",
-  "gallery1Name": "Produkty",
-  "gallery2Name": "Opieka",
-  "gallery3Name": "Blond",
-  "gallery4Name": "Inne kolory"
+  "headerMain": "Galeria",
+  "headerSecondary": "Moja praca",
+  "goToGallery": "Zobacz całą galerię"
 }

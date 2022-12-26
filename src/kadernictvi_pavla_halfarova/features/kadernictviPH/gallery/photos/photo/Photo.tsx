@@ -1,39 +1,48 @@
 import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
-import { MouseEvent, useState } from 'react';
+import { Dispatch, MouseEvent, SetStateAction } from 'react';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import PhotoModel from '../PhotoModel';
-import PhotosDialog from '../photosDialog/PhotosDialog';
 import ImgStyled from './styledComponents/ImgStyled';
 import PhotoWrapperStyled from './styledComponents/PhotoWrapperStyled';
 
 interface IProps {
   delay: number;
-  photos: PhotoModel[];
+  mainPhoto: PhotoModel;
+  galleryName: string;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  children: JSX.Element;
 }
 
 const Photo = (props: IProps) => {
-  // State
-  const [open, setOpen] = useState<boolean>(false);
-
-  // Consts
-  const mainPhoto = props.photos.find((f) => f.MainPhoto) as PhotoModel;
-
   // Other
   const HandleOnClick = (e: MouseEvent<HTMLDivElement>) => {
-    setOpen(true);
+    props.setOpen(true);
   };
 
   return (
     <>
       <PhotoWrapperStyled xs={12} sm={6} lg={3}>
-        <Fade animation='fade-up' delay={props.delay}>
-          <Box>
+        <Fade
+          animation='fade-up'
+          delay={props.delay}
+          sx={{
+            overflow: "hidden",
+          }}
+        >
+          <Box
+            sx={{
+              aspectRatio: "1/1",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <ImgStyled
-              src={mainPhoto.Src}
-              alt={mainPhoto.Alt}
+              src={props.mainPhoto.Src}
+              alt={props.mainPhoto.Alt}
               loading='lazy'
               className='image'
             />
@@ -50,15 +59,14 @@ const Photo = (props: IProps) => {
                 variant='h6'
                 textAlign='center'
               >
-                {mainPhoto.GalleryName}
+                {props.galleryName}
               </Typography>
             </Box>
           </Box>
         </Fade>
       </PhotoWrapperStyled>
-
-      {/* Photos dialog */}
-      <PhotosDialog open={open} setOpen={setOpen} photos={props.photos} />
+      {/* Dialog */}
+      {props.children}
     </>
   );
 };

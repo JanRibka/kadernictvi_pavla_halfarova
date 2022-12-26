@@ -1,21 +1,21 @@
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/bundle";
-import "swiper/css/zoom";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/bundle';
+import 'swiper/css/zoom';
 
-import { Dispatch } from "react";
-import { Navigation, Pagination, Zoom } from "swiper";
+import { Dispatch } from 'react';
+import { Keyboard, Mousewheel, Navigation, Pagination, Zoom } from 'swiper';
 
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
-import PhotoModel from "../PhotoModel";
-import DialogContentStyled from "./styledComponents/DialogContentStyled";
-import DialogStyled from "./styledComponents/DialogStyled";
-import DialogTitleWrapperStyled from "./styledComponents/DialogTitleWrapperStyled";
-import SwiperStyled from "./swiper/styledComponents/SwiperStyled";
-import SwiperSlideStyled from "./swiper/swiperSlide/styledComponents/SwiperSlideStyled";
+import PhotoModel from '../PhotoModel';
+import DialogContentStyled from './styledComponents/DialogContentStyled';
+import DialogStyled from './styledComponents/DialogStyled';
+import DialogTitleWrapperStyled from './styledComponents/DialogTitleWrapperStyled';
+import SwiperStyled from './swiper/styledComponents/SwiperStyled';
+import SwiperSlideStyled from './swiper/swiperSlide/styledComponents/SwiperSlideStyled';
 
 interface IProps {
   open: boolean;
@@ -61,10 +61,12 @@ const PhotosDialog = (props: IProps) => {
           navigation
           loop
           zoom
+          keyboard
+          mousewheel
           slidesPerView={1}
           speed={1500}
           pagination={{ type: "fraction" }}
-          modules={[Pagination, Navigation, Zoom]}
+          modules={[Pagination, Navigation, Zoom, Keyboard, Mousewheel]}
         >
           {RenderPhotos()}
         </SwiperStyled>
