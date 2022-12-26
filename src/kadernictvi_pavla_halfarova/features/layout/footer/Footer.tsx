@@ -53,7 +53,7 @@ const Footer = () => {
                 },
               }}
             >
-              Copyright &#169; 2022 - {actYear} Hairsalon PH,
+              &#169; 2022 - {actYear} Hairsalon PH,
               <Box
                 sx={{ textDecoration: "none", color: "text.primary" }}
                 component='a'
