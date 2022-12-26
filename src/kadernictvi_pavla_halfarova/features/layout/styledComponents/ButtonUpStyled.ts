@@ -9,8 +9,11 @@ const ButtonUpStyled = styled(IconButton)(({ theme }) => ({
   color: theme.palette.primary.dark,
   backgroundColor: theme.palette.common.third.main,
   zIndex: 1,
-  transform: "translateY(100px)",
   transition: "transform 450ms ease-in-out",
+
+  "&:not(.to-top-active)": {
+    transform: "translateY(100px) !important",
+  },
 
   "&.to-top-active": {
     transform: "translateY(0)",
