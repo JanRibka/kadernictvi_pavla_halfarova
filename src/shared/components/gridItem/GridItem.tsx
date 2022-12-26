@@ -7,10 +7,8 @@ import StyledGridItem from './StyledGridItem';
 export interface IGridItemProps extends GridProps {}
 
 const GridItem: React.FC<IGridItemProps> = (props) => {
-  const { ...restProps } = props;
-
   return (
-    <StyledGridItem item {...restProps}>
+    <StyledGridItem item {...props}>
       {props.children}
     </StyledGridItem>
   );
