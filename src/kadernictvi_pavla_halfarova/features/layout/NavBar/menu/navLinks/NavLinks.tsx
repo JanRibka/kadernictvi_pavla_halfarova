@@ -24,7 +24,20 @@ const NavLinks = forwardRef(
     ];
 
     return (
-      <Box className='nav-links-wrapper' ref={ref}>
+      <Box component='nav' className='nav-links-wrapper' ref={ref}>
+        <Box component='ul'>
+          <Box component='li'>
+            <Box
+              component='a'
+              className={props.actValue === 0 ? "active" : undefined}
+              style={{
+                backgroundColor: "transparent",
+              }}
+            >
+              {t("intro")}
+            </Box>
+          </Box>
+        </Box>
         {links.map((item, i) => {
           return (
             <Button

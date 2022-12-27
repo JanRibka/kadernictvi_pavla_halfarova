@@ -8,7 +8,7 @@ const Countries: CountryModel[] = [
   {
     Label: "Česky",
     Src: CzechFlag,
-    Value: LanguageEnum.Cz,
+    Value: LanguageEnum.Cs,
     Title: "Česky",
   },
   {

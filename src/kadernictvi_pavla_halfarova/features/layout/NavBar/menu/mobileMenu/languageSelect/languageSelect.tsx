@@ -17,7 +17,7 @@ const LanguageSelect = forwardRef(
       (f) => f.Value === i18nextLng
     )?.Src;
     const deafultCountry: string =
-      Countries.find((f) => f.Value === LanguageEnum.Cz)?.Src ?? CzechFlag;
+      Countries.find((f) => f.Value === LanguageEnum.Cs)?.Src ?? CzechFlag;
 
     // State
     const [seldCountry, setSeldCountry] = useState<string>(

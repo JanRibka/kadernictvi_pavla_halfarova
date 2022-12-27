@@ -1,6 +1,5 @@
 import i18next from 'i18next';
-import { MouseEvent, useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { MouseEvent, useRef, useState } from 'react';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
 import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 import i18n from 'shared/infrastructure/localize/i18n';
@@ -23,13 +22,7 @@ const LanguageSelect = () => {
   const refMenu = useRef<HTMLDivElement>(null);
   const refArrowIcon = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
-    SetHeadTexts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i18next.language]);
-
   // Consts
-  const { t } = useTranslation(["\\head\\head"]);
   const googleAnalyticsHelper: GoogleAnalyticsHelper =
     new GoogleAnalyticsHelper();
   const i18nextLng: string | null =
@@ -38,7 +31,7 @@ const LanguageSelect = () => {
     (f) => f.Value === i18nextLng
   )?.Src;
   const deafultCountry: string =
-    Countries.find((f) => f.Value === LanguageEnum.Cz)?.Src ?? CzechFlag;
+    Countries.find((f) => f.Value === LanguageEnum.Cs)?.Src ?? CzechFlag;
 
   // State
   const [seldCountry, setSeldCountry] = useState<string>(
@@ -46,17 +39,6 @@ const LanguageSelect = () => {
   );
 
   // Functions
-  const SetHeadTexts = () => {
-    // Změna jazyka na html elementu
-    document.documentElement.lang = i18next.language;
-
-    // Změna document title
-    document.title = t("title");
-
-    // Description
-    const desc = document.querySelector("meta[name='description']");
-    desc?.setAttribute("content", t("description"));
-  };
   const HandleMenuItemOnClick = (e: MouseEvent<HTMLLIElement>) => {
     const title = e?.currentTarget?.firstElementChild?.getAttribute("title");
     const value: string =

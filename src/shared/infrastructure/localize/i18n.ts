@@ -4,9 +4,9 @@ import Backend, { HttpBackendOptions } from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
 
-const languages = [LanguageEnum.Cz, LanguageEnum.Pl];
+const languages = [LanguageEnum.Cs, LanguageEnum.Pl];
 // Zvolený jazyk z localstorage nebo default
-const selectedLanguage = localStorage.getItem("i18nextLng") || LanguageEnum.Cz;
+const selectedLanguage = localStorage.getItem("i18nextLng") || LanguageEnum.Cs;
 
 // Cesta k překladům pro daný projekt
 const getPrefix = () => {
@@ -41,7 +41,7 @@ i18n
   .init({
     backend: backendOptions,
     lng: selectedLanguage,
-    fallbackLng: LanguageEnum.Cz,
+    fallbackLng: LanguageEnum.Cs,
     supportedLngs: languages,
     debug: process.env.REACT_APP_INSTANCE_NAME === "Dev",
 
