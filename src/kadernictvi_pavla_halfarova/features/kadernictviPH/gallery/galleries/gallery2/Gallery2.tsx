@@ -1,9 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Produkt01 from '../../photos/img/gallery1/Produkt01.jpg';
-import Produkt02 from '../../photos/img/gallery1/Produkt02.jpg';
-import Produkt03 from '../../photos/img/gallery1/Produkt03.jpg';
+import Pece01 from '../../photos/img/gallery2/Pece01.jpg';
+import Pece02 from '../../photos/img/gallery2/Pece02.jpg';
+import Pece03 from '../../photos/img/gallery2/Pece03.jpg';
+import Pece04 from '../../photos/img/gallery2/Pece04.jpg';
 import PhotoModel from '../../photos/PhotoModel';
 import PhotosDialog from '../../photos/photosDialog/PhotosDialog';
 
@@ -17,18 +18,23 @@ const Gallery2 = (props: IProps) => {
   const { t } = useTranslation(["kadernictviPH\\gallery\\gallery2"]);
   const photos: PhotoModel[] = [
     {
-      Src: Produkt01,
+      Src: Pece01,
       Alt: t("photo1Alt"),
       MainPhoto: true,
     },
     {
-      Src: Produkt02,
+      Src: Pece02,
       Alt: t("photo2Alt"),
       MainPhoto: false,
     },
     {
-      Src: Produkt03,
+      Src: Pece03,
       Alt: t("photo3Alt"),
+      MainPhoto: false,
+    },
+    {
+      Src: Pece04,
+      Alt: t("photo4Alt"),
       MainPhoto: false,
     },
   ];

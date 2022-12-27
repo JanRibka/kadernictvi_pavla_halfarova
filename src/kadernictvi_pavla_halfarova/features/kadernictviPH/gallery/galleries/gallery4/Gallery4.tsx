@@ -1,9 +1,11 @@
 import { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Produkt01 from '../../photos/img/gallery1/Produkt01.jpg';
-import Produkt02 from '../../photos/img/gallery1/Produkt02.jpg';
-import Produkt03 from '../../photos/img/gallery1/Produkt03.jpg';
+import OstatniBarvy01 from '../../photos/img/gallery4/OstatniBarvy01.jpg';
+import OstatniBarvy02 from '../../photos/img/gallery4/OstatniBarvy02.jpg';
+import OstatniBarvy03 from '../../photos/img/gallery4/OstatniBarvy03.jpg';
+import OstatniBarvy04 from '../../photos/img/gallery4/OstatniBarvy04.jpg';
+import OstatniBarvy05 from '../../photos/img/gallery4/OstatniBarvy05.jpg';
 import PhotoModel from '../../photos/PhotoModel';
 import PhotosDialog from '../../photos/photosDialog/PhotosDialog';
 
@@ -17,18 +19,28 @@ const Gallery4 = (props: IProps) => {
   const { t } = useTranslation(["kadernictviPH\\gallery\\gallery4"]);
   const photos: PhotoModel[] = [
     {
-      Src: Produkt01,
+      Src: OstatniBarvy01,
       Alt: t("photo1Alt"),
       MainPhoto: true,
     },
     {
-      Src: Produkt02,
+      Src: OstatniBarvy02,
       Alt: t("photo2Alt"),
       MainPhoto: false,
     },
     {
-      Src: Produkt03,
+      Src: OstatniBarvy03,
       Alt: t("photo3Alt"),
+      MainPhoto: false,
+    },
+    {
+      Src: OstatniBarvy04,
+      Alt: t("photo4Alt"),
+      MainPhoto: false,
+    },
+    {
+      Src: OstatniBarvy05,
+      Alt: t("photo5Alt"),
       MainPhoto: false,
     },
   ];

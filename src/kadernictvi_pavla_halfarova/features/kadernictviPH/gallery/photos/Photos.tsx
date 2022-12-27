@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 
 import Produkt01 from './img/gallery1/Produkt01.jpg';
+import Pece01 from './img/gallery2/Pece01.jpg';
+import Blond01 from './img/gallery3/Blond01.jpg';
+import OstatniBarvy01 from './img/gallery4/OstatniBarvy01.jpg';
 import Photo from './photo/Photo';
 import PhotoModel from './PhotoModel';
 
@@ -19,7 +22,6 @@ const Photos = () => {
   const [openGallery4, setOpenGallery4] = useState<boolean>(false);
 
   // Consts
-  const { t } = useTranslation(["kadernictviPH\\gallery\\gallery"]);
   const tGallery1 = useTranslation(["kadernictviPH\\gallery\\gallery1"]).t;
   const tGallery2 = useTranslation(["kadernictviPH\\gallery\\gallery2"]).t;
   const tGallery3 = useTranslation(["kadernictviPH\\gallery\\gallery3"]).t;
@@ -32,19 +34,19 @@ const Photos = () => {
   };
 
   const gallery2MainPhoto: PhotoModel = {
-    Src: Produkt01,
+    Src: Pece01,
     Alt: tGallery2("photo1Alt"),
     MainPhoto: true,
   };
 
   const gallery3MainPhoto: PhotoModel = {
-    Src: Produkt01,
+    Src: Blond01,
     Alt: tGallery3("photo1Alt"),
     MainPhoto: true,
   };
 
   const gallery4MainPhoto: PhotoModel = {
-    Src: Produkt01,
+    Src: OstatniBarvy01,
     Alt: tGallery4("photo1Alt"),
     MainPhoto: true,
   };
