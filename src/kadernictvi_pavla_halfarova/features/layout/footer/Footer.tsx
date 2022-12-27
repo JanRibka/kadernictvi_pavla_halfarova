@@ -5,7 +5,7 @@ import { Typography, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 
-import Logo from '../NavBar/logo/Logo';
+import Logo from './logo/Logo';
 import FooterStyled from './styledComponents/FooterStyled';
 
 const Footer = () => {
@@ -24,16 +24,18 @@ const Footer = () => {
     : "100%";
 
   return (
-    <FooterStyled>
+    <FooterStyled component='footer'>
       <GridContainer>
         <GridItem xs={12}>
           <Box
             sx={{
               width: "100%",
-              height: "3rem",
+              padding: "15px",
               backgroundColor: "primary.main.dark",
             }}
-          ></Box>
+          >
+            <Logo />
+          </Box>
         </GridItem>
       </GridContainer>
       <GridContainer sx={{ backgroundColor: "common.third.main" }}>
