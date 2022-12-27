@@ -33,7 +33,7 @@ const Contact = forwardRef(
       : "100%";
 
     return (
-      <ContactStyled ref={ref} data-index={4}>
+      <ContactStyled ref={ref} component='section' data-index={4}>
         <GridContainer
           sx={{ maxWidth: gridContainerMaxWidth, alignItems: "center" }}
         >

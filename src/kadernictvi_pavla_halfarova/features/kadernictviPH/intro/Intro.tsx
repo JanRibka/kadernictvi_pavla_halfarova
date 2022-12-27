@@ -25,7 +25,12 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
   const { t } = useTranslation(["kadernictviPH\\intro\\intro"]);
 
   return (
-    <Box ref={ref} sx={{ position: "relative" }} data-index={0}>
+    <Box
+      ref={ref}
+      component='section'
+      sx={{ position: "relative" }}
+      data-index={0}
+    >
       {/* Swiper */}
       <SwiperStyled
         navigation

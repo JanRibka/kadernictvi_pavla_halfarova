@@ -48,7 +48,7 @@ const Photos = () => {
     Alt: tGallery4("photo1Alt"),
     MainPhoto: true,
   };
-
+  // TODO: Delay zde bude dynamicky podle toho, kolik je fotrk na strance
   return (
     <GridContainer>
       {/* Gallery 1 */}

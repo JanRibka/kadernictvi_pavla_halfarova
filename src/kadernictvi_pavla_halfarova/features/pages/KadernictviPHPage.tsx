@@ -58,6 +58,7 @@ const KadernictviPage = forwardRef(
 
     return (
       <Box
+        component='main'
         sx={{
           overflow: "hidden",
         }}

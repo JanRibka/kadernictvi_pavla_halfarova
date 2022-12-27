@@ -29,7 +29,7 @@ const Gallery = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
     : "100%";
 
   return (
-    <GalleryStyled ref={ref} data-index={3}>
+    <GalleryStyled ref={ref} component='section' data-index={3}>
       <GridContainer
         sx={{ maxWidth: gridContainerMaxWidth, alignItems: "center" }}
       >
