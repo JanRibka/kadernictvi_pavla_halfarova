@@ -66,12 +66,6 @@ const SwiperText2OddStyled = styled(Typography)(
     ${theme.breakpoints.down("md")} {
       font-size: 1.8rem;
     }
-
-    /* The typing effect */
-    // @keyframes typing {
-    //     from { width: 0 }
-    //     to { width: 100% }
-    // }
 `
 );
 

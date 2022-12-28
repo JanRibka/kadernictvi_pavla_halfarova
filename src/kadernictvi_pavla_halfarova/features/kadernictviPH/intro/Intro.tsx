@@ -50,10 +50,10 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
         <SwiperSlideOddStyled>
           <SwiperTextWrapperOddStyled className='slide-text'>
             <SwiperText1OddStyled variant='h2'>
-              {t("hairdressers")}
+              {t("titleMain")}
             </SwiperText1OddStyled>
             <SwiperText2OddStyled variant='h2'>
-              {t("pavlaHalfarova")
+              {t("titleSecondary")
                 .split("")
                 .map((letter, i) => (
                   <span key={"menu-btn-letter_" + i}>{letter}</span>
@@ -62,8 +62,8 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
           </SwiperTextWrapperOddStyled>
           <img
             src={Intro1}
-            alt='Kadeřnictví Pavla Halfarová - Kadeřnictví 1'
-            // loading='lazy'
+            alt='Kadeřnictví Hairsalon PH - Kadeřnictví 1' // TODO: Přidat do překladů
+            loading='lazy'
           />
         </SwiperSlideOddStyled>
         {/* Slide 2 */}
