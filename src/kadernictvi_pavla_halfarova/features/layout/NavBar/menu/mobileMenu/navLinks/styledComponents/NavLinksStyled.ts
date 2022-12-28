@@ -20,69 +20,82 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     flexDirection: "column",
     marginTop: "1rem",
 
-    button: {
-      color: theme.palette.text.primary,
-      position: "relative",
-      disply: "block",
-      width: "fit-content",
-      padding: "0",
-      margin: "15px 0",
-      pointerEvents: "none",
-      opacity: "0",
-      visibility: "hidden",
-      transform: "translateY(30px)",
-      transition: "all 250ms linear",
-      fontSize: "2rem",
-      lineHeight: "1.1",
+    ul: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      listStyleType: "none",
+      paddingInlineStart: 0,
 
-      "&:after": {
-        position: "absolute",
-        content: "''",
-        left: "0%",
-        bottom: "-5px",
-        width: "100%",
-        height: "2px",
-        backgroundColor: theme.palette.common.third.main,
-        transform: "scaleX(0)",
-        transformOrigin: "center",
-        transition: "transform 300ms ease-in-out",
-      },
+      li: {
+        color: theme.palette.text.primary,
+        disply: "block",
+        width: "fit-content",
+        padding: "0",
+        margin: "15px 0",
+        pointerEvents: "none",
+        opacity: "0",
+        visibility: "hidden",
+        transform: "translateY(30px)",
+        transition: "all 250ms linear",
+        fontSize: "2rem",
+        lineHeight: "1.1",
+        cursor: "pointer",
 
-      "&.active": {
-        "&:after": {
-          transform: "scaleX(1)",
-          transformOrigin: "center",
+        a: {
+          position: "relative",
+          transition: "padding 200ms ease-in-out",
+
+          "&:after": {
+            position: "absolute",
+            content: "''",
+            left: "0%",
+            bottom: "-5px",
+            width: "100%",
+            height: "2px",
+            backgroundColor: theme.palette.common.third.main,
+            transform: "scaleX(0)",
+            transformOrigin: "center",
+            transition: "transform 300ms ease-in-out",
+          },
+
+          "&.active": {
+            "&:after": {
+              transform: "scaleX(1)",
+              transformOrigin: "center",
+            },
+          },
         },
-      },
 
-      "&:hover": {
-        paddingBottom: "10px",
-        marginTop: "15px",
-      },
+        "&:hover": {
+          marginTop: "10px",
+          marginBottom: "20px",
 
-      span: {
-        display: "none",
-      },
+          a: {
+            paddingBottom: "5px",
+          },
+        },
 
-      "&:nth-of-type(1)": {
-        transitionDelay: "250ms",
-      },
-      "&:nth-of-type(2)": {
-        transitionDelay: "200ms",
-      },
-      "&:nth-of-type(3)": {
-        transitionDelay: "150ms",
-      },
-      "&:nth-of-type(4)": {
-        transitionDelay: "100ms",
-      },
-      "&:nth-of-type(5)": {
-        transitionDelay: "50ms",
+        "&:nth-of-type(1)": {
+          transitionDelay: "250ms",
+        },
+        "&:nth-of-type(2)": {
+          transitionDelay: "200ms",
+        },
+        "&:nth-of-type(3)": {
+          transitionDelay: "150ms",
+        },
+        "&:nth-of-type(4)": {
+          transitionDelay: "100ms",
+        },
+        "&:nth-of-type(5)": {
+          transitionDelay: "50ms",
+        },
       },
     },
 
     "&.is-opened": {
-      button: {
+      li: {
         pointerEvents: "auto",
         opacity: "1",
         visibility: "visible",

@@ -4,9 +4,7 @@ import { styled } from '@mui/material/styles';
 const NavLinksStyled = styled(Box)(
   ({ theme }) =>
     `
-    align-item: center;
     flex-grow: 1;
-    align-items: center;
     justify-content: end;
 
     ul {

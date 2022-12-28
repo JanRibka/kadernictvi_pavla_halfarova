@@ -133,9 +133,9 @@ const Layout = () => {
   };
 
   const TabSelectOnChangeAction = (
-    event: MouseEvent<HTMLButtonElement> | undefined
+    event: MouseEvent<HTMLLIElement> | undefined
   ) => {
-    const name: string = event?.currentTarget.name ?? "";
+    const name: string = event?.currentTarget.dataset.target ?? "";
 
     if (!!ref) {
       const auxRef = ref?.current as any;

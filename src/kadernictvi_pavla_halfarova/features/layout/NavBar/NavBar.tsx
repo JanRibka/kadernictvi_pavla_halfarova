@@ -10,7 +10,7 @@ import ToolbarStyled from './styledComponents/ToolbarStyled';
 
 interface IProps {
   tabSelectOnChangeAction: (
-    event: MouseEvent<HTMLButtonElement> | undefined
+    event: MouseEvent<HTMLLIElement> | undefined
   ) => void;
   seldTab: number;
 }

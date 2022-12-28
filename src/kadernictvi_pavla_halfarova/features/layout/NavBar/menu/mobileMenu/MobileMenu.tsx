@@ -1,17 +1,17 @@
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from 'react';
 
-import { useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from '@mui/material';
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
 
-import NavLinks from "../navLinks/NavLinks";
-import HamburgerIcon from "./hamburgerIcon/HamburgerIcon";
-import LanguageSelect from "./languageSelect/languageSelect";
-import NavLinksStyled from "./navLinks/styledComponents/NavLinksStyled";
-import NavLinksWrapperStyled from "./navLinks/styledComponents/NavLinksWrapperStyled";
+import NavLinks from '../navLinks/NavLinks';
+import HamburgerIcon from './hamburgerIcon/HamburgerIcon';
+import LanguageSelect from './languageSelect/languageSelect';
+import NavLinksStyled from './navLinks/styledComponents/NavLinksStyled';
+import NavLinksWrapperStyled from './navLinks/styledComponents/NavLinksWrapperStyled';
 
 interface IProps {
-  onClickAction: (event: MouseEvent<HTMLButtonElement> | undefined) => void;
+  onClickAction: (event: MouseEvent<HTMLLIElement> | undefined) => void;
   seldTab: number;
 }
 
@@ -88,7 +88,7 @@ const MobileMenu = (props: IProps) => {
   };
 
   const HandleOnCLickAction = (
-    event: MouseEvent<HTMLButtonElement> | undefined
+    event: MouseEvent<HTMLLIElement> | undefined
   ) => {
     props.onClickAction(event);
     setIsOpnd(false);
@@ -112,7 +112,7 @@ const MobileMenu = (props: IProps) => {
             <NavLinks
               ref={refNavLinks}
               handleOnClick={HandleOnCLickAction}
-              actValue={props.seldTab}
+              seldTab={props.seldTab}
             />
           </NavLinksStyled>
         </Box>
