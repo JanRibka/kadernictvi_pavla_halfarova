@@ -19,7 +19,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-
+// TODO: Předělat mobilní menu na něco jednoduššího
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
