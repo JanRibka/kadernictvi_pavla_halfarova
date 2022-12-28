@@ -2,6 +2,8 @@ import { lazy, Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 
+import { useMediaQuery, useTheme } from '@mui/material';
+
 import Produkt01 from './img/gallery1/Produkt01.jpg';
 import Pece01 from './img/gallery2/Pece01.jpg';
 import Blond01 from './img/gallery3/Blond01.jpg';
@@ -22,6 +24,13 @@ const Photos = () => {
   const [openGallery4, setOpenGallery4] = useState<boolean>(false);
 
   // Consts
+  const theme = useTheme();
+  const smLg = useMediaQuery(theme.breakpoints.between("sm", "lg"));
+  const smDwn = useMediaQuery(theme.breakpoints.down("sm"));
+  const gallery2Delay = smDwn ? 0 : 300;
+  const gallery3Delay = smLg || smDwn ? 0 : 600;
+  const gallery4Delay = smLg ? 300 : smDwn ? 0 : 900;
+
   const tGallery1 = useTranslation(["kadernictviPH\\gallery\\gallery1"]).t;
   const tGallery2 = useTranslation(["kadernictviPH\\gallery\\gallery2"]).t;
   const tGallery3 = useTranslation(["kadernictviPH\\gallery\\gallery3"]).t;
@@ -50,7 +59,7 @@ const Photos = () => {
     Alt: tGallery4("photo1Alt"),
     MainPhoto: true,
   };
-  // TODO: Delay zde bude dynamicky podle toho, kolik je fotrk na strance
+  // TODO: Animace se spou3t2j9 n2jak n8hodn2, zkusit najít něco jiného
   return (
     <GridContainer>
       {/* Gallery 1 */}
@@ -67,7 +76,7 @@ const Photos = () => {
 
       {/* Gallery 2 */}
       <Photo
-        delay={300}
+        delay={gallery2Delay}
         mainPhoto={gallery2MainPhoto}
         galleryName={tGallery2("galleryName")}
         setOpen={setOpenGallery2}
@@ -79,7 +88,7 @@ const Photos = () => {
 
       {/* Gallery 3 */}
       <Photo
-        delay={600}
+        delay={gallery3Delay}
         mainPhoto={gallery3MainPhoto}
         galleryName={tGallery3("galleryName")}
         setOpen={setOpenGallery3}
@@ -92,7 +101,7 @@ const Photos = () => {
 
       {/* Gallery 4 */}
       <Photo
-        delay={900}
+        delay={gallery4Delay}
         mainPhoto={gallery4MainPhoto}
         galleryName={tGallery4("galleryName")}
         setOpen={setOpenGallery4}
