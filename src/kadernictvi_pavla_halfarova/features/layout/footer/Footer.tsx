@@ -58,9 +58,9 @@ const Footer = () => {
             >
               &#169; 2022 - {actYear} Hairsalon PH,
               <Box
-                sx={{ textDecoration: "none", color: "text.primary" }}
                 component='a'
                 href='mailto:weby.ribka@gmail.com'
+                sx={{ textDecoration: "none", color: "text.primary" }}
               >
                 {" "}
                 &nbsp; Webdesign by JAN RIBKA
