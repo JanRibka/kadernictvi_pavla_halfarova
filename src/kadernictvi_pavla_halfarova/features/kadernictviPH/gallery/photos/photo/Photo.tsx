@@ -1,5 +1,5 @@
-import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
 import { Dispatch, MouseEvent, SetStateAction } from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -27,11 +27,10 @@ const Photo = (props: IProps) => {
     <>
       <PhotoWrapperStyled xs={12} sm={6} lg={3}>
         <Fade
-          animation='fade-up'
+          direction='up'
           delay={props.delay}
-          sx={{
-            overflow: "hidden",
-          }}
+          triggerOnce
+          style={{ width: "100%", height: "100%" }}
         >
           <Box
             sx={{

@@ -1,4 +1,4 @@
-import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -13,7 +13,7 @@ interface IProps {
   iconDescription: string;
   description: string;
   items: IItemProps[];
-  animation: "fade-left" | "fade-right";
+  animation: "left" | "right";
 }
 
 const Service = (props: IProps) => {
@@ -27,7 +27,7 @@ const Service = (props: IProps) => {
 
   return (
     <Box sx={{ width: "100%", margin: wrapperMargin }}>
-      <Fade animation={props.animation}>
+      <Fade direction={props.animation} triggerOnce>
         <>
           {/* Icon */}
           <Icon

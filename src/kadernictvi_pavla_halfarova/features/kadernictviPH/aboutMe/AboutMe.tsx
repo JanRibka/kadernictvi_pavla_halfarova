@@ -1,5 +1,5 @@
-import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
 import { forwardRef, Ref } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
 
@@ -40,14 +40,14 @@ const AboutMe = forwardRef(
           {/* Photo */}
           <PhotoWrapperStyled xs={12} md={6}>
             <Box component={"div"} className='photo-wrapper'>
-              <Fade animation={breakpointMdUp ? "fade-right" : "fade-left"}>
+              <Fade direction={breakpointMdUp ? "left" : "right"} triggerOnce>
                 <Photo />
               </Fade>
             </Box>
           </PhotoWrapperStyled>
           {/* Description */}
           <GridItem xs={12} md={6} alignSelf='baseline'>
-            <Fade animation={breakpointMdUp ? "fade-left" : "fade-right"}>
+            <Fade direction={breakpointMdUp ? "right" : "left"} triggerOnce>
               <Description />
             </Fade>
           </GridItem>

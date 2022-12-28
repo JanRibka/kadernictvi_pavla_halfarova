@@ -59,7 +59,7 @@ const Photos = () => {
     Alt: tGallery4("photo1Alt"),
     MainPhoto: true,
   };
-  // TODO: Animace se spou3t2j9 n2jak n8hodn2, zkusit najít něco jiného
+
   return (
     <GridContainer>
       {/* Gallery 1 */}

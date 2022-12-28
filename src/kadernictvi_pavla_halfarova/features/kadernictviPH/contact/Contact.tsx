@@ -1,5 +1,5 @@
-import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
 import { forwardRef, Ref } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
@@ -54,7 +54,7 @@ const Contact = forwardRef(
           {/* Constacts */}
           <GridItem xs={12}>
             <ContactsWrapperStyled>
-              <Fade animation='fade-up'>
+              <Fade direction='up' triggerOnce>
                 <>
                   {/* Tel, email, address */}
                   <Contacts />

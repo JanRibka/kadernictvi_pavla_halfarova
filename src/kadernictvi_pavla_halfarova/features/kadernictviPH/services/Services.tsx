@@ -1,5 +1,5 @@
-import Fade from 'kadernictvi_pavla_halfarova/globalStyles/animations/onScroll/fade/Fade';
 import { forwardRef, Ref } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 import GridItem from 'shared/components/gridItem/GridItem';
@@ -79,7 +79,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             iconDescription='Stříhání vlasů'
             description={t("serviceCutting")}
             items={cuttingItems}
-            animation='fade-right'
+            animation='left'
           />
         </GridItem>
 
@@ -97,12 +97,12 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             iconDescription='Barvení vlasů'
             description={t("serviceColoring")}
             items={coloringItems}
-            animation='fade-left'
+            animation='right'
           />
         </GridItem>
       </GridContainer>
       <GridItem xs={12} sx={{ marginTop: "50px" }} justifyContent='center'>
-        <Fade animation='fade-up'>
+        <Fade direction='up' triggerOnce>
           <Typography sx={{ textAlign: "justify", textAlignLast: "center" }}>
             {t("priceListDesc")}
           </Typography>
