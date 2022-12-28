@@ -16,6 +16,7 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// TODO: Zobrazit tooltip při najetí na logo
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
