@@ -52,6 +52,7 @@ const Footer = () => {
 
                 [theme.breakpoints.down("md")]: {
                   justifyContent: "center",
+                  fontSize: "0.8rem",
                 },
               }}
             >
