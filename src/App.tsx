@@ -52,7 +52,7 @@ const App = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  //TODO: Sjednotit písma
+
   return (
     <>
       <Layout />

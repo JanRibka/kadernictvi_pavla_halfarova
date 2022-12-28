@@ -46,8 +46,6 @@ const PhotosDialog = (props: IProps) => {
     return result;
   };
 
-  // TODO: http://jellydemos.com/wordpress/murdock/dark/#home
-  // TODO: Po dobu na49t8n9 bude loading
   return (
     <DialogStyled open={props.open} disableScrollLock={false}>
       <DialogTitleWrapperStyled>

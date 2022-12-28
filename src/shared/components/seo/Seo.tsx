@@ -32,7 +32,7 @@ const Seo = () => {
     const ogDesc = document.querySelector("meta[property='og:description']");
     ogDesc?.setAttribute("content", t("description"));
     const ogLocale = document.querySelector("meta[property='og:locale']");
-    ogLocale?.setAttribute("content", LocalesEnum[i18next.language]); // TODO: Na produkci je zde undefined
+    ogLocale?.setAttribute("content", LocalesEnum[i18next.language]);
     const seoFb = SeoFb;
     const ogImage = document.querySelector("meta[property='og:image']");
     ogImage?.setAttribute("content", seoFb);

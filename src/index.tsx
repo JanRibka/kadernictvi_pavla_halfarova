@@ -20,8 +20,6 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-// TODO: Uslideru v galeriri, zkusit pridat lazu loading a dát tam načítani
-// TODO: Předělat na next js a SSR https://blog.logrocket.com/implementing-ssr-next-js-dynamic-routing-prefetching/
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>

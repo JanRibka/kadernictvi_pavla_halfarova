@@ -141,7 +141,7 @@ const Layout = () => {
       const auxRef = ref?.current as any;
       const currentRef = auxRef[name] as RefObject<HTMLDivElement>;
 
-      scrollIntoView(currentRef.current as Element, { behavior: "smooth" }); // TODO: otestovat na ruzn7ch prohlizecich, hlavne safari
+      scrollIntoView(currentRef.current as Element, { behavior: "smooth" });
     }
 
     googleAnalyticsHelper.SendEventToGA(
@@ -156,7 +156,7 @@ const Layout = () => {
       const auxRef = ref?.current as any;
       const currentRef = auxRef["intro"] as RefObject<HTMLDivElement>;
 
-      scrollIntoView(currentRef.current as Element, { behavior: "smooth" }); // TODO: otestovat na ruzn7ch prohlizecich, hlavne safari
+      scrollIntoView(currentRef.current as Element, { behavior: "smooth" });
     }
   };
 

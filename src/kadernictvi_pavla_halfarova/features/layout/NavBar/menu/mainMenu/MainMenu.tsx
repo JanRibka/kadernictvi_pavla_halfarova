@@ -7,7 +7,7 @@ interface IProps {
   onChangeAction: (event: MouseEvent<HTMLLIElement> | undefined) => void;
   seldTab: number;
 }
-// TODO: Main menu podle totho https://www.npmjs.com/package/react-scroll
+
 const MainMenu = (props: IProps) => {
   return (
     <NavLinksStyled display={{ xs: "none", md: "flex" }}>
