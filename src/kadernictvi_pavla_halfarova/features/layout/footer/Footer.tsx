@@ -22,7 +22,7 @@ const Footer = () => {
     : breakpointMdUp
     ? "860px"
     : "100%";
-  // TODO: Na mobilu je je text footeru spatne, opravit
+
   return (
     <FooterStyled component='footer'>
       <GridContainer>

@@ -1,8 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 import HairSalonPHLogo from '../../../../../shared/img/logo/logo_hairsalon_ph.svg';
 import ImgWrapperStyled from './styledComponents/ImgWrapperStyles';
 import LogoStyled from './styledComponents/LogoStyled';
 
 const Logo = () => {
+  // Consts
+  const { t } = useTranslation(["layout\\logo"]);
+
   return (
     <LogoStyled>
       <ImgWrapperStyled
@@ -10,7 +15,7 @@ const Logo = () => {
         href={process.env.PUBLIC_URL}
         target='_self'
       >
-        <img src={HairSalonPHLogo} alt='Hairsalon PH - Logo'></img>
+        <img src={HairSalonPHLogo} alt={t("logoAlt") as string}></img>
       </ImgWrapperStyled>
     </LogoStyled>
   );
