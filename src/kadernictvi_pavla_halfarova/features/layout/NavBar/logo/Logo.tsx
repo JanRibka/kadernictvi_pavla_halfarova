@@ -1,6 +1,6 @@
-import HairSalonPHLogo from "../../../../../shared/img/logo/logo_hairsalon_ph.svg";
-import ImgWrapperStyled from "./styledComponents/ImgWrapperStyled";
-import LogoStyled from "./styledComponents/LogoStyled";
+import HairSalonPHLogo from '../../../../../shared/img/logo/logo_hairsalon_ph.svg';
+import ImgWrapperStyled from './styledComponents/ImgWrapperStyled';
+import LogoStyled from './styledComponents/LogoStyled';
 
 // TODO: alt p5idat do prekladu
 const Logo = () => {
@@ -11,7 +11,7 @@ const Logo = () => {
         href={process.env.PUBLIC_URL}
         target='_self'
       >
-        <img src={HairSalonPHLogo} alt='Hair Salon PH - Logo'></img>
+        <img src={HairSalonPHLogo} alt='Hairsalon PH - Logo'></img>
       </ImgWrapperStyled>
     </LogoStyled>
   );

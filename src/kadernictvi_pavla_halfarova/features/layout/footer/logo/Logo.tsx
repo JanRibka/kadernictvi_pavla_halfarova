@@ -10,7 +10,7 @@ const Logo = () => {
         href={process.env.PUBLIC_URL}
         target='_self'
       >
-        <img src={HairSalonPHLogo} alt='Hair Salon PH - Logo'></img>
+        <img src={HairSalonPHLogo} alt='Hairsalon PH - Logo'></img>
       </ImgWrapperStyled>
     </LogoStyled>
   );

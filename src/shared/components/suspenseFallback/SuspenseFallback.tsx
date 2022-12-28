@@ -4,7 +4,7 @@ import SuspenseFallbackStyled from './styledComponents/SuspenseFallbackStyled';
 const SuspenseFallback = () => {
   return (
     <SuspenseFallbackStyled>
-      {<img src={HairSalonPHLogo} alt='Hair Salon PH - Logo'></img>}
+      {<img src={HairSalonPHLogo} alt='Hairsalon PH - Logo'></img>}
     </SuspenseFallbackStyled>
   );
 };
