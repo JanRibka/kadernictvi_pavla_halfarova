@@ -6,7 +6,8 @@ const SwiperText2Styled = styled(Typography)(
     `
     height: 3.5rem;
     visibility: hidden;    
-    color: white;    
+    color: white;
+    font-size: 3rem;
     transition: font-size 300ms linear 1500ms, visibility 1ms linear 1500ms;
     
     ${theme.breakpoints.down("md")} {

@@ -37,7 +37,7 @@ const SectionTitle: React.FC<IProps> = (props) => {
       </Typography>
       <Typography
         className='secondary-text'
-        variant='h5'
+        variant='h3'
         color={props.colorSecondary}
       >
         {props.secondaryText}

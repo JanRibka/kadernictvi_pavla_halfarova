@@ -15,7 +15,7 @@ const SwiperTextWrapperOddSlide = styled(Box)(({ theme }) => ({
     width: "100%",
   },
 
-  "& .MuiTypography-root:nth-of-type(1)": {
+  "& .title-main": {
     lineHeight: "0.7",
   },
 }));

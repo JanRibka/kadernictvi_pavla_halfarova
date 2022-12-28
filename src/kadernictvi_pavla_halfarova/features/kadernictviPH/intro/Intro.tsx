@@ -49,10 +49,10 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
         {/* Slide 1 */}
         <SwiperSlideOddStyled>
           <SwiperTextWrapperOddStyled className='slide-text'>
-            <SwiperText1OddStyled variant='h2'>
+            <SwiperText1OddStyled variant='h1' className='title-main'>
               {t("titleMain")}
             </SwiperText1OddStyled>
-            <SwiperText2OddStyled variant='h2'>
+            <SwiperText2OddStyled variant='h3' className='title-secondary'>
               {t("titleSecondary")
                 .split("")
                 .map((letter, i) => (
@@ -60,11 +60,7 @@ const Intro = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
                 ))}
             </SwiperText2OddStyled>
           </SwiperTextWrapperOddStyled>
-          <img
-            src={Intro1}
-            alt='Kadeřnictví Hairsalon PH - Kadeřnictví 1' // TODO: Přidat do překladů
-            loading='lazy'
-          />
+          <img src={Intro1} alt={t("photo1Alt") as string} loading='lazy' />
         </SwiperSlideOddStyled>
         {/* Slide 2 */}
         {/* <SwiperSlideEvenStyled>

@@ -18,6 +18,7 @@ const SectionTitleStyled = styled(Box)(
 
   & .secondary-text {
     font-family: "Caveat", cursive;
+    font-size: 1.5rem;
   }
 `
 );

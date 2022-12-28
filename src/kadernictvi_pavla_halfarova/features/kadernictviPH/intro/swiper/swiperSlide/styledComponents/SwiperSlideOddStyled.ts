@@ -16,16 +16,17 @@ const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
 
   "&.swiper-slide-active, &.swiper-slide-duplicate-active": {
     "& .slide-text": {
-      "& .MuiTypography-root:nth-of-type(1)": {
+      "& .title-main": {
         visibility: "visible",
         fontSize: "5rem",
+        lineHeight: "0.7",
 
         [theme.breakpoints.down("md")]: {
           fontSize: "3rem",
           height: "2.2rem",
         },
       },
-      "& .MuiTypography-root:nth-of-type(2)": {
+      "& .title-secondary": {
         span: {
           opacity: 1,
         },

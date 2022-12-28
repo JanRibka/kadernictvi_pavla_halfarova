@@ -14,7 +14,7 @@ const Description = () => {
   const { t } = useTranslation(["kadernictviPH\\aboutMe\\aboutMe"]);
   const theme = useTheme();
   const breakpointMdUp: boolean = useMediaQuery(theme.breakpoints.up("md"));
-  // TODO: H1 by mel byt nadpis na intro
+
   return (
     <DescriptionStyled>
       <SectionTitle
@@ -23,7 +23,7 @@ const Description = () => {
         colorMain={theme.palette.text.secondary}
         colorSecondary={theme.palette.common.third.main}
         textAlign={breakpointMdUp ? "start" : "center"}
-        variantMainText='h1'
+        variantMainText='h2'
       />
       <TypographyStyled>{t("description1")}</TypographyStyled>
       <br />
