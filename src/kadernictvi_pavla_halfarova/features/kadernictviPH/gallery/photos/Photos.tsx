@@ -83,6 +83,7 @@ const Photos = () => {
         mainPhoto={gallery3MainPhoto}
         galleryName={tGallery3("galleryName")}
         setOpen={setOpenGallery3}
+        pictToTop
       >
         <Suspense fallback={<div>...Loading</div>}>
           <Gallery3 open={openGallery3} setOpen={setOpenGallery3} />
@@ -95,6 +96,7 @@ const Photos = () => {
         mainPhoto={gallery4MainPhoto}
         galleryName={tGallery4("galleryName")}
         setOpen={setOpenGallery4}
+        pictToTop
       >
         <Suspense fallback={<div>...Loading</div>}>
           <Gallery4 open={openGallery4} setOpen={setOpenGallery4} />

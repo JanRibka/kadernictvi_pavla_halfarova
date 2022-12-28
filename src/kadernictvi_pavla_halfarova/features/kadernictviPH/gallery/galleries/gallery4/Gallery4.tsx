@@ -6,6 +6,7 @@ import OstatniBarvy02 from '../../photos/img/gallery4/OstatniBarvy02.jpg';
 import OstatniBarvy03 from '../../photos/img/gallery4/OstatniBarvy03.jpg';
 import OstatniBarvy04 from '../../photos/img/gallery4/OstatniBarvy04.jpg';
 import OstatniBarvy05 from '../../photos/img/gallery4/OstatniBarvy05.jpg';
+import OstatniBarvy06 from '../../photos/img/gallery4/OstatniBarvy06.jpg';
 import PhotoModel from '../../photos/PhotoModel';
 import PhotosDialog from '../../photos/photosDialog/PhotosDialog';
 
@@ -41,6 +42,11 @@ const Gallery4 = (props: IProps) => {
     {
       Src: OstatniBarvy05,
       Alt: t("photo5Alt"),
+      MainPhoto: false,
+    },
+    {
+      Src: OstatniBarvy06,
+      Alt: t("photo6Alt"),
       MainPhoto: false,
     },
   ];

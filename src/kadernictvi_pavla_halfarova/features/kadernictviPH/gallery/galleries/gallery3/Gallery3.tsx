@@ -6,6 +6,7 @@ import Blond02 from '../../photos/img/gallery3/Blond02.jpg';
 import Blond03 from '../../photos/img/gallery3/Blond03.jpg';
 import Blond04 from '../../photos/img/gallery3/Blond04.jpg';
 import Blond05 from '../../photos/img/gallery3/Blond05.jpg';
+import Blond06 from '../../photos/img/gallery3/Blond06.jpg';
 import PhotoModel from '../../photos/PhotoModel';
 import PhotosDialog from '../../photos/photosDialog/PhotosDialog';
 
@@ -41,6 +42,11 @@ const Gallery3 = (props: IProps) => {
     {
       Src: Blond05,
       Alt: t("photo5Alt"),
+      MainPhoto: false,
+    },
+    {
+      Src: Blond06,
+      Alt: t("photo6Alt"),
       MainPhoto: false,
     },
   ];

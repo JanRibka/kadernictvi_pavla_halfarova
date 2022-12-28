@@ -5,6 +5,7 @@ import Pece01 from '../../photos/img/gallery2/Pece01.jpg';
 import Pece02 from '../../photos/img/gallery2/Pece02.jpg';
 import Pece03 from '../../photos/img/gallery2/Pece03.jpg';
 import Pece04 from '../../photos/img/gallery2/Pece04.jpg';
+import Pece05 from '../../photos/img/gallery2/Pece05.jpg';
 import PhotoModel from '../../photos/PhotoModel';
 import PhotosDialog from '../../photos/photosDialog/PhotosDialog';
 
@@ -35,6 +36,11 @@ const Gallery2 = (props: IProps) => {
     {
       Src: Pece04,
       Alt: t("photo4Alt"),
+      MainPhoto: false,
+    },
+    {
+      Src: Pece05,
+      Alt: t("photo5Alt"),
       MainPhoto: false,
     },
   ];

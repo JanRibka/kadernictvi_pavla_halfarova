@@ -12,6 +12,7 @@ interface IProps {
   delay: number;
   mainPhoto: PhotoModel;
   galleryName: string;
+  pictToTop?: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   children: JSX.Element;
 }
@@ -38,6 +39,7 @@ const Photo = (props: IProps) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              overflow: "hidden",
             }}
           >
             <ImgStyled
@@ -45,6 +47,7 @@ const Photo = (props: IProps) => {
               alt={props.mainPhoto.Alt}
               loading='lazy'
               className='image'
+              pictToTop={props.pictToTop}
             />
             <Box className='line top'></Box>
             <Box className='line right'></Box>
