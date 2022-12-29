@@ -13,6 +13,7 @@ const Logo = () => {
       <ImgWrapperStyled
         component='a'
         href={process.env.PUBLIC_URL}
+        title='Hairsalon PH'
         target='_self'
       >
         <img src={HairSalonPHLogo} alt={t("logoAlt") as string}></img>
