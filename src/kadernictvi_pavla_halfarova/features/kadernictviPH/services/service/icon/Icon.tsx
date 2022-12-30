@@ -34,7 +34,7 @@ const Icon = (props: IProps) => {
         variant='h5'
         sx={{
           fontWeight: "bold",
-          color: theme.palette.common.third.main,
+          color: theme.palette.text.secondary,
           marginTop: "30px",
         }}
       >

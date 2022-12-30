@@ -38,7 +38,7 @@ const Footer = () => {
           </Box>
         </GridItem>
       </GridContainer>
-      <GridContainer sx={{ backgroundColor: "common.third.main" }}>
+      <GridContainer sx={{ backgroundColor: "secondary.main" }}>
         <Box sx={{ maxWidth: gridContainerMaxWidth, width: "100%" }}>
           <GridItem xs={12}>
             <Typography
@@ -48,7 +48,7 @@ const Footer = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "start",
-                color: "text.primary",
+                color: "text.secondary",
 
                 [theme.breakpoints.down("md")]: {
                   justifyContent: "center",
@@ -60,7 +60,7 @@ const Footer = () => {
               <Box
                 component='a'
                 href='mailto:weby.ribka@gmail.com'
-                sx={{ textDecoration: "none", color: "text.primary" }}
+                sx={{ textDecoration: "none", color: "text.secondary" }}
               >
                 {" "}
                 &nbsp; Webdesign by JAN RIBKA

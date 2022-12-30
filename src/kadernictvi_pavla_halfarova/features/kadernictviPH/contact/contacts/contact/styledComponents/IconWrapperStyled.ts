@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 const IconWrapperStyled = styled(Box)(
   ({ theme }) => `
-    color: ${theme.palette.common.third.main};
+    color: ${theme.palette.secondary.main};
     height: 48px;
     width: 48px;
 

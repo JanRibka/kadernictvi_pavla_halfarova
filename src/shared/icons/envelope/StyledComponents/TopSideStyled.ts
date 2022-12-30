@@ -11,7 +11,7 @@ const TopSideStyled = styled(Box)(({ theme }) => ({
   borderLeft: "24px solid transparent",
   borderRight: "24px solid transparent",
   position: "relative",
-  borderBottom: "24px solid " + theme.palette.common.third.light,
+  borderBottom: "24px solid " + theme.palette.secondary.main,
 }));
 
 export default TopSideStyled;

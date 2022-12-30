@@ -32,7 +32,7 @@ const NavLinksStyled = styled(Box)(
             bottom: -5px;
             width: 100%;
             height: 2px;
-            background-color: ${theme.palette.common.third.main};            
+            background-color: ${theme.palette.text.primary};
             transform: translateX(0px) scaleX(0);
             transform-origin: center;
             transition: transform 300ms ease-in-out;         

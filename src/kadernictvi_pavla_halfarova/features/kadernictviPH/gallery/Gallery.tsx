@@ -44,7 +44,7 @@ const Gallery = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
             mainText={t("headerMain")}
             secondaryText={t("headerSecondary")}
             colorMain={theme.palette.text.secondary}
-            colorSecondary={theme.palette.common.third.main}
+            colorSecondary={theme.palette.text.secondary}
           />
         </GridItem>
       </GridContainer>

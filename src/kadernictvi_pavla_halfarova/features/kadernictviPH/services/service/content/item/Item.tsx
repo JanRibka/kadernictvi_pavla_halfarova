@@ -23,7 +23,7 @@ const Item = (props: IItemProps) => {
     <ItemStyled>
       <Box
         sx={{
-          color: "common.third.main",
+          color: "text.secondary",
           marginRight: "10px",
         }}
       >
@@ -60,7 +60,7 @@ const Item = (props: IItemProps) => {
         <Typography
           variant='h4'
           sx={{
-            color: "common.third.main",
+            color: "text.secondary",
             marginRight: "5px",
             width: breakpointMdDwn ? "52px" : "75px",
             fontSize: breakpointMdDwn ? "1.5rem" : undefined,
@@ -76,7 +76,7 @@ const Item = (props: IItemProps) => {
         <Typography
           variant='h5'
           sx={{
-            color: "common.third.main",
+            color: "text.secondary",
           }}
         >
           Kč

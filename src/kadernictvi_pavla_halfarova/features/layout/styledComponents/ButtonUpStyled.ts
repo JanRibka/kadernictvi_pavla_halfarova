@@ -6,8 +6,8 @@ const ButtonUpStyled = styled(IconButton)(({ theme }) => ({
   right: "40px",
   bottom: "40px",
   borderRadius: "5px",
-  color: theme.palette.primary.dark,
-  backgroundColor: theme.palette.common.third.main,
+  color: theme.palette.secondary.main,
+  backgroundColor: theme.palette.primary.main,
   zIndex: 1,
   transition: "transform 450ms ease-in-out",
 
@@ -25,7 +25,7 @@ const ButtonUpStyled = styled(IconButton)(({ theme }) => ({
   },
 
   ":hover": {
-    backgroundColor: theme.palette.common.third.dark,
+    backgroundColor: theme.palette.primary.main,
     transform: "translateY(-10px)",
   },
 }));

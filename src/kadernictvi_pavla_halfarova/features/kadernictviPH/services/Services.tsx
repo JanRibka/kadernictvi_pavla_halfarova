@@ -54,7 +54,7 @@ const Services = forwardRef((props: IProps, ref: Ref<HTMLDivElement>) => {
         mainText={t("headerMain")}
         secondaryText={t("headerSecondary")}
         colorMain={theme.palette.text.primary}
-        colorSecondary={theme.palette.common.third.main}
+        colorSecondary={theme.palette.text.primary}
       />
       {/* Services */}
       <GridContainer

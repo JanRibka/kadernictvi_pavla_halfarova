@@ -14,22 +14,20 @@ const SwiperStyledOddStyled = styled(SwiperSlide)(({ theme }) => ({
     objectFit: "cover",
   },
 
-  "&.swiper-slide-active, &.swiper-slide-duplicate-active": {
-    "& .slide-text": {
-      "& .title-main": {
-        visibility: "visible",
-        fontSize: "5rem",
-        lineHeight: "0.7",
+  "& .slide-text": {
+    "& .title-main": {
+      visibility: "visible",
+      fontSize: "5rem",
+      lineHeight: "0.7",
 
-        [theme.breakpoints.down("md")]: {
-          fontSize: "3rem",
-          height: "2.2rem",
-        },
+      [theme.breakpoints.down("md")]: {
+        fontSize: "3rem",
+        height: "2.2rem",
       },
-      "& .title-secondary": {
-        span: {
-          opacity: 1,
-        },
+    },
+    "& .title-secondary": {
+      span: {
+        opacity: 1,
       },
     },
   },

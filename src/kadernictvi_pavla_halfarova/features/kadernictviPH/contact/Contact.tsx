@@ -48,7 +48,7 @@ const Contact = forwardRef(
               mainText={t("headerMain")}
               secondaryText={t("headerSecondary")}
               colorMain={theme.palette.text.primary}
-              colorSecondary={theme.palette.common.third.main}
+              colorSecondary={theme.palette.text.primary}
             />
           </GridItem>
           {/* Constacts */}

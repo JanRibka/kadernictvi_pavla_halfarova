@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
-import GridContainer from "shared/components/gridContainer/GridContainer";
-import GridItem from "shared/components/gridItem/GridItem";
+import { useTranslation } from 'react-i18next';
+import GridContainer from 'shared/components/gridContainer/GridContainer';
+import GridItem from 'shared/components/gridItem/GridItem';
 
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
+import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material/styles';
 
 const GoToGallery = () => {
   // Consts
@@ -20,7 +20,7 @@ const GoToGallery = () => {
           sx={{
             borderRadius: "23px",
             height: "46px",
-            backgroundColor: theme.palette.common.third.main,
+            backgroundColor: theme.palette.primary.main,
             textTransform: "none",
             display: "flex",
             alignItems: "center",
@@ -28,7 +28,7 @@ const GoToGallery = () => {
             textDecoration: "none",
             color: theme.palette.text.primary,
             ":hover": {
-              backgroundColor: theme.palette.common.third.dark,
+              backgroundColor: theme.palette.primary.dark,
             },
           }}
         >
