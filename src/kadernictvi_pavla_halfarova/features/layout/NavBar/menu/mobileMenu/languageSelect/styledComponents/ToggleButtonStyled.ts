@@ -13,7 +13,7 @@ const ToggleButtonStyled = styled(ToggleButton)(({ theme }) => ({
     left: "15px",
     width: "calc(100% - 30px)",
     height: "2px",
-    backgroundColor: theme.palette.common.third.main,
+    backgroundColor: theme.palette.text.primary,
     transform: "scaleX(0)",
     transformOrigin: "center",
     transition: "transform 300ms ease-in-out",
