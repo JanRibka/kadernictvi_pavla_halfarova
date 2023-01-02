@@ -17,33 +17,37 @@ const Photo = () => {
           <img
             src={pavlaHalfarova}
             alt='Pavla Halfarová'
-            className='swiper-lazy'
+            loading='lazy'
+            // className='swiper-lazy'
           />
-          <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
+          {/* <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div> */}
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={pavlaHalfarova}
             alt='Pavla Halfarová'
-            className='swiper-lazy'
+            loading='lazy'
+            // loading='lazy'
           />
-          <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
+          {/* <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div> */}
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={pavlaHalfarova}
             alt='Pavla Halfarová'
-            className='swiper-lazy'
+            loading='lazy'
+            // className='swiper-lazy'
           />
-          <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
+          {/* <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div> */}
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={pavlaHalfarova}
             alt='Pavla Halfarová'
-            className='swiper-lazy'
+            loading='lazy'
+            // className='swiper-lazy'
           />
-          <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
+          {/* <div className='swiper-lazy-preloader swiper-lazy-preloader-white'></div> */}
         </SwiperSlide>
       </Swiper>
     </ImageWrapperStyled>
