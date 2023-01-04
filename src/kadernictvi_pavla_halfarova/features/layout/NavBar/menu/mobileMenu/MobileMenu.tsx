@@ -53,8 +53,10 @@ const MobileMenu = (props: IProps) => {
   const HandleOnClickAction = (
     event: MouseEvent<HTMLLIElement> | undefined
   ) => {
-    props.onClickAction(event);
     setIsOpnd(false);
+    setTimeout(() => {
+      props.onClickAction(event);
+    }, 800);
   };
 
   return (
