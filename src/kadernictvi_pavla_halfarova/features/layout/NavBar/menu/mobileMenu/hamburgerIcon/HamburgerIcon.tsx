@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-import Box from "@mui/material/Box";
-
-import HamburgerIconStyled from "./styledComponents/HamburgerIconStyled";
+import HamburgerIconLineStyled from './styledComponents/HamburgerIconLineStyled';
+import HamburgerIconStyled from './styledComponents/HamburgerIconStyled';
 
 interface IProps {
   handleOnClick: () => void;
@@ -10,10 +9,8 @@ interface IProps {
 }
 
 const HamburgerIcon = (props: IProps) => {
-  // References
-  const effectRan = useRef<boolean>(false);
-
   // Refrences
+  const effectRan = useRef<boolean>(false);
   const refMobileMenuIcon = useRef<HTMLDivElement>(null);
 
   // Other
@@ -39,13 +36,12 @@ const HamburgerIcon = (props: IProps) => {
       }
     }
   };
-
+  // TODO: Nejprve se zav5e menu a potom se skrokluje na sekci
   return (
-    <HamburgerIconStyled
-      className='hamburger-btn'
-      onClick={props.handleOnClick}
-    >
-      <Box ref={refMobileMenuIcon} className='mobile-menu-icon'></Box>
+    <HamburgerIconStyled ref={refMobileMenuIcon} onClick={props.handleOnClick}>
+      <HamburgerIconLineStyled className='line-1'></HamburgerIconLineStyled>
+      <HamburgerIconLineStyled className='line-2'></HamburgerIconLineStyled>
+      <HamburgerIconLineStyled className='line-3'></HamburgerIconLineStyled>
     </HamburgerIconStyled>
   );
 };

@@ -70,12 +70,12 @@ const Layout = () => {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-icon")[0]
-        .classList.add("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-nav")[0]
-        .classList.add("scroll-on");
+      // document.body
+      //   .getElementsByClassName("mobile-menu-icon")[0]
+      //   .classList.add("scroll-on");
+      // document.body
+      //   .getElementsByClassName("mobile-menu-nav")[0]
+      //   .classList.add("scroll-on");
 
       refBtnUp.current?.classList.add("to-top-active");
     } else {
@@ -85,12 +85,12 @@ const Layout = () => {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-icon")[0]
-        .classList.remove("scroll-on");
-      document.body
-        .getElementsByClassName("mobile-menu-nav")[0]
-        .classList.remove("scroll-on");
+      // document.body
+      //   .getElementsByClassName("mobile-menu-icon")[0]
+      //   .classList.remove("scroll-on");
+      // document.body
+      //   .getElementsByClassName("mobile-menu-nav")[0]
+      //   .classList.remove("scroll-on");
 
       refBtnUp.current?.classList.remove("to-top-active");
     }

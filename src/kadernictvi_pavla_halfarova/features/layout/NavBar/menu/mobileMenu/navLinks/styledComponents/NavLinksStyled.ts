@@ -33,9 +33,6 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
         width: "fit-content",
         padding: "0",
         margin: "15px 0",
-        pointerEvents: "none",
-        opacity: "0",
-        visibility: "hidden",
         transform: "translateY(30px)",
         transition: "all 250ms linear",
         fontSize: "2rem",
@@ -45,6 +42,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
         a: {
           position: "relative",
           transition: "padding 200ms ease-in-out",
+          color: theme.palette.text.secondary,
 
           "&:after": {
             position: "absolute",
@@ -53,7 +51,7 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
             bottom: "-5px",
             width: "100%",
             height: "2px",
-            backgroundColor: theme.palette.text.primary,
+            backgroundColor: theme.palette.text.secondary,
             transform: "scaleX(0)",
             transformOrigin: "center",
             transition: "transform 300ms ease-in-out",
@@ -66,64 +64,6 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
             },
           },
         },
-
-        "&:hover": {
-          marginTop: "10px",
-          marginBottom: "20px",
-
-          a: {
-            paddingBottom: "5px",
-          },
-        },
-
-        "&:nth-of-type(1)": {
-          transitionDelay: "250ms",
-        },
-        "&:nth-of-type(2)": {
-          transitionDelay: "200ms",
-        },
-        "&:nth-of-type(3)": {
-          transitionDelay: "150ms",
-        },
-        "&:nth-of-type(4)": {
-          transitionDelay: "100ms",
-        },
-        "&:nth-of-type(5)": {
-          transitionDelay: "50ms",
-        },
-      },
-    },
-
-    "&.is-opened": {
-      li: {
-        pointerEvents: "auto",
-        opacity: "1",
-        visibility: "visible",
-        transform: "translateY(0)",
-        transition:
-          "opacity 350ms ease, transform 250ms ease, margin 200ms ease-in-out, padding 200ms ease-in-out",
-        "&:nth-of-type(1)": {
-          transitionDelay: "1480ms, 0ms, 0ms, 0ms",
-          transitionProperty: "opacity, transform, margin, padding",
-        },
-        "&:nth-of-type(2)": {
-          transitionDelay: "1560ms, 0ms, 0ms, 0ms",
-          transitionProperty: "opacity, transform, margin, padding",
-        },
-        "&:nth-of-type(3)": {
-          transitionDelay: "1640ms, 0ms, 0ms, 0ms",
-          transitionProperty: "opacity, transform, margin, padding",
-        },
-        "&:nth-of-type(4)": {
-          transitionDelay: "1720ms, 0ms, 0ms, 0ms",
-          transitionProperty: "opacity, transform, margin, padding",
-        },
-        "&:nth-of-type(5)": {
-          transitionDelay: "1800ms, 0ms, 0ms, 0ms",
-          transitionProperty: "opacity, transform, margin, padding",
-        },
-
-        "&.active": {},
       },
     },
   },
