@@ -9,17 +9,13 @@ const ToggleButtonGroupStyled = styled(ToggleButtonGroup)(({ theme }) => ({
   transform: "translateY(30px)",
   transition: "all 250ms linear",
   transitionDelay: "300ms",
-  // pointerEvents: "none",
-  // opacity: "0",
-  // visibility: "hidden",
+  opacity: 0,
 
   "&.is-opened": {
     pointerEvents: "auto",
     opacity: "1",
-    visibility: "visible",
-    transform: "translateY(0)",
-    transition: "opacity 350ms ease, transform 250ms ease",
-    transitionDelay: "1400ms",
+    transition: "all 350ms linear",
+    transitionDelay: "400ms",
   },
 }));
 

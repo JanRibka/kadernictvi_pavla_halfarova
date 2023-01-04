@@ -19,6 +19,15 @@ const NavLinksStyled = styled(Box)(({ theme }) => ({
     alignItems: "center",
     flexDirection: "column",
     marginTop: "1rem",
+    transition: "all 250ms linear",
+    transitionDelay: "300ms",
+    opacity: 0,
+
+    "&.is-opened": {
+      opacity: "1",
+      transition: "all 350ms linear",
+      transitionDelay: "400ms",
+    },
 
     ul: {
       display: "flex",

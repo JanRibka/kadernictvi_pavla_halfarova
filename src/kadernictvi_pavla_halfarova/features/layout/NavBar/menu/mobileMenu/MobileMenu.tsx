@@ -14,7 +14,9 @@ interface IProps {
 const MobileMenu = (props: IProps) => {
   // References
   const refMobileMenu = useRef<HTMLDivElement>(null);
+  const refNavLinksWrapper = useRef<HTMLDivElement>(null);
   const refNavLinks = useRef<HTMLDivElement>(null);
+  const refLanguageSelect = useRef<HTMLDivElement>(null);
   const effectRan = useRef<boolean>(false);
 
   // State
@@ -35,13 +37,22 @@ const MobileMenu = (props: IProps) => {
   }, [isOpnd]);
 
   const SetOpndClsd = (isOpnd: boolean) => {
-    if (!!refMobileMenu.current && !!refNavLinks.current) {
+    if (
+      !!refMobileMenu.current &&
+      !!refNavLinksWrapper.current &&
+      !!refNavLinks.current &&
+      !!refLanguageSelect.current
+    ) {
       if (isOpnd) {
         refMobileMenu.current.classList.add("is-opened");
+        refNavLinksWrapper.current.classList.add("is-opened");
         refNavLinks.current.classList.add("is-opened");
+        refLanguageSelect.current.classList.add("is-opened");
       } else {
         refMobileMenu.current.classList.remove("is-opened");
+        refNavLinksWrapper.current.classList.remove("is-opened");
         refNavLinks.current.classList.remove("is-opened");
+        refLanguageSelect.current.classList.remove("is-opened");
       }
     }
   };
@@ -68,8 +79,8 @@ const MobileMenu = (props: IProps) => {
       {/* Hamburger icon */}
       <HamburgerIcon handleOnClick={HandleIsOpnd} isOpnd={isOpnd} />
       {/* Navigation */}
-      <NavLinksStyled ref={refNavLinks}>
-        <LanguageSelect />
+      <NavLinksStyled ref={refNavLinksWrapper}>
+        <LanguageSelect ref={refLanguageSelect} />
         <NavLinks
           ref={refNavLinks}
           handleOnClick={HandleOnClickAction}
