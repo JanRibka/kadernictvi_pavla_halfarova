@@ -21,6 +21,8 @@ const root = ReactDOM.createRoot(
 );
 // TODO: Předělat mobilní menu na něco jednoduššího
 // TODO: Pokud smažu cookie consent z prohlížešče, zustanou tam google cookies
+// TODO: Když otočím mobil, tak nejde otevřít menu
+// TODO: Pokud na mobilu otevřu galerii, mělo by se to otevřít ve fullscreen
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
