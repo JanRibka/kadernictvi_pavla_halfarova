@@ -1,6 +1,6 @@
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/lazy';
+// import 'swiper/css';
+// import 'swiper/css/lazy';
 
 // import required modules
 // import { Autoplay, Lazy } from 'swiper';
