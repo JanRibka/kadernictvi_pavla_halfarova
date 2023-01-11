@@ -19,7 +19,6 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-// TODO: Předělat mobilní menu na něco jednoduššího
 // TODO: Pokud smažu cookie consent z prohlížešče, zustanou tam google cookies
 root.render(
   <React.StrictMode>

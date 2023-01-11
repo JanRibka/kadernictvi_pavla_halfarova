@@ -22,7 +22,7 @@ interface IProps {
   photos: PhotoModel[];
   setOpen: Dispatch<React.SetStateAction<boolean>>;
 }
-// TODO: Vycentrovat obrazky, zdaji ae mi moc dole
+
 const PhotosDialog = (props: IProps) => {
   // Other
   const RenderPhotos = () => {
