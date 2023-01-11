@@ -1,12 +1,12 @@
-import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 const HamburgerIconStyled = styled(Box)(({ theme }) => ({
   position: "fixed",
   top: "29px",
   right: "35px",
   cursor: "pointer",
-  zIndex: 1,
+  zIndex: 7,
 
   "&.is-opened": {
     "& .line-1": {
