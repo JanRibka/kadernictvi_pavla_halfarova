@@ -26,6 +26,7 @@ export class CookieHelper {
   }
 
   Remove(name: string) {
+    console.log(name + "=; max-age=0;");
     document.cookie = name + "=; max-age=0;";
   }
 }

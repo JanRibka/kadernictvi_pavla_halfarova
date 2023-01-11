@@ -7,6 +7,7 @@ const cookieHelper: CookieHelper = new CookieHelper();
 
 export class GoogleAnalyticsHelper {
   InitGA(id: string) {
+    console.log("GA inicializovano");
     initialize(id);
   }
 
@@ -35,6 +36,7 @@ export class GoogleAnalyticsHelper {
   };
 
   RemoveGA() {
+    console.log("GA smazano");
     cookieHelper.Remove("_ga");
     cookieHelper.Remove("_gid");
     cookieHelper.Remove("_gat");
@@ -44,11 +46,13 @@ export class GoogleAnalyticsHelper {
 export const GetCookieConsentCookieValue = () => {
   const cookieHelper: CookieHelper = new CookieHelper();
   const value: string = cookieHelper.Get("CookieConsent");
+  console.log("value", value);
   let result: CookieConstentModel = { funct: true, diag: false };
 
   if (value !== "") {
     result = JSON.parse(value);
+    console.log("result v ifu", result);
   }
-
+  console.log("result", result);
   return result;
 };
