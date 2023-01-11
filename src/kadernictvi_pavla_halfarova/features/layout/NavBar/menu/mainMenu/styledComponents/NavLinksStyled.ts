@@ -20,6 +20,7 @@ const NavLinksStyled = styled(Box)(
         transition: padding 200ms ease-in-out;
         text-transform: uppercase;
         cursor: pointer;
+        backface-visibility: hidden;
 
         a {
           position: relative;

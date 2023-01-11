@@ -27,6 +27,7 @@
     "react-awesome-reveal": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-ga": "^3.3.1",
+    "react-ga4": "^1.4.1",
     "react-i18next": "^12.1.1",
     "react-scripts": "^5.0.1",
     "seamless-scroll-polyfill": "^2.2.0",

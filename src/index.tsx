@@ -20,6 +20,8 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 // TODO: Pokud smažu cookie consent z prohlížešče, zustanou tam google cookies
+// TODO: Když otočím mobil, tak nejde otevřít menu
+// TODO: Pokud na mobilu otevřu galerii, mělo by se to otevřít ve fullscreen
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
