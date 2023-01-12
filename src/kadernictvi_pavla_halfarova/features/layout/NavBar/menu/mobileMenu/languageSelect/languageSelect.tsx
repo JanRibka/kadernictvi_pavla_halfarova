@@ -1,6 +1,7 @@
 import i18next from 'i18next';
 import { forwardRef, MouseEvent, Ref, useState } from 'react';
 import { LanguageEnum } from 'shared/enums/LanguageEnum';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 import i18n from 'shared/infrastructure/localize/i18n';
 
 import CzechFlag from '../../../../../../../shared/flags/czech-flag.png';
@@ -11,6 +12,8 @@ import ToggleButtonStyled from './styledComponents/ToggleButtonStyled';
 const LanguageSelect = forwardRef(
   (props, ref: Ref<HTMLDivElement> | undefined) => {
     // Consts
+    const googleAnalyticsHelper: GoogleAnalyticsHelper =
+      new GoogleAnalyticsHelper();
     const i18nextLng: string | null =
       i18next.language || localStorage.getItem("i18nextLng");
     const seldLanguage: string | undefined = Countries.find(
@@ -28,6 +31,9 @@ const LanguageSelect = forwardRef(
       event: MouseEvent<HTMLElement, globalThis.MouseEvent>,
       value: any
     ) => {
+      debugger;
+      const title =
+        event?.currentTarget?.firstElementChild?.getAttribute("title");
       const newLanguage: LanguageEnum | undefined = Countries.find(
         (f) => f.Src === value
       )?.Value;
@@ -37,6 +43,11 @@ const LanguageSelect = forwardRef(
       }
 
       setSeldCountry(value);
+      googleAnalyticsHelper.SendEventToGA(
+        "Mobilní menu",
+        title as string,
+        ("Přepnutí jazyka na " + title) as string
+      );
     };
 
     return (
@@ -52,7 +63,7 @@ const LanguageSelect = forwardRef(
             key={key}
             onClick={HandleLanguageOnChange}
           >
-            <img src={item.Src} alt={item.Label} />
+            <img src={item.Src} alt={item.Label} title={item.Title} />
           </ToggleButtonStyled>
         ))}
       </ToggleButtonGroupStyled>

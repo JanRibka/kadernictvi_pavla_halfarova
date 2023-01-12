@@ -1,4 +1,5 @@
-import { event, EventArgs, initialize, pageview } from 'react-ga';
+import ReactGA from 'react-ga4';
+import { UaEventOptions } from 'react-ga4/types/ga4';
 import CookieConstentModel from 'shared/components/cookieConsent/CookieConsentModel';
 
 import { CookieHelper } from './cookieHelper';
@@ -7,23 +8,21 @@ const cookieHelper: CookieHelper = new CookieHelper();
 
 export class GoogleAnalyticsHelper {
   InitGA(id: string) {
-    console.log("GA inicializovano");
-    initialize(id);
+    ReactGA.initialize(id);
   }
 
   // TODO: priskrolovani zavolat event pokud je dana sekce aktivni
-  // TODO: https://blog.saeloun.com/2022/02/17/how-to-integrate-react-app-with-google-analytics.html
   SendEventToGA = (category: string, action: string, label: string = "") => {
     const consent: CookieConstentModel = GetCookieConsentCookieValue();
 
     if (consent.diag === true) {
-      const args: EventArgs = {
+      const args: UaEventOptions = {
         category: category,
         action: action,
         label: label,
       };
 
-      event(args);
+      ReactGA.event(args);
     }
   };
 
@@ -31,12 +30,11 @@ export class GoogleAnalyticsHelper {
     const consent: CookieConstentModel = GetCookieConsentCookieValue();
 
     if (consent.diag === true) {
-      pageview(window.location.href);
+      ReactGA.send(window.location.href);
     }
   };
 
   RemoveGA() {
-    console.log("GA smazano");
     cookieHelper.Remove("_ga");
     cookieHelper.Remove("_gid");
     cookieHelper.Remove("_gat");
@@ -46,13 +44,11 @@ export class GoogleAnalyticsHelper {
 export const GetCookieConsentCookieValue = () => {
   const cookieHelper: CookieHelper = new CookieHelper();
   const value: string = cookieHelper.Get("CookieConsent");
-  console.log("value", value);
-  let result: CookieConstentModel = { funct: true, diag: false };
+  let result: CookieConstentModel = { funct: false, diag: false };
 
   if (value !== "") {
     result = JSON.parse(value);
-    console.log("result v ifu", result);
   }
-  console.log("result", result);
+
   return result;
 };
