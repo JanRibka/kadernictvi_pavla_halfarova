@@ -1,16 +1,16 @@
-import { forwardRef, Ref } from 'react';
-import { Fade } from 'react-awesome-reveal';
-import GridContainer from 'shared/components/gridContainer/GridContainer';
-import GridItem from 'shared/components/gridItem/GridItem';
+import { forwardRef, Ref } from "react";
+import { Fade } from "react-awesome-reveal";
+import GridContainer from "shared/components/gridContainer/GridContainer";
+import GridItem from "shared/components/gridItem/GridItem";
 
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/system/Box';
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/system/Box";
 
-import Description from './description/Description';
-import Photo from './photo/Photo';
-import AboutMeStyled from './styledComponents/AboutMeStyled';
-import PhotoWrapperStyled from './styledComponents/PhotoWrapperStyled';
+import Description from "./description/Description";
+import Photo from "./photo/Photo";
+import AboutMeStyled from "./styledComponents/AboutMeStyled";
+import PhotoWrapperStyled from "./styledComponents/PhotoWrapperStyled";
 
 interface IProps {}
 
