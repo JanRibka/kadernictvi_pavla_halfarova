@@ -1,20 +1,19 @@
-import { lazy, Suspense, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import GridContainer from 'shared/components/gridContainer/GridContainer';
 
 import { useMediaQuery, useTheme } from '@mui/material';
 
+import Gallery1 from '../galleries/gallery1/Gallery1';
+import Gallery2 from '../galleries/gallery2/Gallery2';
+import Gallery3 from '../galleries/gallery3/Gallery3';
+import Gallery4 from '../galleries/gallery4/Gallery4';
 import Produkt01 from './img/gallery1/Produkt01.jpg';
 import Pece01 from './img/gallery2/Pece01.jpg';
 import Blond01 from './img/gallery3/Blond01.jpg';
 import OstatniBarvy01 from './img/gallery4/OstatniBarvy01.jpg';
 import Photo from './photo/Photo';
 import PhotoModel from './PhotoModel';
-
-const Gallery1 = lazy(() => import("../galleries/gallery1/Gallery1"));
-const Gallery2 = lazy(() => import("../galleries/gallery2/Gallery2"));
-const Gallery3 = lazy(() => import("../galleries/gallery3/Gallery3"));
-const Gallery4 = lazy(() => import("../galleries/gallery4/Gallery4"));
 
 const Photos = () => {
   // State
@@ -69,9 +68,7 @@ const Photos = () => {
         galleryName={tGallery1("galleryName")}
         setOpen={setOpenGallery1}
       >
-        <Suspense fallback={<div>...Loading</div>}>
-          <Gallery1 open={openGallery1} setOpen={setOpenGallery1} />
-        </Suspense>
+        <Gallery1 open={openGallery1} setOpen={setOpenGallery1} />
       </Photo>
 
       {/* Gallery 2 */}
@@ -81,9 +78,7 @@ const Photos = () => {
         galleryName={tGallery2("galleryName")}
         setOpen={setOpenGallery2}
       >
-        <Suspense fallback={<div>...Loading</div>}>
-          <Gallery2 open={openGallery2} setOpen={setOpenGallery2} />
-        </Suspense>
+        <Gallery2 open={openGallery2} setOpen={setOpenGallery2} />
       </Photo>
 
       {/* Gallery 3 */}
@@ -94,9 +89,7 @@ const Photos = () => {
         setOpen={setOpenGallery3}
         pictToTop
       >
-        <Suspense fallback={<div>...Loading</div>}>
-          <Gallery3 open={openGallery3} setOpen={setOpenGallery3} />
-        </Suspense>
+        <Gallery3 open={openGallery3} setOpen={setOpenGallery3} />
       </Photo>
 
       {/* Gallery 4 */}
@@ -107,9 +100,7 @@ const Photos = () => {
         setOpen={setOpenGallery4}
         pictToTop
       >
-        <Suspense fallback={<div>...Loading</div>}>
-          <Gallery4 open={openGallery4} setOpen={setOpenGallery4} />
-        </Suspense>
+        <Gallery4 open={openGallery4} setOpen={setOpenGallery4} />
       </Photo>
     </GridContainer>
   );

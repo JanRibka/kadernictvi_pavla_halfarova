@@ -1,5 +1,6 @@
 import { Dispatch, MouseEvent, SetStateAction } from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -18,9 +19,18 @@ interface IProps {
 }
 
 const Photo = (props: IProps) => {
+  // Constants
+  const googleAnalyticsHelper: GoogleAnalyticsHelper =
+    new GoogleAnalyticsHelper();
+
   // Other
   const HandleOnClick = (e: MouseEvent<HTMLDivElement>) => {
     props.setOpen(true);
+
+    googleAnalyticsHelper.SendEventToGA(
+      "Galerie",
+      ("Otevření galerie " + props.galleryName) as string
+    );
   };
 
   return (

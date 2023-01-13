@@ -56,7 +56,6 @@ const LanguageSelect = () => {
     refArrowIcon.current?.classList.remove("opened");
     googleAnalyticsHelper.SendEventToGA(
       "Hlavní menu",
-      title as string,
       ("Přepnutí jazyka na " + title) as string
     );
   };

@@ -31,7 +31,6 @@ const LanguageSelect = forwardRef(
       event: MouseEvent<HTMLElement, globalThis.MouseEvent>,
       value: any
     ) => {
-      debugger;
       const title =
         event?.currentTarget?.firstElementChild?.getAttribute("title");
       const newLanguage: LanguageEnum | undefined = Countries.find(
@@ -45,7 +44,6 @@ const LanguageSelect = forwardRef(
       setSeldCountry(value);
       googleAnalyticsHelper.SendEventToGA(
         "Mobilní menu",
-        title as string,
         ("Přepnutí jazyka na " + title) as string
       );
     };
