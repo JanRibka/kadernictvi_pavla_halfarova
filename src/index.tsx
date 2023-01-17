@@ -1,27 +1,27 @@
 // LOCALIZATION
-import './shared/infrastructure/localize/i18n';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import '@fontsource/caveat';
+import "./shared/infrastructure/localize/i18n";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/caveat";
 
-import { AppTheme } from 'kadernictvi_pavla_halfarova/globalStyles/AppTheme';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { AppTheme } from "kadernictvi_pavla_halfarova/globalStyles/AppTheme";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import { CssBaseline } from '@mui/material';
-import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import { CssBaseline } from "@mui/material";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-// TODO: Pokud smažu cookie consent z prohlížešče, zustanou tam google cookies
-// TODO: Když otočím mobil, tak nejde otevřít menu
+// TODO: Pokud smažu cookie consent z prohlížešče, zustanou tam google cookies. Na za48tku dom0ny je .
 // TODO: Pokud na mobilu otevřu galerii, mělo by se to otevřít ve fullscreen
+// TODO: Upravit fotku pro SEO v headeru
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={AppTheme}>
