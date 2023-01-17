@@ -1,10 +1,10 @@
-import { MouseEvent, useEffect, useRef, useState } from 'react';
-import { CookieHelper } from 'shared/helpers/cookieHelper';
-import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
+import { MouseEvent, useEffect, useRef, useState } from "react";
+import { CookieHelper } from "shared/helpers/cookieHelper";
+import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
 
-import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
-import CookieConstentModel from './CookieConsentModel';
-import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
+import CookieConsentDialog from "./cookieConsentDialog/CookieConsentDialog";
+import CookieConstentModel from "./CookieConsentModel";
+import CookieConsentSettingsDialog from "./cookieConsentSettingsDialog/CookieConsentSettingsDialog";
 
 const CookienConsent = () => {
   // References
@@ -50,7 +50,7 @@ const CookienConsent = () => {
     event: MouseEvent<HTMLButtonElement>
   ) => {
     if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
-      googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID); // TODO: Zmenit id na nové google analytics
+      googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
 
     const consent: CookieConstentModel = {

@@ -1,8 +1,8 @@
-import ReactGA from 'react-ga4';
-import { UaEventOptions } from 'react-ga4/types/ga4';
-import CookieConstentModel from 'shared/components/cookieConsent/CookieConsentModel';
+import ReactGA from "react-ga4";
+import { UaEventOptions } from "react-ga4/types/ga4";
+import CookieConstentModel from "shared/components/cookieConsent/CookieConsentModel";
 
-import { CookieHelper } from './cookieHelper';
+import { CookieHelper } from "./cookieHelper";
 
 const cookieHelper: CookieHelper = new CookieHelper();
 
@@ -11,7 +11,6 @@ export class GoogleAnalyticsHelper {
     ReactGA.initialize(id);
   }
 
-  // TODO: priskrolovani zavolat event pokud je dana sekce aktivni
   SendEventToGA = (category: string, action: string, label: string = "") => {
     const consent: CookieConstentModel = GetCookieConsentCookieValue();
 
