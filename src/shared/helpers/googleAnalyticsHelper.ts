@@ -1,8 +1,8 @@
-import ReactGA from "react-ga4";
-import { UaEventOptions } from "react-ga4/types/ga4";
-import CookieConstentModel from "shared/components/cookieConsent/CookieConsentModel";
+import ReactGA from 'react-ga4';
+import { UaEventOptions } from 'react-ga4/types/ga4';
+import CookieConstentModel from 'shared/components/cookieConsent/CookieConsentModel';
 
-import { CookieHelper } from "./cookieHelper";
+import { CookieHelper } from './cookieHelper';
 
 const cookieHelper: CookieHelper = new CookieHelper();
 
@@ -46,11 +46,11 @@ export class GoogleAnalyticsHelper {
 
     const cookies: string[] = cookieHelper.GetNames();
 
-    cookies.forEach((cookie) => {
-      if (cookie.startsWith("_ga")) {
+    cookies
+      .filter((f) => f.startsWith("_ga"))
+      ?.forEach((cookie) => {
         cookieHelper.Remove(cookie, domain);
-      }
-    });
+      });
   }
 }
 
