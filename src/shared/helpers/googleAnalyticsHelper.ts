@@ -49,7 +49,6 @@ export class GoogleAnalyticsHelper {
     cookies.forEach((cookie) => {
       if (cookie.startsWith("_ga")) {
         cookieHelper.Remove(cookie, domain);
-        return true;
       }
     });
   }

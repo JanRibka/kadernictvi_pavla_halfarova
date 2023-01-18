@@ -19,7 +19,6 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-// TODO: Pokud smažu cookie consent z prohlížešče, zustanou tam google cookies. Na za48tku dom0ny je .
 // TODO: Pokud na mobilu otevřu galerii, mělo by se to otevřít ve fullscreen
 // TODO: Upravit fotku pro SEO v headeru
 root.render(
