@@ -34,9 +34,24 @@ export class GoogleAnalyticsHelper {
   };
 
   RemoveGA() {
-    cookieHelper.Remove("_ga");
-    cookieHelper.Remove("_gid");
-    cookieHelper.Remove("_gat");
+    let domain: string | undefined = undefined;
+
+    if (process.env.REACT_APP_INSTANCE_NAME === "Prod") {
+      domain = "." + window.location.host;
+    }
+
+    cookieHelper.Remove("_ga", domain);
+    cookieHelper.Remove("_gid", domain);
+    cookieHelper.Remove("_gat", domain);
+
+    const cookies: string[] = cookieHelper.GetNames();
+
+    cookies.forEach((cookie) => {
+      if (cookie.startsWith("_ga")) {
+        cookieHelper.Remove(cookie, domain);
+        return true;
+      }
+    });
   }
 }
 
