@@ -2,6 +2,9 @@ export class CookieHelper {
   Set(name: string, value: string, exDays: number) {
     const d = new Date();
 
+    //TODO: var myDate = new Date();
+    //myDate.setFullYear(myDate.getFullYear() + nbYearsToAdd);
+
     d.setTime(d.getTime() + exDays * 24 * 60 * 60 * 1000);
 
     const expires: string = "expires=" + d.toUTCString();
