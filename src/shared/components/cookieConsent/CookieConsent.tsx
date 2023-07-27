@@ -1,17 +1,16 @@
-import { MouseEvent, useEffect, useRef, useState } from "react";
-import { CookieHelper } from "shared/helpers/cookieHelper";
-import { GoogleAnalyticsHelper } from "shared/helpers/googleAnalyticsHelper";
+import { MouseEvent, useEffect, useRef, useState } from 'react';
+import { CookieHelper } from 'shared/helpers/cookieHelper';
+import { GoogleAnalyticsHelper } from 'shared/helpers/googleAnalyticsHelper';
 
-import CookieConsentDialog from "./cookieConsentDialog/CookieConsentDialog";
-import CookieConstentModel from "./CookieConsentModel";
-import CookieConsentSettingsDialog from "./cookieConsentSettingsDialog/CookieConsentSettingsDialog";
+import CookieConsentDialog from './cookieConsentDialog/CookieConsentDialog';
+import CookieConstentModel from './CookieConsentModel';
+import CookieConsentSettingsDialog from './cookieConsentSettingsDialog/CookieConsentSettingsDialog';
 
 const CookienConsent = () => {
   // References
   const effectRan = useRef<boolean>(false);
 
   // Consts
-  const cookieExpiresIn: number = 180;
   const cookieHelper: CookieHelper = new CookieHelper();
   const googleAnalyticsHelper: GoogleAnalyticsHelper =
     new GoogleAnalyticsHelper();
@@ -53,6 +52,7 @@ const CookienConsent = () => {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
 
+    const cookieExpiresIn: number = functCookieValue ? 1820 : 180;
     const consent: CookieConstentModel = {
       funct: functCookieValue,
       diag: diagCookieValue,
@@ -84,7 +84,7 @@ const CookienConsent = () => {
       diag: true,
     };
 
-    cookieHelper.Set("CookieConsent", JSON.stringify(consent), cookieExpiresIn);
+    cookieHelper.Set("CookieConsent", JSON.stringify(consent), 1820);
     setIsOpenSettings(false);
     setIsOpen(false);
   };
@@ -95,7 +95,7 @@ const CookienConsent = () => {
     if (diagCookieValue && process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
       googleAnalyticsHelper.InitGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
     }
-
+    const cookieExpiresIn: number = functCookieValue ? 1820 : 180;
     const consent: CookieConstentModel = {
       funct: functCookieValue,
       diag: diagCookieValue,
